@@ -108,25 +108,32 @@ Description: "Imaging research including images and reports."
   * ^mapping[1].identity = "bbs-dataset-100-alpha2-20240208"
   * ^mapping[1].map = "bbs-dataelement-69"
   * ^mapping[1].comment = "DateTime"
-* author 1..*
-* author only Reference(Practitioner or PractitionerRole or Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
-  * ^short = "Performer / Location / Author"
-  * ^definition = """
-      * The health professional who carried out or will carry out the procedure. In most cases, only the medical specialty is entered, and not the name of the health professional. In the context of image exchange, the Performing Physician should be conveyed here, and NOT the laboratory technician who makes the images (i.e. the Operator).
-      * The healthcare center where the procedure was, is or will be carried out.
-    """
-  * ^alias[0] = "Uitvoerder"
-  * ^alias[1] = "Locatie"
-  * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping[0].map = "bbs-dataelement-187"
-  * ^mapping[0].comment = "Performer"
-  * ^mapping[1].identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping[1].map = "bbs-dataelement-185"
-  * ^mapping[1].comment = "Location"
-  * ^mapping[2].identity = "ihexds-dataset-2024-20220712"
-  * ^mapping[2].map = "ihexds-dataelement-2"
-  * ^mapping[2].comment = "author"
-* authenticator only Reference(Practitioner or PractitionerRole or Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
+* author 2..*
+  * ^slicing.discriminator.type = #profile
+  * ^slicing.discriminator.path = "resolve()"
+  * ^slicing.rules = #open
+  * ^short = "Author"
+  * ^mapping.identity = "ihexds-dataset-2024-20220712"
+  * ^mapping.map = "ihexds-dataelement-2"
+  * ^mapping.comment = "author"
+* author contains
+    location 1..1 and
+    performer 1..1
+* author[location] only Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
+  * ^short = "Location"
+  * ^definition = "The healthcare center where the procedure was, is or will be carried out."
+  * ^alias = "Locatie"
+  * ^mapping.identity = "bbs-dataset-100-alpha2-20240208"
+  * ^mapping.map = "bbs-dataelement-185"
+  * ^mapping.comment = "Location"
+* author[performer] only http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference or Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)
+  * ^short = "Performer"
+  * ^definition = "The health professional who carried out or will carry out the procedure. In most cases, only the medical specialty is entered, and not the name of the health professional. In the context of image exchange, the Performing Physician should be conveyed here, and NOT the laboratory technician who makes the images (i.e. the Operator)."
+  * ^alias = "Uitvoerder"
+  * ^mapping.identity = "bbs-dataset-100-alpha2-20240208"
+  * ^mapping.map = "bbs-dataelement-187"
+  * ^mapping.comment = "Performer"
+* authenticator only http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference or Reference(Practitioner or PractitionerRole or Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
   * ^short = "LegalAuthenticator"
   * ^definition = "Represents a participant who has legally authenticated or attested the document within the author institution."
   * ^mapping.identity = "ihexds-dataset-2024-20220712"

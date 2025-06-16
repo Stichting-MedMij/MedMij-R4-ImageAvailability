@@ -252,23 +252,74 @@
       {
         "id": "DocumentReference.author",
         "path": "DocumentReference.author",
-        "short": "Performer / Location / Author",
-        "definition": "* The health professional who carried out or will carry out the procedure. In most cases, only the medical specialty is entered, and not the name of the health professional. In the context of image exchange, the Performing Physician should be conveyed here, and NOT the laboratory technician who makes the images (i.e. the Operator).\n* The healthcare center where the procedure was, is or will be carried out.",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resolve()"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Author",
+        "min": 2,
+        "mapping": [
+          {
+            "identity": "ihexds-dataset-2024-20220712",
+            "map": "ihexds-dataelement-2",
+            "comment": "author"
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.author:location",
+        "path": "DocumentReference.author",
+        "sliceName": "location",
+        "short": "Location",
+        "definition": "The healthcare center where the procedure was, is or will be carried out.",
         "alias": [
-          "Uitvoerder",
           "Locatie"
         ],
         "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner",
-              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
-              "http://hl7.org/fhir/StructureDefinition/Organization",
-              "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner",
-              "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+            ],
+            "aggregation": [
+              "contained"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "bbs-dataset-100-alpha2-20240208",
+            "map": "bbs-dataelement-185",
+            "comment": "Location"
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.author:performer",
+        "path": "DocumentReference.author",
+        "sliceName": "performer",
+        "short": "Performer",
+        "definition": "The health professional who carried out or will carry out the procedure. In most cases, only the medical specialty is entered, and not the name of the health professional. In the context of image exchange, the Performing Physician should be conveyed here, and NOT the laboratory technician who makes the images (i.e. the Operator).",
+        "alias": [
+          "Uitvoerder"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference"
+            ],
+            "targetProfile": [
+              "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
             ],
             "aggregation": [
               "contained"
@@ -280,16 +331,6 @@
             "identity": "bbs-dataset-100-alpha2-20240208",
             "map": "bbs-dataelement-187",
             "comment": "Performer"
-          },
-          {
-            "identity": "bbs-dataset-100-alpha2-20240208",
-            "map": "bbs-dataelement-185",
-            "comment": "Location"
-          },
-          {
-            "identity": "ihexds-dataset-2024-20220712",
-            "map": "ihexds-dataelement-2",
-            "comment": "author"
           }
         ]
       },
@@ -301,11 +342,13 @@
         "type": [
           {
             "code": "Reference",
+            "profile": [
+              "http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference"
+            ],
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/Practitioner",
               "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
               "http://hl7.org/fhir/StructureDefinition/Organization",
-              "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
             ],
