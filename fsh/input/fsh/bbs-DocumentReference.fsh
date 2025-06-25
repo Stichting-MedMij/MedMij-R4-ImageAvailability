@@ -189,7 +189,7 @@ Description: "Imaging research including images and reports."
       * ^mapping.identity = "ihexds-dataset-2024-20220712"
       * ^mapping.map = "ihexds-dataelement-14"
       * ^mapping.comment = "hash"
-    * title
+    * title 1..1
       * ^short = "ReportTitle / ImageTitle / Title"
       * ^definition = """
         * The title of the report.
