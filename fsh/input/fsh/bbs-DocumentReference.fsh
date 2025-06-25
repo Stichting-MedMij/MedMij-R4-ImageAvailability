@@ -5,6 +5,8 @@ Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensi
 Id: bbs-DocumentReference
 Title: "bbs DocumentReference"
 Description: "Imaging research including images and reports."
+* ^text.status = #empty
+* ^text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
 * ^status = #draft
 * ^publisher = "MedMij"
 * ^contact.name = "MedMij"
