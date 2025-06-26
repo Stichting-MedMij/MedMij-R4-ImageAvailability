@@ -1,11 +1,11 @@
-//Bundle with FHIR test instances in FSH format for "Beeld in PGO" test scenario 3
+//Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 3
 
 Instance: Images-DocumentReference-Klaassen-Groen-Image-3-1
 InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:e5864703-93bd-46dc-9754-fcd2c0f16489" // document uniqueId | dummy UUID
+  * value = "urn:uuid:e5864703-93bd-46dc-9754-fcd2c0f16489" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#16831000087101 "MRI van linker bovenbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -34,7 +34,7 @@ Usage: #example
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-47092" // Dummy Accession Number
 
 Instance: Images-Patient-De-Graaff
