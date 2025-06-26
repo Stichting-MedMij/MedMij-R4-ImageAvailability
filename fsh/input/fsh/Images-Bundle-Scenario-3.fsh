@@ -1,7 +1,7 @@
 //Bundle with FHIR test instances in FSH format for "Beeld in PGO" test scenario 3
 
 Instance: Images-DocumentReference-Klaassen-Groen-Image-3-1
-InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
@@ -9,8 +9,8 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#16831000087101 "MRI van linker bovenbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[0] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[1] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-De-Graaff) "de Graaff"
 * date = "2020-03-03T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Pieterssen) "Pieterssen, Orthopedisch chirurg, Stichting Spaarne Gasthuis, Radiologie"

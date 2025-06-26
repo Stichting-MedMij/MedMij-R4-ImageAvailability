@@ -3,23 +3,10 @@
   "id": "Images-DocumentReference-Klaassen-Groen-Report-2-4",
   "meta": {
     "profile": [
-      "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+      "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
     ]
-  },
-  "masterIdentifier": {
-    "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:0a61a231-1b52-4ba5-b86c-9edac0bfa044"
   },
   "status": "current",
-  "type": {
-    "coding": [
-      {
-        "code": "142771000146105",
-        "system": "http://snomed.info/sct",
-        "display": "röntgenfoto van linker kaakgewricht"
-      }
-    ]
-  },
   "category": [
     {
       "coding": [
@@ -36,6 +23,19 @@
       ]
     }
   ],
+  "masterIdentifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:0a61a231-1b52-4ba5-b86c-9edac0bfa044"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "142771000146105",
+        "system": "http://snomed.info/sct",
+        "display": "röntgenfoto van linker kaakgewricht"
+      }
+    ]
+  },
   "subject": {
     "reference": "Patient/Images-Patient-Klaassen-Groen",
     "display": "José Klaassen-Groen"
