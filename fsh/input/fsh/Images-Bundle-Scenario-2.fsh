@@ -29,13 +29,19 @@ Usage: #example
   * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
-  * related
+  * related[0]
     * identifier
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-19285" // Dummy Accession Number
+  * related[1]
+    * identifier
+      * type.coding
+        * system = "urn:ietf:rfc:3986"
+        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * value = "1.2.826.0.1.3680043.8.498.77615907425522706317163091876421984542" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-Klaassen-Groen-Report-2-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference

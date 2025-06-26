@@ -117,6 +117,19 @@
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
           "value": "RAD-20250212-47092"
         }
+      },
+      {
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "urn:ietf:rfc:3986",
+                "code": "urn:ihe:iti:xds:2016:studyInstanceUID"
+              }
+            ]
+          },
+          "value": "1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801"
+        }
       }
     ]
   }
