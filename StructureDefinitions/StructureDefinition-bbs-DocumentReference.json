@@ -1,6 +1,10 @@
 {
   "resourceType": "StructureDefinition",
   "id": "bbs-DocumentReference",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
   "url": "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference",
   "name": "BbsDocumentReference",
   "title": "bbs DocumentReference",
@@ -312,6 +316,7 @@
         "sliceName": "performer",
         "short": "Performer",
         "definition": "The health professional who carried out or will carry out the procedure. In most cases, only the medical specialty is entered, and not the name of the health professional. In the context of image exchange, the Performing Physician should be conveyed here, and NOT the laboratory technician who makes the images (i.e. the Operator).",
+        "comment": "Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\n\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.",
         "alias": [
           "Uitvoerder"
         ],
@@ -320,9 +325,6 @@
         "type": [
           {
             "code": "Reference",
-            "profile": [
-              "http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference"
-            ],
             "targetProfile": [
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
             ],
@@ -344,12 +346,10 @@
         "path": "DocumentReference.authenticator",
         "short": "LegalAuthenticator",
         "definition": "Represents a participant who has legally authenticated or attested the document within the author institution.",
+        "comment": "Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\n\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.",
         "type": [
           {
             "code": "Reference",
-            "profile": [
-              "http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference"
-            ],
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/Practitioner",
               "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
