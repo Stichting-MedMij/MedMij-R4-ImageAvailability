@@ -1,11 +1,11 @@
-//Bundle with FHIR test instances in FSH format for "Beeld in PGO" test scenario 1
+//Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 1
 
 Instance: Images-DocumentReference-Blaak-Image-1-1
 InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:7ce26098-1b2f-4ad8-bd45-d1e931e94ca0" // document uniqueId | dummy UUID
+  * value = "urn:uuid:7ce26098-1b2f-4ad8-bd45-d1e931e94ca0" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#3511000087103 "röntgenfoto van rechter sleutelbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -34,7 +34,7 @@ Usage: #example
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-83472" // Dummy Accession Number
   * related[1]
     * identifier
@@ -48,7 +48,7 @@ InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Compreh
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:b042e5cc-442d-4abd-840d-57f3c9f86f73" // document uniqueId | dummy UUID
+  * value = "urn:uuid:b042e5cc-442d-4abd-840d-57f3c9f86f73" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#3511000087103 "röntgenfoto van rechter sleutelbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -63,7 +63,7 @@ Usage: #example
   * attachment
     * contentType = #application/pdf
     * language = #nl // languageCode | geen mapping naar dataset
-    * url = "Binary/Images-Binary-Report-1-1" //geen mapping naar dataset | verwijst naar een Binary
+    * url = "Binary/Images-Binary-Report-1-1" // geen mapping naar dataset | verwijst naar een Binary
     * title = "Röntgen Clavicula rechts" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "2024-05-24T12:00:00+02:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
@@ -77,7 +77,7 @@ Usage: #example
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-83472" // Dummy Accession Number
   * related[1]
     * identifier

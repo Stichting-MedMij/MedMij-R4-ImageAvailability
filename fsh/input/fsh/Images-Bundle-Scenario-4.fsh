@@ -1,4 +1,4 @@
-//Bundle with FHIR test instances in FSH format for "Beeld in PGO" test scenario 4
+//Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 4
 
 Instance: Images-Patient-Tjong-A-Kon
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient

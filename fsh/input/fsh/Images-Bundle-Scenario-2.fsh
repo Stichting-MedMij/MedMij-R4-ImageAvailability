@@ -1,11 +1,11 @@
-//Bundle with FHIR test instances in FSH format for "Beeld in PGO" test scenario 2
+//Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 2
 
 Instance: Images-DocumentReference-Klaassen-Groen-Image-2-1
 InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:49b82e94-cf06-4507-b5a3-361d5937e77d" // document uniqueId | dummy UUID
+  * value = "urn:uuid:49b82e94-cf06-4507-b5a3-361d5937e77d" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -34,7 +34,7 @@ Usage: #example
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-19285" // Dummy Accession Number
 
 Instance: Images-DocumentReference-Klaassen-Groen-Report-2-2
@@ -42,7 +42,7 @@ InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Compreh
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:c4a902d3-1259-4881-9dd1-17376cef5ce5" // document uniqueId | dummy UUID
+  * value = "urn:uuid:c4a902d3-1259-4881-9dd1-17376cef5ce5" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -57,7 +57,7 @@ Usage: #example
   * attachment
     * contentType = #application/pdf
     * language = #nl // languageCode | geen mapping naar dataset
-    * url = "Binary/Images-Binary-Report-2-2" //geen mapping naar dataset | verwijst naar een Binary
+    * url = "Binary/Images-Binary-Report-2-2" // geen mapping naar dataset | verwijst naar een Binary
     * title = "longfoto" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
@@ -84,7 +84,7 @@ InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Compreh
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:57b49159-5c9e-424d-8a09-b240c13a395d" // document uniqueId | dummy UUID
+  * value = "urn:uuid:57b49159-5c9e-424d-8a09-b240c13a395d" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -113,7 +113,7 @@ Usage: #example
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-50637" // Dummy Accession Number
   * related[1]
     * identifier
@@ -127,7 +127,7 @@ InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Compreh
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:53338e45-a078-4886-8501-7cf1ec838afd" // document uniqueId | dummy UUID
+  * value = "urn:uuid:53338e45-a078-4886-8501-7cf1ec838afd" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -142,7 +142,7 @@ Usage: #example
   * attachment
     * contentType = #application/pdf
     * language = #nl // languageCode | geen mapping naar dataset
-    * url = "Binary/Images-Binary-Report-2-3" //geen mapping naar dataset | verwijst naar een Binary
+    * url = "Binary/Images-Binary-Report-2-3" // geen mapping naar dataset | verwijst naar een Binary
     * title = "longfoto" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
@@ -156,7 +156,7 @@ Usage: #example
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-50637" // Dummy Accession Number
   * related[1]
     * identifier
@@ -176,7 +176,7 @@ InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Compreh
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:d7236f3e-5c10-4caf-9864-255baa23611b" // document uniqueId | dummy UUID
+  * value = "urn:uuid:d7236f3e-5c10-4caf-9864-255baa23611b" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -205,7 +205,7 @@ Usage: #example
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-74920" // Dummy Accession Number
   * related[1]
     * identifier
@@ -219,7 +219,7 @@ InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Compreh
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:0a61a231-1b52-4ba5-b86c-9edac0bfa044" // document uniqueId | dummy UUID
+  * value = "urn:uuid:0a61a231-1b52-4ba5-b86c-9edac0bfa044" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
 * category
@@ -234,7 +234,7 @@ Usage: #example
   * attachment
     * contentType = #application/pdf
     * language = #nl // languageCode | geen mapping naar dataset
-    * url = "Binary/Images-Binary-Report-2-4" //geen mapping naar dataset | verwijst naar een Binary
+    * url = "Binary/Images-Binary-Report-2-4" // geen mapping naar dataset | verwijst naar een Binary
     * title = "röntgenfoto van linker kaakgewricht" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
@@ -248,7 +248,7 @@ Usage: #example
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-74920" // Dummy Accession Number
   * related[1]
     * identifier
