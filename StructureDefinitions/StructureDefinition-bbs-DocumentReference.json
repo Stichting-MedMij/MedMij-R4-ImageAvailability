@@ -271,7 +271,7 @@
           "rules": "open"
         },
         "short": "Author",
-        "min": 2,
+        "min": 1,
         "mapping": [
           {
             "identity": "ihexds-dataset-2024-20220712",

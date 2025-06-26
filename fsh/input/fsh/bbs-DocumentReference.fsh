@@ -113,7 +113,7 @@ Description: "Imaging research including images and reports."
   * ^mapping[1].identity = "bbs-dataset-100-alpha2-20240208"
   * ^mapping[1].map = "bbs-dataelement-69"
   * ^mapping[1].comment = "DateTime"
-* author 2..*
+* author 1..*
   * ^slicing.discriminator.type = #profile
   * ^slicing.discriminator.path = "resolve()"
   * ^slicing.rules = #open
