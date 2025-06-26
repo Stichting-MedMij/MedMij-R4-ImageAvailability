@@ -21,7 +21,7 @@ Usage: #example
     * contentType = #application/dicom+json
     * language = #nl // languageCode | geen mapping naar dataset
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
-    * title = "MRI van linker bovenbeen" // title | geen mapping naar dataset
+    * title = "MRI van linker bovenbeen" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2020-03-03T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
