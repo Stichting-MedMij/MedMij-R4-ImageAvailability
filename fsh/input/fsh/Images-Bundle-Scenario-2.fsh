@@ -21,7 +21,7 @@ Usage: #example
     * contentType = #application/dicom+json
     * language = #nl // languageCode | geen mapping naar dataset
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
-    * title = "longfoto" // title | geen mapping naar dataset
+    * title = "longfoto" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "1990-02-10T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
@@ -58,7 +58,7 @@ Usage: #example
     * contentType = #application/pdf
     * language = #nl // languageCode | geen mapping naar dataset
     * url = "Binary/Images-Binary-Report-2-2" //geen mapping naar dataset | verwijst naar een Binary
-    * title = "longfoto" // title | geen mapping naar dataset
+    * title = "longfoto" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
 * context
@@ -100,7 +100,7 @@ Usage: #example
     * contentType = #application/dicom+json
     * language = #nl // languageCode | geen mapping naar dataset
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
-    * title = "longfoto" // title | geen mapping naar dataset
+    * title = "longfoto" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
@@ -143,7 +143,7 @@ Usage: #example
     * contentType = #application/pdf
     * language = #nl // languageCode | geen mapping naar dataset
     * url = "Binary/Images-Binary-Report-2-3" //geen mapping naar dataset | verwijst naar een Binary
-    * title = "longfoto" // title | geen mapping naar dataset
+    * title = "longfoto" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
 * context
@@ -192,7 +192,7 @@ Usage: #example
     * contentType = #application/dicom+json
     * language = #nl // languageCode | geen mapping naar dataset
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
-    * title = "röntgenfoto van linker kaakgewricht" // title | geen mapping naar dataset
+    * title = "röntgenfoto van linker kaakgewricht" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
@@ -235,7 +235,7 @@ Usage: #example
     * contentType = #application/pdf
     * language = #nl // languageCode | geen mapping naar dataset
     * url = "Binary/Images-Binary-Report-2-4" //geen mapping naar dataset | verwijst naar een Binary
-    * title = "röntgenfoto van linker kaakgewricht" // title | geen mapping naar dataset
+    * title = "röntgenfoto van linker kaakgewricht" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
 * context

@@ -18,9 +18,12 @@ Description: "Imaging research including images and reports."
 * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
 * ^mapping[0].uri = "https://decor.nictiz.nl/pub/bbs/bbs-html-20240208T092809/ds-2.16.840.1.113883.2.4.3.11.60.133.1.1-2022-03-09T122352.html"
 * ^mapping[0].name = "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208"
-* ^mapping[1].identity = "ihexds-dataset-2024-20220712"
-* ^mapping[1].uri = "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html"
-* ^mapping[1].name = "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
+* ^mapping[1].identity = "bbs-medmij-dataset-100-beta1-2025xxyy"
+* ^mapping[1].uri = "" // This line has been added to overwrite the uri
+* ^mapping[1].name = "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
+* ^mapping[2].identity = "ihexds-dataset-2024-20220712"
+* ^mapping[2].uri = "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html"
+* ^mapping[2].name = "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
 * . 
   * ^short = "ImagingResearch"
   * ^definition = "Imaging research including images and reports."
@@ -120,7 +123,7 @@ Description: "Imaging research including images and reports."
   * ^mapping.comment = "author"
 * author contains
     location 1..1 and
-    performer 1..1
+    performer 0..1
 * author[location] only Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
   * ^short = "Location"
   * ^definition = "The healthcare center where the procedure was, is or will be carried out."
@@ -198,12 +201,24 @@ Description: "Imaging research including images and reports."
       * ^mapping.identity = "ihexds-dataset-2024-20220712"
       * ^mapping.map = "ihexds-dataelement-14"
       * ^mapping.comment = "hash"
-    * title
-      * ^short = "Title"
-      * ^definition = "The title of the document."
-      * ^mapping.identity = "ihexds-dataset-2024-20220712"
-      * ^mapping.map = "ihexds-dataelement-27"
-      * ^mapping.comment = "title"
+    * title 1..1
+      * ^short = "ReportTitle / ImageTitle / Title"
+      * ^definition = """
+        * The title of the report.
+        * The title of the image.
+        * The title of the document.
+        """
+      * ^alias[0] = "VerslagTitel"
+      * ^alias[1] = "BeeldTitel"
+      * ^mapping[0].identity = "bbs-medmij-dataset-100-beta1-2025xxyy"
+      * ^mapping[0].map = "bbs-medmij-dataelement-2"
+      * ^mapping[0].comment = "ReportTitle"
+      * ^mapping[1].identity = "bbs-medmij-dataset-100-beta1-2025xxyy"
+      * ^mapping[1].map = "bbs-medmij-dataelement-1"
+      * ^mapping[1].comment = "ImageTitle"
+      * ^mapping[2].identity = "ihexds-dataset-2024-20220712"
+      * ^mapping[2].map = "ihexds-dataelement-27"
+      * ^mapping[2].comment = "title"
     * creation
       * ^short = "DateTime / CreationTime"
       * ^definition = """
