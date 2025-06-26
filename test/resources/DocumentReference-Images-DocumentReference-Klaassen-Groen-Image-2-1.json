@@ -3,23 +3,10 @@
   "id": "Images-DocumentReference-Klaassen-Groen-Image-2-1",
   "meta": {
     "profile": [
-      "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+      "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
     ]
-  },
-  "masterIdentifier": {
-    "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:49b82e94-cf06-4507-b5a3-361d5937e77d"
   },
   "status": "current",
-  "type": {
-    "coding": [
-      {
-        "code": "399208008",
-        "system": "http://snomed.info/sct",
-        "display": "longfoto"
-      }
-    ]
-  },
   "category": [
     {
       "coding": [
@@ -36,6 +23,19 @@
       ]
     }
   ],
+  "masterIdentifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:49b82e94-cf06-4507-b5a3-361d5937e77d"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "399208008",
+        "system": "http://snomed.info/sct",
+        "display": "longfoto"
+      }
+    ]
+  },
   "subject": {
     "reference": "Patient/Images-Patient-Klaassen-Groen",
     "display": "José Klaassen-Groen"

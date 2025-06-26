@@ -3,23 +3,10 @@
   "id": "Images-DocumentReference-Klaassen-Groen-Image-3-1",
   "meta": {
     "profile": [
-      "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+      "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
     ]
-  },
-  "masterIdentifier": {
-    "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:e5864703-93bd-46dc-9754-fcd2c0f16489"
   },
   "status": "current",
-  "type": {
-    "coding": [
-      {
-        "code": "16831000087101",
-        "system": "http://snomed.info/sct",
-        "display": "MRI van linker bovenbeen"
-      }
-    ]
-  },
   "category": [
     {
       "coding": [
@@ -36,6 +23,19 @@
       ]
     }
   ],
+  "masterIdentifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:e5864703-93bd-46dc-9754-fcd2c0f16489"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "16831000087101",
+        "system": "http://snomed.info/sct",
+        "display": "MRI van linker bovenbeen"
+      }
+    ]
+  },
   "subject": {
     "reference": "Patient/Images-Patient-De-Graaff",
     "display": "de Graaff"
