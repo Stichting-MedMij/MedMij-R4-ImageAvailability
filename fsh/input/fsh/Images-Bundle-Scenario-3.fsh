@@ -36,6 +36,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-47092" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding

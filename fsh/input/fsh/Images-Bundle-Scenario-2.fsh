@@ -36,6 +36,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-19285" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding
@@ -121,6 +122,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-50637" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding
@@ -164,6 +166,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-50637" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding
@@ -213,6 +216,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-74920" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding
@@ -256,6 +260,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-74920" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding

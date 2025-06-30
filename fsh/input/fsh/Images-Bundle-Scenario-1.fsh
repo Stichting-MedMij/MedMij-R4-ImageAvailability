@@ -36,6 +36,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-83472" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding
@@ -79,6 +80,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-83472" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding

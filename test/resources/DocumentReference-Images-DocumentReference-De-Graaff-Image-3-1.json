@@ -115,7 +115,11 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "RAD-20250212-47092"
+          "value": "RAD-20250212-47092",
+          "assigner": {
+            "reference": "Organization/Images-Organization-Spaarne",
+            "display": "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis"
+          }
         }
       },
       {
