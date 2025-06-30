@@ -1,7 +1,7 @@
 //Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 1
 
 Instance: Images-DocumentReference-Blaak-Image-1-1
-InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
@@ -9,8 +9,8 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#3511000087103 "röntgenfoto van rechter sleutelbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[0] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[1] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-Blaak) "Pieter Blaak"
 * date = "2024-05-23T12:00:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-De-Pater) "A.C.H. de Pater, Orthopedisch chirurg, OLVG, Radiologie"
@@ -36,6 +36,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-83472" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding
@@ -44,7 +45,7 @@ Usage: #example
       * value = "2.16.528.1.1007.3.1.20250212.123456" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-Blaak-Report-1-1
-InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
@@ -52,8 +53,8 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#3511000087103 "röntgenfoto van rechter sleutelbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[0] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[1] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS "Reports" // Secundaire code
+  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[reports] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS "Reports" // Secundaire code
 * subject = Reference(Images-Patient-Blaak) "Pieter Blaak"
 * date = "2024-05-24T12:00:00+02:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-De-Pater) "A.C.H. de Pater, Orthopedisch chirurg, OLVG, Radiologie"
@@ -79,6 +80,7 @@ Usage: #example
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-83472" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type.coding
@@ -97,7 +99,7 @@ InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
 * identifier
   * system = "http://fhir.nl/fhir/NamingSystem/bsn"
-  * value = "19056436" // gegenereerd "fake" BSN
+  * value.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #masked // gemaskeerd BSN
 * name
   * use = #official
   * text = "Pieter Blaak"

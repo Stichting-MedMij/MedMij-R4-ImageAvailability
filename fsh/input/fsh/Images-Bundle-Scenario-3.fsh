@@ -1,7 +1,7 @@
 //Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 3
 
-Instance: Images-DocumentReference-Klaassen-Groen-Image-3-1
-InstanceOf: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
+Instance: Images-DocumentReference-De-Graaff-Image-3-1
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
   * system = "urn:ietf:rfc:3986"
@@ -9,8 +9,8 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = http://snomed.info/sct#16831000087101 "MRI van linker bovenbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[0] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[1] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-De-Graaff) "de Graaff"
 * date = "2020-03-03T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Pieterssen) "Pieterssen, Orthopedisch chirurg, Stichting Spaarne Gasthuis, Radiologie"
@@ -29,20 +29,27 @@ Usage: #example
   * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-De-Graaff) "de Graaff"
-  * related
+  * related[0]
     * identifier
       * type.coding
         * system = "urn:ietf:rfc:3986"
         * code = #urn:ihe:iti:xds:2013:accession
       * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-47092" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
+  * related[1]
+    * identifier
+      * type.coding
+        * system = "urn:ietf:rfc:3986"
+        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * value = "1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801" // Dummy Study Instance UID
 
 Instance: Images-Patient-De-Graaff
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
 * identifier
   * system = "http://fhir.nl/fhir/NamingSystem/bsn"
-  * value = "120871737" // gegenereerd "fake" BSN
+  * value.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #masked // gemaskeerd BSN
 * name
   * use = #official
   * text = "de Graaff"

@@ -3,23 +3,10 @@
   "id": "Images-DocumentReference-Klaassen-Groen-Image-2-1",
   "meta": {
     "profile": [
-      "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+      "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
     ]
-  },
-  "masterIdentifier": {
-    "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:49b82e94-cf06-4507-b5a3-361d5937e77d"
   },
   "status": "current",
-  "type": {
-    "coding": [
-      {
-        "code": "399208008",
-        "system": "http://snomed.info/sct",
-        "display": "longfoto"
-      }
-    ]
-  },
   "category": [
     {
       "coding": [
@@ -36,6 +23,19 @@
       ]
     }
   ],
+  "masterIdentifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:49b82e94-cf06-4507-b5a3-361d5937e77d"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "399208008",
+        "system": "http://snomed.info/sct",
+        "display": "longfoto"
+      }
+    ]
+  },
   "subject": {
     "reference": "Patient/Images-Patient-Klaassen-Groen",
     "display": "José Klaassen-Groen"
@@ -115,7 +115,24 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "RAD-20250212-19285"
+          "value": "RAD-20250212-19285",
+          "assigner": {
+            "reference": "Organization/Images-Organization-Erasmus-MC-Radiologie-Universitair",
+            "display": "Erasmus MC, Radiologie, Universitair ziekenhuis"
+          }
+        }
+      },
+      {
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "urn:ietf:rfc:3986",
+                "code": "urn:ihe:iti:xds:2016:studyInstanceUID"
+              }
+            ]
+          },
+          "value": "1.2.826.0.1.3680043.8.498.77615907425522706317163091876421984542"
         }
       }
     ]

@@ -3,23 +3,10 @@
   "id": "Images-DocumentReference-Blaak-Image-1-1",
   "meta": {
     "profile": [
-      "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+      "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
     ]
-  },
-  "masterIdentifier": {
-    "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:7ce26098-1b2f-4ad8-bd45-d1e931e94ca0"
   },
   "status": "current",
-  "type": {
-    "coding": [
-      {
-        "code": "3511000087103",
-        "system": "http://snomed.info/sct",
-        "display": "röntgenfoto van rechter sleutelbeen"
-      }
-    ]
-  },
   "category": [
     {
       "coding": [
@@ -36,6 +23,19 @@
       ]
     }
   ],
+  "masterIdentifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:7ce26098-1b2f-4ad8-bd45-d1e931e94ca0"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "3511000087103",
+        "system": "http://snomed.info/sct",
+        "display": "röntgenfoto van rechter sleutelbeen"
+      }
+    ]
+  },
   "subject": {
     "reference": "Patient/Images-Patient-Blaak",
     "display": "Pieter Blaak"
@@ -115,7 +115,11 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "RAD-20250212-83472"
+          "value": "RAD-20250212-83472",
+          "assigner": {
+            "reference": "Organization/Images-Organization-OLVG",
+            "display": "OLVG, Radiologie, Algemeen ziekenhuis"
+          }
         }
       },
       {
