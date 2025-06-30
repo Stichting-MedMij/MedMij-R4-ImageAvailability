@@ -69,7 +69,7 @@ Description: "Imaging research including images and reports."
   * ^mapping[1].identity = "ihexds-dataset-2024-20220712"
   * ^mapping[1].map = "ihexds-dataelement-28"
   * ^mapping[1].comment = "typeCode"
-* category
+* category obeys bbs-DocumentReference-1
   * ^short = "ClassCode"
   * ^definition = "The code specifying the particular kind of document."
   * ^mapping.identity = "ihexds-dataset-2024-20220712"
@@ -90,7 +90,7 @@ Description: "Imaging research including images and reports."
 * category.coding[reports]
   * ^patternCoding = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS
   * ^condition = "bbs-DocumentReference-1"
-* category.coding obeys bbs-DocumentReference-1
+* category.coding
 * subject only Reference(Patient or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^short = "Patient / PatientId"
   * ^alias = "Patient"
@@ -380,4 +380,4 @@ Description: "Imaging research including images and reports."
 Invariant: bbs-DocumentReference-1
 Description: "Either a category for an image or a report is present."
 Severity: #error
-Expression: "where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() xor where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'REPORTS').exists()"
+Expression: "coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() xor coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'REPORTS').exists()"

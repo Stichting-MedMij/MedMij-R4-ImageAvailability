@@ -137,6 +137,15 @@
         "path": "DocumentReference.category",
         "short": "ClassCode",
         "definition": "The code specifying the particular kind of document.",
+        "constraint": [
+          {
+            "key": "bbs-DocumentReference-1",
+            "severity": "error",
+            "human": "Either a category for an image or a report is present.",
+            "expression": "coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() xor coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'REPORTS').exists()",
+            "source": "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
+          }
+        ],
         "mapping": [
           {
             "identity": "ihexds-dataset-2024-20220712",
@@ -157,16 +166,7 @@
           ],
           "rules": "open"
         },
-        "min": 2,
-        "constraint": [
-          {
-            "key": "bbs-DocumentReference-1",
-            "severity": "error",
-            "human": "Either a category for an image or a report is present.",
-            "expression": "where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() xor where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'REPORTS').exists()",
-            "source": "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
-          }
-        ]
+        "min": 2
       },
       {
         "id": "DocumentReference.category.coding:radiologyStudies",
