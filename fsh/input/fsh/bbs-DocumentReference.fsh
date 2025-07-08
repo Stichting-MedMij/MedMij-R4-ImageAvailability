@@ -15,22 +15,10 @@ Description: "Imaging research including images and reports."
 * ^contact.telecom.use = #work
 * ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Beeldbeschikbaarheid](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference)."
 * ^copyright = "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."
-* ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-* ^mapping[0].uri = "https://decor.nictiz.nl/pub/bbs/bbs-html-20240208T092809/ds-2.16.840.1.113883.2.4.3.11.60.133.1.1-2022-03-09T122352.html"
-* ^mapping[0].name = "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208"
-* ^mapping[1].identity = "bbs-medmij-dataset-100-beta1-2025xxyy"
-* ^mapping[1].uri = "" // This line has been added to overwrite the uri
-* ^mapping[1].name = "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
-* ^mapping[2].identity = "ihexds-dataset-2024-20220712"
-* ^mapping[2].uri = "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html"
-* ^mapping[2].name = "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
 * . 
   * ^short = "ImagingResearch"
   * ^definition = "Imaging research including images and reports."
   * ^alias = "Onderzoek"
-  * ^mapping.identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping.map = "bbs-dataelement-66"
-  * ^mapping.comment = "ImagingResearch"
 * masterIdentifier
   * ^short = "ReportInformationIdentificationNumber / ImageInformationIdentificationNumber / UniqueID"
   * ^definition = """
@@ -40,22 +28,10 @@ Description: "Imaging research including images and reports."
     """
   * ^alias[0] = "VerslaginformatieIdentificatienummer"
   * ^alias[1] = "BeeldinformatieIdentificatienummer"
-  * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping[0].map = "bbs-dataelement-100"
-  * ^mapping[0].comment = "ReportInformationIdentificationNumber"
-  * ^mapping[1].identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping[1].map = "bbs-dataelement-784"
-  * ^mapping[1].comment = "ImageInformationIdentificationNumber"
-  * ^mapping[2].identity = "ihexds-dataset-2024-20220712"
-  * ^mapping[2].map = "ihexds-dataelement-29"
-  * ^mapping[2].comment = "uniqueID"
 * status
   * ^short = "AvailabilityStatus"
   * ^definition = "The lifecycle status of the document."
   * ^patternCode = #current
-  * ^mapping.identity = "ihexds-dataset-2024-20220712"
-  * ^mapping.map = "ihexds-dataelement-3"
-  * ^mapping.comment = "availabilityStatus"
 * type from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.133.11.1--20230808113539 (required)
   * ^short = "ProcedureType / TypeCode"
   * ^definition = """
@@ -63,18 +39,9 @@ Description: "Imaging research including images and reports."
       * The code specifying the precise kind of document (e.g. Pulmonary History and Physical, Discharge Summary, Ultrasound Report).
     """
   * ^alias = "VerrichtingType"
-  * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping[0].map = "bbs-dataelement-176"
-  * ^mapping[0].comment = "ProcedureType"
-  * ^mapping[1].identity = "ihexds-dataset-2024-20220712"
-  * ^mapping[1].map = "ihexds-dataelement-28"
-  * ^mapping[1].comment = "typeCode"
 * category obeys bbs-DocumentReference-1
   * ^short = "ClassCode"
   * ^definition = "The code specifying the particular kind of document."
-  * ^mapping.identity = "ihexds-dataset-2024-20220712"
-  * ^mapping.map = "ihexds-dataelement-9"
-  * ^mapping.comment = "classCode"
 * category.coding 2..*
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "$this"
@@ -94,12 +61,6 @@ Description: "Imaging research including images and reports."
 * subject only Reference(Patient or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^short = "Patient / PatientId"
   * ^alias = "Patient"
-  * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping[0].map = "bbs-dataelement-132"
-  * ^mapping[0].comment = "Patient"
-  * ^mapping[1].identity = "ihexds-dataset-2024-20220712"
-  * ^mapping[1].map = "ihexds-dataelement-19"
-  * ^mapping[1].comment = "patientId"
 * date 1..1
   * ^short = "DateTime"
   * ^definition = """
@@ -107,20 +68,11 @@ Description: "Imaging research including images and reports."
         * Date/time on which the radiological examination has been performed on the patient and/or the images have been made.
         """
   * ^alias = "DatumTijd"
-  * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping[0].map = "bbs-dataelement-101"
-  * ^mapping[0].comment = "DateTime"
-  * ^mapping[1].identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping[1].map = "bbs-dataelement-69"
-  * ^mapping[1].comment = "DateTime"
 * author 1..*
   * ^slicing.discriminator.type = #profile
   * ^slicing.discriminator.path = "resolve()"
   * ^slicing.rules = #open
   * ^short = "Author"
-  * ^mapping.identity = "ihexds-dataset-2024-20220712"
-  * ^mapping.map = "ihexds-dataelement-2"
-  * ^mapping.comment = "author"
 * author contains
     location 1..1 and
     performer 0..1
@@ -128,9 +80,6 @@ Description: "Imaging research including images and reports."
   * ^short = "Location"
   * ^definition = "The healthcare center where the procedure was, is or will be carried out."
   * ^alias = "Locatie"
-  * ^mapping.identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping.map = "bbs-dataelement-185"
-  * ^mapping.comment = "Location"
 * author[performer] only Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)
   * ^short = "Performer"
   * ^definition = "The health professional who carried out or will carry out the procedure. In most cases, only the medical specialty is entered, and not the name of the health professional. In the context of image exchange, the Performing Physician should be conveyed here, and NOT the laboratory technician who makes the images (i.e. the Operator)."
@@ -140,9 +89,6 @@ Description: "Imaging research including images and reports."
     In rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.
     """
   * ^alias = "Uitvoerder"
-  * ^mapping.identity = "bbs-dataset-100-alpha2-20240208"
-  * ^mapping.map = "bbs-dataelement-187"
-  * ^mapping.comment = "Performer"
 * authenticator only Reference(Practitioner or PractitionerRole or Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
   * ^short = "LegalAuthenticator"
   * ^definition = "Represents a participant who has legally authenticated or attested the document within the author institution."
@@ -151,21 +97,12 @@ Description: "Imaging research including images and reports."
     
     In rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.
     """
-  * ^mapping.identity = "ihexds-dataset-2024-20220712"
-  * ^mapping.map = "ihexds-dataelement-17"
-  * ^mapping.comment = "legalAuthenticator"
 * description
   * ^short = "Comments"
   * ^definition = "Comments associated with the document."
-  * ^mapping.identity = "ihexds-dataset-2024-20220712"
-  * ^mapping.map = "ihexds-dataelement-4"
-  * ^mapping.comment = "comments"
 * securityLabel from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.6--20131212104106 (extensible)
   * ^short = "ConfidentialityCode"
   * ^definition = "The code specifying the level of confidentiality of the document."
-  * ^mapping.identity = "ihexds-dataset-2024-20220712"
-  * ^mapping.map = "ihexds-dataelement-10"
-  * ^mapping.comment = "confidentialityCode"
 * content
   * attachment
     * contentType
@@ -174,33 +111,18 @@ Description: "Imaging research including images and reports."
       * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[key].valueId = "bbs-DocumentReference-binding-contentType-1"
       * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[purpose].valueCode = #extensible
       * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[valueSet].valueCanonical = "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.8--20131212104106"
-      * ^mapping.identity = "ihexds-dataset-2024-20220712"
-      * ^mapping.map = "ihexds-dataelement-18"
-      * ^mapping.comment = "mimeType"
     * language from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.12--20131212104106 (extensible)
       * ^short = "LanguageCode"
       * ^definition = "Specifies the human language of character data in the document. Using codes from IETF RFC 3066."
-      * ^mapping.identity = "ihexds-dataset-2024-20220712"
-      * ^mapping.map = "ihexds-dataelement-16"
-      * ^mapping.comment = "languageCode"
     * url
       * ^short = "URI"
       * ^definition = "The URI for the document."
-      * ^mapping.identity = "ihexds-dataset-2024-20220712"
-      * ^mapping.map = "ihexds-dataelement-30"
-      * ^mapping.comment = "URI"
     * size
       * ^short = "Size"
       * ^definition = "Size in bytes of the document."
-      * ^mapping.identity = "ihexds-dataset-2024-20220712"
-      * ^mapping.map = "ihexds-dataelement-24"
-      * ^mapping.comment = "size"
     * hash
       * ^short = "Hash"
       * ^definition = "Hash of the document itself."
-      * ^mapping.identity = "ihexds-dataset-2024-20220712"
-      * ^mapping.map = "ihexds-dataelement-14"
-      * ^mapping.comment = "hash"
     * title 1..1
       * ^short = "ReportTitle / ImageTitle / Title"
       * ^definition = """
@@ -210,15 +132,6 @@ Description: "Imaging research including images and reports."
         """
       * ^alias[0] = "VerslagTitel"
       * ^alias[1] = "BeeldTitel"
-      * ^mapping[0].identity = "bbs-medmij-dataset-100-beta1-2025xxyy"
-      * ^mapping[0].map = "bbs-medmij-dataelement-2"
-      * ^mapping[0].comment = "ReportTitle"
-      * ^mapping[1].identity = "bbs-medmij-dataset-100-beta1-2025xxyy"
-      * ^mapping[1].map = "bbs-medmij-dataelement-1"
-      * ^mapping[1].comment = "ImageTitle"
-      * ^mapping[2].identity = "ihexds-dataset-2024-20220712"
-      * ^mapping[2].map = "ihexds-dataelement-27"
-      * ^mapping[2].comment = "title"
     * creation
       * ^short = "DateTime / CreationTime"
       * ^definition = """
@@ -227,38 +140,20 @@ Description: "Imaging research including images and reports."
         * The time the author created the document. Shall have a single value.
         """
       * ^alias = "DatumTijd"
-      * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-      * ^mapping[0].map = "bbs-dataelement-101"
-      * ^mapping[0].comment = "DateTime"
-      * ^mapping[1].identity = "bbs-dataset-100-alpha2-20240208"
-      * ^mapping[1].map = "bbs-dataelement-69"
-      * ^mapping[1].comment = "DateTime"
-      * ^mapping[2].identity = "ihexds-dataset-2024-20220712"
-      * ^mapping[2].map = "ihexds-dataelement-11"
-      * ^mapping[2].comment = "creationTime"
   * format from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.7--20131212104106 (extensible)
     * ^short = "FormatCode"
     * ^definition = "Code globally uniquely specifying the format of the document."
-    * ^mapping.identity = "ihexds-dataset-2024-20220712"
-    * ^mapping.map = "ihexds-dataelement-13"
-    * ^mapping.comment = "formatCode"
 * context
   * encounter only Reference(Encounter or EpisodeOfCare or http://nictiz.nl/fhir/StructureDefinition/nl-core-Encounter)
     * ^short = "ReferenceIdList"
     * ^definition = "A list of identifiers that apply to the document. Identifiers may be Accession Numbers, Order Numbers, Referral Request Identifiers, XDS Workflow Instance Identifiers, etc."
     * ^comment = "Only Encounters on the ReferenceIdList are conveyed here, while other identifiers on that list are conveyed via `.context.related`."
-    * ^mapping.identity = "ihexds-dataset-2024-20220712"
-    * ^mapping.map = "ihexds-dataelement-117"
-    * ^mapping.comment = "referenceIdList"
   * event
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
     * ^short = "EventCodeList"
     * ^definition = "This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented."
-    * ^mapping.identity = "ihexds-dataset-2024-20220712"
-    * ^mapping.map = "ihexds-dataelement-12"
-    * ^mapping.comment = "eventCodeList"
   * event contains procedureAnatomicalLocation 0..1
   * event[procedureAnatomicalLocation] only http://nictiz.nl/fhir/StructureDefinition/nl-core-AnatomicalLocation
   * event[procedureAnatomicalLocation] from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.19--20240205123345 (required)
@@ -270,16 +165,6 @@ Description: "Imaging research including images and reports."
       """
     * ^alias[0] = "VerrichtingAnatomischeLocatie"
     * ^alias[1] = "Locatie"
-    * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-    * ^mapping[0].map = "bbs-dataelement-178"
-    * ^mapping[0].comment = "ProcedureAnatomicalLocation"
-    * ^mapping[1].identity = "bbs-dataset-100-alpha2-20240208"
-    * ^mapping[1].map = "bbs-dataelement-179"
-    * ^mapping[1].comment = "Location"
-    * extension[http://nictiz.nl/fhir/StructureDefinition/ext-AnatomicalLocation.Laterality].valueCodeableConcept
-      * ^mapping.identity = "bbs-dataset-100-alpha2-20240208"
-      * ^mapping.map = "bbs-dataelement-180"
-      * ^mapping.comment = "Laterality"
   * period 1..1
     * start 1..1
       * ^short = "ProcedureStartDate / ServiceStartTime"
@@ -288,12 +173,6 @@ Description: "Imaging research including images and reports."
         * The start time the service being documented took place.
         """
       * ^alias = "VerrichtingStartDatum"
-      * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-      * ^mapping[0].map = "bbs-dataelement-174"
-      * ^mapping[0].comment = "ProcedureStartDate"
-      * ^mapping[1].identity = "ihexds-dataset-2024-20220712"
-      * ^mapping[1].map = "ihexds-dataelement-22"
-      * ^mapping[1].comment = "serviceStartTime"
     * end
       * ^short = "ProcedureEndDate / ServiceStopTime"
       * ^definition = """
@@ -302,12 +181,6 @@ Description: "Imaging research including images and reports."
         * The stop time the service being documented took place.
         """
       * ^alias = "VerrichtingEindDatum"
-      * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-      * ^mapping[0].map = "bbs-dataelement-175"
-      * ^mapping[0].comment = "ProcedureEndDate"
-      * ^mapping[1].identity = "ihexds-dataset-2024-20220712"
-      * ^mapping[1].map = "ihexds-dataelement-23"
-      * ^mapping[1].comment = "serviceStopTime"
   * facilityType from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.2.3--20200901000000 (extensible)
     * ^short = "OrganizationType / HealthcareFacilityTypeCode"
     * ^definition = """
@@ -315,12 +188,6 @@ Description: "Imaging research including images and reports."
       * This code represents the type of organizational setting of the clinical encounter during which the documented act occurred.
       """
     * ^alias = "OrganisatieType"
-    * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-    * ^mapping[0].map = "bbs-dataelement-546"
-    * ^mapping[0].comment = "OrganizationType"
-    * ^mapping[1].identity = "ihexds-dataset-2024-20220712"
-    * ^mapping[1].map = "ihexds-dataelement-31"
-    * ^mapping[1].comment = "healthcareFacilityTypeCode"
   * practiceSetting from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.22--20240205133006 (required)
     * ^short = "DepartmentSpecialty / PracticeSettingCode "
     * ^definition = """
@@ -329,24 +196,12 @@ Description: "Imaging research including images and reports."
       * The code specifying the clinical specialty where the act that resulted in the document was performed (e.g. Family Practice, Laboratory, Radiology). 
       """
     * ^alias = "AfdelingSpecialisme"
-    * ^mapping[0].identity = "bbs-dataset-100-alpha2-20240208"
-    * ^mapping[0].map = "bbs-dataelement-524"
-    * ^mapping[0].comment = "DepartmentSpecialty"
-    * ^mapping[1].identity = "ihexds-dataset-2024-20220712"
-    * ^mapping[1].map = "ihexds-dataelement-20"
-    * ^mapping[1].comment = "practiceSettingCode"
   * sourcePatientInfo only Reference(Patient or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
     * ^short = "SourcePatientId / SourcePatientInfo"
     * ^definition = """
       * The sourcePatientId represents the subject of care medical record Identifier (e.g. Patient Id) in the local patient Identifier Domain of the Document Source.
       * The sourcePatientInfo contains demographic information of the patient to whose medical record this document belongs.
       """
-    * ^mapping[0].identity = "ihexds-dataset-2024-20220712"
-    * ^mapping[0].map = "ihexds-dataelement-25"
-    * ^mapping[0].comment = "sourcePatientId"
-    * ^mapping[1].identity = "ihexds-dataset-2024-20220712"
-    * ^mapping[1].map = "ihexds-dataelement-26"
-    * ^mapping[1].comment = "sourcePatientInfo"
   * related
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "identifier.type"
@@ -358,9 +213,6 @@ Description: "Imaging research including images and reports."
       For Imaging (Reports), use the Accession Number with Assigning Authority, Order Number with Assigning Authority and StudyUID, as proposed by the IHE MCWG to support linking the Images and Reports together.
       """
     * ^comment = "Encounters on the ReferenceIdList are conveyed via `.context.encounter`."
-    * ^mapping.identity = "ihexds-dataset-2024-20220712"
-    * ^mapping.map = "ihexds-dataelement-117"
-    * ^mapping.comment = "referenceIdList"
   * related contains
       accessionNumber 0..1 and
       studyInstanceUID 0..1
@@ -381,3 +233,66 @@ Invariant: bbs-DocumentReference-1
 Description: "Either a category for an image or a report is present."
 Severity: #error
 Expression: "coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() xor coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'REPORTS').exists()"
+
+Mapping: BeeldbeschikbaarheidNictiz
+Source: BbsDocumentReference
+Target: "https://decor.nictiz.nl/pub/bbs/bbs-html-20240208T092809/ds-2.16.840.1.113883.2.4.3.11.60.133.1.1-2022-03-09T122352.html"
+Id: bbs-dataset-100-alpha2-20240208
+Title: "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208"
+* -> "bbs-dataelement-66" "ImagingResearch"
+* masterIdentifier -> "bbs-dataelement-100" "ReportInformationIdentificationNumber"
+* masterIdentifier -> "bbs-dataelement-784" "ImageInformationIdentificationNumber"
+* type -> "bbs-dataelement-176" "ProcedureType"
+* subject -> "bbs-dataelement-132" "Patient"
+* date -> "bbs-dataelement-101" "DateTime"
+* date -> "bbs-dataelement-69" "DateTime"
+* author[location] -> "bbs-dataelement-185" "Location"
+* author[performer] -> "bbs-dataelement-187" "Performer"
+* content.attachment.creation -> "bbs-dataelement-101" "DateTime"
+* content.attachment.creation -> "bbs-dataelement-69" "DateTime"
+* context.event[procedureAnatomicalLocation] -> "bbs-dataelement-178" "ProcedureAnatomicalLocation"
+* context.event[procedureAnatomicalLocation] -> "bbs-dataelement-179" "Location"
+* context.event[procedureAnatomicalLocation].extension[http://nictiz.nl/fhir/StructureDefinition/ext-AnatomicalLocation.Laterality].valueCodeableConcept -> "bbs-dataelement-180" "Laterality"
+* context.period.start -> "bbs-dataelement-174" "ProcedureStartDate"
+* context.period.end -> "bbs-dataelement-175" "ProcedureEndDate"
+* context.facilityType -> "bbs-dataelement-546" "OrganizationType"
+* context.practiceSetting -> "bbs-dataelement-524" "DepartmentSpecialty"
+
+Mapping: MedMij
+Source: BbsDocumentReference
+Id: bbs-medmij-dataset-100-beta1-2025xxyy
+Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
+* content.attachment.title -> "bbs-medmij-dataelement-2" "ReportTitle"
+* content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
+
+Mapping: IHEXDS
+Source: BbsDocumentReference
+Target: "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html"
+Id: ihexds-dataset-2024-20220712
+Title: "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
+* masterIdentifier -> "ihexds-dataelement-29" "uniqueID"
+* status -> "ihexds-dataelement-3" "availabilityStatus"
+* type -> "ihexds-dataelement-28" "typeCode"
+* category -> "ihexds-dataelement-9" "classCode"
+* subject -> "ihexds-dataelement-19" "patientId"
+* author -> "ihexds-dataelement-2" "author"
+* authenticator -> "ihexds-dataelement-17" "legalAuthenticator"
+* description -> "ihexds-dataelement-4" "comments"
+* securityLabel -> "ihexds-dataelement-10" "confidentialityCode"
+* content.attachment.contentType -> "ihexds-dataelement-18" "mimeType"
+* content.attachment.language -> "ihexds-dataelement-16" "languageCode"
+* content.attachment.url -> "ihexds-dataelement-30" "URI"
+* content.attachment.size -> "ihexds-dataelement-24" "size"
+* content.attachment.hash -> "ihexds-dataelement-14" "hash"
+* content.attachment.title -> "ihexds-dataelement-27" "title"
+* content.attachment.creation -> "ihexds-dataelement-11" "creationTime"
+* content.format -> "ihexds-dataelement-13" "formatCode"
+* context.encounter -> "ihexds-dataelement-117" "referenceIdList"
+* context.event -> "ihexds-dataelement-12" "eventCodeList"
+* context.period.start -> "ihexds-dataelement-22" "serviceStartTime"
+* context.period.end -> "ihexds-dataelement-23" "serviceStopTime"
+* context.facilityType -> "ihexds-dataelement-31" "healthcareFacilityTypeCode"
+* context.practiceSetting -> "ihexds-dataelement-20" "practiceSettingCode"
+* context.sourcePatientInfo -> "ihexds-dataelement-25" "sourcePatientId"
+* context.sourcePatientInfo -> "ihexds-dataelement-26" "sourcePatientInfo"
+* context.related -> "ihexds-dataelement-117" "referenceIdList"

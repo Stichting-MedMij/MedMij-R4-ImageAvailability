@@ -29,18 +29,17 @@
   "mapping": [
     {
       "identity": "bbs-dataset-100-alpha2-20240208",
-      "uri": "https://decor.nictiz.nl/pub/bbs/bbs-html-20240208T092809/ds-2.16.840.1.113883.2.4.3.11.60.133.1.1-2022-03-09T122352.html",
-      "name": "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208"
+      "name": "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208",
+      "uri": "https://decor.nictiz.nl/pub/bbs/bbs-html-20240208T092809/ds-2.16.840.1.113883.2.4.3.11.60.133.1.1-2022-03-09T122352.html"
     },
     {
       "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
-      "uri": "",
       "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
     },
     {
       "identity": "ihexds-dataset-2024-20220712",
-      "uri": "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html",
-      "name": "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
+      "name": "ART-DECOR Dataset Nationale IHE MetaData Set (2024)",
+      "uri": "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html"
     }
   ],
   "kind": "resource",
