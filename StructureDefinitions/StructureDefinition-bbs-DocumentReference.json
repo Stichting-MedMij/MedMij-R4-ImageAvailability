@@ -23,7 +23,7 @@
     }
   ],
   "description": "Imaging research including images and reports.",
-  "purpose": "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Beeldbeschikbaarheid](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference).",
+  "purpose": "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -654,11 +654,6 @@
         "id": "DocumentReference.context.event:procedureAnatomicalLocation.extension:laterality",
         "path": "DocumentReference.context.event.extension",
         "sliceName": "laterality"
-      },
-      {
-        "id": "DocumentReference.context.event:procedureAnatomicalLocation.extension:laterality.extension",
-        "path": "DocumentReference.context.event.extension.extension",
-        "max": "0"
       },
       {
         "id": "DocumentReference.context.event:procedureAnatomicalLocation.extension:laterality.value[x]",

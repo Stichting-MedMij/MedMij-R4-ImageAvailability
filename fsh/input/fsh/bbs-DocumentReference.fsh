@@ -50,12 +50,13 @@ Description: "Imaging research including images and reports."
     radiologyStudies 1..1 and
     images 0..1 and
     reports 0..1
-* category.coding[radiologyStudies] ^patternCoding = http://loinc.org#18726-0
+* category.coding[radiologyStudies]
+  * ^patternCoding = $LNC#18726-0
 * category.coding[images] 
-  * ^patternCoding = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES
+  * ^patternCoding = $XDSClassCode#IMAGES
   * ^condition = "bbs-DocumentReference-1"
 * category.coding[reports]
-  * ^patternCoding = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS
+  * ^patternCoding = $XDSClassCode#REPORTS
   * ^condition = "bbs-DocumentReference-1"
 * category.coding
 * subject only Reference(Patient or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
@@ -219,14 +220,14 @@ Description: "Imaging research including images and reports."
   * related[accessionNumber]
     * identifier 1..1
       * type 1..1
-        * ^patternCodeableConcept = urn:ietf:rfc:3986#urn:ihe:iti:xds:2013:accession
+        * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2013:accession
       * value 1..1
       * assigner only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
         * ^definition = "Issuer of Accession Number."
   * related[studyInstanceUID]
     * identifier 1..1
       * type 1..1
-        * ^patternCodeableConcept = urn:ietf:rfc:3986#urn:ihe:iti:xds:2016:studyInstanceUID
+        * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value 1..1
 
 Invariant: bbs-DocumentReference-1

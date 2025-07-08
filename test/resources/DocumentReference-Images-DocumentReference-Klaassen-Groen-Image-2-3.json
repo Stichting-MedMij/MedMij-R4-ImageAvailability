@@ -109,8 +109,8 @@
           "type": {
             "coding": [
               {
-                "system": "urn:ietf:rfc:3986",
-                "code": "urn:ihe:iti:xds:2013:accession"
+                "code": "urn:ihe:iti:xds:2013:accession",
+                "system": "urn:ietf:rfc:3986"
               }
             ]
           },
@@ -127,8 +127,8 @@
           "type": {
             "coding": [
               {
-                "system": "urn:ietf:rfc:3986",
-                "code": "urn:ihe:iti:xds:2016:studyInstanceUID"
+                "code": "urn:ihe:iti:xds:2016:studyInstanceUID",
+                "system": "urn:ietf:rfc:3986"
               }
             ]
           },
