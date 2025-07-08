@@ -1,4 +1,4 @@
-//Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 3
+//Bundle with FHIR test instances in FSH format for Image Availability test scenario 3
 
 Instance: Images-DocumentReference-De-Graaff-Image-3-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
