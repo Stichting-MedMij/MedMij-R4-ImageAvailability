@@ -332,7 +332,7 @@ Usage: #example
   * system = $AGB
   * value = "6020806"
 * type
-  * coding[0] = urn:oid:2.16.840.1.113883.2.4.6.7#0362 "Radiologie"
+  * coding[0] = $VektisAGB#0362 "Radiologie"
   * coding[1] = $OrganizationType#V5 "Universitair ziekenhuis"
 * name = "Erasmus MC"
 
@@ -343,6 +343,6 @@ Usage: #example
   * system = $AGB
   * value = "6020806"
 * type
-  * coding[0] = urn:oid:2.16.840.1.113883.2.4.6.7#1101 "Mondzorg en kaakchirurgie, implantoloog"
+  * coding[0] = $VektisAGB#1101 "Mondzorg en kaakchirurgie, implantoloog"
   * coding[1] = $OrganizationType#V5 "Universitair ziekenhuis"
 * name = "Erasmus MC"

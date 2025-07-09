@@ -12,4 +12,5 @@ Alias: $OrganizationType = http://nictiz.nl/fhir/NamingSystem/organization-type
 Alias: $SCT = http://snomed.info/sct
 Alias: $URI = urn:ietf:rfc:3986
 Alias: $UZI = http://fhir.nl/fhir/NamingSystem/uzi-rolcode
+Alias: $VektisAGB = urn:oid:2.16.840.1.113883.2.4.6.7
 Alias: $XDSClassCode = urn:oid:1.3.6.1.4.1.19376.1.2.6.1

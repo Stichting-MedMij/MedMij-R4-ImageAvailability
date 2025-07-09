@@ -134,6 +134,6 @@ Usage: #example
   * system = $AGB
   * value = "6010713"
 * type
-  * coding[0] = urn:oid:2.16.840.1.113883.2.4.6.7#0362 "Radiologie"
+  * coding[0] = $VektisAGB#0362 "Radiologie"
   * coding[1] = $OrganizationType#V6 "Algemeen ziekenhuis"
 * name = "OLVG"
