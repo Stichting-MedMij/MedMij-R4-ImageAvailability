@@ -1,0 +1,27 @@
+{
+  "resourceType": "Organization",
+  "id": "Images-Organization-CZE",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/agb-z",
+      "value": "06011009"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "V6",
+          "system": "http://nictiz.nl/fhir/NamingSystem/organization-type",
+          "display": "Algemeen ziekenhuis"
+        }
+      ]
+    }
+  ],
+  "name": "Catharina Ziekenhuis Eindhoven"
+}
