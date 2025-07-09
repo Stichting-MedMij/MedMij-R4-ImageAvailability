@@ -109,13 +109,17 @@
           "type": {
             "coding": [
               {
-                "system": "urn:ietf:rfc:3986",
-                "code": "urn:ihe:iti:xds:2013:accession"
+                "code": "urn:ihe:iti:xds:2013:accession",
+                "system": "urn:ietf:rfc:3986"
               }
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "5003249217"
+          "value": "5003249217",
+          "assigner": {
+            "reference": "Organization/Images-Organization-CZE",
+            "display": "Catharina Ziekenhuis Eindhoven"
+          }
         }
       },
       {
@@ -123,8 +127,8 @@
           "type": {
             "coding": [
               {
-                "system": "urn:ietf:rfc:3986",
-                "code": "urn:ihe:iti:xds:2016:studyInstanceUID"
+                "code": "urn:ihe:iti:xds:2016:studyInstanceUID",
+                "system": "urn:ietf:rfc:3986"
               }
             ]
           },

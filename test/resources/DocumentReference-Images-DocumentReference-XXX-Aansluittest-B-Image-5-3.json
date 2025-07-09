@@ -109,13 +109,17 @@
           "type": {
             "coding": [
               {
-                "system": "urn:ietf:rfc:3986",
-                "code": "urn:ihe:iti:xds:2013:accession"
+                "code": "urn:ihe:iti:xds:2013:accession",
+                "system": "urn:ietf:rfc:3986"
               }
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "EXT-14114"
+          "value": "EXT-14114",
+          "assigner": {
+            "reference": "Organization/Images-Organization-CZE-Radiotherapie",
+            "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie"
+          }
         }
       },
       {
@@ -123,8 +127,8 @@
           "type": {
             "coding": [
               {
-                "system": "urn:ietf:rfc:3986",
-                "code": "urn:ihe:iti:xds:2016:studyInstanceUID"
+                "code": "urn:ihe:iti:xds:2016:studyInstanceUID",
+                "system": "urn:ietf:rfc:3986"
               }
             ]
           },

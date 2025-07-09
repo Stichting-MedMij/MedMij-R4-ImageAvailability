@@ -1,21 +1,21 @@
-//Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 5
+//Bundle with FHIR test instances in FSH format for Image Availability test scenario 5
 
 Instance: Images-DocumentReference-XXX-Aansluittest-B-Image-5-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:b7e5d9e2-9e5f-4df6-bc0f-9f98b6d4c705" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#113091000 "MRI" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#113091000 "MRI" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2024-08-07T11:57:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
 * author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/dicom+json
@@ -23,42 +23,39 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/studies/2.16.840.1.114493.1.4.270.3.20240807115710430/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "MedMij PGO test MR" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2024-08-07T11:57:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
   * period.start = "2024-08-07" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "EXT-14115" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "2.16.840.1.114493.1.4.270.3.20240807115710430" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-XXX-Aansluittest-B-Image-5-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:a013c0cf-d4f9-4bc5-aa76-ac41347454bd" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#77477000 "CT" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#77477000 "CT" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2024-08-22T16:45:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
 * author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/dicom+json
@@ -66,42 +63,39 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/studies/1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "MedMij PGO test CT" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2024-08-22T16:45:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
   * period.start = "2024-08-22" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "EXT-14117" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-XXX-Aansluittest-B-Image-5-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:14206553-b245-4f16-bd9b-78e3b667d879" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#77477000 "CT" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#77477000 "CT" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-01-17T08:44:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
 * author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/dicom+json
@@ -109,42 +103,39 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/studies/1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "MedMij PGO CT" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2025-01-17T08:44:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
   * period.start = "2025-01-17" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "EXT-14114" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-XXX-Aansluittest-B-Image-5-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:68dc993f-5430-4344-aa9b-a9ba3d9ff099" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T13:56:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
 * author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/dicom+json
@@ -152,42 +143,39 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/studies/1.2.752.24.7.3059655634.36524/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "RF Slikfoto's MedMij" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2025-02-25T13:56:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
   * period.start = "2025-02-25" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "5003249217" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.752.24.7.3059655634.36524" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-XXX-Aansluittest-B-Report-5-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:b72d10a7-ca14-4c54-9711-fc4241c5d840" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS "Reports" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T14:24:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
 * author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/pdf
@@ -195,24 +183,21 @@ Usage: #example
     * url = "Binary/Images-Binary-Report-5-4" // geen mapping naar dataset | verwijst naar een Binary
     * title = "RF Slikfoto's MedMij" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "2025-02-25T14:24:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
+  * format = $FormatCode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
 * context
   * period.start = "2025-02-25" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "5003249217" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.752.24.7.3059655634.36524" // Dummy Study Instance UID
 
 Instance: Images-Binary-Report-5-4
@@ -225,18 +210,18 @@ Instance: Images-DocumentReference-XXX-Aansluittest-B-Image-5-5
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:63bab3df-700c-4640-906c-b75e5d028437" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T13:53:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
 * author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/dicom+json
@@ -244,42 +229,39 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/studies/1.2.752.24.7.3059655634.36522/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "CR CWK MedMij" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2025-02-25T13:53:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
   * period.start = "2025-02-25" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "5003249215" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.752.24.7.3059655634.36522" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-XXX-Aansluittest-B-Report-5-5
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:cc9008c2-8a08-457e-a928-c42d43b1efb7" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS "Reports" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T14:07:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
 * author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/pdf
@@ -287,24 +269,21 @@ Usage: #example
     * url = "Binary/Images-Binary-Report-5-5" // geen mapping naar dataset | verwijst naar een Binary
     * title = "CR CWK MedMij" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "2025-02-25T14:07:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
+  * format = $FormatCode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
 * context
   * period.start = "2025-02-25" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeld in PGO
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "5003249215" // Dummy Accession Number
+      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.752.24.7.3059655634.36522" // Dummy Study Instance UID
 
 Instance: Images-Binary-Report-5-5
@@ -317,8 +296,8 @@ Instance: Images-Patient-XXX-Aansluittest-B
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
 * identifier
-  * system = "http://fhir.nl/fhir/NamingSystem/bsn"
-  * value = "999990019" // gegenereerd "fake" BSN
+  * system = $BSN
+  * value.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #masked // gemaskeerd BSN
 * name
   * use = #official
   * text = "B. XXX-Aansluittest-B"
@@ -327,7 +306,7 @@ Usage: #example
   * given = "B."
     * extension[http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier].valueCode = #IN
 * gender = #female
-  * extension[http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#F "Female"
+  * extension[http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification].valueCodeableConcept.coding = $AdministrativeGender#F "Female"
 * birthDate = "1950-02-02"
 
 Instance: Images-PractitionerRole-Cardioloog
@@ -335,32 +314,32 @@ InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional
 Usage: #example
 * organization = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie"
 * specialty
-  * coding = http://fhir.nl/fhir/NamingSystem/uzi-rolcode#01.010 "Cardioloog"
+  * coding = $UZI#01.010 "Cardioloog"
 
 Instance: Images-PractitionerRole-Huisarts
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * organization = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
 * specialty
-  * coding = http://fhir.nl/fhir/NamingSystem/uzi-rolcode#01.015 "Huisarts"
+  * coding = $UZI#01.015 "Huisarts"
 
 Instance: Images-Organization-CZE-Radiotherapie
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
 Usage: #example
 * identifier
-  * system = "http://fhir.nl/fhir/NamingSystem/agb-z"
+  * system = $AGB
   * value = "06011009"
 * type
   * coding[0] = urn:oid:2.16.840.1.113883.2.4.6.7#0361 "Radiotherapie"
-  * coding[1] = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis"
+  * coding[1] = $OrganizationType#V6 "Algemeen ziekenhuis"
 * name = "Catharina Ziekenhuis Eindhoven"
 
 Instance: Images-Organization-CZE
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
 Usage: #example
 * identifier
-  * system = "http://fhir.nl/fhir/NamingSystem/agb-z"
+  * system = $AGB
   * value = "06011009"
 * type
-  * coding = http://nictiz.nl/fhir/NamingSystem/organization-type#V6 "Algemeen ziekenhuis"
+  * coding = $OrganizationType#V6 "Algemeen ziekenhuis"
 * name = "Catharina Ziekenhuis Eindhoven"
