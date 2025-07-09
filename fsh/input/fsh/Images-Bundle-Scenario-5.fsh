@@ -330,7 +330,7 @@ Usage: #example
   * system = $AGB
   * value = "06011009"
 * type
-  * coding[0] = urn:oid:2.16.840.1.113883.2.4.6.7#0361 "Radiotherapie"
+  * coding[0] = $VektisAGB#0361 "Radiotherapie"
   * coding[1] = $OrganizationType#V6 "Algemeen ziekenhuis"
 * name = "Catharina Ziekenhuis Eindhoven"
 
