@@ -6,10 +6,6 @@
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
     ]
   },
-  "organization": {
-    "reference": "Organization/Images-Organization-CZE",
-    "display": "Catharina Ziekenhuis Eindhoven"
-  },
   "specialty": [
     {
       "coding": [

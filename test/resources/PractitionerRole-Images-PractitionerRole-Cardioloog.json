@@ -6,10 +6,6 @@
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
     ]
   },
-  "organization": {
-    "reference": "Organization/Images-Organization-CZE-Radiotherapie",
-    "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie"
-  },
   "specialty": [
     {
       "coding": [

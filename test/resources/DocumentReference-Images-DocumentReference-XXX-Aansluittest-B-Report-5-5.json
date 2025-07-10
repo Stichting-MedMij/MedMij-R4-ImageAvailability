@@ -48,7 +48,7 @@
     },
     {
       "reference": "Organization/Images-Organization-CZE",
-      "display": "Catharina Ziekenhuis Eindhoven"
+      "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
     }
   ],
   "securityLabel": [
@@ -118,7 +118,7 @@
           "value": "5003249215",
           "assigner": {
             "reference": "Organization/Images-Organization-CZE",
-            "display": "Catharina Ziekenhuis Eindhoven"
+            "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
           }
         }
       },

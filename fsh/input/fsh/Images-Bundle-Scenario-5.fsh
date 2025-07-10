@@ -14,7 +14,7 @@ Usage: #example
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2024-08-07T11:57:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
-* author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie"
+* author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -34,7 +34,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "EXT-14115" // Dummy Accession Number
-      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie" // Issuer of Accession Number
+      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -54,7 +54,7 @@ Usage: #example
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2024-08-22T16:45:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
-* author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie"
+* author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -74,7 +74,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "EXT-14117" // Dummy Accession Number
-      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie" // Issuer of Accession Number
+      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -94,7 +94,7 @@ Usage: #example
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-01-17T08:44:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
-* author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie"
+* author[1] = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -114,7 +114,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "EXT-14114" // Dummy Accession Number
-      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie" // Issuer of Accession Number
+      * assigner = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -134,7 +134,7 @@ Usage: #example
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T13:56:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
-* author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
+* author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -154,7 +154,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "5003249217" // Dummy Accession Number
-      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven" // Issuer of Accession Number
+      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -174,7 +174,7 @@ Usage: #example
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T14:24:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
-* author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
+* author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -194,7 +194,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "5003249217" // Dummy Accession Number
-      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven" // Issuer of Accession Number
+      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -220,7 +220,7 @@ Usage: #example
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T13:53:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
-* author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
+* author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -240,7 +240,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "5003249215" // Dummy Accession Number
-      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven" // Issuer of Accession Number
+      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -260,7 +260,7 @@ Usage: #example
 * subject = Reference(Images-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T14:07:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
-* author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
+* author[1] = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -280,7 +280,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeld in PGO
       * value = "5003249215" // Dummy Accession Number
-      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven" // Issuer of Accession Number
+      * assigner = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -312,14 +312,12 @@ Usage: #example
 Instance: Images-PractitionerRole-Cardioloog
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
-* organization = Reference(Images-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie"
 * specialty
   * coding = $UZI#01.010 "Cardioloog"
 
 Instance: Images-PractitionerRole-Huisarts
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
-* organization = Reference(Images-Organization-CZE) "Catharina Ziekenhuis Eindhoven"
 * specialty
   * coding = $UZI#01.015 "Huisarts"
 

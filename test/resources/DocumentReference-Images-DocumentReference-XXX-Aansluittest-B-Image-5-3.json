@@ -48,7 +48,7 @@
     },
     {
       "reference": "Organization/Images-Organization-CZE-Radiotherapie",
-      "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie"
+      "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
     }
   ],
   "securityLabel": [
@@ -118,7 +118,7 @@
           "value": "EXT-14114",
           "assigner": {
             "reference": "Organization/Images-Organization-CZE-Radiotherapie",
-            "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie"
+            "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
           }
         }
       },
