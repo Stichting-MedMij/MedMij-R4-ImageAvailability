@@ -1,20 +1,15 @@
-//Profile on DocumentReference derived from IHE MHD to be used in Image Availability
+// Profile on DocumentReference derived from IHE MHD to be used in Image Availability
 
 Profile: BbsDocumentReference
 Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
 Id: bbs-DocumentReference
 Title: "bbs DocumentReference"
 Description: "Imaging research including images and reports."
-* ^text.status = #empty
-* ^text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+* insert DefaultNarrative
 * ^status = #draft
-* ^publisher = "MedMij"
-* ^contact.name = "MedMij"
-* ^contact.telecom.system = #email
-* ^contact.telecom.value = "info@medmij.nl"
-* ^contact.telecom.use = #work
+* insert PublisherAndContact
 * ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference)."
-* ^copyright = "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."
+* insert Copyright
 * .
   * ^short = "ImagingResearch"
   * ^definition = "Imaging research including images and reports."

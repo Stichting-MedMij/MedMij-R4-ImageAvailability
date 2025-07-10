@@ -1,4 +1,4 @@
-//All aliases used in Image Availability
+// All Aliases used in Image Availability
 
 Alias: $AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
 Alias: $AGB = http://fhir.nl/fhir/NamingSystem/agb-z
