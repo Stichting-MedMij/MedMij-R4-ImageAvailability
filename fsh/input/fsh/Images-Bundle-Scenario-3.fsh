@@ -60,7 +60,6 @@ Instance: Images-PractitionerRole-Pieterssen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * practitioner = Reference(Images-Practitioner-Pieterssen) "Pieterssen"
-* organization = Reference(Images-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis"
 * specialty
   * coding = $UZI#01.032 "Orthopedisch chirurg"
 

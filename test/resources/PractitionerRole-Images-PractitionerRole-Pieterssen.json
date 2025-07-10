@@ -10,10 +10,6 @@
     "reference": "Practitioner/Images-Practitioner-Pieterssen",
     "display": "Pieterssen"
   },
-  "organization": {
-    "reference": "Organization/Images-Organization-Spaarne",
-    "display": "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis"
-  },
   "specialty": [
     {
       "coding": [

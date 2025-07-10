@@ -107,7 +107,6 @@ Instance: Images-PractitionerRole-De-Pater
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * practitioner = Reference(Images-Practitioner-De-Pater) "A.C.H. de Pater"
-* organization = Reference(Images-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis"
 * specialty
   * coding = $UZI#01.032 "Orthopedisch chirurg"
 

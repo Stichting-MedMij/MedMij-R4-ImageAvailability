@@ -273,7 +273,6 @@ Instance: Images-PractitionerRole-Van-Der-Ham
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * practitioner = Reference(Images-Practitioner-Van-Der-Ham) "van der Ham"
-* organization = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * specialty
   * coding = $UZI#01.032 "Orthopedisch chirurg"
 
@@ -291,7 +290,6 @@ Instance: Images-PractitionerRole-Janssen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * practitioner = Reference(Images-Practitioner-Janssen) "Janssen"
-* organization = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * specialty
   * coding = $UZI#01.032 "Orthopedisch chirurg"
 
@@ -308,7 +306,6 @@ Instance: Images-PractitionerRole-Coenen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * practitioner = Reference(Images-Practitioner-Coenen) "C.H. Coenen"
-* organization = Reference(Images-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
 * specialty
   * coding = $UZI#02.054 "Kaakchirurg"
 
