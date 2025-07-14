@@ -25,7 +25,7 @@
   ],
   "masterIdentifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:68dc993f-5430-4344-aa9b-a9ba3d9ff099"
+    "value": "urn:uuid:63bab3df-700c-4640-906c-b75e5d028437"
   },
   "type": {
     "coding": [
@@ -40,7 +40,7 @@
     "reference": "Patient/Images-Patient-XXX-Aansluittest-B",
     "display": "B. XXX-Aansluittest-B"
   },
-  "date": "2025-02-25T13:56:00+01:00",
+  "date": "2025-02-25T13:53:00+01:00",
   "author": [
     {
       "reference": "PractitionerRole/Images-PractitionerRole-Huisarts",
@@ -67,9 +67,9 @@
       "attachment": {
         "contentType": "application/dicom+json",
         "language": "nl",
-        "url": "https://examplepacs.xis/wado/studies/1.2.752.24.7.3059655634.36524/metadata",
-        "title": "RF Slikfoto's MedMij",
-        "creation": "2025-02-25T13:56:00+01:00"
+        "url": "https://examplepacs.xis/wado/studies/1.2.752.24.7.3059655634.36522/metadata",
+        "title": "CR CWK MedMij",
+        "creation": "2025-02-25T13:53:00+01:00"
       },
       "format": {
         "code": "1.2.840.10008.5.1.4.1.1.88.59",
@@ -115,7 +115,7 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "5003249217",
+          "value": "5003249215",
           "assigner": {
             "reference": "Organization/Images-Organization-CZE",
             "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
@@ -132,7 +132,7 @@
               }
             ]
           },
-          "value": "1.2.752.24.7.3059655634.36524"
+          "value": "1.2.752.24.7.3059655634.36522"
         }
       }
     ]
