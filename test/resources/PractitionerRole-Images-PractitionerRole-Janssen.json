@@ -10,10 +10,6 @@
     "reference": "Practitioner/Images-Practitioner-Janssen",
     "display": "Janssen"
   },
-  "organization": {
-    "reference": "Organization/Images-Organization-Erasmus-MC-Radiologie-Universitair",
-    "display": "Erasmus MC, Radiologie, Universitair ziekenhuis"
-  },
   "specialty": [
     {
       "coding": [

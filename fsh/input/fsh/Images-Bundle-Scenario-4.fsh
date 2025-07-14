@@ -1,10 +1,10 @@
-//Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 4
+// Bundle with FHIR test instances in FSH format for Image Availability test scenario 4
 
 Instance: Images-Patient-Tjong-A-Kon
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
 * identifier
-  * system = "http://fhir.nl/fhir/NamingSystem/bsn"
+  * system = $BSN
   * value.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #masked // gemaskeerd BSN
 * name
   * use = #official

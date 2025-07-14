@@ -10,10 +10,6 @@
     "reference": "Practitioner/Images-Practitioner-De-Pater",
     "display": "A.C.H. de Pater"
   },
-  "organization": {
-    "reference": "Organization/Images-Organization-OLVG",
-    "display": "OLVG, Radiologie, Algemeen ziekenhuis"
-  },
   "specialty": [
     {
       "coding": [
