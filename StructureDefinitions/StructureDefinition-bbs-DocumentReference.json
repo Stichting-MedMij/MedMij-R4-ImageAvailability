@@ -23,24 +23,23 @@
     }
   ],
   "description": "Imaging research including images and reports.",
-  "purpose": "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Beeldbeschikbaarheid](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference).",
+  "purpose": "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
       "identity": "bbs-dataset-100-alpha2-20240208",
-      "uri": "https://decor.nictiz.nl/pub/bbs/bbs-html-20240208T092809/ds-2.16.840.1.113883.2.4.3.11.60.133.1.1-2022-03-09T122352.html",
-      "name": "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208"
+      "name": "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208",
+      "uri": "https://decor.nictiz.nl/pub/bbs/bbs-html-20240208T092809/ds-2.16.840.1.113883.2.4.3.11.60.133.1.1-2022-03-09T122352.html"
     },
     {
       "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
-      "uri": "",
       "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
     },
     {
       "identity": "ihexds-dataset-2024-20220712",
-      "uri": "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html",
-      "name": "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
+      "name": "ART-DECOR Dataset Nationale IHE MetaData Set (2024)",
+      "uri": "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html"
     }
   ],
   "kind": "resource",
@@ -655,11 +654,6 @@
         "id": "DocumentReference.context.event:procedureAnatomicalLocation.extension:laterality",
         "path": "DocumentReference.context.event.extension",
         "sliceName": "laterality"
-      },
-      {
-        "id": "DocumentReference.context.event:procedureAnatomicalLocation.extension:laterality.extension",
-        "path": "DocumentReference.context.event.extension.extension",
-        "max": "0"
       },
       {
         "id": "DocumentReference.context.event:procedureAnatomicalLocation.extension:laterality.value[x]",

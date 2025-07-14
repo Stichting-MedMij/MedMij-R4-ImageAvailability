@@ -1,21 +1,21 @@
-//Bundle with FHIR test instances in FSH format for "Beeldbeschikbaarheid" test scenario 2
+// Bundle with FHIR test instances in FSH format for Image Availability test scenario 2
 
 Instance: Images-DocumentReference-Klaassen-Groen-Image-2-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:49b82e94-cf06-4507-b5a3-361d5937e77d" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1990-02-10T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg, Erasmus MC, Radiologie"
 * author[1] = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/dicom+json
@@ -23,43 +23,39 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "longfoto" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "1990-02-10T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
   * period.start = "1990-02-10" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-19285" // Dummy Accession Number
       * assigner = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.826.0.1.3680043.8.498.77615907425522706317163091876421984542" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-Klaassen-Groen-Report-2-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:c4a902d3-1259-4881-9dd1-17376cef5ce5" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS "Reports" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
 * subject = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg, Erasmus MC, Radiologie"
 * author[1] = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/pdf
@@ -67,17 +63,15 @@ Usage: #example
     * url = "Binary/Images-Binary-Report-2-2" // geen mapping naar dataset | verwijst naar een Binary
     * title = "longfoto" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
-  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
+  * format = $FormatCode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
 * context
   * period.start = "1993-02-06" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
   * related
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "2.16.528.1.1007.3.1.20250212.789012" // Dummy Study Instance UID
 
 Instance: Images-Binary-Report-2-2
@@ -90,18 +84,18 @@ Instance: Images-DocumentReference-Klaassen-Groen-Image-2-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:57b49159-5c9e-424d-8a09-b240c13a395d" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg, Erasmus MC, Radiologie"
 * author[1] = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/dicom+json
@@ -109,43 +103,39 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "longfoto" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
   * period.start = "1993-02-06" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-50637" // Dummy Accession Number
       * assigner = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "2.16.528.1.1007.3.1.20250212.456789" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-Klaassen-Groen-Report-2-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:53338e45-a078-4886-8501-7cf1ec838afd" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS "Reports" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
 * subject = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg, Erasmus MC, Radiologie"
 * author[1] = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/pdf
@@ -153,25 +143,21 @@ Usage: #example
     * url = "Binary/Images-Binary-Report-2-3" // geen mapping naar dataset | verwijst naar een Binary
     * title = "longfoto" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
-  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
+  * format = $FormatCode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
 * context
   * period.start = "1993-02-06" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-50637" // Dummy Accession Number
       * assigner = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "2.16.528.1.1007.3.1.20250212.456789" // Dummy Study Instance UID
 
 Instance: Images-Binary-Report-2-3
@@ -184,18 +170,18 @@ Instance: Images-DocumentReference-Klaassen-Groen-Image-2-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:d7236f3e-5c10-4caf-9864-255baa23611b" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#IMAGES "Images" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg, Erasmus MC, Mondzorg en kaakchirurgie"
 * author[1] = Reference(Images-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/dicom+json
@@ -203,43 +189,39 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "röntgenfoto van linker kaakgewricht" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = urn.oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
   * period.start = "2020-08-10" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-74920" // Dummy Accession Number
       * assigner = Reference(Images-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "2.16.528.1.1007.3.1.20250212.456342" // Dummy Study Instance UID
 
 Instance: Images-DocumentReference-Klaassen-Groen-Report-2-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
-  * system = "urn:ietf:rfc:3986"
+  * system = $URI
   * value = "urn:uuid:0a61a231-1b52-4ba5-b86c-9edac0bfa044" // document uniqueId | Onderzoek.Verslaginformatie.VerslaginformatieIdentificatienummer
 * status = #current // availabilityStatus | geen mapping naar dataset
-* type = http://snomed.info/sct#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
+* type = $SCT#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = http://loinc.org#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = urn:oid:1.3.6.1.4.1.19376.1.2.6.1#REPORTS "Reports" // Secundaire code
+  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
 * subject = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(Images-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg, Erasmus MC, Mondzorg en kaakchirurgie"
 * author[1] = Reference(Images-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
-* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
+* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
     * contentType = #application/pdf
@@ -247,25 +229,21 @@ Usage: #example
     * url = "Binary/Images-Binary-Report-2-4" // geen mapping naar dataset | verwijst naar een Binary
     * title = "röntgenfoto van linker kaakgewricht" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd 
-  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
+  * format = $FormatCode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
 * context
   * period.start = "2020-08-10" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = http://snomed.info/sct#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
+  * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
+  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
   * sourcePatientInfo = Reference(Images-Patient-Klaassen-Groen) "José Klaassen-Groen"
   * related[0]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2013:accession
-      * system = "urn:oid:2.16.528.1.1023.19.1.1" // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
+      * type = $URI#urn:ihe:iti:xds:2013:accession
+      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-74920" // Dummy Accession Number
       * assigner = Reference(Images-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
-      * type.coding
-        * system = "urn:ietf:rfc:3986"
-        * code = #urn:ihe:iti:xds:2016:studyInstanceUID
+      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "2.16.528.1.1007.3.1.20250212.456342" // Dummy Study Instance UID
 
 Instance: Images-Binary-Report-2-4
@@ -278,7 +256,7 @@ Instance: Images-Patient-Klaassen-Groen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
 * identifier
-  * system = "http://fhir.nl/fhir/NamingSystem/bsn"
+  * system = $BSN
   * value.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #masked // gemaskeerd BSN
 * name
   * use = #official
@@ -288,16 +266,15 @@ Usage: #example
   * given = "José"
     * extension[http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier].valueCode = #BR
 * gender = #female
-  * extension[http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#F "Female"
+  * extension[http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification].valueCodeableConcept.coding = $AdministrativeGender#F "Female"
 * birthDate = "1924-01-10"
 
 Instance: Images-PractitionerRole-Van-Der-Ham
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * practitioner = Reference(Images-Practitioner-Van-Der-Ham) "van der Ham"
-* organization = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * specialty
-  * coding = http://fhir.nl/fhir/NamingSystem/uzi-rolcode#01.032 "Orthopedisch chirurg"
+  * coding = $UZI#01.032 "Orthopedisch chirurg"
 
 Instance: Images-Practitioner-Van-Der-Ham
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner
@@ -313,9 +290,8 @@ Instance: Images-PractitionerRole-Janssen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * practitioner = Reference(Images-Practitioner-Janssen) "Janssen"
-* organization = Reference(Images-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * specialty
-  * coding = http://fhir.nl/fhir/NamingSystem/uzi-rolcode#01.032 "Orthopedisch chirurg"
+  * coding = $UZI#01.032 "Orthopedisch chirurg"
 
 Instance: Images-Practitioner-Janssen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner
@@ -330,9 +306,8 @@ Instance: Images-PractitionerRole-Coenen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * practitioner = Reference(Images-Practitioner-Coenen) "C.H. Coenen"
-* organization = Reference(Images-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
 * specialty
-  * coding = http://fhir.nl/fhir/NamingSystem/uzi-rolcode#02.054 "Kaakchirurg"
+  * coding = $UZI#02.054 "Kaakchirurg"
 
 Instance: Images-Practitioner-Coenen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner
@@ -351,20 +326,20 @@ Instance: Images-Organization-Erasmus-MC-Radiologie-Universitair
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
 Usage: #example
 * identifier
-  * system = "http://fhir.nl/fhir/NamingSystem/agb-z"
+  * system = $AGB
   * value = "6020806"
 * type
-  * coding[0] = urn:oid:2.16.840.1.113883.2.4.6.7#0362 "Radiologie"
-  * coding[1] = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis"
+  * coding[0] = $VektisAGB#0362 "Radiologie"
+  * coding[1] = $OrganizationType#V5 "Universitair ziekenhuis"
 * name = "Erasmus MC"
 
 Instance: Images-Organization-Erasmus-MC-Mondzorg-Universitair
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
 Usage: #example
 * identifier
-  * system = "http://fhir.nl/fhir/NamingSystem/agb-z"
+  * system = $AGB
   * value = "6020806"
 * type
-  * coding[0] = urn:oid:2.16.840.1.113883.2.4.6.7#1101 "Mondzorg en kaakchirurgie, implantoloog"
-  * coding[1] = http://nictiz.nl/fhir/NamingSystem/organization-type#V5 "Universitair ziekenhuis"
+  * coding[0] = $VektisAGB#1101 "Mondzorg en kaakchirurgie, implantoloog"
+  * coding[1] = $OrganizationType#V5 "Universitair ziekenhuis"
 * name = "Erasmus MC"
