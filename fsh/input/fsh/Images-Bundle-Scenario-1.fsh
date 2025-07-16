@@ -13,7 +13,7 @@ Usage: #example
   * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(ImageAvailability-Patient-Blaak) "Pieter Blaak"
 * date = "2024-05-23T12:00:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
-* author[0] = Reference(ImageAvailability-PractitionerRole-De-Pater) "A.C.H. de Pater, Orthopedisch chirurg, OLVG, Radiologie"
+* author[0] = Reference(ImageAvailability-PractitionerRole-De-Pater) "A.C.H. de Pater, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
@@ -53,7 +53,7 @@ Usage: #example
   * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
 * subject = Reference(ImageAvailability-Patient-Blaak) "Pieter Blaak"
 * date = "2024-05-24T12:00:00+02:00" // date | Onderzoek.Verslaginformatie.DatumTijd
-* author[0] = Reference(ImageAvailability-PractitionerRole-De-Pater) "A.C.H. de Pater, Orthopedisch chirurg, OLVG, Radiologie"
+* author[0] = Reference(ImageAvailability-PractitionerRole-De-Pater) "A.C.H. de Pater, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content

@@ -14,7 +14,7 @@ Usage: #example
   * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2024-08-07T11:57:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
-* author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
+* author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog"
 * author[1] = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
@@ -54,7 +54,7 @@ Usage: #example
   * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2024-08-22T16:45:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
-* author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
+* author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog"
 * author[1] = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
@@ -94,7 +94,7 @@ Usage: #example
   * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-01-17T08:44:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
-* author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
+* author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog"
 * author[1] = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
@@ -134,7 +134,7 @@ Usage: #example
   * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T13:53:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
-* author[0] = Reference(ImageAvailability-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
+* author[0] = Reference(ImageAvailability-PractitionerRole-Huisarts) "Huisarts"
 * author[1] = Reference(ImageAvailability-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
@@ -174,7 +174,7 @@ Usage: #example
   * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T14:07:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
-* author[0] = Reference(ImageAvailability-PractitionerRole-Huisarts) "Huisarts, Catharina Ziekenhuis Eindhoven"
+* author[0] = Reference(ImageAvailability-PractitionerRole-Huisarts) "Huisarts"
 * author[1] = Reference(ImageAvailability-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
