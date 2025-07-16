@@ -1,30 +1,30 @@
-## Prototype Beeld in PGO
+## Prototype Beeldbeschikbaarheid
 
-Voorbeeldimplementatie **Beeld in PGO** bij Beeldbeschikbaarheid [MedMij R4 Images IG 0.1.0-prototype](https://simplifier.net/guide/medmij-r4-images-ig). Usecase *'Raadplegen Beeld en Verslag in persoonlijke gezondheidsomgeving'* bekijkt het ophalen en tonen van beelden en beeldverslagen. In deze repository vind je een project met frontend en backend dat een PGO simuleert waarin de patiëntgebruiker beelden bekijkt met een DICOMweb-viewer.
+Voorbeeldimplementatie **Beeldbeschikbaarheid** [MedMij R4 Images IG](https://simplifier.net/guide/medmij-r4-image-availability-ig). Usecase *'Raadplegen Beeld en Verslag in persoonlijke gezondheidsomgeving'* bekijkt het ophalen en tonen van beelden en beeldverslagen. In deze repository vind je een project met frontend en backend dat een PGO simuleert waarin de patiÃ«ntgebruiker beelden bekijkt met een DICOMweb-viewer.
 
-### Testproject 0.1.0-prototype 
+### Testproject
 
 Frontend is geschreven in [Svelte](https://svelte.dev/) (TypeScript, JavaScript) en backend in [ASP.NET](https://dotnet.microsoft.com/en-us/apps/aspnet) (C#). Doel van het prototype is om vroeg in het ontwikkelproces fouten uit de implementatiegids te halen en het ontwerp met een implementatie te testen. Tijdens het uitwerken van het functioneel en technisch ontwerp van Beeldbeschikbaarheid verzamelen we feedback van de gebruikers en ontwikkelaars. Houd er rekening mee dat het prototype een vorm van concepttesten is en de software in deze repository veroudert.
 
-Wil je het prototype zelf uitproberen? Voor [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) is een solution-file aanwezig met projecten Pgo.Backend en Pgo.Frontend. De solution is ook te openen in Visual Studio Code met de [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)-extensie. Tijdens een presentatie van het prototype aan patiënttestgebruikers gebruikte het ontwerpteam een Docker-container. Het image voor deze container bouwt met het script [build.sh](build.sh) en [Dockerfile](Dockerfile).
+Wil je het prototype zelf uitproberen? Voor [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) is een solution-file aanwezig met projecten Pgo.Backend en Pgo.Frontend. De solution is ook te openen in Visual Studio Code met de [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)-extensie. Tijdens een presentatie van het prototype aan patiÃ«nttestgebruikers gebruikte het ontwerpteam een Docker-container. Het image voor deze container bouwt met het script [build.sh](build.sh) en [Dockerfile](Dockerfile).
 
 Bekijk hier de relevante code voor stappen in usecase:
 
 | Beginpunten        |     |
 | ------------------ | --- |
 | ***Pgo.Frontend*** |
-| Dossier.svelte | Dossieroverzicht van `DocumentReference` voor een patiëntgebruiker. Roept `DossierController` aan in backend-project. Gebruikt _dossier.store.ts_, _dossier-timelines.store.ts_ en _DossierTimeline.svelte_ om het overzicht op te halen, te filteren en te tonen in een tijdlijn. Er is ook een variant in tabelvorm. |
+| Dossier.svelte | Dossieroverzicht van `DocumentReference` voor een patiÃ«ntgebruiker. Roept `DossierController` aan in backend-project. Gebruikt _dossier.store.ts_, _dossier-timelines.store.ts_ en _DossierTimeline.svelte_ om het overzicht op te halen, te filteren en te tonen in een tijdlijn. Er is ook een variant in tabelvorm. |
 | View.svelte | Voorbeeldimplementatie van een viewer op `WADO-RS`. Roept `DocumentController` aan in backend voor het tonen van verslagen in beelden waar DocumentReference naar verwijst.  |
 | ***Pgo.Backend*** |
 | DossierController.cs | Frontend simuleert bij deze API-endpoints het ophalen van zorgdossier. Een overzicht van FHIR DocumentReference resources komt terug om te tonen in een tijdlijn. Simulatiestap voor importeren FHIR van DVA in PGO. |
-| DocumentController.cs | Frontend haalt van deze endpoints PDF, JPEG en DICOM-bestanden op. Backend gebruikt een documentReferenceId om een `PDF` of `KOS` op te halen. DICOM KOS is een JSON-index dat verwijst naar een complete studie van beelden. Deze beelden halen we op als DICOM-archiefverzamelbestand of als foto's in JPEG uit de verzameling, geschikt voor tonen in frontend. |
+| DocumentController.cs | Frontend haalt van deze endpoints PDF-, JPEG- en DICOM-bestanden op. Backend gebruikt een documentReferenceId om een `PDF` of `KOS` op te halen. DICOM KOS is een JSON-index die verwijst naar een complete studie van beelden. Deze beelden halen we op als DICOM-archiefverzamelbestand of als foto's in JPEG uit de verzameling, geschikt voor tonen in frontend. |
 
 
 ### Uitwisseling FHIR-resources
 
-Het ontwerp bespreekt [FHIR R4](https://www.hl7.org/fhir/R4/) resources [MHD DocumentReference Minimal](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) voor het aanbieden van verwijzingen naar beelden en verslagen. De wijze waarop een DVA deze resources aanbiedt is vastgelegd in [MedMij Afsprakenstelsel](https://afsprakenstelsel.medmij.nl/) en volgt de bekende uitwisseling na het uitlezen van Stelselnode.
+Het ontwerp bespreekt [FHIR R4](https://www.hl7.org/fhir/R4/) resources [MHD DocumentReference Minimal](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Minimal.DocumentReference.html) voor het aanbieden van verwijzingen naar beelden en verslagen. De wijze waarop een DVA deze resources aanbiedt, is vastgelegd in [MedMij Afsprakenstelsel](https://afsprakenstelsel.medmij.nl/) en volgt de bekende uitwisseling na het uitlezen van Stelselnode.
 
-In deze simulatie is het uitwisselen licht geïmplementeerd met een endpoint dat FHIR-resources van DVA ophaalt en in de FHIR-resourceserver van PGO plaatst *('import')*. Met een knop in frontend zijn de resources in PGO te verwijderen *('reset')* voor presentatie. Backend doet dit deze uitwisseling met de volgende queries voor het uitlezen. DocumentReference verwijst naar doorgaans naar resources als Organization en Practitioner.
+In deze simulatie is het uitwisselen licht geÃ¯mplementeerd met een endpoint dat FHIR-resources van DVA ophaalt en in de FHIR-resourceserver van PGO plaatst *('import')*. Met een knop in frontend zijn de resources in PGO te verwijderen *('reset')* voor presentatie. Backend doet dit deze uitwisseling met de volgende queries voor het uitlezen. DocumentReference verwijst doorgaans naar resources als Organization en Practitioner.
 
 ```
 GET https://fhir/r4/DocumentReference?patient=voorbeeldgebruiker
@@ -35,12 +35,12 @@ GET https://fhir/r4/Organization/voorbeeldorganisatie
 
 ```
 
-In map [0.1.0-prototype/test/resources](../test/resources) een overzicht van de FHIR-resources in JSON-formaat (application/fhir+json) bij usecases Beeld in PGO. Deze testdata lees je in op FHIR-server van DVA en/of PGO. In een latere fase is de uitwisseling van resources mogelijk met Interoplab Testmanager.
+In map [test/resources](../test/resources) een overzicht van de FHIR-resources in JSON-formaat (application/fhir+json) bij usecases Beeldbeschikbaarheid. Deze testdata lees je in op FHIR-server van DVA en/of PGO. In een latere fase is de uitwisseling van resources mogelijk met Interoplab Testmanager.
 
 
-### Configuratie van resource servers
+### Configuratie van resourceservers
 
-Backend configureert FHIR-resourceservers in [config.yaml](Pgo.Backend/config.yaml) voor PGO en de DVA dat als bron voor testdata dient. Zie DossierController.cs, [DvaConfig.cs](Pgo.Backend/Config/DvaConfig.cs) en [PgoConfig.cs](Pgo.Backend/Config/PgoConfig.cs). Een-en-ander volgt best-practices en templating voor ASP.NET MVC-projecten. Een kort overzicht van instellingen:
+Backend configureert FHIR-resourceservers in [config.yaml](Pgo.Backend/config.yaml) voor PGO en de DVA dat als bron voor testdata dient; zie DossierController.cs, [DvaConfig.cs](Pgo.Backend/Config/DvaConfig.cs) en [PgoConfig.cs](Pgo.Backend/Config/PgoConfig.cs). Een en ander volgt best practices en templating voor ASP.NET MVC-projecten. Een kort overzicht van instellingen:
 
 | Configuratie       |     |
 | ------------------ | --- |
@@ -63,11 +63,11 @@ Backend configureert FHIR-resourceservers in [config.yaml](Pgo.Backend/config.ya
 | .Authority | URL van de OpenID Connect-provider. |
 | .ClientId | ClientId voor authenticatie PGO. Bijvoorbeeld: https://pgo-beeldinpgo/identity | 
 
-In Beeldbeschikbaarheid biedt een DVA-leverancier naast FHIR ook resources in DICOM aan. Daarom zie je naast de instellingen voor de FHIR-resourceserver in ook configuratie voor DICOMweb-resourceserver. Tijdens een proof-of-concept met deelnemers komen deze gegevens uit Stelselnode en Testmanager.
+In Beeldbeschikbaarheid biedt een DVA-leverancier naast FHIR ook resources in DICOM aan. Daarom zie je naast de instellingen voor de FHIR-resourceserver ook configuratie voor DICOMweb-resourceserver. Tijdens een proof-of-concept met deelnemers komen deze gegevens uit Stelselnode en Testmanager.
 
 ### Uitwisseling DICOM-resources
 
-DICOMweb is een verzameling APIs voor het uitwisselen van beelden. Uit FHIR betrokken DocumentReference-resources verwijzen in `attachment.url` naar DICOMweb-resources. Specifiek gaat het om een URI zoals in het voorbeeld hieronder dat verwijst naar een WADO-RS-endpoint voor de KOS van een studie met beelden.
+DICOMweb is een verzameling API's voor het uitwisselen van beelden. Uit FHIR betrokken DocumentReference-resources verwijzen in `.content.attachment.url` naar DICOMweb-resources. Specifiek gaat het om een URI zoals in het voorbeeld hieronder dat verwijst naar een WADO-RS-endpoint voor de KOS van een studie met beelden.
 
 ```json
 
@@ -131,11 +131,11 @@ Accept: multipart/related; type="application/dicom"
 GET https://pacs/wado-rs/studies/1.2.276.0.50.10020017010.15894627.12166536.29885/series/1.2.3/instances/4.5.6.7.8/rendered
 Accept: application/jpeg
 ```
-Een studie bevat series van instances. Deze instances zijn op te halen als beelden. Prototype toont hoe instances van een serie worden uitgelezen om te komen tot rendered-beelden in een viewer. PGO's kunnen er uiteraard voor kiezen een kantenklare webviewer te gebruiken die dit soort uitleesacties al ondersteunt.
+Een studie bevat series van instances. Deze instances zijn op te halen als beelden. Prototype toont hoe instances van een serie worden uitgelezen om te komen tot rendered-beelden in een viewer. PGO's kunnen er uiteraard voor kiezen een kant-en-klare webviewer te gebruiken die dit soort uitleesacties al ondersteunt.
 
 #### Frames
 
-In DICOMweb verwijst een instance naar een beeld. Sommige instances hebben nog een [verdeling naar een frames](https://dicom.nema.org/medical/Dicom/2018d/output/chtml/part03/sect_C.7.6.6.html). Haal je het beeld op voor een instance, dan komt dat neer op het eerste frame (doorgaans frame 0). In de viewer van het prototype is een aanzet gegeven voor het tonen van frames, dit volgt nagegenoeg dezelfde stappen als het tonen van het beeld voor een instance. Gebruik bijvoorbeeld een [slider-control](https://www.w3schools.com/howto/howto_js_rangeslider.asp) om door de frames-beelden te bladeren.
+In DICOMweb verwijst een instance naar een beeld. Sommige instances hebben nog een [verdeling naar frames](https://dicom.nema.org/medical/Dicom/2018d/output/chtml/part03/sect_C.7.6.6.html). Haal je het beeld op voor een instance, dan komt dat neer op het eerste frame (doorgaans frame 0). In de viewer van het prototype is een aanzet gegeven voor het tonen van frames, dit volgt nagegenoeg dezelfde stappen als het tonen van het beeld voor een instance. Gebruik bijvoorbeeld een [slider-control](https://www.w3schools.com/howto/howto_js_rangeslider.asp) om door de frames-beelden te bladeren.
 
 ```
 ### Downloaden van een framefoto op instance, in JPEG-formaat.
