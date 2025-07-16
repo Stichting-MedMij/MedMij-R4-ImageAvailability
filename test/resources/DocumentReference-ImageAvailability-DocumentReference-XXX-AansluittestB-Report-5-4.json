@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-2",
+  "id": "ImageAvailability-DocumentReference-XXX-AansluittestB-Report-5-4",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -25,30 +25,30 @@
   ],
   "masterIdentifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:c4a902d3-1259-4881-9dd1-17376cef5ce5"
+    "value": "urn:uuid:cc9008c2-8a08-457e-a928-c42d43b1efb7"
   },
   "type": {
     "coding": [
       {
-        "code": "399208008",
+        "code": "44491008",
         "system": "http://snomed.info/sct",
-        "display": "longfoto"
+        "display": "röntgendoorlichting"
       }
     ]
   },
   "subject": {
-    "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
-    "display": "José Klaassen-Groen"
+    "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
+    "display": "B. XXX-Aansluittest-B"
   },
-  "date": "1993-02-06T12:00:00+01:00",
+  "date": "2025-02-25T14:07:00+01:00",
   "author": [
     {
-      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Van-Der-Ham",
-      "display": "van der Ham, Orthopedisch chirurg, Erasmus MC, Radiologie"
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Huisarts",
+      "display": "Huisarts, Catharina Ziekenhuis Eindhoven"
     },
     {
-      "reference": "Organization/ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair",
-      "display": "Erasmus MC, Radiologie, Universitair ziekenhuis"
+      "reference": "Organization/ImageAvailability-Organization-CZE",
+      "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
     }
   ],
   "securityLabel": [
@@ -67,9 +67,9 @@
       "attachment": {
         "contentType": "application/pdf",
         "language": "nl",
-        "url": "Binary/ImageAvailability-Binary-Report-2-2",
-        "title": "longfoto",
-        "creation": "1993-02-06T12:00:00+01:00"
+        "url": "Binary/ImageAvailability-Binary-Report-5-5",
+        "title": "CR CWK MedMij",
+        "creation": "2025-02-25T14:07:00+01:00"
       },
       "format": {
         "code": "urn.ihe.rad:PDF",
@@ -79,14 +79,14 @@
   ],
   "context": {
     "period": {
-      "start": "1993-02-06"
+      "start": "2025-02-25"
     },
     "facilityType": {
       "coding": [
         {
-          "code": "V5",
+          "code": "V6",
           "system": "http://nictiz.nl/fhir/NamingSystem/organization-type",
-          "display": "Universitair ziekenhuis"
+          "display": "Algemeen ziekenhuis"
         }
       ]
     },
@@ -100,10 +100,28 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
-      "display": "José Klaassen-Groen"
+      "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
+      "display": "B. XXX-Aansluittest-B"
     },
     "related": [
+      {
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "urn:ihe:iti:xds:2013:accession",
+                "system": "urn:ietf:rfc:3986"
+              }
+            ]
+          },
+          "system": "urn:oid:2.16.528.1.1023.19.1.1",
+          "value": "5003249215",
+          "assigner": {
+            "reference": "Organization/ImageAvailability-Organization-CZE",
+            "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
+          }
+        }
+      },
       {
         "identifier": {
           "type": {
@@ -114,7 +132,7 @@
               }
             ]
           },
-          "value": "2.16.528.1.1007.3.1.20250212.789012"
+          "value": "1.2.752.24.7.3059655634.36522"
         }
       }
     ]

@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-4",
+  "id": "ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-1",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -25,14 +25,14 @@
   ],
   "masterIdentifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:63bab3df-700c-4640-906c-b75e5d028437"
+    "value": "urn:uuid:b7e5d9e2-9e5f-4df6-bc0f-9f98b6d4c705"
   },
   "type": {
     "coding": [
       {
-        "code": "44491008",
+        "code": "113091000",
         "system": "http://snomed.info/sct",
-        "display": "röntgendoorlichting"
+        "display": "MRI"
       }
     ]
   },
@@ -40,15 +40,15 @@
     "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
     "display": "B. XXX-Aansluittest-B"
   },
-  "date": "2025-02-25T13:53:00+01:00",
+  "date": "2024-08-07T11:57:00+02:00",
   "author": [
     {
-      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Huisarts",
-      "display": "Huisarts, Catharina Ziekenhuis Eindhoven"
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Cardioloog",
+      "display": "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
     },
     {
-      "reference": "Organization/ImageAvailability-Organization-CZE",
-      "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
+      "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
+      "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
     }
   ],
   "securityLabel": [
@@ -67,9 +67,9 @@
       "attachment": {
         "contentType": "application/dicom+json",
         "language": "nl",
-        "url": "https://examplepacs.xis/wado/studies/1.2.752.24.7.3059655634.36522/metadata",
-        "title": "CR CWK MedMij",
-        "creation": "2025-02-25T13:53:00+01:00"
+        "url": "https://examplepacs.xis/wado/studies/2.16.840.1.114493.1.4.270.3.20240807115710430/metadata",
+        "title": "MedMij PGO test MR",
+        "creation": "2024-08-07T11:57:00+02:00"
       },
       "format": {
         "code": "1.2.840.10008.5.1.4.1.1.88.59",
@@ -79,7 +79,7 @@
   ],
   "context": {
     "period": {
-      "start": "2025-02-25"
+      "start": "2024-08-07"
     },
     "facilityType": {
       "coding": [
@@ -115,10 +115,10 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "5003249215",
+          "value": "EXT-14115",
           "assigner": {
-            "reference": "Organization/ImageAvailability-Organization-CZE",
-            "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
+            "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
+            "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
           }
         }
       },
@@ -132,7 +132,7 @@
               }
             ]
           },
-          "value": "1.2.752.24.7.3059655634.36522"
+          "value": "2.16.840.1.114493.1.4.270.3.20240807115710430"
         }
       }
     ]

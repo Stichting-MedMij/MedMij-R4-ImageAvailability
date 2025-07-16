@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair",
+  "id": "ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"

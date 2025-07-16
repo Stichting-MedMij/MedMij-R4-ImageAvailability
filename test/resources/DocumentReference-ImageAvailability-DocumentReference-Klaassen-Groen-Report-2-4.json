@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-1",
+  "id": "ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-4",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -16,39 +16,39 @@
           "display": "Radiology studies (set)"
         },
         {
-          "code": "IMAGES",
+          "code": "REPORTS",
           "system": "urn:oid:1.3.6.1.4.1.19376.1.2.6.1",
-          "display": "Images"
+          "display": "Reports"
         }
       ]
     }
   ],
   "masterIdentifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:b7e5d9e2-9e5f-4df6-bc0f-9f98b6d4c705"
+    "value": "urn:uuid:0a61a231-1b52-4ba5-b86c-9edac0bfa044"
   },
   "type": {
     "coding": [
       {
-        "code": "113091000",
+        "code": "142771000146105",
         "system": "http://snomed.info/sct",
-        "display": "MRI"
+        "display": "röntgenfoto van linker kaakgewricht"
       }
     ]
   },
   "subject": {
-    "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
-    "display": "B. XXX-Aansluittest-B"
+    "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
+    "display": "José Klaassen-Groen"
   },
-  "date": "2024-08-07T11:57:00+02:00",
+  "date": "2020-08-10T12:00:00+02:00",
   "author": [
     {
-      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Cardioloog",
-      "display": "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Coenen",
+      "display": "C.H. Coenen, Kaakchirurg, Erasmus MC, Mondzorg en kaakchirurgie"
     },
     {
-      "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
-      "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
+      "reference": "Organization/ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair",
+      "display": "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
     }
   ],
   "securityLabel": [
@@ -65,28 +65,28 @@
   "content": [
     {
       "attachment": {
-        "contentType": "application/dicom+json",
+        "contentType": "application/pdf",
         "language": "nl",
-        "url": "https://examplepacs.xis/wado/studies/2.16.840.1.114493.1.4.270.3.20240807115710430/metadata",
-        "title": "MedMij PGO test MR",
-        "creation": "2024-08-07T11:57:00+02:00"
+        "url": "Binary/ImageAvailability-Binary-Report-2-4",
+        "title": "röntgenfoto van linker kaakgewricht",
+        "creation": "2020-08-10T12:00:00+02:00"
       },
       "format": {
-        "code": "1.2.840.10008.5.1.4.1.1.88.59",
-        "system": "urn.oid:1.2.840.10008.2.6.1"
+        "code": "urn.ihe.rad:PDF",
+        "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode"
       }
     }
   ],
   "context": {
     "period": {
-      "start": "2024-08-07"
+      "start": "2020-08-10"
     },
     "facilityType": {
       "coding": [
         {
-          "code": "V6",
+          "code": "V5",
           "system": "http://nictiz.nl/fhir/NamingSystem/organization-type",
-          "display": "Algemeen ziekenhuis"
+          "display": "Universitair ziekenhuis"
         }
       ]
     },
@@ -100,8 +100,8 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
-      "display": "B. XXX-Aansluittest-B"
+      "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
+      "display": "José Klaassen-Groen"
     },
     "related": [
       {
@@ -115,10 +115,10 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "EXT-14115",
+          "value": "RAD-20250212-74920",
           "assigner": {
-            "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
-            "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
+            "reference": "Organization/ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair",
+            "display": "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
           }
         }
       },
@@ -132,7 +132,7 @@
               }
             ]
           },
-          "value": "2.16.840.1.114493.1.4.270.3.20240807115710430"
+          "value": "2.16.528.1.1007.3.1.20250212.456342"
         }
       }
     ]

@@ -14,7 +14,7 @@ Usage: #example
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1990-02-10T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg, Erasmus MC, Radiologie"
-* author[1] = Reference(ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
+* author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -34,7 +34,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-19285" // Dummy Accession Number
-      * assigner = Reference(ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -54,7 +54,7 @@ Usage: #example
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg, Erasmus MC, Radiologie"
-* author[1] = Reference(ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
+* author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -94,7 +94,7 @@ Usage: #example
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg, Erasmus MC, Radiologie"
-* author[1] = Reference(ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
+* author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -114,7 +114,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-50637" // Dummy Accession Number
-      * assigner = Reference(ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -134,7 +134,7 @@ Usage: #example
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg, Erasmus MC, Radiologie"
-* author[1] = Reference(ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
+* author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -154,7 +154,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-50637" // Dummy Accession Number
-      * assigner = Reference(ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -180,7 +180,7 @@ Usage: #example
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg, Erasmus MC, Mondzorg en kaakchirurgie"
-* author[1] = Reference(ImageAvailability-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
+* author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -200,7 +200,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-74920" // Dummy Accession Number
-      * assigner = Reference(ImageAvailability-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -220,7 +220,7 @@ Usage: #example
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg, Erasmus MC, Mondzorg en kaakchirurgie"
-* author[1] = Reference(ImageAvailability-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
+* author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -240,7 +240,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-74920" // Dummy Accession Number
-      * assigner = Reference(ImageAvailability-Organization-Erasmus-MC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
@@ -322,7 +322,7 @@ Usage: #example
   * given[1] = "H."
     * extension[http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier].valueCode = #IN
 
-Instance: ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair
+Instance: ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
 Usage: #example
 * identifier
@@ -333,7 +333,7 @@ Usage: #example
   * coding[1] = $OrganizationType#V5 "Universitair ziekenhuis"
 * name = "Erasmus MC"
 
-Instance: ImageAvailability-Organization-Erasmus-MC-Mondzorg-Universitair
+Instance: ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
 Usage: #example
 * identifier

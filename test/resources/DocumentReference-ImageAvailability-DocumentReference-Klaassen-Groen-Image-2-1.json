@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "ImageAvailability-DocumentReference-XXX-Aansluittest-B-Report-5-4",
+  "id": "ImageAvailability-DocumentReference-Klaassen-Groen-Image-2-1",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -16,39 +16,39 @@
           "display": "Radiology studies (set)"
         },
         {
-          "code": "REPORTS",
+          "code": "IMAGES",
           "system": "urn:oid:1.3.6.1.4.1.19376.1.2.6.1",
-          "display": "Reports"
+          "display": "Images"
         }
       ]
     }
   ],
   "masterIdentifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:cc9008c2-8a08-457e-a928-c42d43b1efb7"
+    "value": "urn:uuid:49b82e94-cf06-4507-b5a3-361d5937e77d"
   },
   "type": {
     "coding": [
       {
-        "code": "44491008",
+        "code": "399208008",
         "system": "http://snomed.info/sct",
-        "display": "röntgendoorlichting"
+        "display": "longfoto"
       }
     ]
   },
   "subject": {
-    "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
-    "display": "B. XXX-Aansluittest-B"
+    "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
+    "display": "José Klaassen-Groen"
   },
-  "date": "2025-02-25T14:07:00+01:00",
+  "date": "1990-02-10T12:00:00+01:00",
   "author": [
     {
-      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Huisarts",
-      "display": "Huisarts, Catharina Ziekenhuis Eindhoven"
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Van-Der-Ham",
+      "display": "van der Ham, Orthopedisch chirurg, Erasmus MC, Radiologie"
     },
     {
-      "reference": "Organization/ImageAvailability-Organization-CZE",
-      "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
+      "reference": "Organization/ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair",
+      "display": "Erasmus MC, Radiologie, Universitair ziekenhuis"
     }
   ],
   "securityLabel": [
@@ -65,28 +65,28 @@
   "content": [
     {
       "attachment": {
-        "contentType": "application/pdf",
+        "contentType": "application/dicom+json",
         "language": "nl",
-        "url": "Binary/ImageAvailability-Binary-Report-5-5",
-        "title": "CR CWK MedMij",
-        "creation": "2025-02-25T14:07:00+01:00"
+        "url": "https://examplepacs.xis/wado/metadata",
+        "title": "longfoto",
+        "creation": "1990-02-10T12:00:00+01:00"
       },
       "format": {
-        "code": "urn.ihe.rad:PDF",
-        "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode"
+        "code": "1.2.840.10008.5.1.4.1.1.88.59",
+        "system": "urn.oid:1.2.840.10008.2.6.1"
       }
     }
   ],
   "context": {
     "period": {
-      "start": "2025-02-25"
+      "start": "1990-02-10"
     },
     "facilityType": {
       "coding": [
         {
-          "code": "V6",
+          "code": "V5",
           "system": "http://nictiz.nl/fhir/NamingSystem/organization-type",
-          "display": "Algemeen ziekenhuis"
+          "display": "Universitair ziekenhuis"
         }
       ]
     },
@@ -100,8 +100,8 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
-      "display": "B. XXX-Aansluittest-B"
+      "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
+      "display": "José Klaassen-Groen"
     },
     "related": [
       {
@@ -115,10 +115,10 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "5003249215",
+          "value": "RAD-20250212-19285",
           "assigner": {
-            "reference": "Organization/ImageAvailability-Organization-CZE",
-            "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
+            "reference": "Organization/ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair",
+            "display": "Erasmus MC, Radiologie, Universitair ziekenhuis"
           }
         }
       },
@@ -132,7 +132,7 @@
               }
             ]
           },
-          "value": "1.2.752.24.7.3059655634.36522"
+          "value": "1.2.826.0.1.3680043.8.498.77615907425522706317163091876421984542"
         }
       }
     ]

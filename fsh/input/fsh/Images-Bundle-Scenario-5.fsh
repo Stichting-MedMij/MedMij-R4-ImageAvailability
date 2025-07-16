@@ -1,6 +1,6 @@
 // Bundle with FHIR test instances in FSH format for Image Availability test scenario 5
 
-Instance: ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-1
+Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-1
 // For this instance no corresponding DICOM files have been added (yet).
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
@@ -41,7 +41,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "2.16.840.1.114493.1.4.270.3.20240807115710430" // Dummy Study Instance UID
 
-Instance: ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-2
+Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
@@ -81,7 +81,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003" // Dummy Study Instance UID
 
-Instance: ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-3
+Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
@@ -121,7 +121,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003" // Dummy Study Instance UID
 
-Instance: ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-4
+Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
@@ -161,7 +161,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.752.24.7.3059655634.36522" // Dummy Study Instance UID
 
-Instance: ImageAvailability-DocumentReference-XXX-Aansluittest-B-Report-5-4
+Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Report-5-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier

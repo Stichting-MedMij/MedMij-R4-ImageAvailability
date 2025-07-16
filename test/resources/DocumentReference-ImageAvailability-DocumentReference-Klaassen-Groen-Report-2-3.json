@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-2",
+  "id": "ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-3",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -16,39 +16,39 @@
           "display": "Radiology studies (set)"
         },
         {
-          "code": "IMAGES",
+          "code": "REPORTS",
           "system": "urn:oid:1.3.6.1.4.1.19376.1.2.6.1",
-          "display": "Images"
+          "display": "Reports"
         }
       ]
     }
   ],
   "masterIdentifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:a013c0cf-d4f9-4bc5-aa76-ac41347454bd"
+    "value": "urn:uuid:53338e45-a078-4886-8501-7cf1ec838afd"
   },
   "type": {
     "coding": [
       {
-        "code": "77477000",
+        "code": "399208008",
         "system": "http://snomed.info/sct",
-        "display": "CT"
+        "display": "longfoto"
       }
     ]
   },
   "subject": {
-    "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
-    "display": "B. XXX-Aansluittest-B"
+    "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
+    "display": "José Klaassen-Groen"
   },
-  "date": "2024-08-22T16:45:00+02:00",
+  "date": "1993-02-06T12:00:00+01:00",
   "author": [
     {
-      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Cardioloog",
-      "display": "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Janssen",
+      "display": "Janssen, Orthopedisch chirurg, Erasmus MC, Radiologie"
     },
     {
-      "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
-      "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
+      "reference": "Organization/ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair",
+      "display": "Erasmus MC, Radiologie, Universitair ziekenhuis"
     }
   ],
   "securityLabel": [
@@ -65,28 +65,28 @@
   "content": [
     {
       "attachment": {
-        "contentType": "application/dicom+json",
+        "contentType": "application/pdf",
         "language": "nl",
-        "url": "https://examplepacs.xis/wado/studies/1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003/metadata",
-        "title": "MedMij PGO test CT",
-        "creation": "2024-08-22T16:45:00+02:00"
+        "url": "Binary/ImageAvailability-Binary-Report-2-3",
+        "title": "longfoto",
+        "creation": "1993-02-06T12:00:00+01:00"
       },
       "format": {
-        "code": "1.2.840.10008.5.1.4.1.1.88.59",
-        "system": "urn.oid:1.2.840.10008.2.6.1"
+        "code": "urn.ihe.rad:PDF",
+        "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode"
       }
     }
   ],
   "context": {
     "period": {
-      "start": "2024-08-22"
+      "start": "1993-02-06"
     },
     "facilityType": {
       "coding": [
         {
-          "code": "V6",
+          "code": "V5",
           "system": "http://nictiz.nl/fhir/NamingSystem/organization-type",
-          "display": "Algemeen ziekenhuis"
+          "display": "Universitair ziekenhuis"
         }
       ]
     },
@@ -100,8 +100,8 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
-      "display": "B. XXX-Aansluittest-B"
+      "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
+      "display": "José Klaassen-Groen"
     },
     "related": [
       {
@@ -115,10 +115,10 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "EXT-14117",
+          "value": "RAD-20250212-50637",
           "assigner": {
-            "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
-            "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
+            "reference": "Organization/ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair",
+            "display": "Erasmus MC, Radiologie, Universitair ziekenhuis"
           }
         }
       },
@@ -132,7 +132,7 @@
               }
             ]
           },
-          "value": "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003"
+          "value": "2.16.528.1.1007.3.1.20250212.456789"
         }
       }
     ]
