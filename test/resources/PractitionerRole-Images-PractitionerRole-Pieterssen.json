@@ -1,13 +1,13 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "Images-PractitionerRole-Pieterssen",
+  "id": "ImageAvailability-PractitionerRole-Pieterssen",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
     ]
   },
   "practitioner": {
-    "reference": "Practitioner/Images-Practitioner-Pieterssen",
+    "reference": "Practitioner/ImageAvailability-Practitioner-Pieterssen",
     "display": "Pieterssen"
   },
   "specialty": [

@@ -1,13 +1,13 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "Images-PractitionerRole-Van-Der-Ham",
+  "id": "ImageAvailability-PractitionerRole-Van-Der-Ham",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
     ]
   },
   "practitioner": {
-    "reference": "Practitioner/Images-Practitioner-Van-Der-Ham",
+    "reference": "Practitioner/ImageAvailability-Practitioner-Van-Der-Ham",
     "display": "van der Ham"
   },
   "specialty": [

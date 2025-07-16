@@ -1,6 +1,6 @@
-# Test resources for MedMij R4 Images  
+# Test resources for MedMij R4 Image Availability  
 
-This directory contains test resources intended for testing MedMij R4 Images. These test resources are meant to support interoperability testing.
+This directory contains test resources intended for testing MedMij R4 Image Availability. These test resources are meant to support interoperability testing.
 
 ## Structure  
 - The `pgo` folder contains a prototype PGO (Personal Health Environment) implementation, made by MedMij.

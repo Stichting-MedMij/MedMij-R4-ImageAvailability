@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "Images-DocumentReference-Klaassen-Groen-Report-2-2",
+  "id": "ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-2",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -37,17 +37,17 @@
     ]
   },
   "subject": {
-    "reference": "Patient/Images-Patient-Klaassen-Groen",
+    "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
     "display": "José Klaassen-Groen"
   },
   "date": "1993-02-06T12:00:00+01:00",
   "author": [
     {
-      "reference": "PractitionerRole/Images-PractitionerRole-Van-Der-Ham",
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Van-Der-Ham",
       "display": "van der Ham, Orthopedisch chirurg, Erasmus MC, Radiologie"
     },
     {
-      "reference": "Organization/Images-Organization-Erasmus-MC-Radiologie-Universitair",
+      "reference": "Organization/ImageAvailability-Organization-Erasmus-MC-Radiologie-Universitair",
       "display": "Erasmus MC, Radiologie, Universitair ziekenhuis"
     }
   ],
@@ -67,7 +67,7 @@
       "attachment": {
         "contentType": "application/pdf",
         "language": "nl",
-        "url": "Binary/Images-Binary-Report-2-2",
+        "url": "Binary/ImageAvailability-Binary-Report-2-2",
         "title": "longfoto",
         "creation": "1993-02-06T12:00:00+01:00"
       },
@@ -100,7 +100,7 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/Images-Patient-Klaassen-Groen",
+      "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
       "display": "José Klaassen-Groen"
     },
     "related": [

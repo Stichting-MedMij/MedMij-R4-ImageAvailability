@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "Images-DocumentReference-Klaassen-Groen-Image-2-4",
+  "id": "ImageAvailability-DocumentReference-Klaassen-Groen-Image-2-4",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -37,17 +37,17 @@
     ]
   },
   "subject": {
-    "reference": "Patient/Images-Patient-Klaassen-Groen",
+    "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
     "display": "José Klaassen-Groen"
   },
   "date": "2020-08-10T12:00:00+02:00",
   "author": [
     {
-      "reference": "PractitionerRole/Images-PractitionerRole-Coenen",
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Coenen",
       "display": "C.H. Coenen, Kaakchirurg, Erasmus MC, Mondzorg en kaakchirurgie"
     },
     {
-      "reference": "Organization/Images-Organization-Erasmus-MC-Mondzorg-Universitair",
+      "reference": "Organization/ImageAvailability-Organization-Erasmus-MC-Mondzorg-Universitair",
       "display": "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
     }
   ],
@@ -100,7 +100,7 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/Images-Patient-Klaassen-Groen",
+      "reference": "Patient/ImageAvailability-Patient-Klaassen-Groen",
       "display": "José Klaassen-Groen"
     },
     "related": [
@@ -117,7 +117,7 @@
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
           "value": "RAD-20250212-74920",
           "assigner": {
-            "reference": "Organization/Images-Organization-Erasmus-MC-Mondzorg-Universitair",
+            "reference": "Organization/ImageAvailability-Organization-Erasmus-MC-Mondzorg-Universitair",
             "display": "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
           }
         }

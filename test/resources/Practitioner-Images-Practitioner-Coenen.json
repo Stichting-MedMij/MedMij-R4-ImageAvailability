@@ -1,6 +1,6 @@
 {
   "resourceType": "Practitioner",
-  "id": "Images-Practitioner-Coenen",
+  "id": "ImageAvailability-Practitioner-Coenen",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"

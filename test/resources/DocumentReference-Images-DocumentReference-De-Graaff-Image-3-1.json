@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "Images-DocumentReference-De-Graaff-Image-3-1",
+  "id": "ImageAvailability-DocumentReference-De-Graaff-Image-3-1",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -37,17 +37,17 @@
     ]
   },
   "subject": {
-    "reference": "Patient/Images-Patient-De-Graaff",
+    "reference": "Patient/ImageAvailability-Patient-De-Graaff",
     "display": "de Graaff"
   },
   "date": "2020-03-03T12:00:00+01:00",
   "author": [
     {
-      "reference": "PractitionerRole/Images-PractitionerRole-Pieterssen",
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Pieterssen",
       "display": "Pieterssen, Orthopedisch chirurg, Stichting Spaarne Gasthuis, Radiologie"
     },
     {
-      "reference": "Organization/Images-Organization-Spaarne",
+      "reference": "Organization/ImageAvailability-Organization-Spaarne",
       "display": "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis"
     }
   ],
@@ -100,7 +100,7 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/Images-Patient-De-Graaff",
+      "reference": "Patient/ImageAvailability-Patient-De-Graaff",
       "display": "de Graaff"
     },
     "related": [
@@ -117,7 +117,7 @@
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
           "value": "RAD-20250212-47092",
           "assigner": {
-            "reference": "Organization/Images-Organization-Spaarne",
+            "reference": "Organization/ImageAvailability-Organization-Spaarne",
             "display": "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis"
           }
         }

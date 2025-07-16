@@ -1,13 +1,13 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "Images-PractitionerRole-De-Pater",
+  "id": "ImageAvailability-PractitionerRole-De-Pater",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
     ]
   },
   "practitioner": {
-    "reference": "Practitioner/Images-Practitioner-De-Pater",
+    "reference": "Practitioner/ImageAvailability-Practitioner-De-Pater",
     "display": "A.C.H. de Pater"
   },
   "specialty": [

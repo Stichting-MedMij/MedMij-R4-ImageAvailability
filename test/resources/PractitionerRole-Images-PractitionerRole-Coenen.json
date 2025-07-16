@@ -1,13 +1,13 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "Images-PractitionerRole-Coenen",
+  "id": "ImageAvailability-PractitionerRole-Coenen",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
     ]
   },
   "practitioner": {
-    "reference": "Practitioner/Images-Practitioner-Coenen",
+    "reference": "Practitioner/ImageAvailability-Practitioner-Coenen",
     "display": "C.H. Coenen"
   },
   "specialty": [

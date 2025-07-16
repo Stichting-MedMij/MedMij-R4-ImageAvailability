@@ -1,6 +1,6 @@
 {
   "resourceType": "Patient",
-  "id": "Images-Patient-Blaak",
+  "id": "ImageAvailability-Patient-Blaak",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"

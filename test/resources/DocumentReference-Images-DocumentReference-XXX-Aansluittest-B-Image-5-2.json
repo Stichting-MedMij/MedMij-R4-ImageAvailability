@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "Images-DocumentReference-XXX-Aansluittest-B-Image-5-2",
+  "id": "ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-2",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -37,17 +37,17 @@
     ]
   },
   "subject": {
-    "reference": "Patient/Images-Patient-XXX-Aansluittest-B",
+    "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
     "display": "B. XXX-Aansluittest-B"
   },
   "date": "2024-08-22T16:45:00+02:00",
   "author": [
     {
-      "reference": "PractitionerRole/Images-PractitionerRole-Cardioloog",
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Cardioloog",
       "display": "Cardioloog, Catharina Ziekenhuis Eindhoven, Radiotherapie"
     },
     {
-      "reference": "Organization/Images-Organization-CZE-Radiotherapie",
+      "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
       "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
     }
   ],
@@ -100,7 +100,7 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/Images-Patient-XXX-Aansluittest-B",
+      "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
       "display": "B. XXX-Aansluittest-B"
     },
     "related": [
@@ -117,7 +117,7 @@
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
           "value": "EXT-14117",
           "assigner": {
-            "reference": "Organization/Images-Organization-CZE-Radiotherapie",
+            "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
             "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
           }
         }

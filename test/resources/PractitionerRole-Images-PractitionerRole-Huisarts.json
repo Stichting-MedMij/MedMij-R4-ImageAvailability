@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "Images-PractitionerRole-Huisarts",
+  "id": "ImageAvailability-PractitionerRole-Huisarts",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"

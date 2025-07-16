@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "Images-Organization-CZE-Radiotherapie",
+  "id": "ImageAvailability-Organization-CZE-Radiotherapie",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"

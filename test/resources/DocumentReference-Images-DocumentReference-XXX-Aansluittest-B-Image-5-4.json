@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "Images-DocumentReference-XXX-Aansluittest-B-Image-5-4",
+  "id": "ImageAvailability-DocumentReference-XXX-Aansluittest-B-Image-5-4",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -37,17 +37,17 @@
     ]
   },
   "subject": {
-    "reference": "Patient/Images-Patient-XXX-Aansluittest-B",
+    "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
     "display": "B. XXX-Aansluittest-B"
   },
   "date": "2025-02-25T13:53:00+01:00",
   "author": [
     {
-      "reference": "PractitionerRole/Images-PractitionerRole-Huisarts",
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Huisarts",
       "display": "Huisarts, Catharina Ziekenhuis Eindhoven"
     },
     {
-      "reference": "Organization/Images-Organization-CZE",
+      "reference": "Organization/ImageAvailability-Organization-CZE",
       "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
     }
   ],
@@ -100,7 +100,7 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/Images-Patient-XXX-Aansluittest-B",
+      "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
       "display": "B. XXX-Aansluittest-B"
     },
     "related": [
@@ -117,7 +117,7 @@
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
           "value": "5003249215",
           "assigner": {
-            "reference": "Organization/Images-Organization-CZE",
+            "reference": "Organization/ImageAvailability-Organization-CZE",
             "display": "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis"
           }
         }

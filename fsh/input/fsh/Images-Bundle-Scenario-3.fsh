@@ -1,6 +1,6 @@
 // Bundle with FHIR test instances in FSH format for Image Availability test scenario 3
 
-Instance: Images-DocumentReference-De-Graaff-Image-3-1
+Instance: ImageAvailability-DocumentReference-De-Graaff-Image-3-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
@@ -11,10 +11,10 @@ Usage: #example
 * category
   * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
   * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
-* subject = Reference(Images-Patient-De-Graaff) "de Graaff"
+* subject = Reference(ImageAvailability-Patient-De-Graaff) "de Graaff"
 * date = "2020-03-03T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
-* author[0] = Reference(Images-PractitionerRole-Pieterssen) "Pieterssen, Orthopedisch chirurg, Stichting Spaarne Gasthuis, Radiologie"
-* author[1] = Reference(Images-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis"
+* author[0] = Reference(ImageAvailability-PractitionerRole-Pieterssen) "Pieterssen, Orthopedisch chirurg, Stichting Spaarne Gasthuis, Radiologie"
+* author[1] = Reference(ImageAvailability-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
 * content
   * attachment
@@ -28,19 +28,19 @@ Usage: #example
   * period.start = "2020-03-03" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
-  * sourcePatientInfo = Reference(Images-Patient-De-Graaff) "de Graaff"
+  * sourcePatientInfo = Reference(ImageAvailability-Patient-De-Graaff) "de Graaff"
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImagesTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
+      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
       * value = "RAD-20250212-47092" // Dummy Accession Number
-      * assigner = Reference(Images-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
+      * assigner = Reference(ImageAvailability-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801" // Dummy Study Instance UID
 
-Instance: Images-Patient-De-Graaff
+Instance: ImageAvailability-Patient-De-Graaff
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
 * identifier
@@ -56,14 +56,14 @@ Usage: #example
   * extension[http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK "Unknown"
 * birthDate = "2008-01-01"
 
-Instance: Images-PractitionerRole-Pieterssen
+Instance: ImageAvailability-PractitionerRole-Pieterssen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
-* practitioner = Reference(Images-Practitioner-Pieterssen) "Pieterssen"
+* practitioner = Reference(ImageAvailability-Practitioner-Pieterssen) "Pieterssen"
 * specialty
   * coding = $UZI#01.032 "Orthopedisch chirurg"
 
-Instance: Images-Practitioner-Pieterssen
+Instance: ImageAvailability-Practitioner-Pieterssen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner
 Usage: #example
 * name
@@ -72,7 +72,7 @@ Usage: #example
   * family = "Pieterssen"
     * extension[http://hl7.org/fhir/StructureDefinition/humanname-own-name].valueString = "Pieterssen"
 
-Instance: Images-Organization-Spaarne
+Instance: ImageAvailability-Organization-Spaarne
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
 Usage: #example
 * identifier

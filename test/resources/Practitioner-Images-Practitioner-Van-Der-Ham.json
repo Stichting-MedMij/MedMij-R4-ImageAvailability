@@ -1,6 +1,6 @@
 {
   "resourceType": "Practitioner",
-  "id": "Images-Practitioner-Van-Der-Ham",
+  "id": "ImageAvailability-Practitioner-Van-Der-Ham",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"

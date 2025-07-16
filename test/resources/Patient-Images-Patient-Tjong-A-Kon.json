@@ -1,6 +1,6 @@
 {
   "resourceType": "Patient",
-  "id": "Images-Patient-Tjong-A-Kon",
+  "id": "ImageAvailability-Patient-Tjong-A-Kon",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"

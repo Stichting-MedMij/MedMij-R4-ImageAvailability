@@ -1,6 +1,6 @@
 ## Prototype Beeldbeschikbaarheid
 
-Voorbeeldimplementatie **Beeldbeschikbaarheid** [MedMij R4 Images IG](https://simplifier.net/guide/medmij-r4-image-availability-ig). Usecase *'Raadplegen Beeld en Verslag in persoonlijke gezondheidsomgeving'* bekijkt het ophalen en tonen van beelden en beeldverslagen. In deze repository vind je een project met frontend en backend dat een PGO simuleert waarin de patiëntgebruiker beelden bekijkt met een DICOMweb-viewer.
+Voorbeeldimplementatie **Beeldbeschikbaarheid** [MedMij R4 Image Availability IG](https://simplifier.net/guide/medmij-r4-image-availability-ig). Usecase *'Raadplegen Beeld en Verslag in persoonlijke gezondheidsomgeving'* bekijkt het ophalen en tonen van beelden en beeldverslagen. In deze repository vind je een project met frontend en backend dat een PGO simuleert waarin de patiëntgebruiker beelden bekijkt met een DICOMweb-viewer.
 
 ### Testproject
 

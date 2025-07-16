@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "Images-DocumentReference-Blaak-Image-1-1",
+  "id": "ImageAvailability-DocumentReference-Blaak-Image-1-1",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -37,17 +37,17 @@
     ]
   },
   "subject": {
-    "reference": "Patient/Images-Patient-Blaak",
+    "reference": "Patient/ImageAvailability-Patient-Blaak",
     "display": "Pieter Blaak"
   },
   "date": "2024-05-23T12:00:00+02:00",
   "author": [
     {
-      "reference": "PractitionerRole/Images-PractitionerRole-De-Pater",
+      "reference": "PractitionerRole/ImageAvailability-PractitionerRole-De-Pater",
       "display": "A.C.H. de Pater, Orthopedisch chirurg, OLVG, Radiologie"
     },
     {
-      "reference": "Organization/Images-Organization-OLVG",
+      "reference": "Organization/ImageAvailability-Organization-OLVG",
       "display": "OLVG, Radiologie, Algemeen ziekenhuis"
     }
   ],
@@ -100,7 +100,7 @@
       ]
     },
     "sourcePatientInfo": {
-      "reference": "Patient/Images-Patient-Blaak",
+      "reference": "Patient/ImageAvailability-Patient-Blaak",
       "display": "Pieter Blaak"
     },
     "related": [
@@ -117,7 +117,7 @@
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
           "value": "RAD-20250212-83472",
           "assigner": {
-            "reference": "Organization/Images-Organization-OLVG",
+            "reference": "Organization/ImageAvailability-Organization-OLVG",
             "display": "OLVG, Radiologie, Algemeen ziekenhuis"
           }
         }

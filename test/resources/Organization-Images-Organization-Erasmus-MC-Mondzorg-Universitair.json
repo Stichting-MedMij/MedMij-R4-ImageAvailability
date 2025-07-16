@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "Images-Organization-Erasmus-MC-Mondzorg-Universitair",
+  "id": "ImageAvailability-Organization-Erasmus-MC-Mondzorg-Universitair",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"

@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "Images-Organization-OLVG",
+  "id": "ImageAvailability-Organization-OLVG",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"

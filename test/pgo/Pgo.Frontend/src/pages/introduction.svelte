@@ -13,7 +13,7 @@
 
 <section>
     <div class="content">
-        <h2>Raadplegen beeld en verslag in persoonlijke gezondheidsomgeving <small>(MedMij R4 Images IG 0.1.0-poc)</small></h2>
+        <h2>Raadplegen beeld en verslag in persoonlijke gezondheidsomgeving <small>(MedMij R4 ImageAvailability IG)</small></h2>
         <p>Deze demontratie simuleert het verzamelen en presenteren van beeldmateriaal en -verslagen bij zorgaanbieders voor een patiënt. De patiëntgebruiker logt in op een PGO dat een dossier aanlegt met beeldinformatie van meerdere zorgaanbieders. De beeldinformatie omvat verwijzingen naar beelden en rapporten (FHIR), maar de PGO bewaart niet per se de beelden en rapporten zelf.</p>
         <p>Beeldvormingsbestanden zijn doorgaans groot. Beeldservers (PACS, DICOM) bij de zorgaanbieder zijn in staat grote beelden op verzoek uit te leveren of hiervan delen te sturen. Voor het bekijken in een browser is het vaak voldoende om beelden in delen of op lagere resolutie te tonen tot detailinformatie gewenst is. Voorwaarde is dat de patiënt kan beschikken over het origineel.</p>
         <p>

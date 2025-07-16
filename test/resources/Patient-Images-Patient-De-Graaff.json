@@ -1,6 +1,6 @@
 {
   "resourceType": "Patient",
-  "id": "Images-Patient-De-Graaff",
+  "id": "ImageAvailability-Patient-De-Graaff",
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
