@@ -140,7 +140,7 @@ Tabel 1 Bedrijfsrollen
 | Patiënt/ Persoon | Gebruiker van de PGO |
 | (zorg)aanbieder | Gebruiker van het XIS |
 
-{{render:Beeld in PGO - 0.3.png}}
+{{render: guides/medmij-r4-image-availability-ig/images/Beeld in PGO - 0.3.png}}
 
 Figuur 1: Raadplegen in PGO
 
@@ -181,7 +181,7 @@ Tabel 3 Transactiegroep
 
 ### Usecasediagram
 
-{{render:UML Usecasediagram Beeld in PGO.png}}
+{{render: guides/medmij-r4-image-availability-ig/images/UML Usecasediagram Beeld in PGO.png}}
 
 ### Dataset
 

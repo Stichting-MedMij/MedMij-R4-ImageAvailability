@@ -4,4 +4,4 @@ The diagram below shows the transactions within the Image Availability data serv
 
 More details are available at the following link: [MedMij Documentation – Image Availability Transactions](https://medmij.atlassian.net/wiki/external/NzkwYjRiNTRmNDU4NDkzOGJmYTdkM2JhNWI3OTBmNjM) (in Dutch).
 
-{{render: Solution architecture overview.png}}
+{{render: guides/medmij-r4-image-availability-ig/images/Solution architecture overview.png}}
