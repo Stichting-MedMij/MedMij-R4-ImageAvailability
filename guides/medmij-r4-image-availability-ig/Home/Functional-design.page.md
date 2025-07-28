@@ -325,7 +325,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | 8 | PGO | Zorggebruiker | Medische beelden kunnen downloaden in het originele bestandsformaat via een duidelijke button op mijn device | Zelf beschikking heb over mijn medische gegevens en deze kan delen met andere zorgverleners of bewaren voor mijn eigen administratie. | S |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | De gebruiker ziet bij elk beschikbaar beeld of onderzoek een duidelijke downloadknop. |
 | 2. | De gebruiker kan kiezen om dit op te slaan in: 
 | | DICOM Part10-formaat (standaard voor medische beelden); |
@@ -341,7 +341,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | 9 | PGO | Zorggebruiker | Verslagen van beelden kunnen downloaden via een button op mijn device | Zelf beschikking heb over mijn medische gegevens | S |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | Bij elk beschikbaar beeldverslag is een duidelijke knop zichtbaar met het label 'Download verslag'. |
 | 2. | Verslagen zijn te downloaden als PDF-bestand met duidelijke bestandsnaam (bijvoorbeeld Verslag_CT_borst_2025-03-15.pdf). |
 | 3. | De downloadfunctie werkt op mobiele telefoons (Android, iOS), tablets en desktopapparaten in gangbare browsers. |
@@ -352,7 +352,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | 10 | PGO | Zorggebruiker | Wil ik beelden en verslagen kunnen filteren op basis van zorgaanbieder | Ik snel gegevens van een specifieke zorgverlener kan bekijken | S |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | De gebruiker ziet een filter waarin de beschikbare zorgaanbieders worden weergegeven. |
 | 2. | Na selectie van een zorgaanbieder worden alleen de bijbehorende beelden en verslagen getoond in het overzicht.|
 | 3. | In de lijst van beelden en verslagen is duidelijk aangegeven welke zorgaanbieder het item heeft aangeleverd. |
@@ -362,7 +362,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | 11 | PGO | Zorggebruiker | Beelden en verslagen kunnen filteren op basis van aandoening | Gericht informatie kan vinden die relevant is voor mijn gezondheid | C |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | De gebruiker kan kiezen uit een lijst van aandoeningen om alleen gerelateerde beelden en verslagen te tonen. |
 | 2. | Elk beeld of verslag in de PGO is (indien beschikbaar) gelabeld met een of meerdere aandoeningen of zorgindicaties, zodat correcte filtering mogelijk is. |
 | 3. | Aandoeningen worden in de PGO weergegeven met patiëntvriendelijke termen die overeenkomen met de vertalingen uit de Nictiz-publicatie op de Nationale Terminologie Server. Indien er geen patiëntvriendelijke term beschikbaar is voor een specifieke SNOMED-code, wordt de medisch-technische term getoond. |
@@ -372,6 +372,6 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | 12 | PGO | Zorggebruiker | Bij het beeld en verslag de betrokken zorgverlener(s) zien indien beschikbaar gesteld door zorgaanbieder | Weet welke zorgverlener verantwoordelijk is voor de informatie | C |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of specialisme van de aanvragende zorgverlener getoond. |
 | 2. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of specialisme van de uitvoerende zorgverlener getoond. |
