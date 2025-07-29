@@ -224,25 +224,23 @@ Gezocht kan worden op de volgende gegevens:
 Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM viewer op de het device dient geïnstalleerd te worden om het bestand te kunnen inzien. 
 
 ### Requirements
-
 De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de MoSCoW-methodiek, waarbij eisen worden geclassificeerd op basis van hun belang en noodzaak voor de implementatie:
 
-| M(ust-have) | Nodig voor de basisfunctionaliteit van de toepassing en moet worden geïmplementeerd om het proces succesvol te laten verlopen |
-| --- | --- |
-| S(hould-have) | Belangrijke functionaliteit die niet absoluut nodig is, maar die voordelen biedt voor gebruikers en de algehele gebruikservaring. |
-| C(ould-have) | Gewenste functionaliteit die waarde toevoegt, maar minder kritisch is en indien nodig kan worden uitgesteld. |
-| W(on't-have) | Functionaliteiten die nu buiten scope zijn maar mogelijk in de toekomst worden overwogen. |
+| M(ust have) | Nodig voor de basisfunctionaliteit van de toepassing en moet worden geïmplementeerd om het proces succesvol te laten verlopen. |
+| S(hould have) | Belangrijke functionaliteit die niet absoluut nodig is, maar die voordelen biedt voor gebruikers en de algehele gebruikservaring. |
+| C(ould have) | Gewenste functionaliteit die waarde toevoegt, maar minder kritisch is en indien nodig kan worden uitgesteld. |
+| W(on't have) | Functionaliteiten die nu buiten scope zijn maar mogelijk in de toekomst worden overwogen. |
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
 | 1 | PGO | Zorggebruiker | Beelden in de webviewer bekijken | Geen DICOM-viewer op mijn apparaat hoef te downloaden | M |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | Vanuit het overzicht in de PGO kan de gebruiker met één klik een viewer openen om beelden en/of verslagen te bekijken. |
 | 2. | De gebruiker kan (rendered) DICOM-beelden bekijken zonder extra software te installeren. |
 | 3. | De viewer werkt in gangbare webbrowsers en is bruikbaar op desktop, tablet en mobiel (responsive of mobiele variant). |
-| 4. | De gebruiker krijgt duidelijke visuele feedback (bijv. een laadindicator of wachtcursor met tekst) wanneer beelden worden geladen. |
+| 4. | De gebruiker krijgt duidelijke visuele feedback (bijvoorbeeld een laadindicator of wachtcursor met tekst) wanneer beelden worden geladen. |
 | 5. | Indien mogelijk wordt de voortgang van het laden weergegeven in procenten of met een voortgangsbalk. | 
 | 6. | Bij het laden van grotere studies (bijvoorbeeld 100 MB met 200 beelden) blijft de interface bruikbaar en krijgt de gebruiker inzicht in de voortgang, ook als de laadtijd hoger is dan verwacht door systeem- of netwerklatentie. |
 | 7. | De gemiddelde laadtijd voor een studie van 100 MB is indicatief tussen 10–60 seconden, afhankelijk van systeemcapaciteit. Hierop worden geen harde eisen gesteld, maar de gebruiker wordt geïnformeerd indien het langer duurt. |
@@ -250,143 +248,99 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 2 | PGO | Zorggebruiker | medische verslagen kunnen bekijken via de browser | Geen PDF-software op mijn device hoef te downloaden | M |
+| 2 | PGO | Zorggebruiker | Medische verslagen kunnen bekijken via de browser | Geen PDF-software op mijn device hoef te downloaden | M |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | Medische verslagen zijn in de PGO te openen zonder externe PDF-viewer of door ze eerst te downloaden. |
 | 2. | Verslagen zijn leesbaar op alle schermformaten (desktop, tablet, mobiel). |
 
+| ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
+| --- | --- | --- | --- | --- | --- |
+| 3 | PGO | Zorggebruiker | Beelden en verslagen die bij hetzelfde onderzoek horen, gekoppeld zien | Mijn uitslag (beeld en verslag samen) kan interpreteren om goed voorbereid te zijn op een vervolgconsult | M |
+
+|Acceptatiecriteria | Beschrijving |
+| --- | --- |
+| 1. | Bij elk verslag of beeld wordt automatisch gecontroleerd of er een bijbehorend gekoppeld item is (i.e. verslag bij beeld of beeld bij verslag). |
+| 2. | Indien gekoppeld, worden deze gegevens samen weergegeven of met een duidelijke visuele link. |
+| 3. | De koppeling gebeurt op basis van een gedeelde unieke identifier. |
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 3 | PGO | Zorggebruiker | Beelden en verslagen die bij hetzelfde onderzoek horen gekoppeld zien | Mijn uitslag (beeld en verslag samen) kan interpreteren om goed voorbereid te zijn op een vervolg consult | M |
+| 4 | PGO | Zorggebruiker | Beelden en verslagen op chronologische volgorde van uitvoerdatum zien | Ik niet hoef te sorteren om het juiste beeld te vinden | M |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | Bij elk verslag of beeld wordt automatisch gecontroleerd of er een bijbehorend gekoppeld item is (bijv. verslag bij beeld of beeld bij verslag). |
-| 2. | Indien gekoppeld, worden deze gegevens samen weergegeven of met een duidelijke visuele link (bijv. "Bekijk bijbehorende beelden" of "Bekijk bijbehorend verslag"). |
-| 3. | De koppeling gebeurt op basis van een gedeelde unieke identifier |
-| 4. | In de tijdlijnweergave is het voor de gebruiker duidelijk dat de items samen horen |
-| 5. | Op het scherm waar het verslag wordt weergegeven, wordt indien mogelijk de unieke identifier van het onderzoek getoond. |
-
-| ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
-| --- | --- | --- | --- | --- | --- |
-| 4 | PGO | Zorggebruiker | Beelden en verslagen op chronologische  volgorde van uitvoerdatum zien | Ik niet hoef te sorteren om het juiste beeld te vinden  | M |
-
-|Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | Beelden en verslagen worden automatisch gesorteerd op uitvoerdatum, van meest recent naar minst recent. |
-| 2. | De sortering is standaard ingesteld van nieuw naar oud en kan handmatig worden gewijzigd.|
-| 3. | De sortering blijft behouden bij filteracties door de gebruiker|
+| 2. | De sortering kan handmatig worden gewijzigd. |
+| 3. | De sortering blijft behouden bij filteracties door de gebruiker. |
 | 4. | Datum van uitvoering wordt zichtbaar getoond bij ieder verslag/beeld. |
-| 5. | Zowel beelden als verslagen worden chronologisch weergegeven op een gecombineerde tijdlijn gesorteerd op uitvoerdatum |
-| 6. | Indien twee items dezelfde datum hebben, worden ze op tijdstip gesorteerd (indien beschikbaar). |
-| 7. | De sortering blijft consistent bij herladen van de pagina of terugkeer naar het overzicht. | 
-| 8. | Beelden/verslagen zonder uitvoerdatum worden onderaan de lijst weergegeven, ná alle items met een bekende uitvoerdatum, ongeacht of die ouder of recenter zijn. |
+| 5. | Indien twee items dezelfde datum hebben, worden ze op tijdstip gesorteerd (indien beschikbaar). |
+| 6. | De sortering blijft behouden bij herladen van de pagina of terugkeer naar het overzicht. | 
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 5 | PGO | Zorggebruiker | wil ik beelden en verslagen van meerdere zorgaanbieders in één overzicht kunnen bekijken | ik in één oogopslag kan zien bij welke zorgaanbieders ik ben geweest en welke beelden en verslagen daar zijn opgevraagd | M |
+| 5 | PGO | Zorggebruiker | Beelden en verslagen van meerdere zorgaanbieders in één overzicht kunnen bekijken | Ik in één oogopslag kan zien bij welke zorgaanbieders ik ben geweest en welke beelden en verslagen daar zijn opgevraagd | M |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | Beelden en verslagen van meerdere zorgaanbieders worden in één gecombineerd overzicht weergegeven.|
-| 2. | Elk item in het overzicht toont duidelijk de naam van de zorgaanbieder waar het onderzoek heeft plaatsgevonden.|
+| --- | --- |
+| 1. | Beelden en verslagen van meerdere zorgaanbieders worden in één gecombineerd overzicht weergegeven. |
+| 2. | Elk item in het overzicht toont duidelijk de naam van de zorgaanbieder waar het onderzoek heeft plaatsgevonden. |
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 6 | PGO | Zorggebruiker | Beelden en verslagen ophalen met mijn PGO zonder dat deze automatisch opgeslagen worden op mijn device | Mijn privacy kan waarborgen, beelden en verslagen online kan raadplegen en geen onnodige opslagruimte gebruik | M |
+| 6 | PGO | Zorggebruiker | Beelden en verslagen kunnen filteren op basis van datum | Snel de meest recente of specifieke onderzoeken kan zien | S |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | Beelden en verslagen worden tijdelijk geladen in de PGO, zonder automatische download of lokale opslag. |
-| 2. | Tijdens het raadplegen wordt de gebruiker niet geconfronteerd met meldingen om bestanden op te slaan, tenzij hij/zij dat expliciet kiest.|
-| 3. | De gebruiker heeft wél de optie om handmatig te downloaden en op te slaan als hij/zij dat wenst. |
-| 4. | Er wordt geen onnodige cache of tijdelijke opslag gebruikt op het device (of deze wordt automatisch gewist bij afsluiten). | 
-| 5. | Bij gebruik op gedeelde apparaten worden privacyrisico’s (zoals terugvinden in browsergeschiedenis/downloadmap) actief voorkomen. |
-
-| ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
-| --- | --- | --- | --- | --- | --- |
-| 7 | PGO | Zorggebruiker | Kan beelden en verslagen filteren op basis van datum | Snel de meest recente of specifieke onderzoeken kan zien | S |
-
-|Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | De gebruiker kan een datumfilter instellen in het overzicht van beelden en verslagen (bijv. via datumselectie, periode of jaar). |
-| 2. | Het filter werkt op uitvoerdatum en toont alleen items die binnen het gekozen bereik vallen.|
+| --- | --- |
+| 1. | De gebruiker kan een datumfilter instellen in het overzicht van beelden en verslagen (bijvoorbeeld via datumselectie, periode of jaar). |
+| 2. | Het filter werkt op VerrichtingStartDatum (BBS-dataelement-174). |
 | 3. | Er is standaard geen filter actief; alle items worden getoond tot de gebruiker zelf filtert. |
-| 4. | Na toepassing van een filter wordt het overzicht direct bijgewerkt zonder pagina-verversing. | 
-| 5. | Filter blijft actief bij navigatie binnen de sessie (totdat gebruiker reset of verlaat). | 
+| 4. | Na toepassing van een filter wordt het overzicht direct bijgewerkt zonder paginaverversing. | 
+| 5. | Het filter blijft actief bij navigatie binnen de sessie (totdat gebruiker reset of de sessie verlaat). | 
 | 6. | Beelden en verslagen blijven chronologisch gesorteerd binnen het filterresultaat. |
-| 7. | De filteroptie is beschikbaar binnen de gecombineerde weergave van meerdere zorgaanbieders (indien van toepassing). | 
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 8 | PGO | Zorggebruiker | medische beelden kunnen downloaden in het originele bestandsformaat via een duidelijke button op mijn device | elf beschikking heb over mijn medische gegevens en deze kan delen met andere zorgverleners of bewaren voor mijn eigen administratie. | S |
+| 7 | PGO | Zorggebruiker | Medische beelden kunnen downloaden in het originele bestandsformaat via een duidelijke button op mijn device | Zelf beschikking heb over mijn medische gegevens en deze kan delen met andere zorgverleners of bewaren voor mijn eigen administratie. | S |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
+| --- | --- |
 | 1. | De gebruiker ziet bij elk beschikbaar beeld of onderzoek een duidelijke downloadknop. |
 | 2. | De gebruiker kan kiezen om dit op te slaan in: 
-| |  DICOM Part10-formaat (standaard voor medische beelden) |
-| | JPEG-formaat (voor persoonlijk gebruik of eenvoudige weergave)|
+| | DICOM Part10-formaat (standaard voor medische beelden); |
+| | JPEG-formaat (voor persoonlijk gebruik of eenvoudige weergave). |
 | 3. | Wanneer de gebruiker kiest voor het originele formaat (DICOM), wordt een melding getoond met:
-| | De aanduiding dat het om een DICOM-bestand gaat |
-| | Een korte uitleg dat voor het openen van dit bestand een geschikte viewer nodig is |
-| 4. | De download betreft het originele bestand zoals ontvangen van de zorgaanbieder, waarbij DICOM het meest voorkomende formaat is. | 
-
-
-| ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
-| --- | --- | --- | --- | --- | --- |
-| 9 | PGO | Zorggebruiker | beelden kunnen opslaan in het originele formaat (bijv. DICOM Part10) of als JPEG, maar pas nadat ik een duidelijke waarschuwing heb ontvangen over de bestandsgrootte | een weloverwogen keuze kan maken over het downloaden en zelf de beschikking heb over mijn medische gegevens. | S |
-
-Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | Voordat het downloaden start, wordt een duidelijke waarschuwing getoond met uitleg over:
-| | De verwachte bestandsgrootte (MB/GB) |
-| | Een korte toelichting op mogelijke gevolgen (bijv. lange downloadtijd, gebruik van mobiele data, beperkte opslag op mobiel). |
-| | De gevolgen van opslag op het apparaat (privacy, beveiliging, duurzaamheid) |
-
-
+| | De aanduiding dat het om een DICOM-bestand gaat; |
+| | Een korte uitleg dat voor het openen van dit bestand een geschikte viewer nodig is; |
+| | Het bestand persoonlijke data bevat. |
+| | De verwachte bestandsgrootte (MB/GB). |
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 10 | PGO | Zorggebruiker | Verslagen van beelden kunnen downloaden via een button op mijn device | Zelf de beschikking heb over mijn medische gegevens | S |
+| 8 | PGO | Zorggebruiker | Verslagen van beelden kunnen downloaden via een button op mijn device | Zelf beschikking heb over mijn medische gegevens | S |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | Bij elk beschikbaar beeldverslag (zoals MRI, echo, CT) is een duidelijke knop zichtbaar met het label “Download verslag”. |
-| 2. | Verslagen zijn te downloaden als PDF-bestand met duidelijke bestandsnaam (bijvoorbeeld Verslag_CT_borst_2025-03-15.pdf)|
-| 3. | De downloadfunctie werkt op mobiele telefoons (Android, iOS), tablets en desktopapparaten in gangbare browsers. |
-| 4. | Na het klikken op de downloadknop ontvangt de gebruiker visuele feedback: bijvoorbeeld een melding “Download gestart” of “Verslag opgeslagen”. | 
-
+| --- | --- |
+| 1. | Bij elk beschikbaar beeldverslag is een duidelijke knop zichtbaar met het label 'Download verslag'. |
+| 2. | Verslagen zijn te downloaden als PDF-bestand met duidelijke bestandsnaam (bijvoorbeeld Verslag_CT_borst_2025-03-15.pdf). |
+| 3. | Na het klikken op de downloadknop ontvangt de gebruiker visuele feedback, bijvoorbeeld een melding 'Download gestart' of 'Verslag opgeslagen'. | 
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 11 | PGO | Zorggebruiker | wil ik beelden en verslagen kunnen filteren op basis van zorgaanbieder | Ik snel gegevens van een specifieke zorgverlener kan bekijken | S |
+| 9 | PGO | Zorggebruiker | Wil ik beelden en verslagen kunnen filteren op basis van zorgaanbieder | Ik snel gegevens van een specifieke zorgverlener kan bekijken | S |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | De gebruiker ziet een filter waarin de beschikbare zorgaanbieders worden weergegeven |
-| 2. | Na selectie van een zorgaanbieder worden alléén de bijbehorende beelden en/of verslagen getoond in het overzicht.|
-| 3. | In de lijst van beelden en verslagen is duidelijk aangegeven welke zorgaanbieder het item heeft aangeleverd |
+| --- | --- |
+| 1. | De gebruiker ziet een filter waarin de beschikbare zorgaanbieders worden weergegeven. |
+| 2. | Na selectie van een zorgaanbieder worden alleen de bijbehorende beelden en verslagen getoond in het overzicht.|
+| 3. | In de lijst van beelden en verslagen is duidelijk aangegeven welke zorgaanbieder het item heeft aangeleverd. |
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 12 | PGO | Zorggebruiker | Kan beelden en verslagen filteren op basis van aandoening | Gericht informatie kan vinden die relevant is voor mijn gezondheid | C |
+| 10 | PGO | Zorggebruiker | Bij het beeld en verslag de betrokken zorgverlener(s) zien indien beschikbaar gesteld door zorgaanbieder | Weet welke zorgverlener verantwoordelijk is voor de informatie | C |
 
 |Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | De gebruiker kan kiezen uit een lijst van aandoeningen om alleen gerelateerde beelden en verslagen te tonen |
-| 2. | Elk beeld of verslag in de PGO is (indien beschikbaar) gelabeld met een of meerdere aandoeningen of zorgindicaties, zodat correcte filtering mogelijk is.|
-| 3. | Aandoeningen worden in de PGO weergegeven met patiëntvriendelijke termen die overeenkomen met de vertalingen uit de Nictiz-publicatie op de Nationale Terminologie Server. Indien er geen patiëntvriendelijke term beschikbaar is voor een specifieke SNOMED-code, wordt de medisch technische term getoond.|
-
-| ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
-| --- | --- | --- | --- | --- | --- |
-| 13 | PGO | Zorggebruiker | indien beschikbaar gesteld door zorgaanbieder bij het beeld en verslag een betrokken zorgverlener zien | weet welke zorgprofessional verantwoordelijk is voor de informatie. | C |
-
-|Acceptatiecriteria | Beschrijving |
-| --- | ---|
-| 1. | Bij beeld of verslag wordt de beschikbare gestelde naam en/of functie van de betrokken zorgverlener getoond|
-| 2. | Indien meerdere zorgverleners betrokken zijn, is duidelijk aangegeven wie de hoofdverantwoordelijke of beoordelende zorgverlener is.|
-| 3. | Aandoeningen worden in de PGO weergegeven met patiëntvriendelijke termen die overeenkomen met de vertalingen uit de Nictiz-publicatie op de Nationale Terminologie Server. Indien er geen patiëntvriendelijke term beschikbaar is voor een specifieke SNOMED-code, wordt de medisch technische term getoond.|
+| --- | --- |
+| 1. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of specialisme van de aanvragende zorgverlener getoond. |
+| 2. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of specialisme van de uitvoerende zorgverlener getoond. |

@@ -7,7 +7,7 @@
 | Dataset           | The concepts ReportTitle and ImageTitle have been added. | [DOSINZAGE2-514](https://medmij.atlassian.net/browse/DOSINZAGE2-514) |
 | Dataset           | The cardinality of Performer has been changed from `1..1` to `0..1`. | [DOSINZAGE2-514](https://medmij.atlassian.net/browse/DOSINZAGE2-514) |
 | Functional design | The definitions of the system roles (section 1.2.6.1) have been corrected. | |
-| Functional design | The requirements (section 1.2.11) have been updated. | |
+| Functional design | The requirements (section 1.2.11) have been updated. | [DOSINZAGE2-659](https://medmij.atlassian.net/browse/DOSINZAGE2-659) |
 | FHIR artifacts    | The profile bbs-DocumentReference has been created. | [DOSINZAGE2-533](https://medmij.atlassian.net/browse/DOSINZAGE2-533), [DOSINZAGE2-534](https://medmij.atlassian.net/browse/DOSINZAGE2-534), [DOSINZAGE2-598](https://medmij.atlassian.net/browse/DOSINZAGE2-598), [DOSINZAGE2-620](https://medmij.atlassian.net/browse/DOSINZAGE2-620) |
 | FHIR artifacts    | The nl-core dependency has been updated to 0.12.0-beta.1. | [DOSINZAGE2-576](https://medmij.atlassian.net/browse/DOSINZAGE2-576) |
 | Test material     | The time zone in the FHIR instances has been updated to reflect the Dutch time zone. | [DOSINZAGE2-532](https://medmij.atlassian.net/issues/DOSINZAGE2-532) |
