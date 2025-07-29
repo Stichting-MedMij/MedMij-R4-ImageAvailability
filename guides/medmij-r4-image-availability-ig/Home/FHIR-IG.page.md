@@ -51,12 +51,14 @@ See [ITI-67 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674
 > Based on [Use case 4: Retrieve Imaging Report (Raadplegen Verslag)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_4:_Retrieve_Imaging_Report_.28Raadplegen_Verslag.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
 
 ##### PHR: request message
-The PHR (Document Consumer) sends an HTTP GET request to the server. The Document Consumer request is to retrieve the document content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
+The PHR sends an HTTP GET request to the XIS server to retrieve the document content referenced by a DocumentReference in `DocumentReference.content.attachment.url`. The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the document requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The XIS SHALL support the Accept header *application/pdf*, irrespective of the value of `.contentType`. The PHR MAY supply an Accept header other than *application/pdf* or the MIME type indicated in `DocumentReference.content.attachment.contentType`, but the XIS MAY choose to ignore such a header.
 
 See [ITI-68 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message) for further details.
 
 ##### XIS: response message
-The returned Imaging Report SHOULD use a correct contentType on `DocumentReference.content.attachment.contentType`, reflecting the format of the original report. This MAY include CDA, PDF, DICOM Basic Text Structured Report (SR), or other structured or unstructured formats originating from an EHR.
+The XIS returns an HTTP Status code appropriate to the processing. When the requested imaging report is returned, the XIS SHALL respond with HTTP Status Code 200, and the imaging report SHOULD use a correct content type based on the Accept header supplied in the request by the PHR. This MAY include CDA, PDF, DICOM Basic Text Structured Report (SR), or other structured or unstructured formats originating from an EHR.
+
+If the XIS is unable to format the document in a content type listed in the Accept header, it SHALL respond with HTTP Status Code 406.
 
 See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message) for further details.
 
@@ -64,11 +66,21 @@ See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#23684
 > Based on [Use case 5: Retrieve Images (Raadplegen Beeld)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_5:_Retrieve_Images_.28Raadplegen_Beeld.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
 
 ##### PHR: request message
-The PHR (Document Consumer) sends an HTTP GET request to the server. The Document Consumer request is to retrieve the document content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
+The PHR sends an HTTP GET request to the XIS server to retrieve the document content referenced by a DocumentReference in `DocumentReference.content.attachment.url`. The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the document requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The table below indicates which Accept headers SHALL be supported by the XIS relative to the `.contentType` present in the DocumentReference for which the PHR requests the content. In particular, the XIS has to support reformatting a DICOM KOS document (with `.contentType` equal to *application/dicom*) into the [DICOM JSON Model](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_f.html) (with `.contentType` euql to *application/dicom+json*) The PHR MAY supply another Accept header, but this MAY NOT be supported by the XIS.  
+
+| `.contentType` (ITI-67 Response) | Accept header (ITI-68 Request) |
+| --- | --- |
+| *application/dicom* | *application/dicom* |
+| *application/dicom* | *application/dicom+json* |
+| *application/dicom+json* | *application/dicom+json* |
+
+**Table 3: Mapping between content type and supported Accept headers**
 
 See [ITI-68 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message) for further details.
 
 ##### XIS: response message
-The returned content SHOULD follow the [DICOM JSON Model](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_f.html), using the correct contentType on `DocumentReference.content.attachment.contentType`. The DICOM JSON SHOULD contain references to the relevant images following the [WADO-RS format](https://www.dicomstandard.org/using/dicomweb/retrieve-wado-rs-and-wado-uri/).
+The XIS returns an HTTP Status code appropriate to the processing. When the requested imaging study manifest is returned, the XIS SHALL respond with HTTP Status Code 200, and the imaging study manifest SHOULD use a correct content type based on the Accept header supplied in the request by the PHR. The imaging study manifest SHOULD contain references to the relevant images following the [WADO-RS format](https://www.dicomstandard.org/using/dicomweb/retrieve-wado-rs-and-wado-uri/).
+
+If the XIS is unable to format the document in a content type listed in the Accept header, it SHALL respond with HTTP Status Code 406.
 
 See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message) for further details.
