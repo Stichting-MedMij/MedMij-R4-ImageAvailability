@@ -44,7 +44,7 @@ Een usecase is een gedetailleerde beschrijving van een praktijksituatie in de zo
 Het doel is om patiënten toegang te geven tot medische beelden en bijbehorende verslagen, zodat zij een beter inzicht krijgen in hun eigen medische situatie. Dit draagt bij aan een beter begrip van hun gezondheid en de behandelingen die zij ondergaan. Voor zorgverleners betekent dit dat patiënten beter geïnformeerd zijn over eerdere onderzoeken, wat kan bijdragen aan efficiëntere consulten en een beter afgestemd zorgproces.
 
 ##### Patient journey raadplegen beeld en verslag
-Roos Dalstra merkt dat haar gewicht de afgelopen dagen is toegenomen. Omdat vochtophoping een bekend verschijnsel is bij haar hartfalen, neemt ze contact op met haar huisarts. De huisarts verwijst haar door naar de radiologie voor een thoraxfoto. Na het maken van de thoraxfoto bekijkt Roos de radiologische beelden en het bijbehorende verslag in haar PGO. Hierdoor krijgt ze meer inzicht in haar situatie en kan ze het vervolggesprek met haar huisarts goed voorbereiden.
+Roos Dalstra heeft pijn op de borst en besluit naar de huisartsenpost te gaan. Hier aangekomen wordt ze gelijk naar de spoedeisende hulp doorverwezen. Er wordt een echo gemaak van het hart. De cardioloog besluit haar in te sturen naar het academische ziekenhuis i.v.m. andere aandoeningen die Roos ook heeft. In het academische ziekenhuis worden nog een CT-scan en thoraxröntgenfoto gemaakt. Roos verblijft enkele dagen in het ziekenhuis en mag daarna naar huis. Roos wil bij thuiskomst de radiologische beelden en de bijbehorende verslagen van beide ziekenhuizen in haar PGO inzien. Hierdoor krijgt ze meer inzicht in haar situatie en kan ze de vervolgbehandeling beter voorbereiden. 
 
 #### Procesbeschrijving beeld en verslag
 
