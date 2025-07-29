@@ -293,7 +293,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 |Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | Bij elk beschikbaar beeldverslag is een duidelijke knop zichtbaar met het label 'Download verslag'. |
-| 2. | Verslagen zijn te downloaden als PDF-bestand met duidelijke bestandsnaam (bijvoorbeeld Verslag_CT_borst_2025-03-15.pdf). |
+| 2. | Verslagen zijn te downloaden als PDF-bestand. |
 | 3. | Na het klikken op de downloadknop ontvangt de gebruiker visuele feedback, bijvoorbeeld een melding 'Download gestart' of 'Verslag opgeslagen'. | 
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
