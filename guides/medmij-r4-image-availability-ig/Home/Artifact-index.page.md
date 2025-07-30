@@ -7,6 +7,5 @@ In the current version of this IG, the [IHE.MHD.Comprehensive.DocumentReference 
 
 {{tree:https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference, hybrid}}
 
-
 ### Other profiles
 Nictiz R4 nl-core FHIR conformance resources (based on zib publication 2020) from the [0.12.0-beta.1 package](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1) are used and referenced where possible.
