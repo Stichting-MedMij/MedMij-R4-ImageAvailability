@@ -48,12 +48,12 @@ The `<query>` represents a series of encoded name-value pairs representing the f
 
 | Image Availability search parameter | Description | FHIR search parameter | Examples |
 | --- | --- | --- | --- | --- | --- |
-| availabilityStatus | Search on the status of the DocumentReference. | `status` | Retrieve all DocumentReference resources that refer to an approved document. <br/> `GET [base]/DocumentReference?status=current` <br/> Retrieve all DocumentReference resources that refer to a deprecated document. <br/> `GET [base]/DocumentReference?status=superseded` |
-| mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to a report in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> Retrieve all DocumentReference resources that refer to an imaging study available as DICOM KOS manifest. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
+| availabilityStatus | Search on the status of the DocumentReference. | `status` | Retrieve all DocumentReference resources that refer to an approved document. <br/> `GET [base]/DocumentReference?status=current` <br/> <br/> Retrieve all DocumentReference resources that refer to a deprecated document. <br/> `GET [base]/DocumentReference?status=superseded` |
+| mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to a report in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> <br/> Retrieve all DocumentReference resources that refer to an imaging study available as DICOM KOS manifest. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
 
 **Table 2: Search parameters**
 
-Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters). The PHR MAY supply, and the XIS SHALL be capable of processing all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. via an OAuth2 token).
+Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters) specification. The PHR MAY supply, and the XIS SHALL be capable of processing all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. via an OAuth2 token).
 
 See [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236741-find-document-references-request-message) for further details.
 
