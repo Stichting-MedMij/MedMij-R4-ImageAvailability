@@ -29,6 +29,8 @@ The [BBS FHIR IG, section 5.3](https://informatiestandaarden.nictiz.nl/wiki/Bbs:
 ## Use cases
 The use cases in this IG are based as much as possible on the specifications described in the [BBS FHIR IG, section 5.3](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#MHD.2FWIA:_Mobile_access_to_Health_Documents_.2F_Web-based_Image_Access). In short: IHE [MHD](https://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)) and [WIA](https://wiki.ihe.net/index.php/Web-based_Image_Access).
 
+This IG assumes that the PHR system is able to make a connection to the right XIS that contains the patient's information. It does not provide information on finding the right XIS nor does it provide information about security. Moreover, each transaction is performed in the context of a specific authenticated patient, which has been established using the authentication mechanisms outlined in the [MedMij Afsprakenstelsel](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Afsprakenstelsel) (i.e. via an OAuth2 token). Each XIS Gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters should not be included for patient identification.
+
 ### Use case: Retrieve Image and Report in personal health environment
 The Nictiz BBS FHIR IG splits the transactions in different use cases, for reasons of convenience. Seen from the perspective of a patient using a PHR, retrieval of images and reports from a healthcare provider is a related activity performed in one action. Therefore, this IG bundles the BBS use cases as one.
 
@@ -40,18 +42,18 @@ The ITI-67 transaction is used to find available documents for a patient, based 
 ##### PHR: request message
 The PHR executes an HTTP search against the DocumentReference endpoint of the XIS using the following URL:
 
-`GET [base]/DocumentReference?<query>`
+`GET [base]/DocumentReference{?<query>}`
 
 The `<query>` represents a series of encoded name-value pairs representing the filter for the query. The search parameters listed in the table below SHALL be supported by both PHR and XIS. Note that the PHR SHALL always include the search parameter `status` in their request.
 
-| Image Availability search parameter | Description | FHIR search parameter | Example |
+| Image Availability search parameter | Description | FHIR search parameter | Examples |
 | --- | --- | --- | --- | --- | --- |
-| availabilityStatus | Search on the status of the DocumentReference. | `status` | Retrieve all DocumentReference resources that are the current reference for the respective underlying documents (i.e. DocumentReference resources that correspond to approved DocumentEntries). <br/> `GET [base]/DocumentReference?status=current` |
-| mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to reports in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> Retrieve all DocumentReference resources that refer to imaging studies available as DICOM KOS manifest. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
+| availabilityStatus | Search on the status of the DocumentReference. | `status` | Retrieve all DocumentReference resources that refer to an approved document. <br/> `GET [base]/DocumentReference?status=current` <br/> Retrieve all DocumentReference resources that refer to a deprecated document. <br/> `GET [base]/DocumentReference?status=superseded` |
+| mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to a report in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> Retrieve all DocumentReference resources that refer to an imaging study available as DICOM KOS manifest. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
 
 **Table 2: Search parameters**
 
-Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters). The PHR MAY supply, and the XIS SHALL be capable of processing all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. by using the authentication method outlined by the [MedMij Afsprakenstelsel](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Afsprakenstelsel), using OAuth2 tokens).
+Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters). The PHR MAY supply, and the XIS SHALL be capable of processing all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. via an OAuth2 token).
 
 See [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236741-find-document-references-request-message) for further details.
 
