@@ -38,12 +38,25 @@ The Nictiz BBS FHIR IG splits the transactions in different use cases, for reaso
 The ITI-67 transaction is used to find available documents for a patient, based on a search on DocumentReference.
 
 ##### PHR: request message
-The PHR (Document Consumer) executes an HTTP search against the DocumentReference endpoint of the XIS.
+The PHR executes an HTTP search against the DocumentReference endpoint of the XIS using the following URL:
+
+`GET [base]/DocumentReference?<query>`
+
+The `<query>` represents a series of encoded name-value pairs representing the filter for the query. The search parameters listed in the table below SHALL be supported by both PHR and XIS. Note that the PHR SHALL always include the search parameter `status` in their request.
+
+| Image Availability search parameter | Description | FHIR search parameter | Example |
+| --- | --- | --- | --- | --- | --- |
+| availabilityStatus | Search on the status of the DocumentReference. | `status` | Retrieve all DocumentReference resources that are the current reference for the respective underlying documents (i.e. DocumentReference resources that correspond to approved DocumentEntries). <br/> `GET [base]/DocumentReference?status=current` |
+| mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to reports in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> Retrieve all DocumentReference resources that refer to imaging studies available as DICOM KOS manifest. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
+
+**Table 2: Search parameters**
+
+Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters). The PHR MAY supply, and the XIS SHALL be capable of processing all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. by using the authentication method outlined by the [MedMij Afsprakenstelsel](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Afsprakenstelsel), using OAuth2 tokens).
 
 See [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236741-find-document-references-request-message) for further details.
 
 ##### XIS: response message
-The XIS (Document Responder) returns an HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference resources.
+The XIS returns an HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference resources. Based on the values of `DocumentReference.content.attachment.contentType` and `DocumentReference.content.format` it can be derived whether each respective DocumentReference refers to a report or an image.
 
 See [ITI-67 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742-find-document-references-response-message) for further details.
 
