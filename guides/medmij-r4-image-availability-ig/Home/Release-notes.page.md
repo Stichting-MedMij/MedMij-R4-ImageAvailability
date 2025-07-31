@@ -9,9 +9,9 @@
 | Functional design | The definitions of the system roles (section 1.2.6.1) have been corrected. | |
 | Functional design | The requirements (section 1.2.11) have been updated. | [DOSINZAGE2-659](https://medmij.atlassian.net/browse/DOSINZAGE2-659) |
 | Functional design | The functional design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
-| Technical design  | The functional design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
-| Technical design  | The functional design has been finetuned based on the feedback of Founda. | [TBIPB-46](https://medmij.atlassian.net/browse/TBIPB-46) |
-| FHIR artifacts    | The profile bbs-DocumentReference has been created. | [DOSINZAGE2-533](https://medmij.atlassian.net/browse/DOSINZAGE2-533), [DOSINZAGE2-534](https://medmij.atlassian.net/browse/DOSINZAGE2-534), [DOSINZAGE2-598](https://medmij.atlassian.net/browse/DOSINZAGE2-598), [DOSINZAGE2-620](https://medmij.atlassian.net/browse/DOSINZAGE2-620) |
+| Technical design  | The technical design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
+| Technical design  | The technical design has been finetuned based on the feedback of Founda. | [TBIPB-46](https://medmij.atlassian.net/browse/TBIPB-46) |
+| FHIR artifacts    | The profile bbs-DocumentReference has been created and added to the IG. | [DOSINZAGE2-533](https://medmij.atlassian.net/browse/DOSINZAGE2-533), [DOSINZAGE2-534](https://medmij.atlassian.net/browse/DOSINZAGE2-534), [DOSINZAGE2-598](https://medmij.atlassian.net/browse/DOSINZAGE2-598), [DOSINZAGE2-620](https://medmij.atlassian.net/browse/DOSINZAGE2-620), [DOSINZAGE2-667](https://medmij.atlassian.net/browse/DOSINZAGE2-667) |
 | FHIR artifacts    | The nl-core dependency has been updated to 0.12.0-beta.1. | [DOSINZAGE2-576](https://medmij.atlassian.net/browse/DOSINZAGE2-576) |
 | Test material     | The time zone in the FHIR instances has been updated to reflect the Dutch time zone. | [DOSINZAGE2-532](https://medmij.atlassian.net/issues/DOSINZAGE2-532) |
 | Test material     | The concepts ReportInformationIdentificationNumber and ImageInformationIdentificationNumber have been uncoupled from the Study Instance UID and Accession Number, respectively. | [DOSINZAGE2-445](https://medmij.atlassian.net/issues/DOSINZAGE2-445) |
