@@ -10,9 +10,9 @@ This IG describes a patient use case in the context of the [information standard
 This IG is a technical counterpart of the {{pagelink:FO, text: functional design}}. The FHIR version used for this IG is R4 (4.0.1).
 
 ## Actors involved
-| Actors | | Systems | | FHIR CapabilityStatements |
+| Actor | | System | | FHIR CapabilityStatement |
 | --- | --- | --- | --- | --- | --- |
-| Name | Description | Name | Description | Name | Description |
+| **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
 | Patient | The user of a personal healthcare environment | PHR (Document Consumer) | Personal health record | [TO DO] | FHIR client requirements |
 | Healthcare provider | The user of a XIS | XIS (Document Responder) | Healthcare information system | [TO DO] | FHIR server requirements |
 
@@ -37,6 +37,13 @@ The Nictiz BBS FHIR IG splits the transactions in different use cases, for reaso
 
 The ITI-67 transaction is used to find available documents for a patient, based on a search on DocumentReference.
 
+| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
+| --- | --- | --- | --- | --- | --- |
+| Image and report timeline (PULL) | Retrieve image and report timeline | Patient (using a PHR) | MM-1.0-TDR-FHIR | [TO DO] |
+| Image and report timeline (PULL) | Serve image and report timeline | Healthcare provider (using a XIS) | MM-1.0-TDB-FHIR | [TO DO] |
+
+**Table 2: Transactions**
+
 ##### PHR: request message
 The PHR executes an HTTP search against the DocumentReference endpoint of the XIS using the following URL:
 
@@ -49,7 +56,7 @@ The `<query>` represents a series of encoded name-value pairs representing the f
 | availabilityStatus | Search on the status of the DocumentReference. | `status` | Retrieve all DocumentReference resources that refer to an approved document. <br/> `GET [base]/DocumentReference?status=current` <br/> <br/> Retrieve all DocumentReference resources that refer to a deprecated document. <br/> `GET [base]/DocumentReference?status=superseded` |
 | mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to a report in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> <br/> Retrieve all DocumentReference resources that refer to an imaging study available as DICOM KOS manifest. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
 
-**Table 2: Search parameters**
+**Table 3: Search parameters**
 
 Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters) specification. The PHR MAY supply, and the XIS SHALL be capable of processing all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. via an OAuth2 token).
 
@@ -63,8 +70,19 @@ See [ITI-67 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674
 #### Retrieve Imaging Report (MHD ITI-68)
 > Based on [Use case 4: Retrieve Imaging Report (Raadplegen Verslag)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_4:_Retrieve_Imaging_Report_.28Raadplegen_Verslag.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
 
+| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
+| --- | --- | --- | --- | --- | --- |
+| Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR | [TO DO] |
+| Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR | [TO DO] |
+
+**Table 4: Transactions**
+
 ##### PHR: request message
-The PHR sends an HTTP GET request to the XIS server to retrieve the imaging report content referenced by a DocumentReference in `DocumentReference.content.attachment.url`. The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the imaging report requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The XIS SHALL support the Accept header *application/pdf*, irrespective of the value of `.contentType`. The PHR MAY supply an Accept header other than *application/pdf* or the MIME type indicated in `DocumentReference.content.attachment.contentType`, but such a header MAY not be supported by the XIS.
+The PHR sends an HTTP GET request to the XIS server to retrieve the imaging report content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
+
+The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the imaging report requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The XIS SHALL support the Accept header *application/pdf*, irrespective of the value of `.contentType`. 
+
+The PHR MAY supply a MIME type in the Accept header other than *application/pdf* or the MIME type indicated in `DocumentReference.content.attachment.contentType`. Support for such headers by the XIS is optional.
 
 See [ITI-68 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message) for further details.
 
@@ -78,8 +96,19 @@ See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#23684
 #### Retrieve Images (MHD ITI-68)
 > Based on [Use case 5: Retrieve Images (Raadplegen Beeld)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_5:_Retrieve_Images_.28Raadplegen_Beeld.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
 
+| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
+| --- | --- | --- | --- | --- | --- |
+| Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR | [TO DO] |
+| Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR | [TO DO] |
+
+**Table 5: Transactions**
+
 ##### PHR: request message
-The PHR sends an HTTP GET request to the XIS server to retrieve the imaging study manifest content referenced by a DocumentReference in `DocumentReference.content.attachment.url`. The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the imaging study manifest requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The table below indicates which Accept headers SHALL be supported by the XIS relative to the `.contentType` present in the DocumentReference for which the PHR requests the content. In particular, the XIS has to support reformatting a DICOM KOS document (with `.contentType` equal to *application/dicom*) into the [DICOM JSON Model](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_f.html) (with `.contentType` equal to *application/dicom+json*). The PHR MAY supply another Accept header, but such a header MAY not be supported by the XIS.
+The PHR sends an HTTP GET request to the XIS server to retrieve the imaging study manifest content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
+
+The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the imaging study manifest requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS relative to the `.contentType` present in the DocumentReference for which the PHR requests the content. In particular, the XIS has to support reformatting a DICOM KOS document (with `.contentType` equal to *application/dicom*) into the [DICOM JSON Model](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_f.html) (with `.contentType` equal to *application/dicom+json*). 
+
+The PHR MAY supply a MIME type in the Accept header other than those indicated by the table below or the MIME type indicated in `DocumentReference.content.attachment.contentType`. Support for such headers by the XIS is optional.
 
 | `.contentType` (ITI-67 Response) | Accept header (ITI-68 Request) |
 | --- | --- |
@@ -87,7 +116,7 @@ The PHR sends an HTTP GET request to the XIS server to retrieve the imaging stud
 | *application/dicom* | *application/dicom+json* |
 | *application/dicom+json* | *application/dicom+json* |
 
-**Table 3: Mapping between content type and supported Accept headers**
+**Table 6: Mapping between content type and supported Accept headers**
 
 See [ITI-68 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message) for further details.
 

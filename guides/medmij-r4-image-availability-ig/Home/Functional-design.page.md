@@ -264,7 +264,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 |Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | De gebruiker kan een datumfilter instellen in het overzicht van beelden en verslagen (bijvoorbeeld via datumselectie, periode of jaar). |
-| 2. | Het filter werkt op VerrichtingStartDatum (BBS-dataelement-174). |
+| 2. | Het filter werkt op VerrichtingStartDatum (bbs-dataelement-174). |
 | 3. | Er is standaard geen filter actief; alle items worden getoond tot de gebruiker zelf filtert. |
 | 4. | Na toepassing van een filter wordt het overzicht direct bijgewerkt zonder paginaverversing. | 
 | 5. | Het filter blijft actief bij navigatie binnen de sessie (totdat gebruiker reset of de sessie verlaat). | 
@@ -277,14 +277,8 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 |Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | De gebruiker ziet bij elk beschikbaar beeld of onderzoek een duidelijke downloadknop. |
-| 2. | De gebruiker kan kiezen om dit op te slaan in: 
-| | DICOM Part10-formaat (standaard voor medische beelden); |
-| | JPEG-formaat (voor persoonlijk gebruik of eenvoudige weergave). |
-| 3. | Wanneer de gebruiker kiest voor het originele formaat (DICOM), wordt een melding getoond met:
-| | De aanduiding dat het om een DICOM-bestand gaat; |
-| | Een korte uitleg dat voor het openen van dit bestand een geschikte viewer nodig is; |
-| | Het bestand persoonlijke data bevat. |
-| | De verwachte bestandsgrootte (MB/GB). |
+| 2. | De gebruiker kan kiezen om dit op te slaan in: <br/> <ul> <li> DICOM Part10-formaat (standaard voor medische beelden); <li> JPEG-formaat (voor persoonlijk gebruik of eenvoudige weergave). |
+| 3. | Wanneer de gebruiker kiest voor het originele formaat (DICOM), wordt een melding getoond met: <br/> <ul> <li> De aanduiding dat het om een DICOM-bestand gaat; <li> Een korte uitleg dat voor het openen van dit bestand een geschikte viewer nodig is; <li> Een waarschuwing dat het bestand persoonlijke data bevat. <li> De verwachte bestandsgrootte (MB/GB). |
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
