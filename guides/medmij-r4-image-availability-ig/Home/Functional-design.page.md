@@ -233,7 +233,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- |
 | 1. | Bij elk verslag of beeld wordt automatisch gecontroleerd of er een bijbehorend gekoppeld item is (i.e. verslag bij beeld of beeld bij verslag). |
 | 2. | Indien gekoppeld, worden deze gegevens samen weergegeven of met een duidelijke visuele link. |
-| 3. | De koppeling gebeurt op basis van een gedeelde unieke identifier. |
+| 3. | De koppeling gebeurt op basis van een gedeelde unieke identifier (Accession Number). |
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
