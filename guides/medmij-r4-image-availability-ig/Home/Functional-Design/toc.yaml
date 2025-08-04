@@ -1,6 +1,6 @@
-- name: Functional design
+- name: Functioneel ontwerp
   filename: Functional-design.page.md
-- name: Display guideline
+- name: Weergaverichtlijn
   filename: Display-guideline.page.md
 - name: Requirements
   filename: Requirements.page.md
