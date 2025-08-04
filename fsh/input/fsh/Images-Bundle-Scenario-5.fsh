@@ -34,12 +34,12 @@ Usage: #example
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "EXT-14115" // Dummy Accession Number
+      * value = "EXT-14115" // Onderzoek.AccessionNumber
       * assigner = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.840.1.114493.1.4.270.3.20240807115710430" // Dummy Study Instance UID
+      * value = "2.16.840.1.114493.1.4.270.3.20240807115710430" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -74,12 +74,12 @@ Usage: #example
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "EXT-14117" // Dummy Accession Number
+      * value = "EXT-14117" // Onderzoek.AccessionNumber
       * assigner = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003" // Dummy Study Instance UID
+      * value = "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -114,12 +114,12 @@ Usage: #example
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "EXT-14114" // Dummy Accession Number
+      * value = "EXT-14114" // Onderzoek.AccessionNumber
       * assigner = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003" // Dummy Study Instance UID
+      * value = "1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -154,12 +154,12 @@ Usage: #example
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "5003249215" // Dummy Accession Number
+      * value = "5003249215" // Onderzoek.AccessionNumber
       * assigner = Reference(ImageAvailability-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.2.752.24.7.3059655634.36522" // Dummy Study Instance UID
+      * value = "1.2.752.24.7.3059655634.36522" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Report-5-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -194,12 +194,12 @@ Usage: #example
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "5003249215" // Dummy Accession Number
+      * value = "5003249215" // Onderzoek.AccessionNumber
       * assigner = Reference(ImageAvailability-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.2.752.24.7.3059655634.36522" // Dummy Study Instance UID
+      * value = "1.2.752.24.7.3059655634.36522" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-5-4
 InstanceOf: Binary

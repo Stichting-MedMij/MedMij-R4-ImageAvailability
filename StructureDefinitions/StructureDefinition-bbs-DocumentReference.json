@@ -822,7 +822,14 @@
         "path": "DocumentReference.context.related",
         "sliceName": "accessionNumber",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mapping": [
+          {
+            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "map": "bbs-medmij-dataelement-3",
+            "comment": "AccessionNumber"
+          }
+        ]
       },
       {
         "id": "DocumentReference.context.related:accessionNumber.identifier",
@@ -866,7 +873,14 @@
         "path": "DocumentReference.context.related",
         "sliceName": "studyInstanceUID",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mapping": [
+          {
+            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "map": "bbs-medmij-dataelement-4",
+            "comment": "StudyInstanceUID"
+          }
+        ]
       },
       {
         "id": "DocumentReference.context.related:studyInstanceUID.identifier",

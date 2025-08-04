@@ -260,6 +260,8 @@ Id: bbs-medmij-dataset-100-beta1-2025xxyy
 Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
 * content.attachment.title -> "bbs-medmij-dataelement-2" "ReportTitle"
 * content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
+* context.related[accessionNumber] -> "bbs-medmij-dataelement-3" "AccessionNumber"
+* context.related[studyInstanceUID] -> "bbs-medmij-dataelement-4" "StudyInstanceUID"
 
 Mapping: IHEXDS
 Source: BbsDocumentReference
