@@ -20,11 +20,11 @@
     <status value="draft"/>
     <experimental value="false"/>
     <publisher value="Nictiz"/>
-    <description value="confidentiality  codes"/>
+    <description value="confidentiality codes"/>
     <immutable value="false"/>
     <compose>
         <include>
-            <system value="http://hl7.org/fhir/v3/Confidentiality"/>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
             <concept>
                 <code value="N"/>
                 <display value="Normal"/>

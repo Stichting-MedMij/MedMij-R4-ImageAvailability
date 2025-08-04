@@ -10,63 +10,119 @@ This IG describes a patient use case in the context of the [information standard
 This IG is a technical counterpart of the {{pagelink:FO, text: functional design}}. The FHIR version used for this IG is R4 (4.0.1).
 
 ## Actors involved
-| Actors | | Systems | | FHIR CapabilityStatements |
-|
-| Name | Description | Name | Description | Name | Description |
-| Patient | The user of a personal healthcare environment | PHR (Document Consumer) | Personal health record | [TO DO] | FHIR client requirements
-| Healthcare provider | The user of a XIS | XIS (Document Responder) | Healthcare information system | [TO DO] | FHIR server requirements
+| Actor | | System | | FHIR CapabilityStatement |
+| --- | --- | --- | --- | --- | --- |
+| **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
+| Patient | The user of a personal healthcare environment | PHR (Document Consumer) | Personal health record | [TO DO] | FHIR client requirements |
+| Healthcare provider | The user of a XIS | XIS (Document Responder) | Healthcare information system | [TO DO] | FHIR server requirements |
+
+**Table 1: Actors**
 
 ## Boundaries and relationships
 This FHIR IG includes use cases for the exchange of Images and Reports between healthcare providers (e.g. hospitals) and patients (e.g. in a PHR setting).
 
-This IG guide assumes that a PHR is able to connect with a XIS. It does not provide information on finding the right source system nor does it provide information about security. These infrastructure and interface specifications are described in the ['MedMij Afsprakenstelsel'](https://afsprakenstelsel.medmij.nl/).
+This IG assumes that a PHR is able to make a connection to the right XIS that contains the patient's information. It does not provide information on finding the right source system nor does it provide information about security. These infrastructure and interface specifications are described in the [MedMij Afsprakenstelsel](https://afsprakenstelsel.medmij.nl/). In particular, each transaction is performed in the context of a specific authenticated patient, which has been established using the authentication mechanisms outlined in the MedMij Afsprakenstelsel (also see the [MedMij FHIR IG by Nictiz](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Afsprakenstelsel)), i.e. via an OAuth2 token. Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters should not be included for patient identification.
 
 ## Relating FHIR (profiles) to its functional counterpart
-The [BBS FHIR IG, section 4.3](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#MHD.2FWIA:_Mobile_access_to_Health_Documents_.2F_Web-based_Image_Access) describes the (intended) mapping between metadata, FHIR (DocumentReference) and the ART-DECOR dataset. In this FHIR IG, we incorporate the aforementioned functional mapping provided by Nictiz BBS. This mapping is not yet available in FHIR profiles.
+The [BBS FHIR IG, section 5.3](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#MHD.2FWIA:_Mobile_access_to_Health_Documents_.2F_Web-based_Image_Access) describes the (intended) mapping between metadata, FHIR (DocumentReference) and the datasets in ART-DECOR. In this FHIR IG, we incorporate the aforementioned functional mapping provided by Nictiz BBS. This mapping has resulted in the {{pagelink:FHIR, text: bbs-DocumentReference profile}}.
 
 ## Use cases
-The use cases in this IG are based as much as possible on the specifications described in the [BBS FHIR IG, section 4.3](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#MHD.2FWIA:_Mobile_access_to_Health_Documents_.2F_Web-based_Image_Access). In short: IHE [MHD](https://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)) and [WIA](https://wiki.ihe.net/index.php/Web-based_Image_Access).
+The use cases in this IG are based as much as possible on the specifications described in the [BBS FHIR IG, section 5.3](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#MHD.2FWIA:_Mobile_access_to_Health_Documents_.2F_Web-based_Image_Access). In short: IHE [MHD](https://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)) and [WIA](https://wiki.ihe.net/index.php/Web-based_Image_Access).
 
 ### Use case: Retrieve Image and Report in personal health environment
 The Nictiz BBS FHIR IG splits the transactions in different use cases, for reasons of convenience. Seen from the perspective of a patient using a PHR, retrieval of images and reports from a healthcare provider is a related activity performed in one action. Therefore, this IG bundles the BBS use cases as one.
 
 #### Query Timeline Data (MHD ITI-67)
-> Based on [Use case 3: Query Timeline Data (Raadplegen Tijdlijn Data)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_3:_Query_Timeline_Data_.28Raadplegen_Tijdlijn_Data.29_3) in the Nictiz BBS FHIR IG, see https://profiles.ihe.net/ITI/MHD/ITI-67.html for further details.
+> Based on [Use case 3: Query Timeline Data (Raadplegen Tijdlijn Data)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_3:_Query_Timeline_Data_.28Raadplegen_Tijdlijn_Data.29_3) in the Nictiz BBS FHIR IG, see [ITI-67](https://profiles.ihe.net/ITI/MHD/ITI-67.html) for further details.
 
 The ITI-67 transaction is used to find available documents for a patient, based on a search on DocumentReference.
 
-##### PHR: request message
-The PHR (Document Consumer) executes an HTTP search against the DocumentReference endpoint of the XIS.
+| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
+| --- | --- | --- | --- | --- | --- |
+| Image and report timeline (PULL) | Retrieve image and report timeline | Patient (using a PHR) | MM-1.0-TDR-FHIR | [TO DO] |
+| Image and report timeline (PULL) | Serve image and report timeline | Healthcare provider (using a XIS) | MM-1.0-TDB-FHIR | [TO DO] |
 
-See https://profiles.ihe.net/ITI/MHD/ITI-67.html#236741-find-document-references-request-message for further details.
+**Table 2: Transactions**
+
+##### PHR: request message
+The PHR executes an HTTP search against the DocumentReference endpoint of the XIS using the following URL:
+
+`GET [base]/DocumentReference{?<query>}`
+
+The `<query>` represents a series of encoded name-value pairs representing the filter for the query. The search parameters listed in the table below SHALL be supported by both PHR and XIS. Note that the PHR SHALL always include the search parameter `status` in their request.
+
+| Image Availability search parameter | Description | FHIR search parameter | Examples |
+| --- | --- | --- | --- | --- | --- |
+| availabilityStatus | Search on the status of the DocumentReference. | `status` | Retrieve all DocumentReference resources that refer to an approved document. <br/> `GET [base]/DocumentReference?status=current` <br/> <br/> Retrieve all DocumentReference resources that refer to a deprecated document. <br/> `GET [base]/DocumentReference?status=superseded` |
+| mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to a report in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> <br/> Retrieve all DocumentReference resources that refer to an imaging study available as DICOM KOS manifest. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
+
+**Table 3: Search parameters**
+
+Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters) specification. The PHR MAY supply, and the XIS SHALL be capable of processing all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. via an OAuth2 token).
+
+See [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236741-find-document-references-request-message) for further details.
 
 ##### XIS: response message
-The XIS (Document Responder) returns an HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference resources.
+The XIS returns an HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference resources. Based on the values of `DocumentReference.content.attachment.contentType` and `DocumentReference.content.format` it can be derived whether each respective DocumentReference refers to a report or an image.
 
-See https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742-find-document-references-response-message for further details.
+See [ITI-67 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742-find-document-references-response-message) for further details.
 
 #### Retrieve Imaging Report (MHD ITI-68)
-> Based on [Use case 4: Retrieve Imaging Report (Raadplegen Verslag)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_4:_Retrieve_Imaging_Report_.28Raadplegen_Verslag.29_3) in the Nictiz BBS FHIR IG, see https://profiles.ihe.net/ITI/MHD/ITI-68.html for further details.
+> Based on [Use case 4: Retrieve Imaging Report (Raadplegen Verslag)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_4:_Retrieve_Imaging_Report_.28Raadplegen_Verslag.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
+
+| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
+| --- | --- | --- | --- | --- | --- |
+| Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR | [TO DO] |
+| Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR | [TO DO] |
+
+**Table 4: Transactions**
 
 ##### PHR: request message
-The PHR (Document Consumer) sends an HTTP GET request to the server. The Document Consumer request is to retrieve the document content referenced by a `DocumentReference.content.attachment.url`.
+The PHR sends an HTTP GET request to the XIS server to retrieve the imaging report content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
 
-See https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message for further details.
+The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the imaging report requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The XIS SHALL support the Accept header *application/pdf*, irrespective of the value of `.contentType`. 
+
+The PHR MAY supply a MIME type in the Accept header other than *application/pdf* or the MIME type indicated in `DocumentReference.content.attachment.contentType`. Support for such headers by the XIS is optional.
+
+See [ITI-68 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message) for further details.
 
 ##### XIS: response message
-The returned Imaging Report SHOULD use a correct contentType on `DocumentReference.content.attachment.contentType`, reflecting the format of the original report. This MAY include CDA, PDF, DICOM Basic Text Structured Report (SR), or other structured or unstructured formats originating from an EHR.
+The XIS returns an HTTP Status code appropriate to the processing. When the requested imaging report is returned, the XIS SHALL respond with HTTP Status Code 200, and the imaging report SHOULD use a correct content type based on the Accept header supplied in the request by the PHR. This MAY include CDA, PDF, or other structured or unstructured formats originating from an EHR.
 
-See https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message for further details.
+If the XIS is unable to format the imaging report in a content type listed in the Accept header, it SHALL respond with HTTP Status Code 406.
+
+See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message) for further details.
 
 #### Retrieve Images (MHD ITI-68)
-> Based on [Use case 5: Retrieve Images (Raadplegen Beeld)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_5:_Retrieve_Images_.28Raadplegen_Beeld.29_3) in the Nictiz BBS FHIR IG, see https://profiles.ihe.net/ITI/MHD/ITI-68.html for further details.
+> Based on [Use case 5: Retrieve Images (Raadplegen Beeld)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_5:_Retrieve_Images_.28Raadplegen_Beeld.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
+
+| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
+| --- | --- | --- | --- | --- | --- |
+| Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR | [TO DO] |
+| Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR | [TO DO] |
+
+**Table 5: Transactions**
 
 ##### PHR: request message
-The PHR (Document Consumer) sends an HTTP GET request to the server. The Document Consumer request is to retrieve the document content referenced by a `DocumentReference.content.attachment.url`.
+The PHR sends an HTTP GET request to the XIS server to retrieve the imaging study manifest content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
 
-See https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message for further details.
+The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the imaging study manifest requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS relative to the `.contentType` present in the DocumentReference for which the PHR requests the content. In particular, the XIS has to support reformatting a DICOM KOS document (with `.contentType` equal to *application/dicom*) into the [DICOM JSON Model](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_f.html) (with `.contentType` equal to *application/dicom+json*). 
+
+The PHR MAY supply a MIME type in the Accept header other than those indicated by the table below or the MIME type indicated in `DocumentReference.content.attachment.contentType`. Support for such headers by the XIS is optional.
+
+| `.contentType` (ITI-67 Response) | Accept header (ITI-68 Request) |
+| --- | --- |
+| *application/dicom* | *application/dicom* |
+| *application/dicom* | *application/dicom+json* |
+| *application/dicom+json* | *application/dicom+json* |
+
+**Table 6: Mapping between content type and supported Accept headers**
+
+See [ITI-68 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message) for further details.
 
 ##### XIS: response message
-The returned content SHOULD follow the [DICOM JSON Model](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_f.html), using the correct contentType on `DocumentReference.content.attachment.contentType`. The DICOM JSON SHOULD contain references to the relevant images following the [WADO-RS format](https://www.dicomstandard.org/using/dicomweb/retrieve-wado-rs-and-wado-uri/).
+The XIS returns an HTTP Status code appropriate to the processing. When the requested imaging study manifest is returned, the XIS SHALL respond with HTTP Status Code 200, and the imaging study manifest SHOULD use a correct content type based on the Accept header supplied in the request by the PHR. The imaging study manifest SHOULD contain references to the relevant images following the [WADO-RS format](https://www.dicomstandard.org/using/dicomweb/retrieve-wado-rs-and-wado-uri/).
 
-See https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message for further details.
+If the XIS is unable to format the imaging study manifest in a content type listed in the Accept header, it SHALL respond with HTTP Status Code 406.
+
+See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message) for further details.
