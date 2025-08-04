@@ -83,15 +83,15 @@ Als de gebruiker een specifiek verslag in het overzichtsscherm selecteert en van
 ### Relevante gegevens
 In de tabel staan de gegevens uit de gegevensdienst Beeldbeschikbaarheid die relevant zijn voor deze weergaverichtlijn.
 
-| Naam dataelement | Voorbeeld | Advies weergavetekst in PGO | Weergeven |
+| Naam dataelement | Advies weergavetekst in PGO | Voorbeeld | Weergeven |
 | --- | --- | --- | --- |
-| VerrichtingStartDatum | 03-01-2020 | Onderzoeksdatum | Ja  |
-| Beeldtitel | C. van Wijk radiologiebeelden | Naam onderzoek | Ja  |
-| Verslagtitel | Cardiologiebeelden C. van Wijk | Naam onderzoek | Ja  |
-| OrganisatieNaam | OLVG Oost | Zorginstelling | Ja  |
-| Aanvrager.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | G. de Visser | Aanvragend zorgverlener | Ja, indien beschikbaar |
-| Aanvrager.Zorgverlener.Specialisme | Cardiologie | Specialisme aanvragend zorgverlener | Ja, indien beschikbaar |
-| Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | J. ter Velde | Uitvoerend zorgverlener | Ja, indien beschikbaar |
+| VerrichtingStartDatum | Onderzoeksdatum | 03-01-2020 | Ja  |
+| BeeldTitel | Naam onderzoek | C. van Wijk radiologiebeelden | Ja  |
+| VerslagTitel | Naam onderzoek | Cardiologiebeelden C. van Wijk | Ja  |
+| OrganisatieNaam | Zorginstelling | OLVG Oost | Ja  |
+| Aanvrager.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | Aanvragend zorgverlener | G. de Visser | Ja, indien beschikbaar |
+| Aanvrager.Zorgverlener.Specialisme | Specialisme aanvragend zorgverlener | Cardiologie | Ja, indien beschikbaar |
+| Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | Uitvoerend zorgverlener | J. ter Velde | Ja, indien beschikbaar |
 
 **Tabel 4: Relevante gegevens m.b.t. de weergaverichtlijn**
 
