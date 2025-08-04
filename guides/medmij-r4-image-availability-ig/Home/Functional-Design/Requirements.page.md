@@ -3,6 +3,8 @@ topic: Requirements
 ---
 
 # Requirements
+Deze requirements zijn opgesteld voor de PGO's in het kader van gegevensdienst Beeldbeschikbaarheid. De requirements beschrijven de minimale functionele eisen waaraan voldaan moet worden om deze gegevensdienst correct te ondersteunen.
+
 De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de MoSCoW-methodiek, waarbij eisen worden geclassificeerd op basis van hun belang en noodzaak voor de implementatie:
 
 | Prioriteit | Omschrijving |
@@ -11,6 +13,8 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | S(hould have) | Belangrijke functionaliteit die niet absoluut nodig is, maar die voordelen biedt voor gebruikers en de algehele gebruikservaring. |
 | C(ould have) | Gewenste functionaliteit die waarde toevoegt, maar minder kritisch is en indien nodig kan worden uitgesteld. |
 | W(on't have) | Functionaliteiten die nu buiten scope zijn maar mogelijk in de toekomst worden overwogen. |
+
+De functionele eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan moet altijd worden voldaan door een PGO om gekwalificeerd te worden voor de gegevensdienst.
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
@@ -83,7 +87,17 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 7 | PGO | Zorggebruiker | Medische beelden kunnen downloaden in het originele bestandsformaat via een duidelijke button op mijn device | Zelf beschikking heb over mijn medische gegevens en deze kan delen met andere zorgverleners of bewaren voor mijn eigen administratie. | S |
+| 7 | PGO | Zorggebruiker | Beelden en verslagen kunnen doorzoeken | Snel de meest recente of specifieke onderzoeken kan zien | S |
+
+| Acceptatiecriteria | Beschrijving |
+| --- | --- |
+| 1. | Invoer in de zoekbalk filtert de rijen in realtime of na bevestiging (bijvoorbeeld Enter-toets). |
+| 2. | Invoer in de zoekbalk filtert de rijen op basis van deels overeenkomende waarden in de kolommen ('contains'). |
+| 3. | De zoekterm wordt niet hoofdlettergevoelig behandeld (i.e. zoeken is case insensitive). |
+
+| ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
+| --- | --- | --- | --- | --- | --- |
+| 8 | PGO | Zorggebruiker | Medische beelden kunnen downloaden in het originele bestandsformaat via een duidelijke button op mijn device | Zelf beschikking heb over mijn medische gegevens en deze kan delen met andere zorgverleners of bewaren voor mijn eigen administratie. | S |
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
@@ -93,7 +107,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 8 | PGO | Zorggebruiker | Verslagen van beelden kunnen downloaden via een button op mijn device | Zelf beschikking heb over mijn medische gegevens | S |
+| 9 | PGO | Zorggebruiker | Verslagen van beelden kunnen downloaden via een button op mijn device | Zelf beschikking heb over mijn medische gegevens | S |
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
@@ -103,7 +117,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 9 | PGO | Zorggebruiker | Wil ik beelden en verslagen kunnen filteren op basis van zorgaanbieder | Ik snel gegevens van een specifieke zorgverlener kan bekijken | S |
+| 10 | PGO | Zorggebruiker | Wil ik beelden en verslagen kunnen filteren op basis van zorgaanbieder | Ik snel gegevens van een specifieke zorgverlener kan bekijken | S |
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
@@ -113,7 +127,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 10 | PGO | Zorggebruiker | Bij het beeld en verslag de betrokken zorgverlener(s) zien indien beschikbaar gesteld door zorgaanbieder | Weet welke zorgverlener verantwoordelijk is voor de informatie | C |
+| 11 | PGO | Zorggebruiker | Bij het beeld en verslag de betrokken zorgverlener(s) zien indien beschikbaar gesteld door zorgaanbieder | Weet welke zorgverlener verantwoordelijk is voor de informatie | C |
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |

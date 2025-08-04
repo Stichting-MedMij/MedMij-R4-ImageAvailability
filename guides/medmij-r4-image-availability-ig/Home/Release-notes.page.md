@@ -6,8 +6,8 @@
 | ----------------- | ------------ | ---------|
 | Dataset           | The concepts ReportTitle and ImageTitle have been added. | [DOSINZAGE2-514](https://medmij.atlassian.net/browse/DOSINZAGE2-514) |
 | Dataset           | The cardinality of Performer has been changed from `1..1` to `0..1`. | [DOSINZAGE2-514](https://medmij.atlassian.net/browse/DOSINZAGE2-514) |
-| Functional design | The definitions of the system roles (section 1.2.6.1) have been corrected. | |
-| Functional design | The requirements (section 1.2.11) have been updated. | [DOSINZAGE2-659](https://medmij.atlassian.net/browse/DOSINZAGE2-659) |
+| Functional design | The definitions of the system roles have been corrected. | |
+| Functional design | The requirements have been updated. | [DOSINZAGE2-659](https://medmij.atlassian.net/browse/DOSINZAGE2-659), [DOSINZAGE2-672](https://medmij.atlassian.net/browse/DOSINZAGE2-672) |
 | Functional design | The functional design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
 | Functional design | The display guideline (weergaverichtlijn) has been added to the functional design. | [DOSINZAGE2-550](https://medmij.atlassian.net/browse/DOSINZAGE2-550) |
 | Technical design  | The technical design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
