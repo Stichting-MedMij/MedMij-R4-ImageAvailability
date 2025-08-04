@@ -164,34 +164,85 @@ Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op ba
 ### Dataset
 De dataset kan gevonden worden op [GitHub](https://github.com/Stichting-MedMij/MedMij-R4-ImageAvailability/blob/1.0.0-beta.1/dataset/Dataset_MedMij_Beeldbeschikbaarheid_1.0.0-beta.1.xlsx).
 
-### Weergaverichtlijn
+## Weergaverichtlijn
 
-#### Scope weergaverichtlijn
-- Het betreft een richtlijn. PGO-leveranciers hebben zelf de keuze of zij (delen van de) richtlijn toepassen voor de weergave van medische beelden.
-- De richtlijn geeft handvatten voor:
-    1. het gebruik van patiëntvriendelijke termen en toelichting;
-    2. de inhoud van het overzicht van beeldgegevens in de PGO.
-- De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van beeldgegevens. Er is wel een UX-design ontwikkeld die richting aan de vormgeving geeft.
+### Inleiding
+Dit is de weergaverichtlijn voor gegevensdienst Beeldbeschikbaarheid. De richtlijn bevat mock-ups die bedoeld zijn ter inspiratie. PGO’s kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft.
 
-#### Inhoud weergaverichtlijn
-In de dataset is weergegeven welke dataelementen getoond zouden moeten worden (zie kolom 'Tonen in PGO') met een advies voor de weergavenaam erbij voor de gebruiker van een PGO (zie kolom 'Weergavenaam in PGO').
+### Doel weergaverichtlijn
+Het bieden van duidelijke handvatten voor een patiëntvriendelijke en begrijpelijke weergave van medische beeldgegevens in PGO's. De richtlijn ondersteunt ontwikkelaars en zorgverleners bij het:
+- gebruiken van begrijpelijke en patiëntvriendelijke termen en toelichtingen;
+- structureren en presenteren van een overzicht van beeldgegevens op een manier die aansluit bij de informatiebehoefte van patiënten.
 
-Daarnaast moeten beeld en verslag qua weergave zoveel mogelijk gekoppeld blijven om de beelden zichtbaar te maken.
+De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens.
 
-#### Advies filtering in overzicht beelden
-Elke PGO-gebruiker kan het overzicht van beelden minimaal sorteren op onderstaande gegevens:
-*   Datum onderzoek
-*   Zorginstelling
+### Weergave in PGO
+Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze richtlijn.
 
-Elke PGO-gebruiker kan het overzicht van beelden minimaal filteren op onderstaande gegevens:
-*   Datum onderzoek
-*   Zorginstelling
+Nadat de gebruiker één of meerdere zorgaanbieders heeft gekozen waar de beschikbare beelden en verslagen opgehaald moeten worden, kan de gebruiker vanuit het hoofdmenu navigeren naar het overzichtsscherm/de tijdlijn waar de beelden en verslagen kunnen worden opgehaald.
 
-Elke PGO-gebruiker kan binnen het overzicht zoeken op onderstaande gegevens:
-*   Naam onderzoek
+#### Overzichtsscherm beelden en verslagen
+Er zijn twee weergaven gedefinieerd voor het overzicht van de beelden en verslagen:
+- Weergave 1: Tabelweergave
+- Weergave 2: Tijdlijnweergave
+
+Deze weergaves vormen voorbeelden van hoe een UX-design getoond kan worden. Een PGO is vrij om één of beide van deze scenario’s te ondersteunen of zelf een weergave te maken.
+
+##### Tabelweergave
+De tabelweergave biedt gebruikers een compact overzicht van medische verslagen en beelden die zij via hun PGO kunnen inzien. De figuur hieronder bevat een visuele weergave in tabelvorm.
+
+{{render: guides/medmij-r4-image-availability-ig/images/Tabelweergave.png}}
+
+##### Tijdlijnweergave
+De tijdlijnweergave biedt gebruikers een visueel overzicht van alle medische verslagen en beelden die beschikbaar zijn in de PGO. De figuur hieronder bevat een visuele weergave van de tijdlijn.
+
+{{render: guides/medmij-r4-image-availability-ig/images/Tijdlijnweergave.png}}
+
+##### Acceptatiecriteria
+| | Acceptatiecriteria |
+| --- | --- |
+| 1. | Standaard worden alle beelden en verslagen van alle zorgaanbieders weergegeven. |
+| 2. | Beelden en verslagen zijn standaard chronologisch gesorteerd van nieuw naar oud. |
+| 3. | Zoeken op (een deel van) de naam van het onderzoek of informatie uit andere kolommen is mogelijk. |
+| 4. | Voor elk document wordt basisinformatie getoond (datum, type document (i.e. verslag of beeld), naam onderzoek (beeldtitel/verslagtitel), zorginstelling). |
+| 5. | Filteren van beelden en verslagen is mogelijk op datum, zorginstelling en type bestand. |
+| 6. | Verslag en beeld zijn visueel gelinkt indien beide beschikbaar zijn en in de bron gekoppeld zijn middels het Accession Number. |
+
+#### Detailscherm beeld
+Als de gebruiker een specifiek beeld in het overzichtsscherm selecteert en vanuit daar opent, wordt een detailscherm van het betreffende beeld aan de gebruiker getoond. De beeld-viewer wordt geopend in de browser of als programma/app in de PGO.
+
+{{render: guides/medmij-r4-image-availability-ig/images/Voorbeeld beeld.png}}
+
+| | Acceptatiecriteria |
+| --- | --- |
+| 1. | Een gebruiker kan het beeld downloaden. |
+| 2. | Een gebruiker kan in- en uitzoomen. |
+| 3. | Indien het bestand meerdere beelden bevat, kan een gebruiker door de verschillende beelden heen scrollen of afspelen indien het om een echo of scopie gaat. |
+
+#### Detailscherm verslag
+Als de gebruiker een specifiek verslag in het overzichtsscherm selecteert en vanuit daar opent, wordt een PDF-viewer geopend waarin het betreffende verslag wordt getoond.
+
+{{render: guides/medmij-r4-image-availability-ig/images/Voorbeeld verslag.png}}
+
+| | Acceptatiecriteria |
+| --- | --- |
+| 1. | Een gebruiker kan in- en uitzoomen in de PDF-viewer. |
+
+#### Relevante gegevens
+In de tabel staan de gegevens uit de gegevensdienst Beeldbeschikbaarheid die relevant zijn voor deze weergaverichtlijn.
+
+| Naam dataelement | Voorbeeld | Advies weergavetekst in PGO | Weergeven |
+| --- | --- | --- | --- |
+| VerrichtingStartDatum | 03-01-2020 | Onderzoeksdatum | Ja  |
+| Beeldtitel | C. van Wijk radiologiebeelden | Naam onderzoek | Ja  |
+| Verslagtitel | Cardiologiebeelden C. van Wijk | Naam onderzoek | Ja  |
+| OrganisatieNaam | OLVG Oost | Zorginstelling | Ja  |
+| Aanvrager.Zorgverlener.Naamgegevens (Voornamen/Geslachtsnaam) | G. de Visser | Aanvragend zorgverlener | Ja, indien beschikbaar |
+| Aanvrager.Zorgverlener.Specialisme | Cardiologie | Specialisme aanvragend zorgverlener | Ja, indien beschikbaar |
+| Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Geslachtsnaam) | J. ter Velde | Uitvoerend zorgverlener | Ja, indien beschikbaar |
 
 #### Disclaimer
-Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM-viewer op het device geïnstalleerd dient te worden om het bestand te kunnen inzien. 
+Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM-viewer op het device geïnstalleerd dient te worden om het bestand te kunnen inzien.
 
 ### Requirements
 De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de MoSCoW-methodiek, waarbij eisen worden geclassificeerd op basis van hun belang en noodzaak voor de implementatie:
