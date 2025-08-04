@@ -9,6 +9,7 @@
 | Functional design | The definitions of the system roles (section 1.2.6.1) have been corrected. | |
 | Functional design | The requirements (section 1.2.11) have been updated. | [DOSINZAGE2-659](https://medmij.atlassian.net/browse/DOSINZAGE2-659) |
 | Functional design | The functional design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
+| Functional design | The display guideline (weergaverichtlijn) has been added to the functional design. | [DOSINZAGE2-550](https://medmij.atlassian.net/browse/DOSINZAGE2-550) |
 | Technical design  | The technical design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
 | Technical design  | The technical design has been finetuned based on the feedback of Founda. | [TBIPB-46](https://medmij.atlassian.net/browse/TBIPB-46) |
 | FHIR artifacts    | The profile bbs-DocumentReference has been created and added to the IG. | [DOSINZAGE2-533](https://medmij.atlassian.net/browse/DOSINZAGE2-533), [DOSINZAGE2-534](https://medmij.atlassian.net/browse/DOSINZAGE2-534), [DOSINZAGE2-598](https://medmij.atlassian.net/browse/DOSINZAGE2-598), [DOSINZAGE2-620](https://medmij.atlassian.net/browse/DOSINZAGE2-620), [DOSINZAGE2-667](https://medmij.atlassian.net/browse/DOSINZAGE2-667) |
