@@ -821,6 +821,11 @@
         "id": "DocumentReference.context.related:accessionNumber",
         "path": "DocumentReference.context.related",
         "sliceName": "accessionNumber",
+        "short": "AccessionNumber",
+        "definition": "A locally unique record number in the RIS that identifies the imaging procedure request.",
+        "alias": [
+          "AccessionNumber"
+        ],
         "min": 0,
         "max": "1",
         "mapping": [
@@ -872,6 +877,11 @@
         "id": "DocumentReference.context.related:studyInstanceUID",
         "path": "DocumentReference.context.related",
         "sliceName": "studyInstanceUID",
+        "short": "StudyInstanceUID",
+        "definition": "The globally unique DICOM identifier of the imaging study upon which the imaging report is based, assigned by the modality or PACS.",
+        "alias": [
+          "StudyInstanceUID"
+        ],
         "min": 0,
         "max": "1",
         "mapping": [

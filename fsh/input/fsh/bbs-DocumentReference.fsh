@@ -213,6 +213,9 @@ Description: "Imaging research including images and reports."
       accessionNumber 0..1 and
       studyInstanceUID 0..1
   * related[accessionNumber]
+    * ^short = "AccessionNumber"
+    * ^definition = "A locally unique record number in the RIS that identifies the imaging procedure request."
+    * ^alias = "AccessionNumber"
     * identifier 1..1
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2013:accession
@@ -220,6 +223,9 @@ Description: "Imaging research including images and reports."
       * assigner only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
         * ^definition = "Issuer of Accession Number."
   * related[studyInstanceUID]
+    * ^short = "StudyInstanceUID"
+    * ^definition = "The globally unique DICOM identifier of the imaging study upon which the imaging report is based, assigned by the modality or PACS."
+    * ^alias = "StudyInstanceUID"
     * identifier 1..1
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
