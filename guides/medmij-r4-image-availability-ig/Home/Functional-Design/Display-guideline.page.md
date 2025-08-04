@@ -31,10 +31,14 @@ De tabelweergave biedt gebruikers een compact overzicht van medische verslagen e
 
 {{render: guides/medmij-r4-image-availability-ig/images/Tabelweergave.png}}
 
+**Figuur 1: Voorbeeld van de tabelweergave**
+
 #### Tijdlijnweergave
 De tijdlijnweergave biedt gebruikers een visueel overzicht van alle medische verslagen en beelden die beschikbaar zijn in de PGO. De figuur hieronder bevat een visuele weergave van de tijdlijn.
 
 {{render: guides/medmij-r4-image-availability-ig/images/Tijdlijnweergave.png}}
+
+**Figuur 2: Voorbeeld van de tijdlijnweergave**
 
 #### Acceptatiecriteria
 | | Acceptatiecriteria |
@@ -46,10 +50,14 @@ De tijdlijnweergave biedt gebruikers een visueel overzicht van alle medische ver
 | 5. | Filteren van beelden en verslagen is mogelijk op datum, zorginstelling en type bestand. |
 | 6. | Verslag en beeld zijn visueel gelinkt indien beide beschikbaar zijn en in de bron gekoppeld zijn middels het Accession Number. |
 
+**Tabel 1: Acceptatiecriteria voor het overzichtsscherm**
+
 ### Detailscherm beeld
 Als de gebruiker een specifiek beeld in het overzichtsscherm selecteert en vanuit daar opent, wordt een detailscherm van het betreffende beeld aan de gebruiker getoond. De beeld-viewer wordt geopend in de browser of als programma/app in de PGO.
 
 {{render: guides/medmij-r4-image-availability-ig/images/Voorbeeld beeld.png}}
+
+**Figuur 3: Voorbeeld van een beeld**
 
 | | Acceptatiecriteria |
 | --- | --- |
@@ -57,14 +65,20 @@ Als de gebruiker een specifiek beeld in het overzichtsscherm selecteert en vanui
 | 2. | Een gebruiker kan in- en uitzoomen. |
 | 3. | Indien het bestand meerdere beelden bevat, kan een gebruiker door de verschillende beelden heen scrollen of afspelen indien het om een echo of scopie gaat. |
 
+**Tabel 2: Acceptatiecriteria voor het detailscherm van een beeld**
+
 ### Detailscherm verslag
 Als de gebruiker een specifiek verslag in het overzichtsscherm selecteert en vanuit daar opent, wordt een PDF-viewer geopend waarin het betreffende verslag wordt getoond.
 
 {{render: guides/medmij-r4-image-availability-ig/images/Voorbeeld verslag.png}}
 
+**Figuur 4: Voorbeeld van een verslag**
+
 | | Acceptatiecriteria |
 | --- | --- |
 | 1. | Een gebruiker kan in- en uitzoomen in de PDF-viewer. |
+
+**Tabel 3: Acceptatiecriteria voor het detailscherm van een verslag**
 
 ### Relevante gegevens
 In de tabel staan de gegevens uit de gegevensdienst Beeldbeschikbaarheid die relevant zijn voor deze weergaverichtlijn.
@@ -75,9 +89,11 @@ In de tabel staan de gegevens uit de gegevensdienst Beeldbeschikbaarheid die rel
 | Beeldtitel | C. van Wijk radiologiebeelden | Naam onderzoek | Ja  |
 | Verslagtitel | Cardiologiebeelden C. van Wijk | Naam onderzoek | Ja  |
 | OrganisatieNaam | OLVG Oost | Zorginstelling | Ja  |
-| Aanvrager.Zorgverlener.Naamgegevens (Voornamen/Geslachtsnaam) | G. de Visser | Aanvragend zorgverlener | Ja, indien beschikbaar |
+| Aanvrager.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | G. de Visser | Aanvragend zorgverlener | Ja, indien beschikbaar |
 | Aanvrager.Zorgverlener.Specialisme | Cardiologie | Specialisme aanvragend zorgverlener | Ja, indien beschikbaar |
-| Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Geslachtsnaam) | J. ter Velde | Uitvoerend zorgverlener | Ja, indien beschikbaar |
+| Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | J. ter Velde | Uitvoerend zorgverlener | Ja, indien beschikbaar |
+
+**Tabel 4: Relevante gegevens m.b.t. de weergaverichtlijn**
 
 ### Disclaimer
 Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM-viewer op het device geïnstalleerd dient te worden om het bestand te kunnen inzien.

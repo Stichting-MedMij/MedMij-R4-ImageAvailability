@@ -5,6 +5,8 @@ topic: Requirements
 # Requirements
 De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de MoSCoW-methodiek, waarbij eisen worden geclassificeerd op basis van hun belang en noodzaak voor de implementatie:
 
+| Prioriteit | Omschrijving |
+| --- | --- |
 | M(ust have) | Nodig voor de basisfunctionaliteit van de toepassing en moet worden geïmplementeerd om het proces succesvol te laten verlopen. |
 | S(hould have) | Belangrijke functionaliteit die niet absoluut nodig is, maar die voordelen biedt voor gebruikers en de algehele gebruikservaring. |
 | C(ould have) | Gewenste functionaliteit die waarde toevoegt, maar minder kritisch is en indien nodig kan worden uitgesteld. |
@@ -14,7 +16,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 1 | PGO | Zorggebruiker | Beelden in de webviewer bekijken | Geen DICOM-viewer op mijn apparaat hoef te downloaden | M |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | Vanuit het overzicht in de PGO kan de gebruiker met één klik een viewer openen om beelden en/of verslagen te bekijken. |
 | 2. | De gebruiker kan (rendered) DICOM-beelden bekijken zonder extra software te installeren. |
@@ -29,7 +31,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 2 | PGO | Zorggebruiker | Medische verslagen kunnen bekijken via de browser | Geen PDF-software op mijn device hoef te downloaden | M |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | Medische verslagen zijn in de PGO te openen zonder externe PDF-viewer of door ze eerst te downloaden. |
 | 2. | Verslagen zijn leesbaar op alle schermformaten (desktop, tablet, mobiel). |
@@ -38,7 +40,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 3 | PGO | Zorggebruiker | Beelden en verslagen die bij hetzelfde onderzoek horen, gekoppeld zien | Mijn uitslag (beeld en verslag samen) kan interpreteren om goed voorbereid te zijn op een vervolgconsult | M |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | Bij elk verslag of beeld wordt automatisch gecontroleerd of er een bijbehorend gekoppeld item is (i.e. verslag bij beeld of beeld bij verslag). |
 | 2. | Indien gekoppeld, worden deze gegevens samen weergegeven of met een duidelijke visuele link. |
@@ -48,7 +50,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 4 | PGO | Zorggebruiker | Beelden en verslagen op chronologische volgorde van uitvoerdatum zien | Ik niet hoef te sorteren om het juiste beeld te vinden | M |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | Beelden en verslagen worden automatisch gesorteerd op uitvoerdatum, van meest recent naar minst recent. |
 | 2. | De sortering kan handmatig worden gewijzigd. |
@@ -61,7 +63,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 5 | PGO | Zorggebruiker | Beelden en verslagen van meerdere zorgaanbieders in één overzicht kunnen bekijken | Ik in één oogopslag kan zien bij welke zorgaanbieders ik ben geweest en welke beelden en verslagen daar zijn opgevraagd | M |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | Beelden en verslagen van meerdere zorgaanbieders worden in één gecombineerd overzicht weergegeven. |
 | 2. | Elk item in het overzicht toont duidelijk de naam van de zorgaanbieder waar het onderzoek heeft plaatsgevonden. |
@@ -70,7 +72,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 6 | PGO | Zorggebruiker | Beelden en verslagen kunnen filteren op basis van datum | Snel de meest recente of specifieke onderzoeken kan zien | S |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | De gebruiker kan een datumfilter instellen in het overzicht van beelden en verslagen (bijvoorbeeld via datumselectie, periode of jaar). |
 | 2. | Het filter werkt op VerrichtingStartDatum (bbs-dataelement-174). |
@@ -83,7 +85,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 7 | PGO | Zorggebruiker | Medische beelden kunnen downloaden in het originele bestandsformaat via een duidelijke button op mijn device | Zelf beschikking heb over mijn medische gegevens en deze kan delen met andere zorgverleners of bewaren voor mijn eigen administratie. | S |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | De gebruiker ziet bij elk beschikbaar beeld of onderzoek een duidelijke downloadknop. |
 | 2. | De gebruiker kan kiezen om dit op te slaan in: <br/> <ul> <li> DICOM Part10-formaat (standaard voor medische beelden); <li> JPEG-formaat (voor persoonlijk gebruik of eenvoudige weergave). |
@@ -93,7 +95,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 8 | PGO | Zorggebruiker | Verslagen van beelden kunnen downloaden via een button op mijn device | Zelf beschikking heb over mijn medische gegevens | S |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | Bij elk beschikbaar beeldverslag is een duidelijke knop zichtbaar met het label 'Download verslag'. |
 | 2. | Verslagen zijn te downloaden als PDF-bestand. |
@@ -103,7 +105,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 9 | PGO | Zorggebruiker | Wil ik beelden en verslagen kunnen filteren op basis van zorgaanbieder | Ik snel gegevens van een specifieke zorgverlener kan bekijken | S |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | De gebruiker ziet een filter waarin de beschikbare zorgaanbieders worden weergegeven. |
 | 2. | Na selectie van een zorgaanbieder worden alleen de bijbehorende beelden en verslagen getoond in het overzicht.|
@@ -113,7 +115,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 | --- | --- | --- | --- | --- | --- |
 | 10 | PGO | Zorggebruiker | Bij het beeld en verslag de betrokken zorgverlener(s) zien indien beschikbaar gesteld door zorgaanbieder | Weet welke zorgverlener verantwoordelijk is voor de informatie | C |
 
-|Acceptatiecriteria | Beschrijving |
+| Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of specialisme van de aanvragende zorgverlener getoond. |
 | 2. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of specialisme van de uitvoerende zorgverlener getoond. |
