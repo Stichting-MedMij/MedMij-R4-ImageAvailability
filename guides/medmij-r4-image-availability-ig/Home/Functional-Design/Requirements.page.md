@@ -3,6 +3,8 @@ topic: Requirements
 ---
 
 # Requirements
+
+## Inleiding
 Deze requirements zijn opgesteld voor de PGO's in het kader van gegevensdienst Beeldbeschikbaarheid. De requirements beschrijven de minimale functionele eisen waaraan voldaan moet worden om deze gegevensdienst correct te ondersteunen.
 
 De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de MoSCoW-methodiek, waarbij eisen worden geclassificeerd op basis van hun belang en noodzaak voor de implementatie:
@@ -16,6 +18,7 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 
 De functionele eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan moet altijd worden voldaan door een PGO om gekwalificeerd te worden voor de gegevensdienst.
 
+## Functionele eisen
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
 | 1 | PGO | Zorggebruiker | Beelden in de webviewer bekijken | Geen DICOM-viewer op mijn apparaat hoef te downloaden | M |
