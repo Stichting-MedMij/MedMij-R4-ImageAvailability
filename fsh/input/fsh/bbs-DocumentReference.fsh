@@ -214,6 +214,9 @@ Description: "Imaging research including images and reports."
       studyInstanceUID 0..1
   * related[accessionNumber]
     * identifier 1..1
+      * ^short = "AccessionNumber"
+      * ^definition = "A locally unique record number in the RIS that identifies the imaging procedure request."
+      * ^alias = "AccessionNumber"
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2013:accession
       * value 1..1
@@ -221,6 +224,9 @@ Description: "Imaging research including images and reports."
         * ^definition = "Issuer of Accession Number."
   * related[studyInstanceUID]
     * identifier 1..1
+      * ^short = "StudyInstanceUID"
+      * ^definition = "The globally unique DICOM identifier of the imaging study upon which the imaging report is based, assigned by the modality or PACS."
+      * ^alias = "StudyInstanceUID"
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value 1..1
@@ -260,6 +266,8 @@ Id: bbs-medmij-dataset-100-beta1-2025xxyy
 Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
 * content.attachment.title -> "bbs-medmij-dataelement-2" "ReportTitle"
 * content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
+* context.related[accessionNumber].identifier -> "bbs-medmij-dataelement-3" "AccessionNumber"
+* context.related[studyInstanceUID].identifier -> "bbs-medmij-dataelement-4" "StudyInstanceUID"
 
 Mapping: IHEXDS
 Source: BbsDocumentReference

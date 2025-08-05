@@ -33,12 +33,12 @@ Usage: #example
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-83472" // Dummy Accession Number
+      * value = "RAD-20250212-83472" // Onderzoek.AccessionNumber
       * assigner = Reference(ImageAvailability-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.123456" // Dummy Study Instance UID
+      * value = "2.16.528.1.1007.3.1.20250212.123456" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-Blaak-Report-1-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -73,12 +73,12 @@ Usage: #example
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
       * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-83472" // Dummy Accession Number
+      * value = "RAD-20250212-83472" // Onderzoek.AccessionNumber
       * assigner = Reference(ImageAvailability-Organization-OLVG) "OLVG, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.123456" // Dummy Study Instance UID
+      * value = "2.16.528.1.1007.3.1.20250212.123456" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-1-1
 InstanceOf: Binary

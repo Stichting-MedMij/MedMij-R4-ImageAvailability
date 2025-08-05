@@ -827,7 +827,19 @@
       {
         "id": "DocumentReference.context.related:accessionNumber.identifier",
         "path": "DocumentReference.context.related.identifier",
-        "min": 1
+        "short": "AccessionNumber",
+        "definition": "A locally unique record number in the RIS that identifies the imaging procedure request.",
+        "alias": [
+          "AccessionNumber"
+        ],
+        "min": 1,
+        "mapping": [
+          {
+            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "map": "bbs-medmij-dataelement-3",
+            "comment": "AccessionNumber"
+          }
+        ]
       },
       {
         "id": "DocumentReference.context.related:accessionNumber.identifier.type",
@@ -871,7 +883,19 @@
       {
         "id": "DocumentReference.context.related:studyInstanceUID.identifier",
         "path": "DocumentReference.context.related.identifier",
-        "min": 1
+        "short": "StudyInstanceUID",
+        "definition": "The globally unique DICOM identifier of the imaging study upon which the imaging report is based, assigned by the modality or PACS.",
+        "alias": [
+          "StudyInstanceUID"
+        ],
+        "min": 1,
+        "mapping": [
+          {
+            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "map": "bbs-medmij-dataelement-4",
+            "comment": "StudyInstanceUID"
+          }
+        ]
       },
       {
         "id": "DocumentReference.context.related:studyInstanceUID.identifier.type",
