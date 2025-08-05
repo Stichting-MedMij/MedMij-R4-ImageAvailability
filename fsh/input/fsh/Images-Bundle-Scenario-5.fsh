@@ -1,47 +1,6 @@
 // Bundle with FHIR test instances in FSH format for Image Availability test scenario 5
 
 Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-1
-// For this instance no corresponding DICOM files have been added (yet).
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
-Usage: #example
-* masterIdentifier
-  * system = $URI
-  * value = "urn:uuid:b7e5d9e2-9e5f-4df6-bc0f-9f98b6d4c705" // document uniqueId | Onderzoek.Beeldinformatie.BeeldinformatieIdentificatienummer
-* status = #current // availabilityStatus | geen mapping naar dataset
-* type = $SCT#113091000 "MRI" // Onderzoek.Verrichting.VerrichtingType
-* category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
-* subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
-* date = "2024-08-07T11:57:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
-* author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog"
-* author[1] = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
-* securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
-* content
-  * attachment
-    * contentType = #application/dicom+json
-    * language = #nl // languageCode | geen mapping naar dataset
-    * url = "https://examplepacs.xis/wado/studies/2.16.840.1.114493.1.4.270.3.20240807115710430/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
-    * title = "MedMij PGO test MR" // title | Onderzoek.Beeldinformatie.BeeldTitel
-    * creation = "2024-08-07T11:57:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
-* context
-  * period.start = "2024-08-07" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
-  * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
-  * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
-  * sourcePatientInfo = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
-  * related[0]
-    * identifier
-      * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "EXT-14115" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
-  * related[1]
-    * identifier
-      * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.840.1.114493.1.4.270.3.20240807115710430" // Onderzoek.StudyInstanceUID
-
-Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
@@ -81,7 +40,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003" // Onderzoek.StudyInstanceUID
 
-Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-3
+Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
@@ -121,7 +80,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003" // Onderzoek.StudyInstanceUID
 
-Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-4
+Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
@@ -161,7 +120,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.752.24.7.3059655634.36522" // Onderzoek.StudyInstanceUID
 
-Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Report-5-4
+Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Report-5-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
 Usage: #example
 * masterIdentifier
@@ -181,7 +140,7 @@ Usage: #example
   * attachment
     * contentType = #application/pdf
     * language = #nl // languageCode | geen mapping naar dataset
-    * url = "Binary/ImageAvailability-Binary-Report-5-4" // geen mapping naar dataset | verwijst naar een Binary
+    * url = "Binary/ImageAvailability-Binary-Report-5-3" // geen mapping naar dataset | verwijst naar een Binary
     * title = "CR CWK MedMij" // title | Onderzoek.Verslaginformatie.VerslagTitel
     * creation = "2025-02-25T14:07:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = $FormatCode#urn.ihe.rad:PDF // formatCode | geen mapping naar dataset
@@ -201,7 +160,7 @@ Usage: #example
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
       * value = "1.2.752.24.7.3059655634.36522" // Onderzoek.StudyInstanceUID
 
-Instance: ImageAvailability-Binary-Report-5-4
+Instance: ImageAvailability-Binary-Report-5-3
 InstanceOf: Binary
 Usage: #example
 * contentType = #application/pdf

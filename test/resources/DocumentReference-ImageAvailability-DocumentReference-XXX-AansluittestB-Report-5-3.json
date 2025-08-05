@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "ImageAvailability-DocumentReference-XXX-AansluittestB-Report-5-4",
+  "id": "ImageAvailability-DocumentReference-XXX-AansluittestB-Report-5-3",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -67,7 +67,7 @@
       "attachment": {
         "contentType": "application/pdf",
         "language": "nl",
-        "url": "Binary/ImageAvailability-Binary-Report-5-4",
+        "url": "Binary/ImageAvailability-Binary-Report-5-3",
         "title": "CR CWK MedMij",
         "creation": "2025-02-25T14:07:00+01:00"
       },
