@@ -25,14 +25,14 @@
   ],
   "masterIdentifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:b7e5d9e2-9e5f-4df6-bc0f-9f98b6d4c705"
+    "value": "urn:uuid:a013c0cf-d4f9-4bc5-aa76-ac41347454bd"
   },
   "type": {
     "coding": [
       {
-        "code": "113091000",
+        "code": "77477000",
         "system": "http://snomed.info/sct",
-        "display": "MRI"
+        "display": "CT"
       }
     ]
   },
@@ -40,7 +40,7 @@
     "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
     "display": "B. XXX-Aansluittest-B"
   },
-  "date": "2024-08-07T11:57:00+02:00",
+  "date": "2024-08-22T16:45:00+02:00",
   "author": [
     {
       "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Cardioloog",
@@ -67,9 +67,9 @@
       "attachment": {
         "contentType": "application/dicom+json",
         "language": "nl",
-        "url": "https://examplepacs.xis/wado/studies/2.16.840.1.114493.1.4.270.3.20240807115710430/metadata",
-        "title": "MedMij PGO test MR",
-        "creation": "2024-08-07T11:57:00+02:00"
+        "url": "https://examplepacs.xis/wado/studies/1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003/metadata",
+        "title": "MedMij PGO test CT",
+        "creation": "2024-08-22T16:45:00+02:00"
       },
       "format": {
         "code": "1.2.840.10008.5.1.4.1.1.88.59",
@@ -82,15 +82,15 @@
       {
         "coding": [
           {
-            "code": "MR",
+            "code": "CT",
             "system": "http://dicom.nema.org/resources/ontology/DCM",
-            "display": "Magnetic Resonance"
+            "display": "Computed Tomography"
           }
         ]
       }
     ],
     "period": {
-      "start": "2024-08-07"
+      "start": "2024-08-22"
     },
     "facilityType": {
       "coding": [
@@ -126,7 +126,7 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "EXT-14115",
+          "value": "EXT-14117",
           "assigner": {
             "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
             "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
@@ -143,7 +143,7 @@
               }
             ]
           },
-          "value": "2.16.840.1.114493.1.4.270.3.20240807115710430"
+          "value": "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003"
         }
       }
     ]

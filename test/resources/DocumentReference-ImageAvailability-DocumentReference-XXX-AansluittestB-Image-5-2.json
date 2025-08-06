@@ -25,7 +25,7 @@
   ],
   "masterIdentifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:a013c0cf-d4f9-4bc5-aa76-ac41347454bd"
+    "value": "urn:uuid:14206553-b245-4f16-bd9b-78e3b667d879"
   },
   "type": {
     "coding": [
@@ -40,7 +40,7 @@
     "reference": "Patient/ImageAvailability-Patient-XXX-Aansluittest-B",
     "display": "B. XXX-Aansluittest-B"
   },
-  "date": "2024-08-22T16:45:00+02:00",
+  "date": "2025-01-17T08:44:00+01:00",
   "author": [
     {
       "reference": "PractitionerRole/ImageAvailability-PractitionerRole-Cardioloog",
@@ -67,9 +67,9 @@
       "attachment": {
         "contentType": "application/dicom+json",
         "language": "nl",
-        "url": "https://examplepacs.xis/wado/studies/1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003/metadata",
-        "title": "MedMij PGO test CT",
-        "creation": "2024-08-22T16:45:00+02:00"
+        "url": "https://examplepacs.xis/wado/studies/1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003/metadata",
+        "title": "MedMij PGO CT",
+        "creation": "2025-01-17T08:44:00+01:00"
       },
       "format": {
         "code": "1.2.840.10008.5.1.4.1.1.88.59",
@@ -90,7 +90,7 @@
       }
     ],
     "period": {
-      "start": "2024-08-22"
+      "start": "2025-01-17"
     },
     "facilityType": {
       "coding": [
@@ -126,7 +126,7 @@
             ]
           },
           "system": "urn:oid:2.16.528.1.1023.19.1.1",
-          "value": "EXT-14117",
+          "value": "EXT-14114",
           "assigner": {
             "reference": "Organization/ImageAvailability-Organization-CZE-Radiotherapie",
             "display": "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis"
@@ -143,7 +143,7 @@
               }
             ]
           },
-          "value": "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003"
+          "value": "1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003"
         }
       }
     ]
