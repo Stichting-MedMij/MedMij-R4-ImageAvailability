@@ -23,7 +23,7 @@ This FHIR IG includes use cases for the exchange of images and reports between h
 
 This IG assumes that a PHR is able to make a connection to the right XIS that contains the patient's information. It does not provide information on finding the right source system nor does it provide information about security. These infrastructure and interface specifications are described in the [MedMij Afsprakenstelsel](https://afsprakenstelsel.medmij.nl/). In particular, each transaction is performed in the context of a specific authenticated patient, which has been established using the authentication mechanisms outlined in the MedMij Afsprakenstelsel (also see the [MedMij FHIR IG by Nictiz](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Afsprakenstelsel)), i.e. via an OAuth2 token. Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters should not be included for patient identification.
 
-## Relating FHIR (profiles) to its functional counterpart
+## Relating FHIR to its functional counterpart
 The [BBS FHIR IG, section 5.3](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#MHD.2FWIA:_Mobile_access_to_Health_Documents_.2F_Web-based_Image_Access) describes the (intended) mapping between metadata, FHIR (DocumentReference) and the datasets in ART-DECOR. In this FHIR IG, we incorporate the aforementioned functional mapping provided by Nictiz BBS. This mapping has resulted in the {{pagelink:FHIR, text: bbs-DocumentReference profile}}.
 
 ## Identifiers

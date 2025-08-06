@@ -21,7 +21,7 @@ In the current version of this IG, the [IHE.MHD.Comprehensive.DocumentReference 
   - If no concept from the Nictiz BBS dataset is mapped on a certain element, but there is a concept from the National IHE MetaData Set mapped to that element, and a value set is linked to that concept, the corresponding ValueSet is adopted on that element with an *extensible* binding.
 
 ### Other profiles
-Nictiz R4 nl-core FHIR conformance resources (based on zib publication 2020) from the [0.12.0-beta.1 package](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1) are used and referenced where possible. In particular, the nl-core profiles in the table below are used.
+FHIR R4 conformance resources developed by Nictiz (based on zib publication 2020) from the [nl-core 0.12.0-beta.1 package](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1) are used and referenced where possible. In particular, the nl-core profiles the table below are used.
 
 | Zib | FHIR resource/data type | FHIR profile |
 | --- | --- | --- |
