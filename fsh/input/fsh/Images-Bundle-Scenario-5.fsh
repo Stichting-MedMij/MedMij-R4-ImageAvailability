@@ -25,6 +25,7 @@ Usage: #example
     * creation = "2024-08-22T16:45:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
+  * event[modality] = $DICOM#CT "Computed Tomography" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2024-08-22" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
@@ -65,6 +66,7 @@ Usage: #example
     * creation = "2025-01-17T08:44:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
+  * event[modality] = $DICOM#CT "Computed Tomography" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2025-01-17" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
@@ -105,6 +107,7 @@ Usage: #example
     * creation = "2025-02-25T13:53:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
+  * event[modality] = $DICOM#CR "Computed Radiography" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2025-02-25" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker

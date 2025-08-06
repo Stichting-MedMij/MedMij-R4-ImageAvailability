@@ -78,6 +78,17 @@
     }
   ],
   "context": {
+    "event": [
+      {
+        "coding": [
+          {
+            "code": "OT",
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "display": "Other"
+          }
+        ]
+      }
+    ],
     "period": {
       "start": "1990-02-10"
     },

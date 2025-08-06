@@ -10,7 +10,7 @@ Description: "Imaging research including images and reports."
 * insert PublisherAndContact
 * ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference)."
 * insert Copyright
-* .
+* . obeys bbs-DocumentReference-1 and bbs-DocumentReference-2
   * ^short = "ImagingResearch"
   * ^definition = "Imaging research including images and reports."
   * ^alias = "Onderzoek"
@@ -34,7 +34,7 @@ Description: "Imaging research including images and reports."
       * The code specifying the precise kind of document (e.g. Pulmonary History and Physical, Discharge Summary, Ultrasound Report).
     """
   * ^alias = "VerrichtingType"
-* category obeys bbs-DocumentReference-1
+* category
   * ^short = "ClassCode"
   * ^definition = "The code specifying the particular kind of document."
 * category.coding 2..*
@@ -49,7 +49,8 @@ Description: "Imaging research including images and reports."
   * ^patternCoding = $LNC#18726-0
 * category.coding[images] 
   * ^patternCoding = $XDSClassCode#IMAGES
-  * ^condition = "bbs-DocumentReference-1"
+  * ^condition[0] = "bbs-DocumentReference-1"
+  * ^condition[1] = "bbs-DocumentReference-2"
 * category.coding[reports]
   * ^patternCoding = $XDSClassCode#REPORTS
   * ^condition = "bbs-DocumentReference-1"
@@ -150,7 +151,9 @@ Description: "Imaging research including images and reports."
     * ^slicing.rules = #open
     * ^short = "EventCodeList"
     * ^definition = "This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented."
-  * event contains procedureAnatomicalLocation 0..1
+  * event contains
+    procedureAnatomicalLocation 0..1 and
+    modality 0..*
   * event[procedureAnatomicalLocation] only http://nictiz.nl/fhir/StructureDefinition/nl-core-AnatomicalLocation
   * event[procedureAnatomicalLocation] from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.19--20240205123345 (required)
     * ^short = "ProcedureAnatomicalLocation / Location"
@@ -161,6 +164,12 @@ Description: "Imaging research including images and reports."
       """
     * ^alias[0] = "VerrichtingAnatomischeLocatie"
     * ^alias[1] = "Locatie"
+  * event[modality] from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.9--20131212104106 (required)
+    * ^short = "Modality"
+    * ^definition = "Type of medical imaging device, process or method that originally acquired or produced the data used to create the image or series of images, such as a CT scanner or MRI machine."
+    * ^comment = "For an image or series of images the modalities SHALL be specified."
+    * ^alias = "Modaliteit"
+    * ^condition = "bbs-DocumentReference-2"
   * period 1..1
     * start 1..1
       * ^short = "ProcedureStartDate / ServiceStartTime"
@@ -234,7 +243,12 @@ Description: "Imaging research including images and reports."
 Invariant: bbs-DocumentReference-1
 Description: "Either a category for an image or a report is present."
 Severity: #error
-Expression: "coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() xor coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'REPORTS').exists()"
+Expression: "category.coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() xor category.coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'REPORTS').exists()"
+
+Invariant: bbs-DocumentReference-2
+Description: "For an image or series of images the modalities are specified."
+Severity: #error
+Expression: "category.coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() implies context.event.coding.where(system = 'http://dicom.nema.org/resources/ontology/DCM').exists()"
 
 Mapping: BeeldbeschikbaarheidNictiz
 Source: BbsDocumentReference
@@ -266,6 +280,7 @@ Id: bbs-medmij-dataset-100-beta1-2025xxyy
 Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
 * content.attachment.title -> "bbs-medmij-dataelement-2" "ReportTitle"
 * content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
+* context.event[modality] -> "bbs-medmij-dataelement-5" "Modality"
 * context.related[accessionNumber].identifier -> "bbs-medmij-dataelement-3" "AccessionNumber"
 * context.related[studyInstanceUID].identifier -> "bbs-medmij-dataelement-4" "StudyInstanceUID"
 
