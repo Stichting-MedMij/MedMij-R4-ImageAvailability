@@ -4,6 +4,7 @@ Alias: $AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-Administ
 Alias: $AGB = http://fhir.nl/fhir/NamingSystem/agb-z
 Alias: $BSN = http://fhir.nl/fhir/NamingSystem/bsn
 Alias: $Confidentiality = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
+Alias: $DICOM = http://dicom.nema.org/resources/ontology/DCM
 Alias: $DICOMUIDRegistry = urn.oid:1.2.840.10008.2.6.1
 Alias: $FormatCode = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
 Alias: $LNC = http://loinc.org

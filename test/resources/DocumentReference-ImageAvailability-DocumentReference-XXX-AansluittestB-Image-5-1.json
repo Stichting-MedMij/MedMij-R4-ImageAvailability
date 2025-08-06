@@ -78,6 +78,17 @@
     }
   ],
   "context": {
+    "event": [
+      {
+        "coding": [
+          {
+            "code": "MR",
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "display": "Magnetic Resonance"
+          }
+        ]
+      }
+    ],
     "period": {
       "start": "2024-08-07"
     },

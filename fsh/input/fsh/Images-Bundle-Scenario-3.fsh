@@ -25,6 +25,7 @@ Usage: #example
     * creation = "2020-03-03T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
   * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
+  * event[modality] = $DICOM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2020-03-03" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
