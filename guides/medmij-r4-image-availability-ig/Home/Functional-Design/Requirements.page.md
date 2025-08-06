@@ -105,8 +105,8 @@ De functionele eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
 | 1. | De gebruiker ziet bij elk beschikbaar beeld of onderzoek een duidelijke downloadknop. |
-| 2. | De gebruiker kan kiezen om dit op te slaan in: <br/> <ul> <li> DICOM Part10-formaat (standaard voor medische beelden); <li> JPEG-formaat (voor persoonlijk gebruik of eenvoudige weergave). |
-| 3. | Wanneer de gebruiker kiest voor het originele formaat (DICOM), wordt een melding getoond met: <br/> <ul> <li> De aanduiding dat het om een DICOM-bestand gaat; <li> Een korte uitleg dat voor het openen van dit bestand een geschikte viewer nodig is; <li> Een waarschuwing dat het bestand persoonlijke data bevat. <li> De verwachte bestandsgrootte (MB/GB). |
+| 2. | De gebruiker kan kiezen om dit op te slaan in: <br/> <ul> <li> [DICOM-formaat](https://dicom.nema.org/medical/dicom/2018d/output/html/part10.html) (standaard voor medische beelden); <li> JPEG-formaat (voor persoonlijk gebruik of eenvoudige weergave). |
+| 3. | Wanneer de gebruiker kiest voor het originele formaat (DICOM), wordt een melding getoond met: <br/> <ul> <li> de aanduiding dat het om een DICOM-bestand gaat; <li> een korte uitleg dat voor het openen van dit bestand een geschikte viewer nodig is; <li> een waarschuwing dat het bestand persoonlijke data bevat; <li> de verwachte bestandsgrootte (MB/GB). |
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
