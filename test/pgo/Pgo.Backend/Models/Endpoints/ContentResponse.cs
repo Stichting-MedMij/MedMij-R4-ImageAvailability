@@ -128,16 +128,16 @@ public static class DocumentReferenceContentItemExtensions
   },
   "author": [
     {
-      "reference": "PractitionerRole/MM-R4-Images-PractitionerRole-Janssen",
+      "reference": "PractitionerRole/MM-R4-ImageAvailability-PractitionerRole-Janssen",
       "display": "C.H. Coenen, Kaakchirurg, Erasmus MC, Mondzorg en kaakchirurgie"
     },
     {
-      "reference": "Organization/MM-R4-Images-Organization-Erasmus-MC-Radiologie",
+      "reference": "Organization/MM-R4-ImageAvailability-Organization-Erasmus-MC-Radiologie",
       "display": "Erasmus MC, Radiologie"
     }
   ],
   "custodian": {
-    "reference": "Organization/MM-R4-Images-Organization-Erasmus-MC-Radiologie",
+    "reference": "Organization/MM-R4-ImageAvailability-Organization-Erasmus-MC-Radiologie",
     "display": "Erasmus MC, Radiologie"
   },
   "masterIdentifier": {

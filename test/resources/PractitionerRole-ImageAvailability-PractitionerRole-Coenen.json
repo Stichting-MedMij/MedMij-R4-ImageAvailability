@@ -1,0 +1,24 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "ImageAvailability-PractitionerRole-Coenen",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/ImageAvailability-Practitioner-Coenen",
+    "display": "C.H. Coenen"
+  },
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "02.054",
+          "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
+          "display": "Kaakchirurg"
+        }
+      ]
+    }
+  ]
+}
