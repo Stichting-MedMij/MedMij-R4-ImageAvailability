@@ -276,8 +276,8 @@ Title: "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208"
 
 Mapping: MedMij
 Source: BbsDocumentReference
-Id: bbs-medmij-dataset-100-beta1-2025xxyy
-Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
+Id: bbs-medmij-dataset-100-beta1-20250807
+Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
 * content.attachment.title -> "bbs-medmij-dataelement-2" "ReportTitle"
 * content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
 * context.event[modality] -> "bbs-medmij-dataelement-5" "Modality"
