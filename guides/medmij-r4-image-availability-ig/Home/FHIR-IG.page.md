@@ -149,14 +149,14 @@ The WADO-RS Retrieve request (RAD-107) is used to retrieve individual (image) in
 
 `GET [WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}/instances/{SOPInstanceUID}`
 
-The required `{StudyInstanceUID}`, `{SeriesInstanceUID}` and `{SOPInstanceUID}` unique identifier values can be found in the DICOM KOS document, which is obtained via the ITI-68 Retrieve Document. Instead of constructing the above URL from scratch by searching all these identifier values in the KOS document, the DICOM tag `(0008,1190)` (Retrieve URL) can be used instead, as it attains the value `[WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}`. To retrieve an image, the PHR would then only need to add the value of DICOM tag `(0008,1155)` (SOP Instance UID) found in the KOS object to create the WADO-RS request.
+The required `{StudyInstanceUID}`, `{SeriesInstanceUID}` and `{SOPInstanceUID}` unique identifier values can be found in the DICOM KOS document, which is obtained via the ITI-68 Retrieve Document transaction. Instead of constructing the above URL from scratch by searching all these identifier values in the KOS document, the DICOM tag `(0008,1190)` (Retrieve URL) can be used instead, as it attains the value `[WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}`. To retrieve an image, the PHR would then only need to add the value of DICOM tag `(0008,1155)` (SOP Instance UID) found in the KOS object, to create the WADO-RS request.
 
-The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the image in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request that needs to be executed by the PHR. 
+The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request that needs to be executed by the PHR. 
 
 | WADO-RS request | Accept header |
 | --- | --- |
-| `{RetrieveURL}/instances/{SOPInstanceUID}` | *application/dicom* |
-| `{RetrieveURL}/instances/{SOPInstanceUID}/rendered` | *image/jpeg* |
+| `GET {RetrieveURL}/instances/{SOPInstanceUID}` | *application/dicom* |
+| `GET {RetrieveURL}/instances/{SOPInstanceUID}/rendered` | *image/jpeg* |
 
 See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
 
