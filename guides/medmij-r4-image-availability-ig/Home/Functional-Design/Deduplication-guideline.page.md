@@ -5,12 +5,12 @@ topic: Deduplicatierichtlijn
 # Deduplicatierichtlijn
 
 ## Inleiding en doel
-Deze richtlijn beschrijft het proces van duplicaatdetectie binnen de gegevensdienst Beeldbeschikbaarheid. Het doel is het voorkomen van dubbele verslagen en beelden die door verschillende bronsystemen aan een PGO beschikbaar worden gesteld. Door inconsistent gebruik van (unieke) identificatienummers en hergebruik van gegevens over instellingen heen, kunnen dubbele documenten ontstaan. Deze richtlijn helpt om dergelijke duplicatie te herkennen en, waar mogelijk, verhelderend aan de burger te tonen.
+Deze richtlijn beschrijft het proces van duplicaatdetectie binnen de gegevensdienst Beeldbeschikbaarheid. Het doel is het voorkomen van dubbele verslagen en beelden die door verschillende bronsystemen aan een PGO beschikbaar worden gesteld. Door inconsistent gebruik van (unieke) identificatienummers bij hergebruik van gegevens over instellingen heen, kunnen dubbele documenten ontstaan. Deze richtlijn helpt om dergelijke duplicatie te herkennen en, waar mogelijk, verhelderend aan de burger te tonen.
 
 Er bestaan op dit moment geen overkoepelende nationale richtlijnen voor het uniek identificeren van medische beelden of verslagen. Deze richtlijn dient daarom als tijdelijke handreiking aan leveranciers en zorgaanbieders.
 
 ## Duplicaatdetectie
-Duplicaatdetectie is het proces waarbij dubbele of overbodige kopieën van gegevens worden geïdentificeerd. In de ideale situatie stelt elke zorgverlener uitsluitend zijn eigen beelden en verslagen beschikbaar. In de praktijk blijkt dit echter lastig door het ontbreken van domeinoverstijgende afspraken. Duplicaatdetectie via automatische detectie op basis van unieke kenmerken, is daarom noodzakelijk, zodat er voor de burger een bruikbaar en leesbaar overzicht van gegevens in de PGO wordt weergegeven.
+Duplicaatdetectie is het proces waarbij kopieën van gegevens worden geïdentificeerd. In de ideale situatie stelt elke zorgverlener uitsluitend zijn eigen beelden en verslagen beschikbaar. In de praktijk blijkt dit echter lastig door het ontbreken van domeinoverstijgende afspraken. Duplicaatdetectie via automatische detectie op basis van unieke kenmerken, is daarom noodzakelijk, zodat er voor de burger een bruikbaar en leesbaar overzicht van gegevens in de PGO wordt weergegeven.
 
 In sectie 2.5 van de {{pagelink:TO}} is een overzicht weergegeven van alle relevante identificatienummers voor de uitwisseling van beelden en verslagen. In het bijzonder bevat dit overzicht extra toelichting voor de identificatienummers die gebruikt worden voor duplicaatdetectie. 
 
