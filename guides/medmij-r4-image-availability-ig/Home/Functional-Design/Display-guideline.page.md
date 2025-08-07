@@ -5,7 +5,7 @@ topic: Weergaverichtlijn
 # Weergaverichtlijn
 
 ## Inleiding
-Dit is de weergaverichtlijn voor gegevensdienst Beeldbeschikbaarheid. De richtlijn bevat mock-ups die bedoeld zijn ter inspiratie. PGO’s kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft.
+Dit is de weergaverichtlijn voor de gegevensdienst Beeldbeschikbaarheid. De richtlijn bevat mock-ups die bedoeld zijn ter inspiratie. PGO’s kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft.
 
 ## Doel
 Het bieden van duidelijke handvatten voor een patiëntvriendelijke en begrijpelijke weergave van medische beeldgegevens in PGO's. De richtlijn ondersteunt ontwikkelaars en zorgverleners bij het:

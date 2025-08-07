@@ -4,3 +4,5 @@
   filename: Display-guideline.page.md
 - name: Requirements
   filename: Requirements.page.md
+- name: Deduplicatierichtlijn
+  filename: Deduplication-guideline.page.md
