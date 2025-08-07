@@ -12,6 +12,7 @@
 | Functional design     | The requirements have been updated. | [DOSINZAGE2-617](https://medmij.atlassian.net/browse/DOSINZAGE2-617), [DOSINZAGE2-659](https://medmij.atlassian.net/browse/DOSINZAGE2-659), [DOSINZAGE2-672](https://medmij.atlassian.net/browse/DOSINZAGE2-672) |
 | Functional design     | The functional design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
 | Functional design     | The display guideline (weergaverichtlijn) has been added to the functional design. | [DOSINZAGE2-550](https://medmij.atlassian.net/browse/DOSINZAGE2-550), [DOSINZAGE2-671](https://medmij.atlassian.net/browse/DOSINZAGE2-671) |
+| Functional design     | The deduplication guideline (deduplicatierichtlijn) has been added to the functional design. | [DOSINZAGE2-477](https://medmij.atlassian.net/browse/DOSINZAGE2-477) |
 | Technical design      | The technical design has been finetuned based on the feedback of Nictiz. | [DOSINZAGE2-414](https://medmij.atlassian.net/browse/DOSINZAGE2-414) |
 | Technical design      | The technical design has been finetuned based on the feedback of Founda. | [TBIPB-46](https://medmij.atlassian.net/browse/TBIPB-46) |
 | Technical design      | More guidance on the relevant identifiers has been added. | [DOSINZAGE2-571](https://medmij.atlassian.net/browse/DOSINZAGE2-571), [DOSINZAGE2-617](https://medmij.atlassian.net/browse/DOSINZAGE2-617) |
