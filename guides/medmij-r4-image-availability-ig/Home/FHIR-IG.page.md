@@ -71,7 +71,7 @@ The `<query>` represents a series of encoded name-value pairs representing the f
 | Image Availability search parameter | Description | FHIR search parameter | Examples |
 | --- | --- | --- | --- | --- | --- |
 | availabilityStatus | Search on the status of the DocumentReference. | `status` | Retrieve all DocumentReference resources that refer to an approved document. <br/> `GET [base]/DocumentReference?status=current` <br/> <br/> Retrieve all DocumentReference resources that refer to a deprecated document. <br/> `GET [base]/DocumentReference?status=superseded` |
-| mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to a report in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> <br/> Retrieve all DocumentReference resources that refer to an imaging study available as DICOM KOS manifest. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
+| mimeType | Search on the MIME type of the document. | `contenttype` | Retrieve all DocumentReference resources that refer to a report in PDF format. <br/> `GET [base]/DocumentReference?contenttype=application/pdf` <br/> <br/> Retrieve all DocumentReference resources that refer to an imaging study available as DICOM KOS document. <br/> `GET [base]/DocumentReference?contenttype=application/dicom` |
 
 **Table 4: Search parameters**
 
@@ -110,7 +110,7 @@ If the XIS is unable to format the imaging report in a content type listed in th
 
 See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message) for further details.
 
-#### Retrieve Images (MHD ITI-68)
+#### Retrieve Images (MHD ITI-68 and WADO-RS RAD-107)
 > Based on [Use case 5: Retrieve Images (Raadplegen Beeld)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_5:_Retrieve_Images_.28Raadplegen_Beeld.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
 
 | Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
@@ -120,7 +120,7 @@ See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#23684
 
 **Table 6: Transactions**
 
-##### PHR: request message
+##### PHR: request message (MHD ITI-68)
 The PHR sends an HTTP GET request to the XIS server to retrieve the imaging study manifest content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
 
 The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the imaging study manifest requested in an encoding other than the encoding indicated in the `DocumentReference.content.attachment.contentType`. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS relative to the `.contentType` present in the DocumentReference for which the PHR requests the content. In particular, the XIS has to support reformatting a DICOM KOS document (with `.contentType` equal to *application/dicom*) into the [DICOM JSON Model](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_f.html) (with `.contentType` equal to *application/dicom+json*). 
@@ -137,9 +137,42 @@ The PHR MAY supply a MIME type in the Accept header other than those indicated b
 
 See [ITI-68 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message) for further details.
 
-##### XIS: response message
+##### XIS: response message (MHD ITI-68)
 The XIS returns an HTTP Status code appropriate to the processing. When the requested imaging study manifest is returned, the XIS SHALL respond with HTTP Status Code 200, and the imaging study manifest SHOULD use a correct content type based on the Accept header supplied in the request by the PHR. The imaging study manifest SHOULD contain references to the relevant images following the [WADO-RS format](https://www.dicomstandard.org/using/dicomweb/retrieve-wado-rs-and-wado-uri/).
 
 If the XIS is unable to format the imaging study manifest in a content type listed in the Accept header, it SHALL respond with HTTP Status Code 406.
 
 See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message) for further details.
+
+##### PHR: request message (WADO-RS RAD-107)
+The WADO-RS Retrieve request (RAD-107) is used to retrieve individual (image) instances. For each (image) instance the PHR wants to retrieve, it executes an HTTP GET against the WADO-RS endpoint of the XIS using the following URL:
+
+`GET [WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}/instances/{SOPInstanceUID}`
+
+The required `{StudyInstanceUID}`, `{SeriesInstanceUID}` and `{SOPInstanceUID}` unique identifier values can be found in the DICOM KOS document, which is obtained via the ITI-68 Retrieve Document transaction. 
+
+Instead of constructing the above URL from scratch by searching all these identifier values from various locations within the KOS document, the DICOM tag `(0008,1115)` (Referenced Series Sequence) provides a structured way to access this information. This sequence contains one or more referenced image series. Each item in the sequence corresponds to a specific series and contains:
+- Retrieve URL `(0008,1190)`
+- A sequence of referenced instances (Referenced SOP Sequence `(0008,1199)`), each containing:
+  - Referenced SOP Instance UID `(0008,1155)`
+
+To simplify the construction of the WADO-RS request, the Retrieve URL `(0008,1190)` can be used, as it attains the value `[WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}` (for each series). To create the WADO-RS request with which the image is retrieved, the PHR would then only need to add the value of the Referenced SOP Instance UID `(0008,1155)`. This approach allows the PHR to iterate over all items in the KOS document in the Referenced Series Sequence `(0008,1115)`:
+1. For each series in the Referenced Series Sequence `(0008,1115)`, retrieve the corresponding Retrieve URL `(0008,1190)`;
+2. For each SOP instance in the series, retrieve the corresponding Referenced SOP Instance UID `(0008,1155)`;
+3. Compose the WADO-RS URL by using the data retrieved in the previous steps: `{RetrieveURL}/instances/{SOPInstanceUID}`.
+
+The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request that needs to be executed by the PHR. 
+
+| WADO-RS request | Accept header |
+| --- | --- |
+| `GET {RetrieveURL}/instances/{SOPInstanceUID}` | *application/dicom* |
+| `GET {RetrieveURL}/instances/{SOPInstanceUID}/rendered` | *image/jpeg* |
+
+See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
+
+**Table 8: Supported WADO-RS requests**
+
+##### XIS: response message (WADO-RS RAD-107)
+The XIS returns an HTTP Status code appropriate to the processing. When the requested (image) instance is returned, the XIS SHALL respond with HTTP Status Code 200, and the (image) instance SHOULD use a correct content type based on the Accept header supplied in the request by the PHR.
+
+See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
