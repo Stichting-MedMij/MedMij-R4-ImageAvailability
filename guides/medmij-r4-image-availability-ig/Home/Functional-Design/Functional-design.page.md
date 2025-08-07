@@ -162,4 +162,4 @@ Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op ba
 **Figuur 2: Usecasediagram**
 
 ### Dataset
-De dataset kan gevonden worden op [GitHub](https://github.com/Stichting-MedMij/MedMij-R4-ImageAvailability/blob/1.0.0-beta.1/dataset/Dataset_MedMij_Beeldbeschikbaarheid_1.0.0-beta.1.xlsx).
+De dataset kan gevonden worden op [GitHub](https://github.com/Stichting-MedMij/MedMij-R4-ImageAvailability/blob/main/dataset/Dataset_MedMij_Beeldbeschikbaarheid_1.0.0-beta.1.xlsx).
