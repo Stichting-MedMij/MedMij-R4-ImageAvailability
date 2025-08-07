@@ -158,7 +158,7 @@ Instead of constructing the above URL from scratch by searching all these identi
 
 To simplify the construction of the WADO-RS request, the Retrieve URL `(0008,1190)` can be used, as it attains the value `[WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}` (for each series). To create the WADO-RS request with which the image is retrieved, the PHR would then only need to add the value of the Referenced SOP Instance UID `(0008,1155)`. This approach allows the PHR to iterate over all items in the KOS document in the Referenced Series Sequence `(0008,1115)`:
 1. For each series in the Referenced Series Sequence `(0008,1115)`, retrieve the corresponding Retrieve URL `(0008,1190)`;
-2. For each SOP instance in the series, retrieve the Referenced SOP Instance UID `(0008,1155)`;
+2. For each SOP instance in the series, retrieve the corresponding Referenced SOP Instance UID `(0008,1155)`;
 3. Compose the WADO-RS URL by using the data retrieved in the previous steps: `{RetrieveURL}/instances/{SOPInstanceUID}`.
 
 The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request that needs to be executed by the PHR. 
