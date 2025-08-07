@@ -33,8 +33,8 @@
       "uri": "https://decor.nictiz.nl/pub/bbs/bbs-html-20240208T092809/ds-2.16.840.1.113883.2.4.3.11.60.133.1.1-2022-03-09T122352.html"
     },
     {
-      "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
-      "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 2025xxyy"
+      "identity": "bbs-medmij-dataset-100-beta1-20250807",
+      "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
     },
     {
       "identity": "ihexds-dataset-2024-20220712",
@@ -516,12 +516,12 @@
         "min": 1,
         "mapping": [
           {
-            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-2",
             "comment": "ReportTitle"
           },
           {
-            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-1",
             "comment": "ImageTitle"
           },
@@ -695,7 +695,7 @@
         },
         "mapping": [
           {
-            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-5",
             "comment": "Modality"
           }
@@ -870,7 +870,7 @@
         "min": 1,
         "mapping": [
           {
-            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-3",
             "comment": "AccessionNumber"
           }
@@ -926,7 +926,7 @@
         "min": 1,
         "mapping": [
           {
-            "identity": "bbs-medmij-dataset-100-beta1-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-4",
             "comment": "StudyInstanceUID"
           }
