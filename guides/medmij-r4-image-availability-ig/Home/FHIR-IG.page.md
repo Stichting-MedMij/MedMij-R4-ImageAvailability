@@ -149,7 +149,22 @@ The WADO-RS Retrieve request (RAD-107) is used to retrieve individual (image) in
 
 `GET [WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}/instances/{SOPInstanceUID}`
 
-The required `{StudyInstanceUID}`, `{SeriesInstanceUID}` and `{SOPInstanceUID}` unique identifier values can be found in the DICOM KOS document, which is obtained via the ITI-68 Retrieve Document transaction. Instead of constructing the above URL from scratch by searching all these identifier values in the KOS document, the DICOM tag `(0008,1190)` (Retrieve URL) can be used instead, as it attains the value `[WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}`. To retrieve an image, the PHR would then only need to add the value of DICOM tag `(0008,1155)` (SOP Instance UID) found in the KOS object, to create the WADO-RS request.
+The required `{StudyInstanceUID}`, `{SeriesInstanceUID}` and `{SOPInstanceUID}` unique identifier values can be found in the DICOM KOS document, which is obtained via the ITI-68 Retrieve Document transaction. 
+
+Instead of constructing the above URL from scratch by searching all these identifier values from various locations within the KOS document, the DICOM tag `(0008,1115)` (Referenced Series Sequence) provides a structured way to access this information. This sequence contains one or more referenced image series. Each item in the sequence corresponds to a specific series and contains:
+- `(0008,1190)` Retrieve URL
+- A sequence of referenced instances, each containing:
+  - `(0008,1155)` SOPInstanceUID
+
+To simplifiy the construction of the WADO-RS the DICOM tag `(0008,1190)` (Retrieve URL) can be used, as it attains the value `[WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}`. 
+
+To retrieve an image, the PHR would then only need to add the value of DICOM tag `(0008,1155)` (SOP Instance UID) found in the KOS object, to create the WADO-RS request.
+This approach allows the PHR to iterate over the items in the KOS object in DICOM tag `(0008,1115)`:
+1. For each series:
+   - Use the `RetrieveURL` from `(0008,1190)`
+2. For each SOP instance in the series:
+   - Use the `SOPInstanceUID` from `(0008,1155)`
+3. Compose the WADO-RS URL: `{RetrieveURL}/instances/{SOPInstanceUID}`
 
 The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request that needs to be executed by the PHR. 
 
