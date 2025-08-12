@@ -1,7 +1,13 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="2.16.840.1.113883.2.4.3.11.60.133.11.1--20230808113539"/>
     <meta>
-        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/><!--<profile value="http://hl7.org/fhir/3.0/StructureDefinition/ValueSet"/>-->
+        <lastUpdated value="2023-08-08T11:35:39Z"/>
+        <source value="http://decor.nictiz.nl/fhir/4.0/bbs-"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/><!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/ValueSet"/>-->
+        <tag>
+            <system value="http://hl7.org/fhir/FHIR-version"/>
+            <code value="4.0.1"/>
+        </tag>
     </meta>
     <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
         <valuePeriod>
@@ -20,6 +26,7 @@
     <title value="VerrichtingTypeDHDCodelijst met nullFlavor"/>
     <status value="draft"/>
     <experimental value="false"/>
+    <date value="2023-08-08T11:35:39Z"/>
     <publisher value="Nictiz"/>
     <description value="SNOMED CT - SNOMED CT: ^41000147108 | DHD Verrichtingenthesaurus-referentieset (was: DHD Verrichtingenthesaurus - Alle waarden met OID 2.16.840.1.113883.2.4.3.120.5.2. Deze set is echter niet direct bedoeld voor uitwisseling. Zie onder andere https://bits.nictiz.nl/browse/ZIB-1233)"/>
     <immutable value="false"/>
