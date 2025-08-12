@@ -1,5 +1,12 @@
 # {{page-title}}
 
+## 1.0.0-beta.2
+
+| Component             | Description  | Ticket   |
+| --------------------- | ------------ | ---------|
+| FHIR artifacts        | The uri for the DICOM UID Registry, present in the FormatCodes ValueSet, has been updated. | [DOSINZAGE2-690](https://medmij.atlassian.net/browse/DOSINZAGE2-690), [DICOM CP-2453](https://dicom.nema.org/Dicom/News/March2025/docs/cpack130/cp2453.pdf) |
+| Test material         | The `.content.format.system` has been updated for all DocumentReference instances corresponding to a KOS document. | [DOSINZAGE2-690](https://medmij.atlassian.net/browse/DOSINZAGE2-690), [DICOM CP-2453](https://dicom.nema.org/Dicom/News/March2025/docs/cpack130/cp2453.pdf) |
+
 ## 1.0.0-beta.1
 
 | Component             | Description  | Ticket   |
