@@ -1,5 +1,12 @@
 # {{page-title}}
 
+## 1.0.0-beta.2
+
+| Component             | Description  | Ticket   |
+| --------------------- | ------------ | ---------|
+| FHIR artifacts        | The radiologyStudies slice on `.category.coding` in bbs-DocumentReference (with a pattern of LOINC code 18726-0) has been removed. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
+| Test material         | The `.category.coding` with LOINC code 18726-0 has been removed from all DocumentReference instances. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
+
 ## 1.0.0-beta.1
 
 | Component             | Description  | Ticket   |
