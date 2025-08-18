@@ -1,9 +1,15 @@
 # {{page-title}}
 
+## 1.0.0-beta.2
+
+| Component             | Description  | Ticket    |
+| --------------------- | ------------ | --------- |
+| Technical design      | Added requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*). | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
+
 ## 1.0.0-beta.1
 
-| Component             | Description  | Ticket   |
-| --------------------- | ------------ | ---------|
+| Component             | Description  | Ticket    |
+| --------------------- | ------------ | --------- |
 | Dataset               | The concepts ReportTitle and ImageTitle have been added. | [DOSINZAGE2-514](https://medmij.atlassian.net/browse/DOSINZAGE2-514) |
 | Dataset               | The cardinality of Performer has been changed from `1..1` to `0..1`. | [DOSINZAGE2-514](https://medmij.atlassian.net/browse/DOSINZAGE2-514) |
 | Dataset               | The concepts AccessionNumber and StudyInstanceUID have been added. | [DOSINZAGE2-571](https://medmij.atlassian.net/browse/DOSINZAGE2-571) |
