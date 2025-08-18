@@ -7,7 +7,6 @@ Alias: $Confidentiality = http://terminology.hl7.org/CodeSystem/v3-Confidentiali
 Alias: $DICOM = http://dicom.nema.org/resources/ontology/DCM
 Alias: $DICOMUIDRegistry = http://dicom.nema.org/resources/ontology/DCMUID
 Alias: $FormatCode = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
-Alias: $LNC = http://loinc.org
 Alias: $MedMijImageAvailabilityTest = urn:oid:2.16.528.1.1023.19.1.1
 Alias: $OrganizationType = http://nictiz.nl/fhir/NamingSystem/organization-type
 Alias: $SCT = http://snomed.info/sct

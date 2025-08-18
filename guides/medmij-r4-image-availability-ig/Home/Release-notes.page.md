@@ -2,15 +2,18 @@
 
 ## 1.0.0-beta.2
 
-| Component             | Description  | Ticket   |
-| --------------------- | ------------ | ---------|
+| Component             | Description  | Ticket    |
+| --------------------- | ------------ | --------- |
+| Technical design      | Added requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*). | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
 | FHIR artifacts        | The uri for the DICOM UID Registry, present in the FormatCodes ValueSet, has been updated. | [DOSINZAGE2-690](https://medmij.atlassian.net/browse/DOSINZAGE2-690), [DICOM CP-2453](https://dicom.nema.org/Dicom/News/March2025/docs/cpack130/cp2453.pdf) |
+| FHIR artifacts        | The radiologyStudies slice on `.category.coding` in bbs-DocumentReference (with a pattern of LOINC code 18726-0) has been removed. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
 | Test material         | The `.content.format.system` has been updated for all DocumentReference instances corresponding to a KOS document. | [DOSINZAGE2-690](https://medmij.atlassian.net/browse/DOSINZAGE2-690), [DICOM CP-2453](https://dicom.nema.org/Dicom/News/March2025/docs/cpack130/cp2453.pdf) |
+| Test material         | The `.category.coding` with LOINC code 18726-0 has been removed from all DocumentReference instances. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
 
 ## 1.0.0-beta.1
 
-| Component             | Description  | Ticket   |
-| --------------------- | ------------ | ---------|
+| Component             | Description  | Ticket    |
+| --------------------- | ------------ | --------- |
 | Dataset               | The concepts ReportTitle and ImageTitle have been added. | [DOSINZAGE2-514](https://medmij.atlassian.net/browse/DOSINZAGE2-514) |
 | Dataset               | The cardinality of Performer has been changed from `1..1` to `0..1`. | [DOSINZAGE2-514](https://medmij.atlassian.net/browse/DOSINZAGE2-514) |
 | Dataset               | The concepts AccessionNumber and StudyInstanceUID have been added. | [DOSINZAGE2-571](https://medmij.atlassian.net/browse/DOSINZAGE2-571) |
