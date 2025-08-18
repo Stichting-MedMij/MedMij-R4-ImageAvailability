@@ -9,8 +9,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#16831000087101 "MRI van linker bovenbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-De-Graaff) "de Graaff"
 * date = "2020-03-03T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Pieterssen) "Pieterssen, Orthopedisch chirurg"

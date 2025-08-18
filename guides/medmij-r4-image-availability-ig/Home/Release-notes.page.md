@@ -5,6 +5,8 @@
 | Component             | Description  | Ticket    |
 | --------------------- | ------------ | --------- |
 | Technical design      | Added requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*). | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
+| FHIR artifacts        | The radiologyStudies slice on `.category.coding` in bbs-DocumentReference (with a pattern of LOINC code 18726-0) has been removed. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
+| Test material         | The `.category.coding` with LOINC code 18726-0 has been removed from all DocumentReference instances. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
 
 ## 1.0.0-beta.1
 

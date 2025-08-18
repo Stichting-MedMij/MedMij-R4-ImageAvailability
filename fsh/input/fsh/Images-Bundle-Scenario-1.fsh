@@ -9,8 +9,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#3511000087103 "röntgenfoto van rechter sleutelbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Blaak) "Pieter Blaak"
 * date = "2024-05-23T12:00:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-De-Pater) "A.C.H. de Pater, Orthopedisch chirurg"
@@ -50,8 +49,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#3511000087103 "röntgenfoto van rechter sleutelbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Blaak) "Pieter Blaak"
 * date = "2024-05-24T12:00:00+02:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-De-Pater) "A.C.H. de Pater, Orthopedisch chirurg"

@@ -9,8 +9,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#77477000 "CT" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2024-08-22T16:45:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog"
@@ -50,8 +49,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#77477000 "CT" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-01-17T08:44:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Cardioloog) "Cardioloog"
@@ -91,8 +89,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T13:53:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Huisarts) "Huisarts"
@@ -132,8 +129,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#44491008 "röntgendoorlichting" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-XXX-Aansluittest-B) "B. XXX-Aansluittest-B"
 * date = "2025-02-25T14:07:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Huisarts) "Huisarts"

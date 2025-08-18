@@ -9,8 +9,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1990-02-10T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg"
@@ -50,8 +49,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg"
@@ -90,8 +88,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg"
@@ -131,8 +128,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg"
@@ -177,8 +173,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg"
@@ -218,8 +213,7 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
 * date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg"

@@ -37,16 +37,13 @@ Description: "Imaging research including images and reports."
 * category
   * ^short = "ClassCode"
   * ^definition = "The code specifying the particular kind of document."
-* category.coding 2..*
+* category.coding 1..*
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * category.coding contains
-    radiologyStudies 1..1 and
     images 0..1 and
     reports 0..1
-* category.coding[radiologyStudies]
-  * ^patternCoding = $LNC#18726-0
 * category.coding[images] 
   * ^patternCoding = $XDSClassCode#IMAGES
   * ^condition[0] = "bbs-DocumentReference-1"
