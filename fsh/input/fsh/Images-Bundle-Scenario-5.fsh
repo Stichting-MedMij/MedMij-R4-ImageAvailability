@@ -22,9 +22,9 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/studies/1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "MedMij PGO test CT" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2024-08-22T16:45:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DCMUID#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
-  * event[modality] = $DICOM#CT "Computed Tomography" // Onderzoek.Beeldinformatie.Modaliteit
+  * event[modality] = $DCM#CT "Computed Tomography" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2024-08-22" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
@@ -62,9 +62,9 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/studies/1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "MedMij PGO CT" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2025-01-17T08:44:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DCMUID#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
-  * event[modality] = $DICOM#CT "Computed Tomography" // Onderzoek.Beeldinformatie.Modaliteit
+  * event[modality] = $DCM#CT "Computed Tomography" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2025-01-17" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
@@ -102,9 +102,9 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/studies/1.2.752.24.7.3059655634.36522/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "CR CWK MedMij" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2025-02-25T13:53:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DCMUID#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
-  * event[modality] = $DICOM#CR "Computed Radiography" // Onderzoek.Beeldinformatie.Modaliteit
+  * event[modality] = $DCM#CR "Computed Radiography" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2025-02-25" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
