@@ -32,13 +32,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "EXT-14117" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
+      * system = $OIDCZE
+      * value = "EXT-14117" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:1.3.12.2.1107.5.1.7.130290.30000024082216430327200000003" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -72,13 +73,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "EXT-14114" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Issuer of Accession Number
+      * system = $OIDCZE
+      * value = "EXT-14114" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-CZE-Radiotherapie) "Catharina Ziekenhuis Eindhoven, Radiotherapie, Algemeen ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:1.3.12.2.1107.5.1.7.130290.30000025011708292397300000003" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Image-5-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -112,13 +114,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "5003249215" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Issuer of Accession Number
+      * system = $OIDCZE
+      * value = "5003249215" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.2.752.24.7.3059655634.36522" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:1.2.752.24.7.3059655634.36522" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-XXX-AansluittestB-Report-5-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -151,13 +154,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeld in PGO
-      * value = "5003249215" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Issuer of Accession Number
+      * system = $OIDCZE
+      * value = "5003249215" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-CZE) "Catharina Ziekenhuis Eindhoven, Algemeen ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.2.752.24.7.3059655634.36522" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:1.2.752.24.7.3059655634.36522" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-5-3
 InstanceOf: Binary

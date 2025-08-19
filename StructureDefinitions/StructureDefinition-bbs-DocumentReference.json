@@ -37,6 +37,10 @@
       "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
     },
     {
+      "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+      "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.2 2025xxyy"
+    },
+    {
       "identity": "ihexds-dataset-2024-20220712",
       "name": "ART-DECOR Dataset Nationale IHE MetaData Set (2024)",
       "uri": "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html"
@@ -515,6 +519,16 @@
             "comment": "ImageTitle"
           },
           {
+            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "map": "bbs-medmij-dataelement-2",
+            "comment": "ReportTitle"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "map": "bbs-medmij-dataelement-1",
+            "comment": "ImageTitle"
+          },
+          {
             "identity": "ihexds-dataset-2024-20220712",
             "map": "ihexds-dataelement-27",
             "comment": "title"
@@ -685,6 +699,11 @@
         "mapping": [
           {
             "identity": "bbs-medmij-dataset-100-beta1-20250807",
+            "map": "bbs-medmij-dataelement-5",
+            "comment": "Modality"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
             "map": "bbs-medmij-dataelement-5",
             "comment": "Modality"
           }
@@ -862,6 +881,11 @@
             "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-3",
             "comment": "AccessionNumber"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "map": "bbs-medmij-dataelement-3",
+            "comment": "AccessionNumber"
           }
         ]
       },
@@ -879,6 +903,19 @@
         }
       },
       {
+        "id": "DocumentReference.context.related:accessionNumber.identifier.system",
+        "path": "DocumentReference.context.related.identifier.system",
+        "comment": "In DICOM, the Accession Number is just a string (namely of DICOM data type *Short String* (*SH*)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback (for instance the OID registered for the Assigning Authority).",
+        "min": 1,
+        "mapping": [
+          {
+            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "map": "bbs-medmij-dataelement-7",
+            "comment": "AssigningAuthority (implicit, main mapping is on .context.related[accessionNumber].identifier.assigner)"
+          }
+        ]
+      },
+      {
         "id": "DocumentReference.context.related:accessionNumber.identifier.value",
         "path": "DocumentReference.context.related.identifier.value",
         "min": 1
@@ -886,7 +923,11 @@
       {
         "id": "DocumentReference.context.related:accessionNumber.identifier.assigner",
         "path": "DocumentReference.context.related.identifier.assigner",
-        "definition": "Issuer of Accession Number.",
+        "short": "AssigningAuthority",
+        "definition": "Assigning authority that issued the Accession Number.",
+        "alias": [
+          "UitgevendeInstelling"
+        ],
         "type": [
           {
             "code": "Reference",
@@ -894,6 +935,13 @@
               "http://hl7.org/fhir/StructureDefinition/Organization",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
             ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "map": "bbs-medmij-dataelement-7",
+            "comment": "AssigningAuthority"
           }
         ]
       },
@@ -918,6 +966,11 @@
             "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-4",
             "comment": "StudyInstanceUID"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "map": "bbs-medmij-dataelement-4",
+            "comment": "StudyInstanceUID"
           }
         ]
       },
@@ -935,9 +988,25 @@
         }
       },
       {
+        "id": "DocumentReference.context.related:studyInstanceUID.identifier.system",
+        "path": "DocumentReference.context.related.identifier.system",
+        "min": 1,
+        "patternUri": "urn:dicom:uid"
+      },
+      {
         "id": "DocumentReference.context.related:studyInstanceUID.identifier.value",
         "path": "DocumentReference.context.related.identifier.value",
-        "min": 1
+        "comment": "As the Study Instance UID is a DICOM UID, its value SHALL be prefixed with *urn:oid:*.",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "bbs-DocumentReference-3",
+            "severity": "error",
+            "human": "Each DICOM UID value is a proper OID.",
+            "expression": "$this.startsWith('urn:oid:')",
+            "source": "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
+          }
+        ]
       }
     ]
   }
