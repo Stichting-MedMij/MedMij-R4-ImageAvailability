@@ -4,9 +4,13 @@
 
 | Component             | Description  | Ticket    |
 | --------------------- | ------------ | --------- |
+| Dataset               | The concept AssigningAuthority (in the context of an AccessionNumber) has been added. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |
 | Technical design      | Added requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*). | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
+| Technical design      | Added guidance on DICOM UIDs. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |
 | FHIR artifacts        | The radiologyStudies slice on `.category.coding` in bbs-DocumentReference (with a pattern of LOINC code 18726-0) has been removed. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
+| FHIR artifacts        | <ul> <li>The `context.related.identifier.system`s corresponding to the Accession Number and Study Instance UID have been made mandatory (i.e. cardinality `1..1`). <li>The concept AssigningAuthority has been mapped on `.context.related.identifier.assigner`, and corresponding guidance on the Accession Number identifier system has been added. <li>The pattern *urn:dicom:uid* has been added to the `.context.related.identifier.system` of the Study Instance UID. <li>A constraint w.r.t. its format has been added on the `context.related.identifier.value` of the Study Instance UID.</ul> | [DOSINZAGE2-686](https://medmij.atlassian.net/issues/DOSINZAGE2-686) |
 | Test material         | The `.category.coding` with LOINC code 18726-0 has been removed from all DocumentReference instances. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
+| Test material         | <ul> <li>The identifier systems of the Accession Numbers have been updated to reflect the corresponding Assigning Authority. <li>For all Study Instance UIDs, the `.system` *urn:dicom:uid* has been added and the `.value` has been prefixed with *urn:oid:*.</ul> | [DOSINZAGE2-686](https://medmij.atlassian.net/issues/DOSINZAGE2-686) |
 
 ## 1.0.0-beta.1
 
