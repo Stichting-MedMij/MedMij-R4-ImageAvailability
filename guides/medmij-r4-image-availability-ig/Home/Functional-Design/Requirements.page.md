@@ -30,9 +30,8 @@ De functionele eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan
 | 3. | De viewer werkt in gangbare webbrowsers en is bruikbaar op desktop, tablet en mobiel (responsive of mobiele variant). |
 | 4. | De gebruiker krijgt duidelijke visuele feedback (bijvoorbeeld een laadindicator of wachtcursor met tekst) wanneer beelden worden geladen. |
 | 5. | Indien mogelijk wordt de voortgang van het laden weergegeven in procenten of met een voortgangsbalk. | 
-| 6. | Bij het laden van grotere studies (bijvoorbeeld 100 MB met 200 beelden) blijft de interface bruikbaar en krijgt de gebruiker inzicht in de voortgang, ook als de laadtijd hoger is dan verwacht door systeem- of netwerklatentie. |
-| 7. | De gemiddelde laadtijd voor een studie van 100 MB is indicatief tussen 10–60 seconden, afhankelijk van systeemcapaciteit. Hierop worden geen harde eisen gesteld, maar de gebruiker wordt geïnformeerd indien het langer duurt. |
-| 8. | De viewer opent in hetzelfde venster of in een herkenbare tab/pagina binnen de PGO (geen verwarring met andere portalen). | 
+| 6. | Als het laden langer duurt dan 60 seconden, dient de gebruiker te worden geïnformeerd. |
+| 7. | De viewer opent in hetzelfde venster of in een herkenbare tab/pagina binnen de PGO (geen verwarring met andere portalen). | 
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
@@ -77,7 +76,7 @@ De functionele eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 6 | PGO | Zorggebruiker | Beelden en verslagen kunnen filteren op basis van datum | Snel de meest recente of specifieke onderzoeken kan zien | S |
+| 6 | PGO | Zorggebruiker | Beelden en verslagen kunnen filteren op basis van datum | Snel de juiste onderzoeken kan zien | S |
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
@@ -90,7 +89,7 @@ De functionele eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan
 
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
-| 7 | PGO | Zorggebruiker | Beelden en verslagen kunnen doorzoeken | Snel de meest recente of specifieke onderzoeken kan zien | S |
+| 7 | PGO | Zorggebruiker | Beelden en verslagen kunnen doorzoeken | Snel de juiste te onderzoeken kan zien | S |
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
@@ -134,5 +133,5 @@ De functionele eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
-| 1. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of specialisme van de aanvragende zorgverlener getoond. |
-| 2. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of specialisme van de uitvoerende zorgverlener getoond. |
+| 1. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of het specialisme van de aanvragende zorgverlener (bbs-dataelement-189) getoond. |
+| 2. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of het specialisme van de uitvoerende zorgverlener (bbs-dataelement-187) getoond. |
