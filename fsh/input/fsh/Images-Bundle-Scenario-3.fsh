@@ -32,13 +32,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-47092" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
+      * system = $OIDSpaarneZiekenhuis
+      * value = "RAD-20250212-47092" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Patient-De-Graaff
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient

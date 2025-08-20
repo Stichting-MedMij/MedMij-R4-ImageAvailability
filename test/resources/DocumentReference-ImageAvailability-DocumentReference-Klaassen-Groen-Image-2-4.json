@@ -120,7 +120,7 @@
               }
             ]
           },
-          "system": "urn:oid:2.16.528.1.1023.19.1.1",
+          "system": "urn:oid:2.16.840.1.113883.2.4.3.6",
           "value": "RAD-20250212-74920",
           "assigner": {
             "reference": "Organization/ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair",
@@ -138,7 +138,8 @@
               }
             ]
           },
-          "value": "2.16.528.1.1007.3.1.20250212.456342"
+          "system": "urn:dicom:uid",
+          "value": "urn:oid:2.16.528.1.1007.3.1.20250212.456342"
         }
       }
     ]

@@ -225,9 +225,13 @@ Description: "Imaging research including images and reports."
       * ^alias = "AccessionNumber"
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2013:accession
+      * system 1..1
+        * ^comment = "In DICOM, the Accession Number is just a string (namely of DICOM data type *Short String* (*SH*)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback (for instance the OID registered for the Assigning Authority, or the information present in DICOM tag `(0008,0051)` (Issuer of Accession Number Sequence))."
       * value 1..1
       * assigner only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
-        * ^definition = "Issuer of Accession Number."
+        * ^short = "AssigningAuthority"
+        * ^definition = "Assigning authority that issued the Accession Number."
+        * ^alias = "UitgevendeInstelling"
   * related[studyInstanceUID]
     * identifier 1..1
       * ^short = "StudyInstanceUID"
@@ -235,7 +239,11 @@ Description: "Imaging research including images and reports."
       * ^alias = "StudyInstanceUID"
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
+      * system 1..1
+        * ^patternUri = $DICOMUniqueId
       * value 1..1
+      * value obeys bbs-DocumentReference-3
+        * ^comment = "As the Study Instance UID is a DICOM UID, its value SHALL be prefixed with *urn:oid:*."
 
 Invariant: bbs-DocumentReference-1
 Description: "Either a category for an image or a report is present."
@@ -246,6 +254,11 @@ Invariant: bbs-DocumentReference-2
 Description: "For an image or series of images the modalities are specified."
 Severity: #error
 Expression: "category.coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() implies context.event.coding.where(system = 'http://dicom.nema.org/resources/ontology/DCM').exists()"
+
+Invariant: bbs-DocumentReference-3
+Description: "Each DICOM UID value is a proper OID."
+Severity: #error
+Expression: "$this.startsWith('urn:oid:')"
 
 Mapping: BeeldbeschikbaarheidNictiz
 Source: BbsDocumentReference
@@ -271,7 +284,7 @@ Title: "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208"
 * context.facilityType -> "bbs-dataelement-546" "OrganizationType"
 * context.practiceSetting -> "bbs-dataelement-524" "DepartmentSpecialty"
 
-Mapping: MedMij
+Mapping: MedMij-100-beta1
 Source: BbsDocumentReference
 Id: bbs-medmij-dataset-100-beta1-20250807
 Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
@@ -279,6 +292,18 @@ Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
 * content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
 * context.event[modality] -> "bbs-medmij-dataelement-5" "Modality"
 * context.related[accessionNumber].identifier -> "bbs-medmij-dataelement-3" "AccessionNumber"
+* context.related[studyInstanceUID].identifier -> "bbs-medmij-dataelement-4" "StudyInstanceUID"
+
+Mapping: MedMij-100-beta2
+Source: BbsDocumentReference
+Id: bbs-medmij-dataset-100-beta2-2025xxyy
+Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.2 2025xxyy"
+* content.attachment.title -> "bbs-medmij-dataelement-2" "ReportTitle"
+* content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
+* context.event[modality] -> "bbs-medmij-dataelement-5" "Modality"
+* context.related[accessionNumber].identifier -> "bbs-medmij-dataelement-3" "AccessionNumber"
+* context.related[accessionNumber].identifier.system -> "bbs-medmij-dataelement-7" "AssigningAuthority (implicit, main mapping is on .context.related[accessionNumber].identifier.assigner)"
+* context.related[accessionNumber].identifier.assigner -> "bbs-medmij-dataelement-7" "AssigningAuthority"
 * context.related[studyInstanceUID].identifier -> "bbs-medmij-dataelement-4" "StudyInstanceUID"
 
 Mapping: IHEXDS
