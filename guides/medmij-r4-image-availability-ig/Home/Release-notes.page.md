@@ -5,7 +5,10 @@
 | Component             | Description  | Ticket    |
 | --------------------- | ------------ | --------- |
 | Dataset               | The concept AssigningAuthority (in the context of an AccessionNumber) has been added. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |
+| Dataset               | The definition of the Performer concept has been finetuned. | [DOSINZAGE2-684](https://medmij.atlassian.net/browse/DOSINZAGE2-684) |
 | Dataset               | The cardinality of Performer has been changed from `0..1` to `0..*`. | [DOSINZAGE2-693](https://medmij.atlassian.net/browse/DOSINZAGE2-693) |
+| Functional design     | The display guideline has been finetuned. | [DOSINZAGE2-683](https://medmij.atlassian.net/browse/DOSINZAGE2-683) |
+| Functional design     | Several requirements have been finetuned. | [DOSINZAGE2-684](https://medmij.atlassian.net/browse/DOSINZAGE2-684) |
 | Technical design      | Added requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*). | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
 | Technical design      | Added guidance on DICOM UIDs. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |
 | FHIR artifacts        | The radiologyStudies slice on `.category.coding` in bbs-DocumentReference (with a pattern of LOINC code 18726-0) has been removed. | [DOSINZAGE2-692](https://medmij.atlassian.net/browse/DOSINZAGE2-692) |
