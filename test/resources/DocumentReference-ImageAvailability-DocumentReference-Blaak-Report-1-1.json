@@ -109,7 +109,7 @@
               }
             ]
           },
-          "system": "urn:oid:2.16.528.1.1023.19.1.1",
+          "system": "urn:oid:2.16.528.1.1007.3.3.14332",
           "value": "RAD-20250212-83472",
           "assigner": {
             "reference": "Organization/ImageAvailability-Organization-OLVG",
@@ -127,7 +127,8 @@
               }
             ]
           },
-          "value": "2.16.528.1.1007.3.1.20250212.123456"
+          "system": "urn:dicom:uid",
+          "value": "urn:oid:2.16.528.1.1007.3.1.20250212.123456"
         }
       }
     ]

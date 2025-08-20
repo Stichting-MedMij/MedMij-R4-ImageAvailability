@@ -32,13 +32,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-19285" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-19285" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.2.826.0.1.3680043.8.498.77615907425522706317163091876421984542" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:1.2.826.0.1.3680043.8.498.77615907425522706317163091876421984542" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -71,7 +72,8 @@ Usage: #example
   * related
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.789012" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.789012" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-2-2
 InstanceOf: Binary
@@ -111,13 +113,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-50637" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-50637" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.456789" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.456789" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -150,13 +153,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-50637" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-50637" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.456789" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.456789" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-2-3
 InstanceOf: Binary
@@ -196,13 +200,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-74920" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-74920" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.456342" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.456342" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -235,13 +240,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-74920" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-74920" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.456342" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.456342" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-2-4
 InstanceOf: Binary

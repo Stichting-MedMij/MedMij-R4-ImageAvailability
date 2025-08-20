@@ -120,7 +120,7 @@
               }
             ]
           },
-          "system": "urn:oid:2.16.528.1.1023.19.1.1",
+          "system": "urn:oid:2.16.840.1.113883.2.4.3.104",
           "value": "5003249215",
           "assigner": {
             "reference": "Organization/ImageAvailability-Organization-CZE",
@@ -138,7 +138,8 @@
               }
             ]
           },
-          "value": "1.2.752.24.7.3059655634.36522"
+          "system": "urn:dicom:uid",
+          "value": "urn:oid:1.2.752.24.7.3059655634.36522"
         }
       }
     ]
