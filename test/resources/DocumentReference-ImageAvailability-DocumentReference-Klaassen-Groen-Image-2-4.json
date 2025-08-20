@@ -68,7 +68,7 @@
       },
       "format": {
         "code": "1.2.840.10008.5.1.4.1.1.88.59",
-        "system": "urn.oid:1.2.840.10008.2.6.1"
+        "system": "http://dicom.nema.org/resources/ontology/DCMUID"
       }
     }
   ],
