@@ -6,6 +6,7 @@
 | --------------------- | ------------ | --------- |
 | Dataset               | The concept AssigningAuthority (in the context of an AccessionNumber) has been added. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |
 | Dataset               | The definition of the Performer concept has been finetuned. | [DOSINZAGE2-684](https://medmij.atlassian.net/browse/DOSINZAGE2-684) |
+| Functional design     | The display guideline has been finetuned. | [DOSINZAGE2-683](https://medmij.atlassian.net/browse/DOSINZAGE2-683) |
 | Functional design     | Several requirements have been finetuned. | [DOSINZAGE2-684](https://medmij.atlassian.net/browse/DOSINZAGE2-684) |
 | Technical design      | Added requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*). | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
 | Technical design      | Added guidance on DICOM UIDs. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |

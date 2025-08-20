@@ -49,6 +49,7 @@ De tijdlijnweergave biedt gebruikers een visueel overzicht van alle medische ver
 | 4. | Voor elk document wordt basisinformatie getoond (datum, type document (i.e. verslag of beeld), naam onderzoek (beeldtitel/verslagtitel), zorginstelling, soort beeld). |
 | 5. | Filteren van beelden en verslagen is mogelijk op datum, zorginstelling en type bestand. |
 | 6. | Verslag en beeld zijn visueel gelinkt indien beide beschikbaar zijn en in de bron gekoppeld zijn middels het Accession Number. |
+| 7. | Een gebruiker kan een verslag of een volledig onderzoek (corresponderend met één tijdlijnregel) downloaden. |
 
 **Tabel 1: Acceptatiecriteria voor het overzichtsscherm**
 
@@ -61,9 +62,9 @@ Als de gebruiker een specifiek beeld in het overzichtsscherm selecteert en vanui
 
 | | Acceptatiecriteria |
 | --- | --- |
-| 1. | Een gebruiker kan het beeld downloaden. |
+| 1. | Een gebruiker kan het beeld of het volledige onderzoek downloaden. |
 | 2. | Een gebruiker kan in- en uitzoomen. |
-| 3. | Indien het bestand meerdere beelden bevat, kan een gebruiker door de verschillende beelden heen scrollen of afspelen indien het om een echo of scopie gaat. |
+| 3. | Indien het bestand meerdere beelden bevat (bijvoorbeeld bij een CT of MRI), kan een gebruiker door de verschillende beelden heen scrollen of deze beelden afspelen als een filmpje. |
 
 **Tabel 2: Acceptatiecriteria voor het detailscherm van een beeld**
 
@@ -85,14 +86,14 @@ In de tabel staan de gegevens uit de gegevensdienst Beeldbeschikbaarheid die rel
 
 | Naam dataelement | Advies weergavetekst in PGO | Voorbeeld | Weergeven |
 | --- | --- | --- | --- |
-| VerrichtingStartDatum | Onderzoeksdatum | 03-01-2020 | Ja  |
+| VerrichtingStartDatum | Onderzoeksdatum | 31-01-2020 | Ja  |
 | BeeldTitel | Naam onderzoek | C. van Wijk radiologiebeelden | Ja  |
 | VerslagTitel | Naam onderzoek | Cardiologiebeelden C. van Wijk | Ja  |
 | OrganisatieNaam | Zorginstelling | OLVG Oost | Ja  |
 | Aanvrager.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | Aanvragend zorgverlener | G. de Visser | Ja, indien beschikbaar |
 | Aanvrager.Zorgverlener.Specialisme | Specialisme aanvragend zorgverlener | Cardiologie | Ja, indien beschikbaar |
 | Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | Uitvoerend zorgverlener | J. ter Velde | Ja, indien beschikbaar |
-| Modaliteit | Soort beeld | Röntgen | Ja, indien het een beeld betreft |
+| Modaliteit | Soort beeld | CT | Ja, indien het een beeld betreft |
 
 **Tabel 4: Relevante gegevens m.b.t. de weergaverichtlijn**
 
