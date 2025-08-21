@@ -69,7 +69,7 @@ Description: "Imaging research including images and reports."
   * ^short = "Author"
 * author contains
     location 1..1 and
-    performer 0..1
+    performer 0..*
 * author[location] only Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
   * ^short = "Location"
   * ^definition = "The healthcare center where the procedure was, is or will be carried out."
