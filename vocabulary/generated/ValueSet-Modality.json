@@ -1,0 +1,95 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "Modality",
+  "id": "Modality",
+  "title": "Modality ValueSet.",
+  "description": "DICOM modalities that need to be supported in the context of Image Availability.",
+  "url": "http://medmij.nl/fhir/ValueSet/Modality",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.528.1.1023.11.2.3.11.11"
+    }
+  ],
+  "experimental": false,
+  "publisher": "MedMij",
+  "contact": [
+    {
+      "name": "MedMij",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@medmij.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://dicom.nema.org/resources/ontology/DCM",
+        "concept": [
+          {
+            "code": "CR",
+            "display": "Computed Radiography"
+          },
+          {
+            "code": "CT",
+            "display": "Computed Tomography"
+          },
+          {
+            "code": "DX",
+            "display": "Digital Radiography"
+          },
+          {
+            "code": "ES",
+            "display": "Endoscopy"
+          },
+          {
+            "code": "MG",
+            "display": "Mammography"
+          },
+          {
+            "code": "MR",
+            "display": "Magnetic Resonance"
+          },
+          {
+            "code": "NM",
+            "display": "Nuclear Medicine"
+          },
+          {
+            "code": "OT",
+            "display": "Other"
+          },
+          {
+            "code": "PT",
+            "display": "Positron emission tomography"
+          },
+          {
+            "code": "RF",
+            "display": "Radiofluoroscopy"
+          },
+          {
+            "code": "SC",
+            "display": "Secondary Capture"
+          },
+          {
+            "code": "US",
+            "display": "Ultrasound"
+          },
+          {
+            "code": "XA",
+            "display": "X-Ray Angiography"
+          }
+        ]
+      }
+    ]
+  }
+}

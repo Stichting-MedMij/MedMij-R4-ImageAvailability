@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ModalityCombined",
+  "id": "ModalityCombined",
+  "title": "ModalityCombined ValueSet.",
+  "description": "Value set combining the (overlapping) value sets that are defined by Nictiz (in the Nationale IHE MetaData Set (2024)) and MedMij, respectively.",
+  "url": "http://medmij.nl/fhir/ValueSet/ModalityCombined",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.528.1.1023.11.2.3.11.12"
+    }
+  ],
+  "experimental": false,
+  "publisher": "MedMij",
+  "contact": [
+    {
+      "name": "MedMij",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@medmij.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.9--20131212104106"
+        ]
+      },
+      {
+        "valueSet": [
+          "http://medmij.nl/fhir/ValueSet/Modality"
+        ]
+      }
+    ]
+  }
+}

@@ -161,12 +161,15 @@ Description: "Imaging research including images and reports."
       """
     * ^alias[0] = "VerrichtingAnatomischeLocatie"
     * ^alias[1] = "Locatie"
-  * event[modality] from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.9--20131212104106 (required)
+  * event[modality] from $ModalityCombinedValueSetURL (required)
     * ^short = "Modality"
     * ^definition = "Type of medical imaging device, process or method that originally acquired or produced the data used to create the image or series of images, such as a CT scanner or MRI machine."
     * ^comment = "For an image or series of images the modalities SHALL be specified."
     * ^alias = "Modaliteit"
     * ^condition = "bbs-DocumentReference-2"
+    * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[key].valueId = "bbs-DocumentReference-binding-modality-1"
+    * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[purpose].valueCode = #minimum
+    * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[valueSet].valueCanonical = $ModalityValueSetURL
   * period 1..1
     * start 1..1
       * ^short = "ProcedureStartDate / ServiceStartTime"
