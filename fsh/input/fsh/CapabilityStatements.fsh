@@ -1,0 +1,123 @@
+// CapabilityStatement based on ITI MHD to be used in Image Availability
+
+Instance: bbs-Retrieve
+InstanceOf: CapabilityStatement
+Usage: #definition
+* insert DefaultNarrativeInstance
+* name = "bbs Retrieve"
+* status = #draft
+* date = "2025-09-01"
+* insert PublisherAndContactInstance
+* description = "This CapabilityStatement describes the minimal requirements for a client to fulfill the 'Retrieve image and report timeline' and 'Retrieve image and report' transactions within Image Availability. It is partly based on the CapabilityStatement defined by IHE ITI for the [Document Consumer](https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentConsumer)."
+* purpose = "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted."
+* insert CopyrightInstance
+* kind = #requirements
+* fhirVersion = #4.0.1
+* format[0] = #xml
+* format[1] = #json
+* rest
+  * mode = #client
+  * documentation = "Minimal requirements for a client to fulfill the 'Retrieve image and report timeline' and 'Retrieve image and report' transactions (system roles: MM-1.0-TDR-FHIR and MM-1.0-BR-FHIR, respectively)."
+  * resource[+]
+    * type = #DocumentReference
+    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
+    * interaction
+      * code = #search-type
+    * searchParam[0]
+      * name = "status"
+      * type = #token
+      * documentation = "Only approved documents are to be exchanged, hence only searching on the value *current* needs to be supported."
+    * searchParam[1]
+      * name = "contenttype"
+      * type = #token
+  * resource[+]
+    * type = #Binary
+    * interaction
+      * code = #read
+  * resource[+]
+    * type = #Patient
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle. For a client support of the `read` interaction is mandatory."
+    * interaction
+      * code = #read
+  * resource[+]
+    * type = #PractitionerRole
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle. For a client support of the `read` interaction is mandatory."
+    * interaction
+      * code = #read
+  * resource[+]
+    * type = #Practitioner
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle. For a client support of the `read` interaction is mandatory."
+    * interaction
+      * code = #read
+  * resource[+]
+    * type = #Organization
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle. For a client support of the `read` interaction is mandatory."
+    * interaction
+      * code = #read
+  * resource[+]
+    * type = #Encounter
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-Encounter"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle. For a client support of the `read` interaction is mandatory."
+    * interaction
+      * code = #read
+  * interaction
+    * code = #search-system
+
+Instance: bbs-Serve
+InstanceOf: CapabilityStatement
+Usage: #definition
+* insert DefaultNarrativeInstance
+* name = "bbs Serve"
+* status = #draft
+* date = "2025-09-01"
+* insert PublisherAndContactInstance
+* description = "This CapabilityStatement describes the minimal requirements for a server to fulfill the 'Serve image and report timeline' and 'Serve image and report' transactions within Image Availability. It is partly based on the CapabilityStatement defined by IHE ITI for the [Document Responder](https://profiles.ihe.net/ITI/MHD/CapabilityStatement/IHE.MHD.DocumentResponder)."
+* purpose = "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted."
+* insert CopyrightInstance
+* kind = #requirements
+* fhirVersion = #4.0.1
+* format[0] = #xml
+* format[1] = #json
+* rest
+  * mode = #server
+  * documentation = "Minimal requirements for a server to fulfill the 'Serve image and report timeline' and 'Serve image and report' transactions (system roles: MM-1.0-TDB-FHIR and MM-1.0-BB-FHIR, respectively)."
+  * resource[+]
+    * type = #DocumentReference
+    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
+    * interaction
+      * code = #search-type
+    * searchParam[0]
+      * name = "status"
+      * type = #token
+      * documentation = "Only approved documents are to be exchanged, hence only searching on the value *current* needs to be supported."
+    * searchParam[1]
+      * name = "contenttype"
+      * type = #token
+  * resource[+]
+    * type = #Binary
+  * resource[+]
+    * type = #Patient
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+  * resource[+]
+    * type = #PractitionerRole
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+  * resource[+]
+    * type = #Practitioner
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+  * resource[+]
+    * type = #Organization
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+  * resource[+]
+    * type = #Encounter
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-Encounter"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+  * interaction
+    * code = #search-system
