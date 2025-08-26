@@ -167,7 +167,7 @@ To simplify the construction of the WADO-RS request, the Retrieve URL `(0008,119
 2. For each SOP instance in the series, retrieve the corresponding Referenced SOP Instance UID `(0008,1155)`;
 3. Compose the WADO-RS URL by using the data retrieved in the previous steps: `{RetrieveURL}/instances/{SOPInstanceUID}`.
 
-The table below indicates the minimal set of SOP classes that SHALL be supported by the PHR. If, for a certain series in the sequence, a SOP Class UID would be present in DICOM tag `(0008,1150)` other than those specified below, the PHR MAY still retrieve the corresponding image, but is not required to do so.
+The table below indicates the minimal set of SOP classes that SHALL be supported by the PHR. If, for a certain series in the sequence, a SOP Class UID is present in DICOM tag `(0008,1150)` other than those specified below, the PHR MAY still retrieve the corresponding image, but is not required to do so.
 
 | SOP Class Name | SOP Class UID | Description | Corresponding modality |
 | --- | --- | --- | --- |
