@@ -159,12 +159,36 @@ The required `{StudyInstanceUID}`, `{SeriesInstanceUID}` and `{SOPInstanceUID}` 
 Instead of constructing the above URL from scratch by searching all these identifier values from various locations within the KOS document, the DICOM tag `(0008,1115)` (Referenced Series Sequence) provides a structured way to access this information. This sequence contains one or more referenced image series. Each item in the sequence corresponds to a specific series and contains:
 - Retrieve URL `(0008,1190)`
 - A sequence of referenced instances (Referenced SOP Sequence `(0008,1199)`), each containing:
+  - Referenced SOP Class UID `(0008,1150)`
   - Referenced SOP Instance UID `(0008,1155)`
 
 To simplify the construction of the WADO-RS request, the Retrieve URL `(0008,1190)` can be used, as it attains the value `[WadoRsEndpoint]/studies/{StudyInstanceUID}/series/{SeriesInstanceUID}` (for each series). To create the WADO-RS request with which the image is retrieved, the PHR would then only need to add the value of the Referenced SOP Instance UID `(0008,1155)`. This approach allows the PHR to iterate over all items in the KOS document in the Referenced Series Sequence `(0008,1115)`:
 1. For each series in the Referenced Series Sequence `(0008,1115)`, retrieve the corresponding Retrieve URL `(0008,1190)`;
 2. For each SOP instance in the series, retrieve the corresponding Referenced SOP Instance UID `(0008,1155)`;
 3. Compose the WADO-RS URL by using the data retrieved in the previous steps: `{RetrieveURL}/instances/{SOPInstanceUID}`.
+
+The table below indicates the minimal set of SOP classes that SHALL be supported by the PHR. If, for a certain series in the sequence, a SOP Class UID would be present in DICOM tag `(0008,1150)` other than those specified below, the PHR MAY still retrieve the corresponding image, but is not required to do so.
+
+| SOP Class Name | SOP Class UID | Description | Corresponding modality |
+| --- | --- | --- | --- |
+| Computed Radiography (CR) Image Storage | 1.2.840.10008.5.1.4.1.1.1 | Digitalized conventional X-ray images, often used in older systems. | CR |
+| Digital X-Ray Image Storage – For Presentation | 1.2.840.10008.5.1.4.1.1.1.1 | Modern digital X-ray images, successor of Computed Radiography (CR) Image Storage. | DX |
+| Digital Mammography X-Ray Image Storage – For Presentation | 1.2.840.10008.5.1.4.1.1.1.2 | Specialized X-ray images for digital mammography. | MG |
+| Computed Tomography (CT) Image Storage | 1.2.840.10008.5.1.4.1.1.2 | Standard CT images. | CT |
+| Enhanced Computed Tomography (CT) Image Storage | 1.2.840.10008.5.1.4.1.1.2.1 | Enhanced CT images with multi-frame structure, recommended to be future-proof. | CT |
+| Ultrasound Multi-frame Image Storage | 1.2.840.10008.5.1.4.1.1.3.1 | Dynamic ultrasound images (cine-loops). | US |
+| Magnetic Resonance (MR) Image Storage | 1.2.840.10008.5.1.4.1.1.4 | Standard MRI images, supported by all systems. | MR|
+| Enhanced Magnetic Resonance (MR) Image Storage | 1.2.840.10008.5.1.4.1.1.4.1 | Multi-frame MRI images with extensive metadata, used by modern MRI scanners. | MR |
+| Ultrasound Image Storage | 1.2.840.10008.5.1.4.1.1.6.1 | Static 2D ultrasound images, often used in almost all ultrasound examinations. | US |
+| Secondary Capture Image Storage | 1.2.840.10008.5.1.4.1.1.7 | Digital photos or screenshots, e.g. from non-DICOM devices. | SC |
+| X-Ray Angiographic Image Storage | 1.2.840.10008.5.1.4.1.1.12.1 | Angiographic images. | XA |
+| X-Ray Radiofluoroscopic Image Storage | 1.2.840.10008.5.1.4.1.1.12.2 | Dynamic X-ray images, such as swallow study videos. | RF |
+| Nuclear Medicine Image Storage | 1.2.840.10008.5.1.4.1.1.20 | Images of gamma cameras used in nuclear medicine (not in radiology), important for functional imaging (e.g. thyroid, skeleton). | NM |
+| Video Endoscopic Image Storage | 1.2.840.10008.5.1.4.1.1.77.1.1.1 | Endoscopic images. | ES |
+| Encapsulated PDF Storage | 1.2.840.10008.5.1.4.1.1.104.1 | Used to store PDF documents as DICOM objects, e.g. reports and attachments. | OT |
+| Enhanced Positron Emission Tomography (PET) Image Storage | 1.2.840.10008.5.1.4.1.1.130 | PET scan images used in nuclear medicine. | PT |
+
+**Table 8: SOP classes supported by the PHR**
 
 The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request that needs to be executed by the PHR. 
 
@@ -175,7 +199,7 @@ The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type,
 
 See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
 
-**Table 8: Supported WADO-RS requests**
+**Table 9: Supported WADO-RS requests**
 
 ##### XIS: response message (WADO-RS RAD-107)
 The XIS returns an HTTP Status code appropriate to the processing. When the requested (image) instance is returned, the XIS SHALL respond with HTTP Status Code 200, and the (image) instance SHOULD use a correct content type based on the Accept header supplied in the request by the PHR.
