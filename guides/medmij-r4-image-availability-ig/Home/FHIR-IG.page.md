@@ -186,7 +186,8 @@ The table below indicates the minimal set of SOP classes that SHALL be supported
 | Nuclear Medicine Image Storage | 1.2.840.10008.5.1.4.1.1.20 | Images of gamma cameras used in nuclear medicine (not in radiology), important for functional imaging (e.g. thyroid, skeleton). | NM |
 | Video Endoscopic Image Storage | 1.2.840.10008.5.1.4.1.1.77.1.1.1 | Endoscopic images. | ES |
 | Encapsulated PDF Storage | 1.2.840.10008.5.1.4.1.1.104.1 | Used to store PDF documents as DICOM objects, e.g. reports and attachments. | OT |
-| Enhanced Positron Emission Tomography (PET) Image Storage | 1.2.840.10008.5.1.4.1.1.130 | PET scan images used in nuclear medicine. | PT |
+| Positron Emission Tomography (PET) Image Storage | 1.2.840.10008.5.1.4.1.1.128 | PET scan images used in nuclear medicine. | PT |
+| Enhanced Positron Emission Tomography (PET) Image Storage | 1.2.840.10008.5.1.4.1.1.130 | Enhanced PET scan images used in nuclear medicine. | PT |
 
 **Table 8: SOP classes supported by the PHR**
 
@@ -197,9 +198,9 @@ The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type,
 | `GET {RetrieveURL}/instances/{SOPInstanceUID}` | *application/dicom* |
 | `GET {RetrieveURL}/instances/{SOPInstanceUID}/rendered` | *image/jpeg* |
 
-See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
-
 **Table 9: Supported WADO-RS requests**
+
+See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
 
 ##### XIS: response message (WADO-RS RAD-107)
 The XIS returns an HTTP Status code appropriate to the processing. When the requested (image) instance is returned, the XIS SHALL respond with HTTP Status Code 200, and the (image) instance SHOULD use a correct content type based on the Accept header supplied in the request by the PHR.
