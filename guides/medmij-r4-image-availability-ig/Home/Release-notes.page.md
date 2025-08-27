@@ -10,6 +10,8 @@
 | Dataset               | The concept Initials has been added for the Patient, Requester and Performer concepts. | [DOSINZAGE2-681](https://medmij.atlassian.net/browse/DOSINZAGE2-681) |
 | Functional design     | The display guideline has been finetuned. | [DOSINZAGE2-683](https://medmij.atlassian.net/browse/DOSINZAGE2-683) |
 | Functional design     | Several requirements have been finetuned. | [DOSINZAGE2-684](https://medmij.atlassian.net/browse/DOSINZAGE2-684) |
+| Functional design     | The separate system roles for retrieving and serving the timeline have been removed. The underlying transactions have been linked to the system roles for retrieving and serving the images and reports, respectively. | [DOSINZAGE2-676](https://medmij.atlassian.net/browse/DOSINZAGE2-676) |
+| Functional design     | <ul> <li>The diagrams in the functional design have been finetuned. <li>The separate use cases for retrieving only an image or a report have been removed.</ul> | [DOSINZAGE2-682](https://medmij.atlassian.net/browse/DOSINZAGE2-682) |
 | Technical design      | The requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*) has been added. | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
 | Technical design      | Guidance on DICOM UIDs has been added. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |
 | Technical design      | The minimal set of SOP classes that need to be supported by PHRs has been added. | [DOSINZAGE2-653](https://medmij.atlassian.net/browse/DOSINZAGE2-653) |
