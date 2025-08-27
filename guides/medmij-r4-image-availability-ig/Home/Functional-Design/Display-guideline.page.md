@@ -8,11 +8,13 @@ topic: Weergaverichtlijn
 Dit is de weergaverichtlijn voor de gegevensdienst Beeldbeschikbaarheid. De richtlijn bevat mock-ups die bedoeld zijn ter inspiratie. PGO’s kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft.
 
 ## Doel
-Het bieden van duidelijke handvatten voor een patiëntvriendelijke en begrijpelijke weergave van medische beeldgegevens in PGO's. De richtlijn ondersteunt ontwikkelaars en zorgverleners bij het:
+Deze richtlijn heeft als doel om duidelijke handvatten te bieden voor een patiëntvriendelijke en begrijpelijke weergave van medische beeldgegevens in PGO's. De richtlijn ondersteunt ontwikkelaars en zorgverleners bij het:
 - gebruiken van begrijpelijke en patiëntvriendelijke termen en toelichtingen;
 - structureren en presenteren van een overzicht van beeldgegevens op een manier die aansluit bij de informatiebehoefte van patiënten.
 
 De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens.
+
+Naast de weergaverichtlijn zijn ook {{pagelink:Requirements, text: requirements}} opgesteld. De requirements bevatten de minimale functionele vereisten waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
 
 ## Weergave in PGO
 Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze richtlijn.

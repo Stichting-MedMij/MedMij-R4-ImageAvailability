@@ -10,6 +10,7 @@
 | Dataset               | The concept Initials has been added for the Patient, Requester and Performer concepts. | [DOSINZAGE2-681](https://medmij.atlassian.net/browse/DOSINZAGE2-681) |
 | Functional design     | The display guideline has been finetuned. | [DOSINZAGE2-683](https://medmij.atlassian.net/browse/DOSINZAGE2-683) |
 | Functional design     | Several requirements have been finetuned. | [DOSINZAGE2-684](https://medmij.atlassian.net/browse/DOSINZAGE2-684) |
+| Functional design     | The link between the requirements and the display guideline has been made explicit. | [DOSINZAGE2-705](https://medmij.atlassian.net/browse/DOSINZAGE2-705) |
 | Technical design      | The requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*) has been added. | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
 | Technical design      | Guidance on DICOM UIDs has been added. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |
 | Technical design      | The minimal set of SOP classes that need to be supported by PHRs has been added. | [DOSINZAGE2-653](https://medmij.atlassian.net/browse/DOSINZAGE2-653) |
