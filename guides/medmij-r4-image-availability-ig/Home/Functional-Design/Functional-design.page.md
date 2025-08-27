@@ -72,7 +72,7 @@ Deze usecase onderscheidt twee bedrijfsrollen, namelijk de Persoon en de (Zorg)A
 
 **Tabel 1: Bedrijfsrollen**
 
-{{render: guides/medmij-r4-image-availability-ig/images/Activiteitendiagram.jpg}}
+{{render: guides/medmij-r4-image-availability-ig/images/Activiteitendiagram.png}}
 
 **Figuur 1: Activiteitendiagram**
 
