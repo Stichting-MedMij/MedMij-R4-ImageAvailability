@@ -57,8 +57,8 @@ The ITI-67 transaction is used to find available documents for a patient, based 
 
 | Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
 | --- | --- | --- | --- | --- | --- |
-| Image and report timeline (PULL) | Retrieve image and report timeline | Patient (using a PHR) | MM-1.0-TDR-FHIR | [TO DO] |
-| Image and report timeline (PULL) | Serve image and report timeline | Healthcare provider (using a XIS) | MM-1.0-TDB-FHIR | [TO DO] |
+| Image and report timeline (PULL) | Retrieve image and report timeline | Patient (using a PHR) | MM-1.0-BR-FHIR | [TO DO] |
+| Image and report timeline (PULL) | Serve image and report timeline | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR | [TO DO] |
 
 **Table 3: Transactions**
 
