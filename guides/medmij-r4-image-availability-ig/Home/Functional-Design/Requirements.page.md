@@ -18,6 +18,8 @@ De prioriteit van elke onderstaande functionele eis wordt vastgesteld volgens de
 
 De functionele eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan moet altijd worden voldaan door een PGO om gekwalificeerd te worden voor de gegevensdienst.
 
+Naast de requirements is ook de {{pagelink:Weergaverichtlijn, text: weergaverichtlijn}} opgesteld. De requirements bevatten de minimale functionele vereisten waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
+
 ## Functionele eisen
 | ID | Eis voor | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- | --- |
