@@ -87,7 +87,16 @@ The XIS MAY be capable of processing some or all query parameters listed there. 
 See [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236741-find-document-references-request-message) for further details.
 
 ##### XIS: response message
-The XIS returns an HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference resources. Based on the values of `DocumentReference.content.attachment.contentType` and `DocumentReference.content.format` it can be derived whether each respective DocumentReference refers to a report or an image.
+The XIS returns an HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference resources. Based on the value of `DocumentReference.category` it can be derived whether each respective DocumentReference refers to a report or an image (and hence, in what way the subsequent ITI-68 request should be handled). Other elements, such as `.content.attachment.contentType` and `.content.format`, also indicate whether the DocumentReference concerns a report or an image. The table below illustrates some of the possible values (i.e. `code`-`system` pairs) in the DocumentReference, but is not meant to be comprehensive.
+
+| FHIR element | Image | Report (PDF) | Report (DICOM) |
+| --- | --- | --- | --- |
+| `.category` | *IMAGES* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) | *REPORTS* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) | *REPORTS* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) |
+| `.content.attachment.contentType` | *application/dicom* or *application/dicom+json* | *application/pdf* | *application/dicom* or *application/dicom+json* |
+| `.content.format` | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) | Any value from `http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem` in ValueSet [FormatCodes](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-beta.1/files/2949899) | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) |
+| `.context.event[modality]` | Any value from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined) | Empty | *OT* (`http://dicom.nema.org/resources/ontology/DCM`) |
+
+**Table 5: Possible DocumentReference element values for images and reports**
 
 See [ITI-67 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742-find-document-references-response-message) for further details.
 
@@ -99,7 +108,7 @@ See [ITI-67 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674
 | Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR |
 | Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR |
 
-**Table 5: Transactions**
+**Table 6: Transactions**
 
 ##### PHR: request message
 The PHR sends an HTTP GET request to the XIS server to retrieve the imaging report content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
@@ -125,7 +134,7 @@ See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#23684
 | Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR |
 | Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR |
 
-**Table 6: Transactions**
+**Table 7: Transactions**
 
 ##### PHR: request message (MHD ITI-68)
 The PHR sends an HTTP GET request to the XIS server to retrieve the imaging study manifest content referenced by a DocumentReference in `DocumentReference.content.attachment.url`.
@@ -140,7 +149,7 @@ The PHR MAY supply a MIME type in the Accept header other than those indicated b
 | *application/dicom* | *application/dicom+json* |
 | *application/dicom+json* | *application/dicom+json* |
 
-**Table 7: Mapping between content type and supported Accept headers**
+**Table 8: Mapping between content type and supported Accept headers**
 
 See [ITI-68 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message) for further details.
 
@@ -191,7 +200,7 @@ The table below indicates the minimal set of SOP classes that SHALL be supported
 | Positron Emission Tomography (PET) Image Storage | 1.2.840.10008.5.1.4.1.1.128 | PET scan images used in nuclear medicine. | PT |
 | Enhanced Positron Emission Tomography (PET) Image Storage | 1.2.840.10008.5.1.4.1.1.130 | Enhanced PET scan images used in nuclear medicine. | PT |
 
-**Table 8: SOP classes supported by the PHR**
+**Table 9: SOP classes supported by the PHR**
 
 The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request that needs to be executed by the PHR. 
 
@@ -200,7 +209,7 @@ The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type,
 | `GET {RetrieveURL}/instances/{SOPInstanceUID}` | *application/dicom* |
 | `GET {RetrieveURL}/instances/{SOPInstanceUID}/rendered` | *image/jpeg* |
 
-**Table 9: Supported WADO-RS requests**
+**Table 10: Supported WADO-RS requests**
 
 See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
 
