@@ -240,7 +240,7 @@
         "id": "DocumentReference.date",
         "path": "DocumentReference.date",
         "short": "DateTime",
-        "definition": "* Date/time on which the report has been autorised and/or made available.\n* Date/time on which the radiological examination has been performed on the patient and/or the images have been made.",
+        "definition": "* Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).\n* Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).",
         "alias": [
           "DatumTijd"
         ],
@@ -539,7 +539,7 @@
         "id": "DocumentReference.content.attachment.creation",
         "path": "DocumentReference.content.attachment.creation",
         "short": "DateTime / CreationTime",
-        "definition": "* Date/time on which the report has been autorised and/or made available.\n* Date/time on which the radiological examination has been performed on the patient and/or the images have been made.\n* The time the author created the document. Shall have a single value.",
+        "definition": "* Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).\n* Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).\n* The time the author created the document. Shall have a single value.",
         "alias": [
           "DatumTijd"
         ],
