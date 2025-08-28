@@ -13,8 +13,8 @@ This IG is a technical counterpart of the {{pagelink:FO, text: functional design
 | Actor | | System | | FHIR CapabilityStatement |
 | --- | --- | --- | --- | --- | --- |
 | **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
-| Patient | The user of a personal healthcare environment | PHR (Document Consumer) | Personal health record | [TO DO] | FHIR client requirements |
-| Healthcare provider | The user of a XIS | XIS (Document Responder) | Healthcare information system | [TO DO] | FHIR server requirements |
+| Patient | The user of a personal healthcare environment | PHR (Document Consumer) | Personal health record | [Retrieve image and report (timeline)](http://medmij.nl/fhir/CapabilityStatement/bbs-Retrieve) | FHIR client requirements |
+| Healthcare provider | The user of a XIS | XIS (Document Responder) | Healthcare information system | [Serve image and report (timeline)](http://medmij.nl/fhir/CapabilityStatement/bbs-Serve) | FHIR server requirements |
 
 **Table 1: Actors**
 
@@ -55,10 +55,10 @@ The Nictiz BBS FHIR IG splits the transactions in different use cases, for reaso
 
 The ITI-67 transaction is used to find available documents for a patient, based on a search on DocumentReference.
 
-| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
-| --- | --- | --- | --- | --- | --- |
-| Image and report timeline (PULL) | Retrieve image and report timeline | Patient (using a PHR) | MM-1.0-BR-FHIR | [TO DO] |
-| Image and report timeline (PULL) | Serve image and report timeline | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR | [TO DO] |
+| Transaction group | Transaction | Actor | System role |
+| --- | --- | --- | --- | --- |
+| Image and report timeline (PULL) | Retrieve image and report timeline | Patient (using a PHR) | MM-1.0-BR-FHIR |
+| Image and report timeline (PULL) | Serve image and report timeline | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR |
 
 **Table 3: Transactions**
 
@@ -80,7 +80,9 @@ Since only approved documents are to be exchanged, the PHR SHALL always include 
 
 `GET [base]/DocumentReference?status=current{&<additional parameters>}`
 
-Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters) specification. The PHR MAY supply, and the XIS SHALL be capable of processing all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. via an OAuth2 token).
+Other search parameters can be found in the [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters) specification. The PHR MAY supply all query parameters listed there, with the exception of the `patient` and `patient.identifier` search parameters, as patient identification is done differently in the MedMij context (i.e. via an OAuth2 token).
+
+The XIS MAY be capable of processing some or all query parameters listed there. Note that this is a deviation from the ITI-67 specification, in which the XIS SHALL be capable of processing all listed query parameters. However, support of all these query parameters was deemed to pose a disproportionate implementation burden for the XIS, and is therefore not enforced here.
 
 See [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236741-find-document-references-request-message) for further details.
 
@@ -92,10 +94,10 @@ See [ITI-67 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674
 #### Retrieve Imaging Report (MHD ITI-68)
 > Based on [Use case 4: Retrieve Imaging Report (Raadplegen Verslag)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_4:_Retrieve_Imaging_Report_.28Raadplegen_Verslag.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
 
-| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
-| --- | --- | --- | --- | --- | --- |
-| Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR | [TO DO] |
-| Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR | [TO DO] |
+| Transaction group | Transaction | Actor | System role |
+| --- | --- | --- | --- | --- |
+| Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR |
+| Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR |
 
 **Table 5: Transactions**
 
@@ -118,10 +120,10 @@ See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#23684
 #### Retrieve Images (MHD ITI-68 and WADO-RS RAD-107)
 > Based on [Use case 5: Retrieve Images (Raadplegen Beeld)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_5:_Retrieve_Images_.28Raadplegen_Beeld.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) for further details.
 
-| Transaction group | Transaction | Actor | System role | FHIR CapabilityStatement |
-| --- | --- | --- | --- | --- | --- |
-| Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR | [TO DO] |
-| Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR | [TO DO] |
+| Transaction group | Transaction | Actor | System role |
+| --- | --- | --- | --- | --- |
+| Image and report (PULL) | Retrieve image and report | Patient (using a PHR) | MM-1.0-BR-FHIR |
+| Image and report (PULL) | Serve image and report | Healthcare provider (using a XIS) | MM-1.0-BB-FHIR |
 
 **Table 6: Transactions**
 
