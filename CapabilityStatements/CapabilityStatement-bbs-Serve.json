@@ -34,7 +34,7 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "Minimal requirements for a server to fulfill the 'Serve image and report timeline' and 'Serve image and report' transactions (system roles: MM-1.0-TDB-FHIR and MM-1.0-BB-FHIR, respectively).",
+      "documentation": "Minimal requirements for a server to fulfill the 'Serve image and report timeline' and 'Serve image and report' transactions (system role: MM-1.0-BB-FHIR).",
       "resource": [
         {
           "type": "DocumentReference",

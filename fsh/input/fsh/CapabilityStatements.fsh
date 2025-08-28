@@ -17,7 +17,7 @@ Usage: #definition
 * format[1] = #json
 * rest
   * mode = #client
-  * documentation = "Minimal requirements for a client to fulfill the 'Retrieve image and report timeline' and 'Retrieve image and report' transactions (system roles: MM-1.0-TDR-FHIR and MM-1.0-BR-FHIR, respectively)."
+  * documentation = "Minimal requirements for a client to fulfill the 'Retrieve image and report timeline' and 'Retrieve image and report' transactions (system role: MM-1.0-BR-FHIR)."
   * resource[+]
     * type = #DocumentReference
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
@@ -84,7 +84,7 @@ Usage: #definition
 * format[1] = #json
 * rest
   * mode = #server
-  * documentation = "Minimal requirements for a server to fulfill the 'Serve image and report timeline' and 'Serve image and report' transactions (system roles: MM-1.0-TDB-FHIR and MM-1.0-BB-FHIR, respectively)."
+  * documentation = "Minimal requirements for a server to fulfill the 'Serve image and report timeline' and 'Serve image and report' transactions (system role: MM-1.0-BB-FHIR)."
   * resource[+]
     * type = #DocumentReference
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
