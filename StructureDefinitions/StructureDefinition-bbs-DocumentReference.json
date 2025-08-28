@@ -694,7 +694,26 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.9--20131212104106"
+          "valueSet": "http://medmij.nl/fhir/ValueSet/ModalityCombined",
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "key",
+                  "valueId": "bbs-DocumentReference-binding-modality-1"
+                },
+                {
+                  "url": "purpose",
+                  "valueCode": "minimum"
+                },
+                {
+                  "url": "valueSet",
+                  "valueCanonical": "http://medmij.nl/fhir/ValueSet/Modality"
+                }
+              ],
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+            }
+          ]
         },
         "mapping": [
           {
