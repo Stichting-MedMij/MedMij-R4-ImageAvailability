@@ -1,14 +1,14 @@
 // All custom ValueSets used in Image Availability
 
-ValueSet: Modality
-Id: Modality
-Title: "Modality ValueSet."
-Description: "DICOM modalities that need to be supported in the context of Image Availability."
+ValueSet: MedMijModality
+Id: MedMijModality
+Title: "MedMijModality ValueSet."
+Description: "DICOM modalities that need to be supported in the MedMij use case of Image Availability."
 * insert DefaultNarrative
-* ^url = $ModalityValueSetURL
+* ^url = $MedMijModalityValueSetURL
 * ^identifier.use = #official
 * ^identifier.system = $URI
-* ^identifier.value = $ModalityValueSetOID
+* ^identifier.value = $MedMijModalityValueSetOID
 * ^status = #draft
 * ^experimental = false
 * insert PublisherAndContact
@@ -39,4 +39,4 @@ Description: "Value set combining the (overlapping) value sets that are defined 
 * ^experimental = false
 * insert PublisherAndContact
 * include codes from valueset http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.9--20131212104106
-* include codes from valueset Modality
+* include codes from valueset MedMijModality

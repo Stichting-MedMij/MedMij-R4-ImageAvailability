@@ -169,7 +169,7 @@ Description: "Imaging research including images and reports."
     * ^condition = "bbs-DocumentReference-2"
     * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[key].valueId = "bbs-DocumentReference-binding-modality-1"
     * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[purpose].valueCode = #minimum
-    * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[valueSet].valueCanonical = $ModalityValueSetURL
+    * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[valueSet].valueCanonical = $MedMijModalityValueSetURL
   * period 1..1
     * start 1..1
       * ^short = "ProcedureStartDate / ServiceStartTime"
