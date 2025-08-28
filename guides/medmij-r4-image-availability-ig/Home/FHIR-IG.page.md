@@ -87,16 +87,16 @@ The XIS MAY be capable of processing some or all query parameters listed there. 
 See [ITI-67 Request Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236741-find-document-references-request-message) for further details.
 
 ##### XIS: response message
-The XIS returns an HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference resources. Based on the value of `DocumentReference.category` it can be derived whether each respective DocumentReference refers to a report or an image (and hence, in what way the subsequent ITI-68 request should be handled). Other elements, such as `.content.attachment.contentType` and `.content.format`, also indicate whether the DocumentReference concerns a report or an image. The table below illustrates some of the possible values (i.e. `code`-`system` pairs) in the DocumentReference, but is not meant to be comprehensive.
+The XIS returns an HTTP Status code appropriate to the processing as well as a Bundle of the matching DocumentReference resources. Based on the value of `DocumentReference.category` it can be derived whether each respective DocumentReference refers to a report or an image (and hence, in what way the subsequent ITI-68 request should be handled). Other elements, such as `.content.attachment.contentType` and `.content.format`, also indicate whether the DocumentReference concerns a report or an image. The table below illustrates some of the possible values (i.e. `code`-`system` pairs) in the DocumentReference for reports and images, but it is not meant to be comprehensive.
 
 | FHIR element | Image | Report (PDF) | Report (DICOM) |
 | --- | --- | --- | --- |
 | `.category` | *IMAGES* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) | *REPORTS* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) | *REPORTS* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) |
 | `.content.attachment.contentType` | *application/dicom* or *application/dicom+json* | *application/pdf* | *application/dicom* or *application/dicom+json* |
-| `.content.format` | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) | Any value from `http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem` in ValueSet [FormatCodes](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-beta.1/files/2949899) | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) |
-| `.context.event[modality]` | Any value from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined) | Empty | *OT* (`http://dicom.nema.org/resources/ontology/DCM`) |
+| `.content.format` | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) | Any code from `http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem` in ValueSet [FormatCodes](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-beta.1/files/2949899) | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) |
+| `.context.event[modality]` | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined) | Empty | *OT* (`http://dicom.nema.org/resources/ontology/DCM`) |
 
-**Table 5: Possible DocumentReference element values for images and reports**
+**Table 5: Possible DocumentReference element values for reports and images**
 
 See [ITI-67 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742-find-document-references-response-message) for further details.
 
