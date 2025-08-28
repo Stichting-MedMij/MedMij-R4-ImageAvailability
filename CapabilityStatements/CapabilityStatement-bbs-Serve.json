@@ -59,42 +59,77 @@
           ]
         },
         {
-          "type": "Binary"
+          "type": "Binary",
+          "interaction": [
+            {
+              "code": "read"
+            }
+          ]
         },
         {
           "type": "Patient",
           "supportedProfile": [
             "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
           ],
-          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
+            }
+          ]
         },
         {
           "type": "PractitionerRole",
           "supportedProfile": [
             "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
           ],
-          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
+            }
+          ]
         },
         {
           "type": "Practitioner",
           "supportedProfile": [
             "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
           ],
-          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
+            }
+          ]
         },
         {
           "type": "Organization",
           "supportedProfile": [
             "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
           ],
-          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
+            }
+          ]
         },
         {
           "type": "Encounter",
           "supportedProfile": [
             "http://nictiz.nl/fhir/StructureDefinition/nl-core-Encounter"
           ],
-          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
+            }
+          ]
         }
       ],
       "interaction": [
