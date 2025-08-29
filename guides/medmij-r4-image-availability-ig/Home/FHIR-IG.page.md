@@ -39,7 +39,7 @@ There are several identifiers that play a role in the exchange of images and rep
 
 **Table 2: Identifiers relevant in the context of images and reports**
 
-**Note:**
+Note the following:
 - The cardinality of `DocumentReference.masterIdentifier` is `1..1`. If a XIS wants to provide additional identifiers (e.g. a report identifier assigned in the EHR), the `DocumentReference.identifier` can be used.
 - If the Accession Number is known, it SHALL be conveyed in all DocumentReference resources that refer to the corresponding images and reports. In particular, this ensures that images and reports that belong to the same imaging study, are linked together.
 - When encoding a DICOM UID (e.g. Study Instance UID) in an Identifier datatype, use the `.system` *urn:dicom:uid*, and prefix the `.value` with *urn:oid:*.
