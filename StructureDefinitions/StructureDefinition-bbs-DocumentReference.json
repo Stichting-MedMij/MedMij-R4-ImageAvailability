@@ -23,7 +23,7 @@
     }
   ],
   "description": "Imaging research including images and reports.",
-  "purpose": "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference).",
+  "purpose": "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -49,7 +49,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "DocumentReference",
-  "baseDefinition": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference",
+  "baseDefinition": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -296,9 +296,6 @@
             "code": "Reference",
             "targetProfile": [
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
-            ],
-            "aggregation": [
-              "contained"
             ]
           }
         ],
@@ -327,9 +324,6 @@
             "code": "Reference",
             "targetProfile": [
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
-            ],
-            "aggregation": [
-              "contained"
             ]
           }
         ],
@@ -356,9 +350,6 @@
               "http://hl7.org/fhir/StructureDefinition/Organization",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
-            ],
-            "aggregation": [
-              "contained"
             ]
           }
         ],
@@ -837,9 +828,6 @@
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/Patient",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
-            ],
-            "aggregation": [
-              "contained"
             ]
           }
         ],
