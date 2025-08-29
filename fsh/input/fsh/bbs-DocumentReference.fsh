@@ -229,7 +229,7 @@ Description: "Imaging research including images and reports."
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2013:accession
       * system 1..1
-        * ^comment = "In DICOM, the Accession Number is just a string (namely of DICOM data type *Short String* (*SH*)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback (for instance the OID registered for the Assigning Authority, or the information present in DICOM tag `(0008,0051)` (Issuer of Accession Number Sequence))."
+        * ^comment = "In DICOM, the Accession Number is just a string (namely of DICOM data type *Short String* (*SH*)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback, i.e. the OID registered for the Assigning Authority, which should be present in DICOM tag `(0040,0032)` (Universal Entity ID) as part of `(0008,0051)` (Issuer of Accession Number Sequence)."
       * value 1..1
       * assigner only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
         * ^short = "AssigningAuthority"
