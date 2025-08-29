@@ -56,10 +56,11 @@ Description: "Imaging research including images and reports."
   * ^short = "Patient / PatientId"
   * ^alias = "Patient"
 * date 1..1
-  * ^short = "DateTime"
+  * ^short = "DateTime / CreationTime"
   * ^definition = """
         * Date/time on which the report has been autorised and/or made available.
         * Date/time on which the radiological examination has been performed on the patient and/or the images have been made.
+        * The time the author created the document. Shall have a single value.
         """
   * ^alias = "DatumTijd"
 * author 1..*
@@ -319,6 +320,7 @@ Title: "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
 * type -> "ihexds-dataelement-28" "typeCode"
 * category -> "ihexds-dataelement-9" "classCode"
 * subject -> "ihexds-dataelement-19" "patientId"
+* date -> "ihexds-dataelement-11" "creationTime"
 * author -> "ihexds-dataelement-2" "author"
 * authenticator -> "ihexds-dataelement-17" "legalAuthenticator"
 * description -> "ihexds-dataelement-4" "comments"
