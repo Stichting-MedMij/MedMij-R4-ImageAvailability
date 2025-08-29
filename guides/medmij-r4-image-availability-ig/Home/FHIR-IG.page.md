@@ -94,7 +94,7 @@ The XIS returns an HTTP Status code appropriate to the processing as well as a B
 | `.category` | *IMAGES* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) | *REPORTS* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) | *REPORTS* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) |
 | `.content.attachment.contentType` | *application/dicom* or *application/dicom+json* | *application/pdf* | *application/dicom* or *application/dicom+json* |
 | `.content.format` | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) | Any code from `http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem` in ValueSet [FormatCodes](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-beta.1/files/2949899) | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) |
-| `.context.event[modality]` | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined) | Empty | *OT* (`http://dicom.nema.org/resources/ontology/DCM`) |
+| `.context.event[modality]` | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined) | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined) or empty | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined), but often *OT* (`http://dicom.nema.org/resources/ontology/DCM`) |
 
 **Table 5: Possible DocumentReference element values for reports and images**
 
