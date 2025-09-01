@@ -1,6 +1,6 @@
-title: MedMij R4 Image Availability IG 1.0.0-beta.1
+title: MedMij R4 Image Availability IG 1.0.0-beta.2
 description: 'FHIR IG for MedMij Image Availability (Dutch: Beeldbeschikbaarheid or BBS). This IG is considered unstable and not suited for implementation in production environments.'
-version: 1.0.0-beta.1
+version: 1.0.0-beta.2
 style-root: project
 style-name: MedMij
 numbered-headings: true
