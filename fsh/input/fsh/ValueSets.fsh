@@ -29,7 +29,7 @@ Description: "DICOM modalities that need to be supported in the MedMij use case 
 ValueSet: ModalityCombined
 Id: ModalityCombined
 Title: "ModalityCombined ValueSet."
-Description: "Value set combining the (overlapping) value sets that are defined by Nictiz (in the Nationale IHE MetaData Set (2024)) and MedMij, respectively."
+Description: "Value set combining the (overlapping) value sets that are defined by DICOM (in [CID 29 Acquisition Modality](https://dicom.nema.org/medical/dicom/2018a/output/chtml/part16/sect_CID_29.html)) and MedMij, respectively."
 * insert DefaultNarrative
 * ^url = $ModalityCombinedValueSetURL
 * ^identifier.use = #official
@@ -38,5 +38,5 @@ Description: "Value set combining the (overlapping) value sets that are defined 
 * ^status = #draft
 * ^experimental = false
 * insert PublisherAndContact
-* include codes from valueset http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.9--20131212104106
+* include codes from valueset http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html
 * include codes from valueset MedMijModality

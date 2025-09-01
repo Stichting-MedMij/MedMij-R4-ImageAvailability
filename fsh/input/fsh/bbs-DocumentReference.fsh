@@ -1,14 +1,14 @@
 // Profile on DocumentReference derived from IHE MHD to be used in Image Availability
 
 Profile: BbsDocumentReference
-Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
+Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference
 Id: bbs-DocumentReference
 Title: "bbs DocumentReference"
 Description: "Imaging research including images and reports."
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference)."
+* ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference)."
 * insert Copyright
 * . obeys bbs-DocumentReference-1 and bbs-DocumentReference-2
   * ^short = "ImagingResearch"
@@ -56,10 +56,11 @@ Description: "Imaging research including images and reports."
   * ^short = "Patient / PatientId"
   * ^alias = "Patient"
 * date 1..1
-  * ^short = "DateTime"
+  * ^short = "DateTime / CreationTime"
   * ^definition = """
         * Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).
         * Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).
+        * The time the author created the document. Shall have a single value.
         """
   * ^alias = "DatumTijd"
 * author 1..*
@@ -229,7 +230,7 @@ Description: "Imaging research including images and reports."
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2013:accession
       * system 1..1
-        * ^comment = "In DICOM, the Accession Number is just a string (namely of DICOM data type *Short String* (*SH*)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback (for instance the OID registered for the Assigning Authority, or the information present in DICOM tag `(0008,0051)` (Issuer of Accession Number Sequence))."
+        * ^comment = "In DICOM, the Accession Number is just a string (namely of DICOM data type *Short String* (*SH*)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback, i.e. the OID registered for the Assigning Authority, which should be present in DICOM tag `(0040,0032)` (Universal Entity ID) as part of `(0008,0051)` (Issuer of Accession Number Sequence)."
       * value 1..1
       * assigner only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
         * ^short = "AssigningAuthority"
@@ -319,6 +320,7 @@ Title: "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
 * type -> "ihexds-dataelement-28" "typeCode"
 * category -> "ihexds-dataelement-9" "classCode"
 * subject -> "ihexds-dataelement-19" "patientId"
+* date -> "ihexds-dataelement-11" "creationTime"
 * author -> "ihexds-dataelement-2" "author"
 * authenticator -> "ihexds-dataelement-17" "legalAuthenticator"
 * description -> "ihexds-dataelement-4" "comments"

@@ -11,7 +11,7 @@ Usage: #example
 * category
   * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "1990-02-10T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
+* date = "1990-02-10T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -52,7 +52,7 @@ Usage: #example
 * category
   * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
+* date = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -92,7 +92,7 @@ Usage: #example
 * category
   * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
+* date = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -133,7 +133,7 @@ Usage: #example
 * category
   * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
+* date = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -179,7 +179,7 @@ Usage: #example
 * category
   * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
+* date = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -220,7 +220,7 @@ Usage: #example
 * category
   * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Verslaginformatie.DatumTijd
+* date = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
