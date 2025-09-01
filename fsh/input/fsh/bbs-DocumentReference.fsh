@@ -58,8 +58,8 @@ Description: "Imaging research including images and reports."
 * date 1..1
   * ^short = "DateTime / CreationTime"
   * ^definition = """
-        * Date/time on which the report has been autorised and/or made available.
-        * Date/time on which the radiological examination has been performed on the patient and/or the images have been made.
+        * Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).
+        * Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).
         * The time the author created the document. Shall have a single value.
         """
   * ^alias = "DatumTijd"
@@ -130,8 +130,8 @@ Description: "Imaging research including images and reports."
     * creation
       * ^short = "DateTime / CreationTime"
       * ^definition = """
-        * Date/time on which the report has been autorised and/or made available.
-        * Date/time on which the radiological examination has been performed on the patient and/or the images have been made.
+        * Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).
+        * Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).
         * The time the author created the document. Shall have a single value.
         """
       * ^alias = "DatumTijd"
