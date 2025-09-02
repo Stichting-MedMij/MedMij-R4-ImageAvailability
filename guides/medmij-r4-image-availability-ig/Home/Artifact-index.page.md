@@ -11,7 +11,7 @@ In the current version of this IG, the [IHE.MHD.UnContained.Comprehensive.Docume
 
 {{tree:http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference, buttons}}
 
-**Note:**
+Note the following:
 - The [Nictiz Profiling Guidelines for FHIR R4](https://informatiestandaarden.nictiz.nl/wiki/FHIR:V1.0_FHIR_Profiling_Guidelines_R4) have been used as guidelines for creating the profile.
 - The (element) descriptions present in het profile are taken (and translated, if necessary) from the respective dataset the mapped concept originates from. If concepts of different datasets are mapped to the same element within the profile, both descriptions have been included.
 - The ['open world' modeling](https://informatiestandaarden.nictiz.nl/wiki/FHIR:V1.0_FHIR_Profiling_Guidelines_R4#Open_vs._closed_world_modeling) approach is adopted as much as possible. Notable exceptions are cardinalities that have been restricted based on the functional dataset of the MedMij use case, such as the minimum cardinalities of `.date` and `.content.attachment.title`.
@@ -22,14 +22,20 @@ In the current version of this IG, the [IHE.MHD.UnContained.Comprehensive.Docume
   - Additional bindings might be added where appropriate (e.g. the *minimum* additional binding on `.context.event[modality]`).
 
 ### Other profiles
-FHIR R4 conformance resources developed by Nictiz (based on zib publication 2020) from the [nl-core 0.12.0-beta.1 package](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1) are used and referenced where possible. In particular, the nl-core profiles the table below are used.
+FHIR R4 conformance resources developed by Nictiz (based on zib publication 2020) from the [nl-core 0.12.0-beta.1 package](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1) are used and referenced where possible. In particular, the zibs and corresponding nl-core profiles collected in the table below are used.
 
 | Zib | FHIR resource/data type | FHIR profile |
 | --- | --- | --- |
 | [Patient](https://zibs.nl/wiki/Patient-v3.2(2020EN)) | Patient | [nl-core-Patient](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885819) |
-| [HealthProfessional](https://zibs.nl/wiki/HealthProfessional-v3.5(2020EN)) | PractitionerRole | [nl-core-HealthProfessional-PractitionerRole](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885778)
-| [HealthcareProvider](https://zibs.nl/wiki/HealthcareProvider-v3.4(2020EN)) | Organization | [nl-core-HealthcareProvider-Organization](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885776) |
+| [HealthProfessional](https://zibs.nl/wiki/HealthProfessional-v3.5(2020EN)) | PractitionerRole <br/> Practitioner | [nl-core-HealthProfessional-PractitionerRole](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885778) <br/> [nl-core-HealthProfessional-Practitioner](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885777) |
+| [HealthcareProvider](https://zibs.nl/wiki/HealthcareProvider-v3.4(2020EN)) | Location <br/> Organization | [nl-core-HealthcareProvider](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885775) <br/> [nl-core-HealthcareProvider-Organization](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885776) |
 | [Encounter](https://zibs.nl/wiki/Encounter-v4.0.1(2020EN)) | Encounter | [nl-core-Encounter](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885764) |
 | [AnatomicalLocation](https://zibs.nl/wiki/AnatomicalLocation-v1.0(2020EN)) | CodeableConcept | [nl-core-AnatomicalLocation](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885731) |
 
 **Table 1: Relevant nl-core profiles**
+
+Note the following:
+- Each occurrence of the zib HealthProfessional is normally represented by two FHIR resources: a PractitionerRole resource (instance of nl-core-HealthProfessional-PractitionerRole) and a Practitioner resource (instance of nl-core-HealthProfessional-Practitioner). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance where relevant, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.
+In rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced instead. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is never explicitly mentioned as a target profile.
+This is in line with the [Nictiz Profiling Guidelines for FHIR R4](https://informatiestandaarden.nictiz.nl/wiki/FHIR:V1.0_FHIR_Profiling_Guidelines_R4#Referencing_zib_HealthProfessional).
+- The zib HealthcareProvider is mapped to both a Location and Organization profile. In general the Location profile acts as the focal resource, because most references to this zib are concerned about the recording of the physical location where the care to patient takes place rather than the organizational information. However, within Image Availability (and in particular the DocumentReference resource), the HealthcareProvider is only referenced directly on `.author`, and indirectly via the PractitionerRole resource, hence a reference to the Organization profile is sufficient in those cases. The Location profile is mentioned in the table above for completeness purposes.
