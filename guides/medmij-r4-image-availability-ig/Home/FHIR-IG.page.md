@@ -212,7 +212,7 @@ The table below indicates the minimal set of SOP classes that SHALL be supported
 
 **Table 9: SOP classes supported by the PHR**
 
-The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request that needs to be executed by the PHR. 
+The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request (both forms) that needs to be executed by the PHR. 
 
 | WADO-RS request | Accept header |
 | --- | --- |
