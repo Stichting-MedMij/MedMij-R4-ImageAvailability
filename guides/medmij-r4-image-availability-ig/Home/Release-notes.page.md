@@ -9,11 +9,13 @@
 | Dataset               | The cardinality of Performer has been changed from `0..1` to `0..*`. | [DOSINZAGE2-693](https://medmij.atlassian.net/browse/DOSINZAGE2-693) |
 | Dataset               | The concept Initials has been added for the Patient, Requester and Performer concepts. | [DOSINZAGE2-681](https://medmij.atlassian.net/browse/DOSINZAGE2-681) |
 | Dataset               | The codes *OT* and *SC* have been added to the value set for Modality. | [DOSINZAGE2-653](https://medmij.atlassian.net/browse/DOSINZAGE2-653), [DOSINZAGE2-701](https://medmij.atlassian.net/browse/DOSINZAGE2-701) |
+| Dataset               | The concept Requester has been removed. | [DOSINZAGE2-586](https://medmij.atlassian.net/browse/DOSINZAGE2-586) |
 | Functional design     | The display guideline has been finetuned. | [DOSINZAGE2-683](https://medmij.atlassian.net/browse/DOSINZAGE2-683) |
 | Functional design     | Several requirements have been finetuned. | [DOSINZAGE2-684](https://medmij.atlassian.net/browse/DOSINZAGE2-684) |
 | Functional design     | The separate system roles for retrieving and serving the timeline have been removed. The underlying transactions have been linked to the system roles for retrieving and serving the images and reports, respectively. | [DOSINZAGE2-676](https://medmij.atlassian.net/browse/DOSINZAGE2-676) |
 | Functional design     | <ul> <li>The diagrams in the functional design have been finetuned. <li>The separate use cases for retrieving only an image or a report have been removed.</ul> | [DOSINZAGE2-682](https://medmij.atlassian.net/browse/DOSINZAGE2-682) |
 | Functional design     | The link between the requirements and the display guideline has been made explicit. | [DOSINZAGE2-705](https://medmij.atlassian.net/browse/DOSINZAGE2-705) |
+| Functional design     | References to the requester have been removed from the requirements and display guideline. | [DOSINZAGE2-586](https://medmij.atlassian.net/browse/DOSINZAGE2-586) |
 | Technical design      | <ul> <li>The requirements for the XIS with respect to search parameters have been relaxed. <li>Links to the CapabilityStatements have been added in the technical design. </ul> | [DOSINZAGE2-668](https://medmij.atlassian.net/browse/DOSINZAGE2-668) |
 | Technical design      | The requirement to only exchange approved documents (i.e. DocumentReferences with `.status` equal to *current*) has been added. | [DOSINZAGE2-698](https://medmij.atlassian.net/browse/DOSINZAGE2-698) |
 | Technical design      | Guidance on DICOM UIDs has been added. | [DOSINZAGE2-686](https://medmij.atlassian.net/browse/DOSINZAGE2-686) |

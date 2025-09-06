@@ -135,5 +135,4 @@ Naast de requirements is ook de {{pagelink:Weergaverichtlijn, text: weergaverich
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
-| 1. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of het specialisme van de aanvragende zorgverlener (bbs-dataelement-189) getoond. |
-| 2. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of het specialisme van de uitvoerende zorgverlener (bbs-dataelement-187) getoond. |
+| 1. | Bij elk beeld of verslag wordt de beschikbaar gestelde naam en/of het specialisme van de uitvoerende zorgverlener (bbs-dataelement-187) getoond. |
