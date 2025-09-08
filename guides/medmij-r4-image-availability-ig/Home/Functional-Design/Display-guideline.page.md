@@ -92,8 +92,6 @@ In de tabel staan de gegevens uit de gegevensdienst Beeldbeschikbaarheid die rel
 | BeeldTitel | Naam onderzoek | C. van Wijk radiologiebeelden | Ja  |
 | VerslagTitel | Naam onderzoek | Cardiologiebeelden C. van Wijk | Ja  |
 | OrganisatieNaam | Zorginstelling | OLVG Oost | Ja  |
-| Aanvrager.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | Aanvragend zorgverlener | G. de Visser | Ja, indien beschikbaar |
-| Aanvrager.Zorgverlener.Specialisme | Specialisme aanvragend zorgverlener | Cardiologie | Ja, indien beschikbaar |
 | Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | Uitvoerend zorgverlener | J. ter Velde | Ja, indien beschikbaar |
 | Modaliteit | Soort beeld | CT | Ja, indien het een beeld betreft |
 
