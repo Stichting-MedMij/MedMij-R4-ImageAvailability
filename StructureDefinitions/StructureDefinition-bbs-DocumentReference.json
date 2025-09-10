@@ -503,7 +503,6 @@
           "VerslagTitel",
           "BeeldTitel"
         ],
-        "min": 1,
         "mapping": [
           {
             "identity": "bbs-medmij-dataset-100-beta1-20250807",

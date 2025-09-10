@@ -123,7 +123,7 @@ Description: "Imaging research including images and reports."
     * hash
       * ^short = "Hash"
       * ^definition = "Hash of the document itself."
-    * title 1..1
+    * title
       * ^short = "ReportTitle / ImageTitle / Title"
       * ^definition = """
         * The title of the report.
