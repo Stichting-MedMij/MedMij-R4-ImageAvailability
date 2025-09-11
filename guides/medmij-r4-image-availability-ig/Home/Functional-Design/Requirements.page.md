@@ -18,16 +18,17 @@ De prioriteit van elke onderstaande eis wordt vastgesteld volgens de MoSCoW-meth
 
 De eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan moet altijd worden voldaan door een DVA of PGO om gekwalificeerd te worden voor de gegevensdienst.
 
-Naast de requirements is ook de {{pagelink:Weergaverichtlijn, text: weergaverichtlijn}} opgesteld. De requirements bevatten de minimale vereisten waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
+Naast de requirements is ook de {{pagelink:Weergaverichtlijn, text: weergaverichtlijn}} opgesteld. De requirements bevatten de minimale eisen waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
 
 ## Eisen voor DVA
 | ID | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
 | --- | --- | --- | --- | --- |
-| 1 | PGO-leverancier | Dat de DVA specificeert hoe de rate limiting van zijn product werkt | Een stabielere aansluiting op de DVA heb. | M |
+| 1 | PGO-leverancier | Inzicht in de manier waarop rate limiting door de DVA is geconfigureerd | Een stabielere aansluiting op de DVA heb. | M |
 
 | Acceptatiecriteria | Beschrijving |
 | --- | --- |
-| 1. | Als de limiet gespecificeerd door de DVA wordt overschreden door de PGO, wordt als response een HTTP 429 (Too Many Requests) gegeven op de request(s) van de PGO. |
+| 1. | De DVA stelt documentatie beschikbaar waarin beschreven is hoe rate limiting is toegepast. |
+| 2. | Als de limiet gespecificeerd door de DVA wordt overschreden door de PGO, wordt als response een HTTP 429 (Too Many Requests) gegeven op de request(s) van de PGO. |
 
 ## Eisen voor PGO
 | ID | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
