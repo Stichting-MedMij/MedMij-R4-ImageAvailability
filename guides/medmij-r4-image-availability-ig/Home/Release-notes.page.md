@@ -11,7 +11,7 @@
 | Dataset               | The codes *OT* and *SC* have been added to the value set for Modality. | [DOSINZAGE2-653](https://medmij.atlassian.net/browse/DOSINZAGE2-653), [DOSINZAGE2-701](https://medmij.atlassian.net/browse/DOSINZAGE2-701) |
 | Dataset               | The concept Requester has been removed. | [DOSINZAGE2-586](https://medmij.atlassian.net/browse/DOSINZAGE2-586) |
 | Dataset               | The cardinalities of ReportTitle and ImageTitle have been changed from `1..1` to `0..1`. | [DOSINZAGE2-740](https://medmij.atlassian.net/browse/DOSINZAGE2-740) |
-| Functional design     | The display guideline has been finetuned. | [DOSINZAGE2-683](https://medmij.atlassian.net/browse/DOSINZAGE2-683) |
+| Functional design     | The display guideline has been finetuned. | [DOSINZAGE2-683](https://medmij.atlassian.net/browse/DOSINZAGE2-683), [DOSINZAGE2-740](https://medmij.atlassian.net/browse/DOSINZAGE2-740) |
 | Functional design     | Several requirements have been finetuned, and requirements for the DVA have been added. | [DOSINZAGE2-684](https://medmij.atlassian.net/browse/DOSINZAGE2-684), [DOSINZAGE2-691](https://medmij.atlassian.net/browse/DOSINZAGE2-691) |
 | Functional design     | The separate system roles for retrieving and serving the timeline have been removed. The underlying transactions have been linked to the system roles for retrieving and serving the images and reports, respectively. | [DOSINZAGE2-676](https://medmij.atlassian.net/browse/DOSINZAGE2-676) |
 | Functional design     | <ul> <li>The diagrams in the functional design have been finetuned. <li>The separate use cases for retrieving only an image or a report have been removed.</ul> | [DOSINZAGE2-682](https://medmij.atlassian.net/browse/DOSINZAGE2-682) |
