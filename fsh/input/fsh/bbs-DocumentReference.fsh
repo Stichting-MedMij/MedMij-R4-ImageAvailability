@@ -27,7 +27,7 @@ Description: "Imaging research including images and reports."
   * ^short = "AvailabilityStatus"
   * ^definition = "The lifecycle status of the document."
   * ^patternCode = #current
-* type from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.133.11.1--20230808113539 (required)
+* type from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.133.11.1--20230808113539 (extensible)
   * ^short = "ProcedureType / TypeCode"
   * ^definition = """
       * Description of the procedure and/or the performed imaging research (e.g. CT thorax, MRI knee, ultrasonography of breast, X-ray).
