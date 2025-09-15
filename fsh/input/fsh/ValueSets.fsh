@@ -9,7 +9,7 @@ Description: "DICOM modalities that need to be supported in the MedMij use case 
 * ^identifier.use = #official
 * ^identifier.system = $URI
 * ^identifier.value = $MedMijModalityValueSetOID
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * insert PublisherAndContact
 * $DCM#CR "Computed Radiography"
@@ -35,7 +35,7 @@ Description: "Value set combining the (overlapping) value sets that are defined 
 * ^identifier.use = #official
 * ^identifier.system = $URI
 * ^identifier.value = $ModalityCombinedValueSetOID
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * insert PublisherAndContact
 * include codes from valueset http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html

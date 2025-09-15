@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "MedMijModality",
   "id": "MedMijModality",
   "title": "MedMijModality ValueSet.",

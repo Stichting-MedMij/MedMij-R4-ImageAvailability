@@ -1,6 +1,6 @@
 # {{page-title}}
 
-## 1.0.0-beta.2
+## 1.0.0-rc.1
 
 | Component             | Description  | Ticket    |
 | --------------------- | ------------ | --------- |
