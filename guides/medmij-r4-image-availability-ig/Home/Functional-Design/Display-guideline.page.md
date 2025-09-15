@@ -14,7 +14,7 @@ Deze richtlijn heeft als doel om duidelijke handvatten te bieden voor een patië
 
 De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens.
 
-Naast de weergaverichtlijn zijn ook {{pagelink:Requirements, text: requirements}} opgesteld. De requirements bevatten de minimale functionele vereisten waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
+Naast de weergaverichtlijn zijn ook {{pagelink:Requirements, text: requirements}} opgesteld. De requirements bevatten de minimale eisen waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
 
 ## Weergave in PGO
 Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze richtlijn.
@@ -49,9 +49,10 @@ De tijdlijnweergave biedt gebruikers een visueel overzicht van alle medische ver
 | 2. | Beelden en verslagen zijn standaard chronologisch gesorteerd van nieuw naar oud. |
 | 3. | Zoeken op (een deel van) de naam van het onderzoek of informatie uit andere kolommen is mogelijk. |
 | 4. | Voor elk document wordt basisinformatie getoond (datum, type document (i.e. verslag of beeld), naam onderzoek (beeldtitel/verslagtitel), zorginstelling, soort beeld). |
-| 5. | Filteren van beelden en verslagen is mogelijk op datum, zorginstelling en type bestand. |
-| 6. | Verslag en beeld zijn visueel gelinkt indien beide beschikbaar zijn en in de bron gekoppeld zijn middels het Accession Number. |
-| 7. | Een gebruiker kan een verslag of een volledig onderzoek (corresponderend met één tijdlijnregel) downloaden. |
+| 5. | Als de titel van een verslag of beeld ontbreekt, dan wordt dit expliciet gemeld in de betreffende tijdlijnregel. |
+| 6. | Filteren van beelden en verslagen is mogelijk op datum, zorginstelling en type bestand. |
+| 7. | Verslag en beeld zijn visueel gelinkt indien beide beschikbaar zijn en in de bron gekoppeld zijn middels het Accession Number. |
+| 8. | Een gebruiker kan een verslag of een volledig onderzoek (corresponderend met één tijdlijnregel) downloaden. |
 
 **Tabel 1: Acceptatiecriteria voor het overzichtsscherm**
 
@@ -89,11 +90,9 @@ In de tabel staan de gegevens uit de gegevensdienst Beeldbeschikbaarheid die rel
 | Naam dataelement | Advies weergavetekst in PGO | Voorbeeld | Weergeven |
 | --- | --- | --- | --- |
 | VerrichtingStartDatum | Onderzoeksdatum | 31-01-2020 | Ja  |
-| BeeldTitel | Naam onderzoek | C. van Wijk radiologiebeelden | Ja  |
-| VerslagTitel | Naam onderzoek | Cardiologiebeelden C. van Wijk | Ja  |
+| BeeldTitel | Naam onderzoek | C. van Wijk radiologiebeelden | Ja, indien beschikbaar  |
+| VerslagTitel | Naam onderzoek | Cardiologiebeelden C. van Wijk | Ja, indien beschikbaar  |
 | OrganisatieNaam | Zorginstelling | OLVG Oost | Ja  |
-| Aanvrager.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | Aanvragend zorgverlener | G. de Visser | Ja, indien beschikbaar |
-| Aanvrager.Zorgverlener.Specialisme | Specialisme aanvragend zorgverlener | Cardiologie | Ja, indien beschikbaar |
 | Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | Uitvoerend zorgverlener | J. ter Velde | Ja, indien beschikbaar |
 | Modaliteit | Soort beeld | CT | Ja, indien het een beeld betreft |
 
