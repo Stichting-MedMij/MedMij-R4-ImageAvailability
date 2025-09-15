@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "ModalityCombined",
   "id": "ModalityCombined",
   "title": "ModalityCombined ValueSet.",
