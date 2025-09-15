@@ -99,4 +99,14 @@ In de tabel staan de gegevens uit de gegevensdienst Beeldbeschikbaarheid die rel
 **Tabel 4: Relevante gegevens m.b.t. de weergaverichtlijn**
 
 ### Disclaimer
-Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM-viewer op het device geïnstalleerd dient te worden om het bestand te kunnen inzien.
+Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM-viewer op het device geïnstalleerd dient te worden om het bestand te kunnen inzien. Door het ontwikkelen van een waarschuwing is het voor een gebruiker duidelijk wat de gevolgen zijn als een DICOM-bestand wordt gedownload.
+
+Figuur 5 bevat een visuele weergave van hoe deze waarschuwing eruit zou kunnen komen te zien. In deze figuur is een waarschuwingsveld geplaatst onder de knop waarmee het beeld als DICOM-bestand kan worden gedownload. Dit waarschuwingsveld kan als uitklapmenu geopend worden met daarin de inhoudelijke tekst (zie Figuur 6).
+
+{{render: guides/medmij-r4-image-availability-ig/images/Weergaverichtlijn waarschuwing (knop).png}}
+
+**Figuur 5: Voorbeeld van een waarschuwing voor het downloaden van een DICOM-beeld**
+
+{{render: guides/medmij-r4-image-availability-ig/images/Weergaverichtlijn waarschuwing (tekst).png}}
+
+**Figuur 6: Voorbeeld van inhoudelijke tekst waarschuwing**
