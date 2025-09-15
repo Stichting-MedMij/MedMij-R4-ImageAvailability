@@ -7,8 +7,8 @@
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
   "name": "bbs Serve",
-  "status": "draft",
-  "date": "2025-09-01",
+  "status": "active",
+  "date": "2025-09-19",
   "publisher": "MedMij",
   "contact": [
     {

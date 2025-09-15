@@ -8,7 +8,7 @@
   "url": "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference",
   "name": "BbsDocumentReference",
   "title": "bbs DocumentReference",
-  "status": "draft",
+  "status": "active",
   "publisher": "MedMij",
   "contact": [
     {
@@ -37,8 +37,8 @@
       "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
     },
     {
-      "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
-      "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.2 2025xxyy"
+      "identity": "bbs-medmij-dataset-100-rc1-20250919",
+      "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-rc.1 20250919"
     },
     {
       "identity": "ihexds-dataset-2024-20220712",
@@ -515,12 +515,12 @@
             "comment": "ImageTitle"
           },
           {
-            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-2",
             "comment": "ReportTitle"
           },
           {
-            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-1",
             "comment": "ImageTitle"
           },
@@ -718,7 +718,7 @@
             "comment": "Modality"
           },
           {
-            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-5",
             "comment": "Modality"
           }
@@ -895,7 +895,7 @@
             "comment": "AccessionNumber"
           },
           {
-            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-3",
             "comment": "AccessionNumber"
           }
@@ -921,7 +921,7 @@
         "min": 1,
         "mapping": [
           {
-            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-7",
             "comment": "AssigningAuthority (implicit, main mapping is on .context.related[accessionNumber].identifier.assigner)"
           }
@@ -951,7 +951,7 @@
         ],
         "mapping": [
           {
-            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-7",
             "comment": "AssigningAuthority"
           }
@@ -980,7 +980,7 @@
             "comment": "StudyInstanceUID"
           },
           {
-            "identity": "bbs-medmij-dataset-100-beta2-2025xxyy",
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-4",
             "comment": "StudyInstanceUID"
           }

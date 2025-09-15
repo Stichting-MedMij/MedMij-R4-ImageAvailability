@@ -6,7 +6,7 @@ Id: bbs-DocumentReference
 Title: "bbs DocumentReference"
 Description: "Imaging research including images and reports."
 * insert DefaultNarrative
-* ^status = #draft
+* ^status = #active
 * insert PublisherAndContact
 * ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference)."
 * insert Copyright
@@ -303,10 +303,10 @@ Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
 * context.related[accessionNumber].identifier -> "bbs-medmij-dataelement-3" "AccessionNumber"
 * context.related[studyInstanceUID].identifier -> "bbs-medmij-dataelement-4" "StudyInstanceUID"
 
-Mapping: MedMij-100-beta2
+Mapping: MedMij-100-rc1
 Source: BbsDocumentReference
-Id: bbs-medmij-dataset-100-beta2-2025xxyy
-Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.2 2025xxyy"
+Id: bbs-medmij-dataset-100-rc1-20250919
+Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-rc.1 20250919"
 * content.attachment.title -> "bbs-medmij-dataelement-2" "ReportTitle"
 * content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
 * context.event[modality] -> "bbs-medmij-dataelement-5" "Modality"
