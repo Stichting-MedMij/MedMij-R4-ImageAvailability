@@ -240,7 +240,7 @@ Description: "Imaging research including images and reports."
       * assigner only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
         * ^short = "AssigningAuthority"
         * ^definition = "Assigning authority that issued the Accession Number."
-        * ^alias = "UitgevendeInstelling"
+        * ^alias = "UitgevendeInstantie"
   * related[studyInstanceUID]
     * identifier 1..1
       * ^short = "StudyInstanceUID"

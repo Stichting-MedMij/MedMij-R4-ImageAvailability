@@ -938,7 +938,7 @@
         "short": "AssigningAuthority",
         "definition": "Assigning authority that issued the Accession Number.",
         "alias": [
-          "UitgevendeInstelling"
+          "UitgevendeInstantie"
         ],
         "type": [
           {
