@@ -22,5 +22,6 @@ sushi build
 
 The `fsh-generated` folder is included in `.gitignore`, meaning that its contents are not tracked by Git. After running `sushi build`, you need to manually move the generated files to the corresponding folders in the repository, i.e.
 - `../StructureDefinitions` for profiles and extensions;
-- `../vocabulary` for terminology resources, such as CodeSystems, ValueSets, ConceptMaps and NamingSystems;
-- `../test/resources/` for example resources.
+- `../vocabulary/generated` for terminology resources, such as CodeSystems, ValueSets, ConceptMaps and NamingSystems;
+- `../test/resources/` for example resources;
+- `../CapabilityStatements` for CapabilityStatements.
