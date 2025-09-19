@@ -11,11 +11,6 @@
     {
       "coding": [
         {
-          "code": "18726-0",
-          "system": "http://loinc.org",
-          "display": "Radiology studies (set)"
-        },
-        {
           "code": "IMAGES",
           "system": "urn:oid:1.3.6.1.4.1.19376.1.2.6.1",
           "display": "Images"
@@ -73,7 +68,7 @@
       },
       "format": {
         "code": "1.2.840.10008.5.1.4.1.1.88.59",
-        "system": "urn.oid:1.2.840.10008.2.6.1"
+        "system": "http://dicom.nema.org/resources/ontology/DCMUID"
       }
     }
   ],
@@ -125,7 +120,7 @@
               }
             ]
           },
-          "system": "urn:oid:2.16.528.1.1023.19.1.1",
+          "system": "urn:oid:2.16.840.1.113883.2.4.3.63",
           "value": "RAD-20250212-47092",
           "assigner": {
             "reference": "Organization/ImageAvailability-Organization-Spaarne",
@@ -143,7 +138,8 @@
               }
             ]
           },
-          "value": "1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801"
+          "system": "urn:dicom:uid",
+          "value": "urn:oid:1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801"
         }
       }
     ]

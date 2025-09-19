@@ -8,7 +8,7 @@
   "url": "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference",
   "name": "BbsDocumentReference",
   "title": "bbs DocumentReference",
-  "status": "draft",
+  "status": "active",
   "publisher": "MedMij",
   "contact": [
     {
@@ -23,7 +23,7 @@
     }
   ],
   "description": "Imaging research including images and reports.",
-  "purpose": "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference).",
+  "purpose": "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.UnContained.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -37,6 +37,10 @@
       "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
     },
     {
+      "identity": "bbs-medmij-dataset-100-rc1-20250919",
+      "name": "Dataset Beeldbeschikbaarheid MedMij 1.0.0-rc.1 20250919"
+    },
+    {
       "identity": "ihexds-dataset-2024-20220712",
       "name": "ART-DECOR Dataset Nationale IHE MetaData Set (2024)",
       "uri": "https://decor.nictiz.nl/pub/nihemds/ihexds-html-20220712T144728/ds-2.16.840.1.113883.2.4.3.11.60.106.1.1-2013-12-04T122419.html"
@@ -45,7 +49,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "DocumentReference",
-  "baseDefinition": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference",
+  "baseDefinition": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -127,11 +131,12 @@
         "path": "DocumentReference.type",
         "short": "ProcedureType / TypeCode",
         "definition": "* Description of the procedure and/or the performed imaging research (e.g. CT thorax, MRI knee, ultrasonography of breast, X-ray).\n* The code specifying the precise kind of document (e.g. Pulmonary History and Physical, Discharge Summary, Ultrasound Report).",
+        "comment": "The value set bound to this element is a thesaurus managed, owned and distributed by DHD (namely the Verrichtingenthesaurus (VT)). Every concept in the VT is linked to a unique SNOMED concept, but it is no SNOMED reference set, and in particular it is not published on the SNOMED browsers. In order to retrieve the contents of the VT, authorized access is required.\n\nThe XDS metadata element typeCode, which normally contains the precise type of document, is mapped on `.type` in [core FHIR](https://hl7.org/fhir/R4/documentreference-mappings.html#xds). In XDS-I, and consequently, the Nictiz IG, the typeCode element is used to indicate the procedure type instead. Even though `.context.event` is better suited to convey the procedure type from a FHIR perspective, the core FHIR mapping between typeCode and `.type` is retained.",
         "alias": [
           "VerrichtingType"
         ],
         "binding": {
-          "strength": "required",
+          "strength": "extensible",
           "valueSet": "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.133.11.1--20230808113539"
         },
         "mapping": [
@@ -172,18 +177,7 @@
           ],
           "rules": "open"
         },
-        "min": 2
-      },
-      {
-        "id": "DocumentReference.category.coding:radiologyStudies",
-        "path": "DocumentReference.category.coding",
-        "sliceName": "radiologyStudies",
-        "min": 1,
-        "max": "1",
-        "patternCoding": {
-          "code": "18726-0",
-          "system": "http://loinc.org"
-        }
+        "min": 1
       },
       {
         "id": "DocumentReference.category.coding:images",
@@ -246,8 +240,8 @@
       {
         "id": "DocumentReference.date",
         "path": "DocumentReference.date",
-        "short": "DateTime",
-        "definition": "* Date/time on which the report has been autorised and/or made available.\n* Date/time on which the radiological examination has been performed on the patient and/or the images have been made.",
+        "short": "DateTime / CreationTime",
+        "definition": "* Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).\n* Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).\n* The time the author created the document. Shall have a single value.",
         "alias": [
           "DatumTijd"
         ],
@@ -262,6 +256,11 @@
             "identity": "bbs-dataset-100-alpha2-20240208",
             "map": "bbs-dataelement-69",
             "comment": "DateTime"
+          },
+          {
+            "identity": "ihexds-dataset-2024-20220712",
+            "map": "ihexds-dataelement-11",
+            "comment": "creationTime"
           }
         ]
       },
@@ -303,9 +302,6 @@
             "code": "Reference",
             "targetProfile": [
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
-            ],
-            "aggregation": [
-              "contained"
             ]
           }
         ],
@@ -328,15 +324,12 @@
           "Uitvoerder"
         ],
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
-            ],
-            "aggregation": [
-              "contained"
             ]
           }
         ],
@@ -363,9 +356,6 @@
               "http://hl7.org/fhir/StructureDefinition/Organization",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
-            ],
-            "aggregation": [
-              "contained"
             ]
           }
         ],
@@ -513,7 +503,6 @@
           "VerslagTitel",
           "BeeldTitel"
         ],
-        "min": 1,
         "mapping": [
           {
             "identity": "bbs-medmij-dataset-100-beta1-20250807",
@@ -522,6 +511,16 @@
           },
           {
             "identity": "bbs-medmij-dataset-100-beta1-20250807",
+            "map": "bbs-medmij-dataelement-1",
+            "comment": "ImageTitle"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
+            "map": "bbs-medmij-dataelement-2",
+            "comment": "ReportTitle"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-1",
             "comment": "ImageTitle"
           },
@@ -536,7 +535,7 @@
         "id": "DocumentReference.content.attachment.creation",
         "path": "DocumentReference.content.attachment.creation",
         "short": "DateTime / CreationTime",
-        "definition": "* Date/time on which the report has been autorised and/or made available.\n* Date/time on which the radiological examination has been performed on the patient and/or the images have been made.\n* The time the author created the document. Shall have a single value.",
+        "definition": "* Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).\n* Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).\n* The time the author created the document. Shall have a single value.",
         "alias": [
           "DatumTijd"
         ],
@@ -691,11 +690,35 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.9--20131212104106"
+          "valueSet": "http://medmij.nl/fhir/ValueSet/ModalityCombined",
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "key",
+                  "valueId": "bbs-DocumentReference-binding-modality-1"
+                },
+                {
+                  "url": "purpose",
+                  "valueCode": "minimum"
+                },
+                {
+                  "url": "valueSet",
+                  "valueCanonical": "http://medmij.nl/fhir/ValueSet/Modality"
+                }
+              ],
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+            }
+          ]
         },
         "mapping": [
           {
             "identity": "bbs-medmij-dataset-100-beta1-20250807",
+            "map": "bbs-medmij-dataelement-5",
+            "comment": "Modality"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
             "map": "bbs-medmij-dataelement-5",
             "comment": "Modality"
           }
@@ -810,9 +833,6 @@
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/Patient",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
-            ],
-            "aggregation": [
-              "contained"
             ]
           }
         ],
@@ -873,6 +893,11 @@
             "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-3",
             "comment": "AccessionNumber"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
+            "map": "bbs-medmij-dataelement-3",
+            "comment": "AccessionNumber"
           }
         ]
       },
@@ -890,6 +915,19 @@
         }
       },
       {
+        "id": "DocumentReference.context.related:accessionNumber.identifier.system",
+        "path": "DocumentReference.context.related.identifier.system",
+        "comment": "In DICOM, the Accession Number is just a string (namely of DICOM data type _Short String_ (_SH_)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback, i.e. the OID registered for the Assigning Authority, which should be present in DICOM tag `(0040,0032)` (Universal Entity ID) as part of `(0008,0051)` (Issuer of Accession Number Sequence).",
+        "min": 1,
+        "mapping": [
+          {
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
+            "map": "bbs-medmij-dataelement-7",
+            "comment": "AssigningAuthority (implicit, main mapping is on .context.related[accessionNumber].identifier.assigner)"
+          }
+        ]
+      },
+      {
         "id": "DocumentReference.context.related:accessionNumber.identifier.value",
         "path": "DocumentReference.context.related.identifier.value",
         "min": 1
@@ -897,7 +935,11 @@
       {
         "id": "DocumentReference.context.related:accessionNumber.identifier.assigner",
         "path": "DocumentReference.context.related.identifier.assigner",
-        "definition": "Issuer of Accession Number.",
+        "short": "AssigningAuthority",
+        "definition": "Assigning authority that issued the Accession Number.",
+        "alias": [
+          "UitgevendeInstantie"
+        ],
         "type": [
           {
             "code": "Reference",
@@ -905,6 +947,13 @@
               "http://hl7.org/fhir/StructureDefinition/Organization",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
             ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
+            "map": "bbs-medmij-dataelement-7",
+            "comment": "AssigningAuthority"
           }
         ]
       },
@@ -929,6 +978,11 @@
             "identity": "bbs-medmij-dataset-100-beta1-20250807",
             "map": "bbs-medmij-dataelement-4",
             "comment": "StudyInstanceUID"
+          },
+          {
+            "identity": "bbs-medmij-dataset-100-rc1-20250919",
+            "map": "bbs-medmij-dataelement-4",
+            "comment": "StudyInstanceUID"
           }
         ]
       },
@@ -946,9 +1000,25 @@
         }
       },
       {
+        "id": "DocumentReference.context.related:studyInstanceUID.identifier.system",
+        "path": "DocumentReference.context.related.identifier.system",
+        "min": 1,
+        "patternUri": "urn:dicom:uid"
+      },
+      {
         "id": "DocumentReference.context.related:studyInstanceUID.identifier.value",
         "path": "DocumentReference.context.related.identifier.value",
-        "min": 1
+        "comment": "As the Study Instance UID is a DICOM UID, its value SHALL be prefixed with _urn:oid:_.",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "bbs-DocumentReference-3",
+            "severity": "error",
+            "human": "Each DICOM UID value is a proper OID.",
+            "expression": "$this.startsWith('urn:oid:')",
+            "source": "http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference"
+          }
+        ]
       }
     ]
   }

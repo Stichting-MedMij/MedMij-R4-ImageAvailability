@@ -1,14 +1,14 @@
 // Profile on DocumentReference derived from IHE MHD to be used in Image Availability
 
 Profile: BbsDocumentReference
-Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference
+Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference
 Id: bbs-DocumentReference
 Title: "bbs DocumentReference"
 Description: "Imaging research including images and reports."
 * insert DefaultNarrative
-* ^status = #draft
+* ^status = #active
 * insert PublisherAndContact
-* ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference)."
+* ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.UnContained.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference)."
 * insert Copyright
 * . obeys bbs-DocumentReference-1 and bbs-DocumentReference-2
   * ^short = "ImagingResearch"
@@ -27,26 +27,28 @@ Description: "Imaging research including images and reports."
   * ^short = "AvailabilityStatus"
   * ^definition = "The lifecycle status of the document."
   * ^patternCode = #current
-* type from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.133.11.1--20230808113539 (required)
+* type from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.133.11.1--20230808113539 (extensible)
   * ^short = "ProcedureType / TypeCode"
   * ^definition = """
       * Description of the procedure and/or the performed imaging research (e.g. CT thorax, MRI knee, ultrasonography of breast, X-ray).
       * The code specifying the precise kind of document (e.g. Pulmonary History and Physical, Discharge Summary, Ultrasound Report).
     """
+  * ^comment = """
+    The value set bound to this element is a thesaurus managed, owned and distributed by DHD (namely the Verrichtingenthesaurus (VT)). Every concept in the VT is linked to a unique SNOMED concept, but it is no SNOMED reference set, and in particular it is not published on the SNOMED browsers. In order to retrieve the contents of the VT, authorized access is required.
+
+    The XDS metadata element typeCode, which normally contains the precise type of document, is mapped on `.type` in [core FHIR](https://hl7.org/fhir/R4/documentreference-mappings.html#xds). In XDS-I, and consequently, the Nictiz IG, the typeCode element is used to indicate the procedure type instead. Even though `.context.event` is better suited to convey the procedure type from a FHIR perspective, the core FHIR mapping between typeCode and `.type` is retained.
+    """
   * ^alias = "VerrichtingType"
 * category
   * ^short = "ClassCode"
   * ^definition = "The code specifying the particular kind of document."
-* category.coding 2..*
+* category.coding 1..*
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * category.coding contains
-    radiologyStudies 1..1 and
     images 0..1 and
     reports 0..1
-* category.coding[radiologyStudies]
-  * ^patternCoding = $LNC#18726-0
 * category.coding[images] 
   * ^patternCoding = $XDSClassCode#IMAGES
   * ^condition[0] = "bbs-DocumentReference-1"
@@ -59,10 +61,11 @@ Description: "Imaging research including images and reports."
   * ^short = "Patient / PatientId"
   * ^alias = "Patient"
 * date 1..1
-  * ^short = "DateTime"
+  * ^short = "DateTime / CreationTime"
   * ^definition = """
-        * Date/time on which the report has been autorised and/or made available.
-        * Date/time on which the radiological examination has been performed on the patient and/or the images have been made.
+        * Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).
+        * Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).
+        * The time the author created the document. Shall have a single value.
         """
   * ^alias = "DatumTijd"
 * author 1..*
@@ -72,7 +75,7 @@ Description: "Imaging research including images and reports."
   * ^short = "Author"
 * author contains
     location 1..1 and
-    performer 0..1
+    performer 0..*
 * author[location] only Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
   * ^short = "Location"
   * ^definition = "The healthcare center where the procedure was, is or will be carried out."
@@ -120,7 +123,7 @@ Description: "Imaging research including images and reports."
     * hash
       * ^short = "Hash"
       * ^definition = "Hash of the document itself."
-    * title 1..1
+    * title
       * ^short = "ReportTitle / ImageTitle / Title"
       * ^definition = """
         * The title of the report.
@@ -132,8 +135,8 @@ Description: "Imaging research including images and reports."
     * creation
       * ^short = "DateTime / CreationTime"
       * ^definition = """
-        * Date/time on which the report has been autorised and/or made available.
-        * Date/time on which the radiological examination has been performed on the patient and/or the images have been made.
+        * Date/time on which the report has been autorised and/or made available (if the DocumentReference represents an imaging report).
+        * Date/time on which the radiological examination has been performed on the patient and/or the images have been made (if the DocumentReference represents an imaging study).
         * The time the author created the document. Shall have a single value.
         """
       * ^alias = "DatumTijd"
@@ -164,12 +167,15 @@ Description: "Imaging research including images and reports."
       """
     * ^alias[0] = "VerrichtingAnatomischeLocatie"
     * ^alias[1] = "Locatie"
-  * event[modality] from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.106.11.9--20131212104106 (required)
+  * event[modality] from $ModalityCombinedValueSetURL (required)
     * ^short = "Modality"
     * ^definition = "Type of medical imaging device, process or method that originally acquired or produced the data used to create the image or series of images, such as a CT scanner or MRI machine."
     * ^comment = "For an image or series of images the modalities SHALL be specified."
     * ^alias = "Modaliteit"
     * ^condition = "bbs-DocumentReference-2"
+    * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[key].valueId = "bbs-DocumentReference-binding-modality-1"
+    * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[purpose].valueCode = #minimum
+    * ^binding.extension[http://hl7.org/fhir/tools/StructureDefinition/additional-binding].extension[valueSet].valueCanonical = $MedMijModalityValueSetURL
   * period 1..1
     * start 1..1
       * ^short = "ProcedureStartDate / ServiceStartTime"
@@ -228,9 +234,13 @@ Description: "Imaging research including images and reports."
       * ^alias = "AccessionNumber"
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2013:accession
+      * system 1..1
+        * ^comment = "In DICOM, the Accession Number is just a string (namely of DICOM data type _Short String_ (_SH_)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback, i.e. the OID registered for the Assigning Authority, which should be present in DICOM tag `(0040,0032)` (Universal Entity ID) as part of `(0008,0051)` (Issuer of Accession Number Sequence)."
       * value 1..1
       * assigner only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
-        * ^definition = "Issuer of Accession Number."
+        * ^short = "AssigningAuthority"
+        * ^definition = "Assigning authority that issued the Accession Number."
+        * ^alias = "UitgevendeInstantie"
   * related[studyInstanceUID]
     * identifier 1..1
       * ^short = "StudyInstanceUID"
@@ -238,7 +248,11 @@ Description: "Imaging research including images and reports."
       * ^alias = "StudyInstanceUID"
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
+      * system 1..1
+        * ^patternUri = $DICOMUniqueId
       * value 1..1
+      * value obeys bbs-DocumentReference-3
+        * ^comment = "As the Study Instance UID is a DICOM UID, its value SHALL be prefixed with _urn:oid:_."
 
 Invariant: bbs-DocumentReference-1
 Description: "Either a category for an image or a report is present."
@@ -249,6 +263,11 @@ Invariant: bbs-DocumentReference-2
 Description: "For an image or series of images the modalities are specified."
 Severity: #error
 Expression: "category.coding.where(system = 'urn:oid:1.3.6.1.4.1.19376.1.2.6.1' and code = 'IMAGES').exists() implies context.event.coding.where(system = 'http://dicom.nema.org/resources/ontology/DCM').exists()"
+
+Invariant: bbs-DocumentReference-3
+Description: "Each DICOM UID value is a proper OID."
+Severity: #error
+Expression: "$this.startsWith('urn:oid:')"
 
 Mapping: BeeldbeschikbaarheidNictiz
 Source: BbsDocumentReference
@@ -274,7 +293,7 @@ Title: "ART-DECOR Dataset BBS 1.0.0-alpha.2 20240208"
 * context.facilityType -> "bbs-dataelement-546" "OrganizationType"
 * context.practiceSetting -> "bbs-dataelement-524" "DepartmentSpecialty"
 
-Mapping: MedMij
+Mapping: MedMij-100-beta1
 Source: BbsDocumentReference
 Id: bbs-medmij-dataset-100-beta1-20250807
 Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
@@ -282,6 +301,18 @@ Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-beta.1 20250807"
 * content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
 * context.event[modality] -> "bbs-medmij-dataelement-5" "Modality"
 * context.related[accessionNumber].identifier -> "bbs-medmij-dataelement-3" "AccessionNumber"
+* context.related[studyInstanceUID].identifier -> "bbs-medmij-dataelement-4" "StudyInstanceUID"
+
+Mapping: MedMij-100-rc1
+Source: BbsDocumentReference
+Id: bbs-medmij-dataset-100-rc1-20250919
+Title: "Dataset Beeldbeschikbaarheid MedMij 1.0.0-rc.1 20250919"
+* content.attachment.title -> "bbs-medmij-dataelement-2" "ReportTitle"
+* content.attachment.title -> "bbs-medmij-dataelement-1" "ImageTitle"
+* context.event[modality] -> "bbs-medmij-dataelement-5" "Modality"
+* context.related[accessionNumber].identifier -> "bbs-medmij-dataelement-3" "AccessionNumber"
+* context.related[accessionNumber].identifier.system -> "bbs-medmij-dataelement-7" "AssigningAuthority (implicit, main mapping is on .context.related[accessionNumber].identifier.assigner)"
+* context.related[accessionNumber].identifier.assigner -> "bbs-medmij-dataelement-7" "AssigningAuthority"
 * context.related[studyInstanceUID].identifier -> "bbs-medmij-dataelement-4" "StudyInstanceUID"
 
 Mapping: IHEXDS
@@ -294,6 +325,7 @@ Title: "ART-DECOR Dataset Nationale IHE MetaData Set (2024)"
 * type -> "ihexds-dataelement-28" "typeCode"
 * category -> "ihexds-dataelement-9" "classCode"
 * subject -> "ihexds-dataelement-19" "patientId"
+* date -> "ihexds-dataelement-11" "creationTime"
 * author -> "ihexds-dataelement-2" "author"
 * authenticator -> "ihexds-dataelement-17" "legalAuthenticator"
 * description -> "ihexds-dataelement-4" "comments"

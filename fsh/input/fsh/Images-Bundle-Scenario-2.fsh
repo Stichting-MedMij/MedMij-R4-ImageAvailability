@@ -9,10 +9,9 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "1990-02-10T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
+* date = "1990-02-10T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -23,9 +22,9 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "longfoto" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "1990-02-10T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DCMUID#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
-  * event[modality] = $DICOM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
+  * event[modality] = $DCM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "1990-02-10" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
@@ -33,13 +32,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-19285" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-19285" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.2.826.0.1.3680043.8.498.77615907425522706317163091876421984542" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:1.2.826.0.1.3680043.8.498.77615907425522706317163091876421984542" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -50,10 +50,9 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
+* date = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Van-Der-Ham) "van der Ham, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -73,7 +72,8 @@ Usage: #example
   * related
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.789012" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.789012" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-2-2
 InstanceOf: Binary
@@ -90,10 +90,9 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
+* date = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -104,9 +103,9 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "longfoto" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DCMUID#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
-  * event[modality] = $DICOM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
+  * event[modality] = $DCM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "1993-02-06" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
@@ -114,13 +113,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-50637" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-50637" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.456789" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.456789" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -131,10 +131,9 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#399208008 "longfoto" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "1993-02-06T12:00:00+01:00" // date | Onderzoek.Verslaginformatie.DatumTijd
+* date = "1993-02-06T12:00:00+01:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Janssen) "Janssen, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -154,13 +153,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-50637" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-50637" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Radiologie-Universitair) "Erasmus MC, Radiologie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.456789" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.456789" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-2-3
 InstanceOf: Binary
@@ -177,10 +177,9 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Beeldinformatie.DatumTijd
+* date = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -191,9 +190,9 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "röntgenfoto van linker kaakgewricht" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DCMUID#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
-  * event[modality] = $DICOM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
+  * event[modality] = $DCM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2020-08-10" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V5 "Universitair ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
@@ -201,13 +200,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-74920" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-74920" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.456342" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.456342" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-DocumentReference-Klaassen-Groen-Report-2-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/bbs-DocumentReference
@@ -218,10 +218,9 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#142771000146105 "röntgenfoto van linker kaakgewricht" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[reports] = $XDSClassCode#REPORTS "Reports" // Secundaire code
+  * coding[reports] = $XDSClassCode#REPORTS "Reports" // classCode
 * subject = Reference(ImageAvailability-Patient-Klaassen-Groen) "José Klaassen-Groen"
-* date = "2020-08-10T12:00:00+02:00" // date | Onderzoek.Verslaginformatie.DatumTijd
+* date = "2020-08-10T12:00:00+02:00" // creationTime | Onderzoek.Verslaginformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Coenen) "C.H. Coenen, Kaakchirurg"
 * author[1] = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -241,13 +240,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-74920" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Issuer of Accession Number
+      * system = $OIDErasmusMC
+      * value = "RAD-20250212-74920" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-ErasmusMC-Mondzorg-Universitair) "Erasmus MC, Mondzorg en kaakchirurgie, Universitair ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "2.16.528.1.1007.3.1.20250212.456342" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:2.16.528.1.1007.3.1.20250212.456342" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Binary-Report-2-4
 InstanceOf: Binary

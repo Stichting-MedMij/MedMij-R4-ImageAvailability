@@ -9,10 +9,9 @@ Usage: #example
 * status = #current // availabilityStatus | geen mapping naar dataset
 * type = $SCT#16831000087101 "MRI van linker bovenbeen" // Onderzoek.Verrichting.VerrichtingType
 * category
-  * coding[radiologyStudies] = $LNC#18726-0 "Radiology studies (set)" // Primaire code
-  * coding[images] = $XDSClassCode#IMAGES "Images" // Secundaire code
+  * coding[images] = $XDSClassCode#IMAGES "Images" // classCode
 * subject = Reference(ImageAvailability-Patient-De-Graaff) "de Graaff"
-* date = "2020-03-03T12:00:00+01:00" // date | Onderzoek.Beeldinformatie.DatumTijd
+* date = "2020-03-03T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
 * author[0] = Reference(ImageAvailability-PractitionerRole-Pieterssen) "Pieterssen, Orthopedisch chirurg"
 * author[1] = Reference(ImageAvailability-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis"
 * securityLabel = $Confidentiality#N "Normal" // securityLabel | geen mapping naar dataset
@@ -23,9 +22,9 @@ Usage: #example
     * url = "https://examplepacs.xis/wado/metadata" // geen mapping naar dataset | verwijst naar een dummy URL op een PACS
     * title = "MRI van linker bovenbeen" // title | Onderzoek.Beeldinformatie.BeeldTitel
     * creation = "2020-03-03T12:00:00+01:00" // creationTime | Onderzoek.Beeldinformatie.DatumTijd
-  * format = $DICOMUIDRegistry#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
+  * format = $DCMUID#1.2.840.10008.5.1.4.1.1.88.59 // formatCode | geen mapping naar dataset
 * context
-  * event[modality] = $DICOM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
+  * event[modality] = $DCM#OT "Other" // Onderzoek.Beeldinformatie.Modaliteit
   * period.start = "2020-03-03" // serviceStartTime | Onderzoek.Verrichting.VerrrichtingStartdatum
   * facilityType = $OrganizationType#V6 "Algemeen ziekenhuis" // Zorgaanbieder.OrganisatieType
   * practiceSetting = $SCT#394734003 "Radiological specialties" // Overgenomen uit de Nictiz IG, moet mogelijk specifieker
@@ -33,13 +32,14 @@ Usage: #example
   * related[0]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2013:accession
-      * system = $MedMijImageAvailabilityTest // MedMij OID voor testdoeleinden Beeldbeschikbaarheid
-      * value = "RAD-20250212-47092" // Onderzoek.AccessionNumber
-      * assigner = Reference(ImageAvailability-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis" // Issuer of Accession Number
+      * system = $OIDSpaarneZiekenhuis
+      * value = "RAD-20250212-47092" // Onderzoek.AccessionNumberInformatie.AccessionNumber
+      * assigner = Reference(ImageAvailability-Organization-Spaarne) "Stichting Spaarne Gasthuis, Radiologie, Algemeen ziekenhuis" // Onderzoek.AccessionNumberInformatie.UitgevendeInstantie
   * related[1]
     * identifier
       * type = $URI#urn:ihe:iti:xds:2016:studyInstanceUID
-      * value = "1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801" // Onderzoek.StudyInstanceUID
+      * system = $DICOMUniqueId
+      * value = "urn:oid:1.2.826.0.1.3680043.8.498.90783674708684117220863480423356599801" // Onderzoek.StudyInstanceUID
 
 Instance: ImageAvailability-Patient-De-Graaff
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient

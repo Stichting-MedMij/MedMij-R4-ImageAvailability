@@ -1,7 +1,12 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="2.16.840.1.113883.2.4.3.11.60.106.11.12--20131212104106"/>
     <meta>
-        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/><!--<profile value="http://hl7.org/fhir/3.0/StructureDefinition/ValueSet"/>-->
+        <source value="http://decor.nictiz.nl/fhir/4.0/ihexds-"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/><!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/ValueSet"/>-->
+        <tag>
+            <system value="http://hl7.org/fhir/FHIR-version"/>
+            <code value="4.0.1"/>
+        </tag>
     </meta>
     <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
         <valuePeriod>
