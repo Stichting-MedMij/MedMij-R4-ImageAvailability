@@ -8,7 +8,7 @@ Description: "Imaging research including images and reports."
 * insert DefaultNarrative
 * ^status = #active
 * insert PublisherAndContact
-* ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference)."
+* ^purpose = "This DocumentReference resource represents the Onderzoek building block for patient use cases in the context of the information standard [Image Availability (Beeldbeschikbaarheid)](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Beeldbeschikbaarheid). This profile is based on the [IHE.MHD.UnContained.Comprehensive.DocumentReference profile](https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference)."
 * insert Copyright
 * . obeys bbs-DocumentReference-1 and bbs-DocumentReference-2
   * ^short = "ImagingResearch"
@@ -235,7 +235,7 @@ Description: "Imaging research including images and reports."
       * type 1..1
         * ^patternCodeableConcept = $URI#urn:ihe:iti:xds:2013:accession
       * system 1..1
-        * ^comment = "In DICOM, the Accession Number is just a string (namely of DICOM data type *Short String* (*SH*)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback, i.e. the OID registered for the Assigning Authority, which should be present in DICOM tag `(0040,0032)` (Universal Entity ID) as part of `(0008,0051)` (Issuer of Accession Number Sequence)."
+        * ^comment = "In DICOM, the Accession Number is just a string (namely of DICOM data type _Short String_ (_SH_)). In order to ensure uniqueness of the Accession Number, a `.system` SHALL be provided. It is up to the Assigning Authority that issued the Accession Number to determine and manage an appropriate URL or URN as `.system`. If no specific URL or URN for the Accession Number identifier system is provided in the source data, the identifier of the Assigning Authority itself SHOULD be used as fallback, i.e. the OID registered for the Assigning Authority, which should be present in DICOM tag `(0040,0032)` (Universal Entity ID) as part of `(0008,0051)` (Issuer of Accession Number Sequence)."
       * value 1..1
       * assigner only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
         * ^short = "AssigningAuthority"
@@ -252,7 +252,7 @@ Description: "Imaging research including images and reports."
         * ^patternUri = $DICOMUniqueId
       * value 1..1
       * value obeys bbs-DocumentReference-3
-        * ^comment = "As the Study Instance UID is a DICOM UID, its value SHALL be prefixed with *urn:oid:*."
+        * ^comment = "As the Study Instance UID is a DICOM UID, its value SHALL be prefixed with _urn:oid:_."
 
 Invariant: bbs-DocumentReference-1
 Description: "Either a category for an image or a report is present."

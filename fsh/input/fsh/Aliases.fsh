@@ -8,7 +8,6 @@ Alias: $DCM = http://dicom.nema.org/resources/ontology/DCM
 Alias: $DCMUID = http://dicom.nema.org/resources/ontology/DCMUID
 Alias: $DICOMUniqueId = urn:dicom:uid
 Alias: $FormatCode = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
-Alias: $MedMijImageAvailabilityTest = urn:oid:2.16.528.1.1023.19.1.1
 Alias: $MedMijModalityValueSetOID = urn:oid:2.16.528.1.1023.11.2.3.11.11
 Alias: $MedMijModalityValueSetURL = http://medmij.nl/fhir/ValueSet/Modality
 Alias: $ModalityCombinedValueSetOID = urn:oid:2.16.528.1.1023.11.2.3.11.12
