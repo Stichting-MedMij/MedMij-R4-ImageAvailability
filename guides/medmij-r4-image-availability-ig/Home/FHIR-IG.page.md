@@ -13,8 +13,8 @@ This IG is a technical counterpart of the {{pagelink:FO, text: functional design
 | Actor | | System | | FHIR CapabilityStatement |
 | --- | --- | --- | --- | --- | --- |
 | **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
-| Patient | The user of a personal healthcare environment | PHR (Document Consumer) | Personal health record | [Retrieve image and report (timeline)](http://medmij.nl/fhir/CapabilityStatement/bbs-Retrieve) | FHIR client requirements |
-| Healthcare provider | The user of a XIS | XIS (Document Responder) | Healthcare information system | [Serve image and report (timeline)](http://medmij.nl/fhir/CapabilityStatement/bbs-Serve) | FHIR server requirements |
+| Patient | The user of a personal healthcare environment | PHR (Document Consumer) | Personal health record | [CapabilityStatement Retrieve image and report (timeline)](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-rc.1/files/2975388) | FHIR client requirements |
+| Healthcare provider | The user of a XIS | XIS (Document Responder) | Healthcare information system | [CapabilityStatement Serve image and report (timeline)](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-rc.1/files/2975389) | FHIR server requirements |
 
 **Table 1: Actors**
 
@@ -97,7 +97,7 @@ The XIS returns an HTTP Status code appropriate to the processing as well as a B
 | `.category` | *IMAGES* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) | *REPORTS* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) | *REPORTS* (`urn:oid:1.3.6.1.4.1.19376.1.2.6.1`) |
 | `.content.attachment.contentType` | *application/dicom* or *application/dicom+json* | *application/pdf* | *application/dicom* or *application/dicom+json* |
 | `.content.format` | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) | Any code from `http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem` in ValueSet [FormatCodes](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-beta.1/files/2949899) | *1.2.840.10008.5.1.4.1.1.88.59* (`http://dicom.nema.org/resources/ontology/DCMUID`) |
-| `.context.event[modality]` | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined) | Empty or any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined) | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](http://medmij.nl/fhir/ValueSet/ModalityCombined), but often code *OT* |
+| `.context.event[modality]` | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-rc.1/files/2975433) | Empty or any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-rc.1/files/2975433) | Any code from `http://dicom.nema.org/resources/ontology/DCM` in ValueSet [ModalityCombined](https://simplifier.net/packages/medmij.fhir.nl.r4.imageavailability/1.0.0-rc.1/files/2975433), but often code *OT* |
 
 **Table 5: Possible DocumentReference element values for reports and images**
 
