@@ -136,7 +136,7 @@ See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#23684
 #### <a name="RetrieveImages"></a> Retrieve Images (MHD ITI-68 and WADO-RS RAD-107)
 > Based on [Use case 5: Retrieve Images (Raadplegen Beeld)](https://informatiestandaarden.nictiz.nl/wiki/Bbs:V1_Alpha2_IG#Use_case_5:_Retrieve_Images_.28Raadplegen_Beeld.29_3) in the Nictiz BBS FHIR IG, see [ITI-68](https://profiles.ihe.net/ITI/MHD/ITI-68.html) and [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107 for further details.
 
-The retrieval of images consists of two consecutive steps, namely the ITI-68 transaction, which retrieves the imaging study manifest content referenced by a DocumentReference in `DocumentReference.content.attachment.url` (i.e. the [DICOM KOS document](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_c.17.6.2.html)), and the RAD-107 transaction, which retrieves the individual (image) instances (i.e. the SOP instances) based on the contents of the KOS document. Seen from the perspective of the patient using a PHR, these two transactions are performed in one action.
+The retrieval of images consists of two consecutive steps, namely the ITI-68 transaction, which retrieves the imaging study manifest content referenced by a DocumentReference in `DocumentReference.content.attachment.url` (i.e. the [DICOM KOS document](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_c.17.6.2.html)), and the RAD-107 transaction, which retrieves the individual DICOM instances (including images and encapsulated PDF documents) based on the contents of the KOS document. Seen from the perspective of the patient using a PHR, these two transactions are performed in one action.
 
 | Transaction group | Transaction | Actor | System role |
 | --- | --- | --- | --- | --- |
@@ -172,7 +172,7 @@ If the XIS is unable to format the imaging study manifest in a content type list
 See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message) for further details.
 
 ##### PHR: request message (WADO-RS RAD-107)
-The WADO-RS Retrieve request (RAD-107) is used to retrieve individual (image) instances. For each (image) instance the PHR wants to retrieve, it executes an HTTP GET against the WADO-RS endpoint of the XIS using the following URL:
+The WADO-RS Retrieve request (RAD-107) is used to retrieve individual DICOM instances, including images and encapsulated PDF documents. For each instance the PHR wants to retrieve, it executes an HTTP GET against the WADO-RS endpoint of the XIS using the following URL:
 
 ```
 GET [WadoRsEndpoint]/studies/[StudyInstanceUID]/series/[SeriesInstanceUID]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}{/rendered}
@@ -181,8 +181,8 @@ GET [WadoRsEndpoint]/studies/[StudyInstanceUID]/series/[SeriesInstanceUID]/insta
 Note the following:
 - The required `[StudyInstanceUID]`, `[SeriesInstanceUID]` and `[SOPInstanceUID]` unique identifier values can be found in the DICOM KOS document, which is obtained via the ITI-68 Retrieve Document transaction. In Table 2, the corresponding DICOM tags are listed. Note however, that the SOP Instance UID of an individual instance which is referenced by the KOS document can be found in DICOM tag `(0008,1155)` (Referenced SOP Instance UID) within the KOS document.
 - Based on the [current DICOM specifications](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_c.17.6.2.html), it is not possible to indicate the order of image instances within a series in the KOS document, as DICOM tag `(0020,0013)` (Instance Number) is not available at the image instance level. Hence for each series, the PHR SHOULD assume the order of instances within the KOS document is the correct ordering, and retrieve (and display) the individual instances in that order.
-- By default, the request returns binary DICOM instances, while adding `/rendered` to the request results in rendered instances, e.g. in JPEG format (also see Table 10).
-- The part `/frames/[FrameIndex]` only needs to be added to the request when the SOP instance may contain multi-frame images, which is indicated in Table 9 below. Since the approaches of retrieving a single-frame or multi-frame image differ slightly, these are described separately below.
+- By default, the request returns binary DICOM instances, while adding `/rendered` to the request results in rendered instances in JPEG or PDF format, depending on the SOP class (also see Table 10).
+- The part `/frames/[FrameIndex]` only needs to be added to the request when the SOP instance may contain multi-frame images, which is indicated in Table 9 below. Since the approaches of retrieving a single-frame or multi-frame image differ slightly, these are described separately below. These image retrieval procedures do not apply to Encapsulated PDF Storage instances, which are retrieved as complete documents as described below Table 10.
 
 **<a name="RetrieveSingleFrameImage"></a> Retrieve single-frame image** <br/>
 Instead of constructing the above URL from scratch by searching all these identifier values from various locations within the KOS document, DICOM tag `(0008,1115)` (Referenced Series Sequence) provides a structured way to access this information. This sequence contains one or more referenced image series. Each item in the sequence corresponds to a specific series and contains:
@@ -243,7 +243,7 @@ where `[FrameIndex]` attains the values 1, 2, 3, ..., Number of Frames, consecut
 If Number of Frames is equal to 1 or if Number of Frames is missing, the PHR SHALL treat the instance as a single-frame image and follow the image retrieval approach described in the {{pagelink: TD, text: previous subsection, anchor: RetrieveSingleFrameImage}}.
 
 **Supported SOP classes and WADO-RS requests** <br/>
-The table below indicates the minimal set of SOP classes that SHALL be supported. If, for a certain series in the sequence, a SOP Class UID is present in DICOM tag `(0008,1150)` other than those specified below, the PHR MAY still retrieve the corresponding image, but is not required to do so.
+The table below indicates the minimal set of SOP classes that SHALL be supported. If, for a certain series in the sequence, a SOP Class UID is present in DICOM tag `(0008,1150)` other than those specified below, the PHR MAY still retrieve the corresponding instance, but is not required to do so.
 
 | SOP Class Name | SOP Class UID | Description | Corresponding modality | May contain multi-frame images |
 | --- | --- | --- | --- | --- |
@@ -272,18 +272,21 @@ The table below indicates the minimal set of SOP classes that SHALL be supported
 
 **<a name="SupportedSOPClasses"></a> Table 9: Supported SOP classes**
 
-The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the (image) instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS, as well as the corresponding WADO-RS request (both forms) that needs to be executed by the PHR.
+The PHR SHALL provide an HTTP Accept header to indicate the preferred MIME type, such that the XIS can provide the DICOM instance in the preferred format. The table below indicates which MIME types as value of the Accept header SHALL be supported by the XIS for each applicable SOP class, as well as the corresponding WADO-RS request (both forms) that needs to be executed by the PHR.
 
-| WADO-RS request | Accept header |
-| --- | --- |
-| `GET [RetrieveURL]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}` <br/> `GET [WadoRsEndpoint]/studies/[StudyInstanceUID]/series/[SeriesInstanceUID]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}` | *application/dicom* |
-| `GET [RetrieveURL]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}/rendered` <br/> `GET [WadoRsEndpoint]/studies/[StudyInstanceUID]/series/[SeriesInstanceUID]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}/rendered` | *image/jpeg* |
+| Applicable SOP Class | WADO-RS request | Accept header |
+| --- | --- | --- |
+| All SOP Classes listed in Table 9 | `GET [RetrieveURL]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}` <br/> `GET [WadoRsEndpoint]/studies/[StudyInstanceUID]/series/[SeriesInstanceUID]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}` | *multipart/related; type="application/dicom"* |
+| All SOP Classes listed in Table 9, except Encapsulated PDF Storage | `GET [RetrieveURL]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}/rendered` <br/> `GET [WadoRsEndpoint]/studies/[StudyInstanceUID]/series/[SeriesInstanceUID]/instances/[SOPInstanceUID]{/frames/[FrameIndex]}/rendered` | *image/jpeg* |
+| Encapsulated PDF Storage (1.2.840.10008.5.1.4.1.1.104.1) | `GET [RetrieveURL]/instances/[SOPInstanceUID]/rendered` <br/> `GET [WadoRsEndpoint]/studies/[StudyInstanceUID]/series/[SeriesInstanceUID]/instances/[SOPInstanceUID]/rendered` | *application/pdf* |
 
 **Table 10: Supported WADO-RS requests**
+
+For Encapsulated PDF Storage, a request to `/rendered` with an Accept header of *application/pdf* retrieves the complete encapsulated PDF document, which the XIS SHALL return in PDF format. PDF pages are not DICOM frames, so the PHR SHALL NOT include `/frames/[FrameIndex]` in requests for these instances. To retrieve the complete DICOM instance containing the PDF document instead, the PHR can omit `/rendered` and use an Accept header of *multipart/related; type="application/dicom"*.
 
 See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
 
 ##### XIS: response message (WADO-RS RAD-107)
-The XIS returns an HTTP Status code appropriate to the processing outcome. When the requested (image) instance is returned, the XIS SHALL respond with HTTP Status Code 200, and the (image) instance SHOULD use a correct content type based on the Accept header supplied in the request by the PHR.
+The XIS returns an HTTP Status code appropriate to the processing outcome. When the requested instance is returned, the XIS SHALL respond with HTTP Status Code 200, and the returned content SHOULD use a correct content type based on the Accept header supplied in the request by the PHR.
 
 See [WADO-RS Retrieve (RAD-107)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf), section 4.107, for further details.
