@@ -1,11 +1,11 @@
 ---
-topic: Requirements
+topic: Functionele eisen
 ---
 
-# Requirements
+# Functionele eisen
 
 ## Inleiding
-Deze requirements zijn opgesteld voor de DVA's en PGO's in het kader van gegevensdienst Beeldbeschikbaarheid. De requirements beschrijven de minimale eisen waaraan voldaan moet worden om deze gegevensdienst correct te ondersteunen.
+Deze functionele eisen zijn opgesteld voor de DVA's en PGO's in het kader van gegevensdienst Beeldbeschikbaarheid. De functionele eisen beschrijven de minimale eisen waaraan voldaan moet worden om deze gegevensdienst correct te ondersteunen.
 
 De prioriteit van elke onderstaande eis wordt vastgesteld volgens de MoSCoW-methodiek, waarbij eisen worden geclassificeerd op basis van hun belang en noodzaak voor de implementatie:
 
@@ -18,7 +18,7 @@ De prioriteit van elke onderstaande eis wordt vastgesteld volgens de MoSCoW-meth
 
 De eisen gemarkeerd met een 'M' vormen het absolute minimum: hieraan moet altijd worden voldaan door een DVA of PGO om gekwalificeerd te worden voor de gegevensdienst.
 
-Naast de requirements is ook de {{pagelink: Weergaverichtlijn, text: weergaverichtlijn}} opgesteld. De requirements bevatten de minimale eisen waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
+Naast de functionele eisen is ook de {{pagelink: Weergaverichtlijn, text: weergaverichtlijn}} opgesteld. De functionele eisen bevatten de minimale eisen waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
 
 ## Eisen voor DVA
 | ID | Als (rol) | Wil ik (functie) | Zodat ik (doel) | Prioriteit (MoSCoW) |
