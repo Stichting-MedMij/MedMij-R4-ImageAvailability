@@ -1,66 +1,49 @@
 ---
-topic: Weergaverichtlijn
+topic: Weergavevoorbeelden
 ---
 
-# Weergaverichtlijn
+# Weergavevoorbeelden
 
 ## Inleiding
-Dit is de weergaverichtlijn voor de gegevensdienst Beeldbeschikbaarheid. De richtlijn bevat mock-ups die bedoeld zijn ter inspiratie. PGO’s kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft.
+Dit zijn weergavevoorbeelden voor de gegevensdienst Beeldbeschikbaarheid. De voorbeelden betreffen mock-ups die bedoeld zijn ter inspiratie. PGO’s kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft.
 
 ## Doel
-Deze richtlijn heeft als doel om duidelijke handvatten te bieden voor een patiëntvriendelijke en begrijpelijke weergave van medische beeldgegevens in PGO's. De richtlijn ondersteunt ontwikkelaars en zorgverleners bij het:
+De weergavevoorbeelden hebben als doel om duidelijke handvatten te bieden voor een patiëntvriendelijke en begrijpelijke weergave van medische beeldgegevens in PGO's. Deze voorbeelden ondersteunen ontwikkelaars en zorgverleners bij het:
 - gebruiken van begrijpelijke en patiëntvriendelijke termen en toelichtingen;
 - structureren en presenteren van een overzicht van beeldgegevens op een manier die aansluit bij de informatiebehoefte van patiënten.
 
-De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens.
+De weergavevoorbeelden geven géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens.
 
-Naast de weergaverichtlijn zijn ook {{pagelink: Requirements, text: requirements}} opgesteld. De requirements bevatten de minimale eisen waaraan een PGO moet voldoen en de weergaverichtlijn bestaat daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
+Naast de weergavevoorbeelden zijn ook {{pagelink: Functionele eisen, text: functionele eisen}} opgesteld. De functionele eisen bevatten de minimale eisen waaraan een DVA en PGO moeten voldoen en de weergavevoorbeelden bestaan daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
 
 ## Weergave in PGO
-Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze richtlijn.
+Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze weergavevoorbeelden.
 
 Nadat de gebruiker één of meerdere zorgaanbieders heeft gekozen waar de beschikbare beelden en verslagen opgehaald moeten worden, kan de gebruiker vanuit het hoofdmenu navigeren naar het overzichtsscherm waar de beelden en verslagen kunnen worden opgehaald.
 
 ### Overzichtsscherm beelden en verslagen
-Het overzichtsscherm bevat de tijdlijn van de beelden en verslagen die door de gebruiker in de PGO kunnen worden ingezien. De twee figuren hieronder zijn voorbeelden van hoe deze tijdlijn zou kunnen worden weergegeven. Een PGO is vrij om één van onderstaande weergaven te ondersteunen of zelf een weergave te maken. 
+Het overzichtsscherm bevat het overzicht van de beelden en verslagen die door de gebruiker in de PGO kunnen worden ingezien. De figuur hieronder is een voorbeeld van hoe dit overzicht zou kunnen worden weergegeven. Een PGO is vrij om onderstaande weergaven te ondersteunen of zelf een weergave te maken. 
 
-{{render: guides/medmij-r4-image-availability-ig/images/Tabelweergave.png}}
+{{render: guides/medmij-r4-image-availability-ig/images/Overzicht_beelden_en_verslagen.png}}
 
-**Figuur 1: Voorbeeld 1 van een tijdlijnweergave**
-
-{{render: guides/medmij-r4-image-availability-ig/images/Tijdlijnweergave.png}}
-
-**Figuur 2: Voorbeeld 2 van een tijdlijnweergave**
+**Figuur 1: Voorbeeld van een overzicht**
 
 ### Detailscherm beeld
-Als de gebruiker een specifiek beeld in de tijdlijn selecteert en vanuit daar opent, wordt een detailscherm van het betreffende beeld aan de gebruiker getoond. De beeld-viewer wordt geopend in de browser of als programma/app in de PGO.
+Als de gebruiker een specifiek beeld in het overzicht selecteert en vanuit daar opent, wordt een detailscherm van het betreffende beeld aan de gebruiker getoond. De beeld-viewer wordt geopend in de browser of als programma/app in de PGO.
 
 {{render: guides/medmij-r4-image-availability-ig/images/Voorbeeld beeld.png}}
 
-**Figuur 3: Voorbeeld van een beeld**
+**Figuur 2: Voorbeeld van een beeld**
 
 ### Detailscherm verslag
-Als de gebruiker een specifiek verslag in de tijdlijn selecteert en vanuit daar opent, wordt een PDF-viewer geopend waarin het betreffende verslag wordt getoond.
+Als de gebruiker een specifiek verslag in het overzicht selecteert en vanuit daar opent, wordt een PDF-viewer geopend waarin het betreffende verslag wordt getoond.
 
 {{render: guides/medmij-r4-image-availability-ig/images/Voorbeeld verslag.png}}
 
-**Figuur 4: Voorbeeld van een verslag**
+**Figuur 3: Voorbeeld van een verslag**
 
 ### Relevante gegevens
-In de tabel hieronder staan de gegevens die relevant zijn voor deze weergaverichtlijn.
-
-| Naam dataelement | Id dataelement | Advies weergavetekst in PGO | Voorbeeld | Weergeven |
-| --- | --- | --- | --- | --- |
-| VerrichtingStartDatum | bbs-dataelement-174 | Onderzoeksdatum | 31-01-2020 | Ja |
-| BeeldTitel | bbs-medmij-dataelement-1 | Naam onderzoek | C. van Wijk radiologiebeelden | Ja, indien beschikbaar |
-| VerslagTitel | bbs-medmij-dataelement-2 | Naam onderzoek | Cardiologiebeelden C. van Wijk | Ja, indien beschikbaar |
-| OrganisatieNaam | bbs-dataelement-523 | Zorgaanbieder | OLVG Oost | Ja |
-| Uitvoerder.Zorgverlener.Naamgegevens (Voornamen/Initialen/Geslachtsnaam) | bbs-dataelement-385 | Uitvoerend zorgverlener | J. ter Velde | Ja, indien beschikbaar |
-| Modaliteit | bbs-medmij-dataelement-5 | Type beeld | CT | Ja, indien het een beeld betreft |
-
-**Tabel 1: Relevante gegevens m.b.t. de weergaverichtlijn**
-
-De volgende tabel bevat patiëntvriendelijke termen voor alle SOP-klassen die ondersteund moeten worden (zie ook Tabel 9 in het {{pagelink: TD, text: technisch ontwerp, anchor: SupportedSOPClasses}}). Deze termen kunnen gebruikt worden als weergavetekst in de PGO.
+De tabel hieronder bevat patiëntvriendelijke termen voor alle SOP-klassen die ondersteund moeten worden (zie ook Tabel 9 in het {{pagelink: TD, text: technisch ontwerp, anchor: SupportedSOPClasses}}). Deze termen kunnen gebruikt worden als weergavetekst in de PGO.
 
 | Naam SOP-klasse | SOP Class UID | Patiëntvriendelijke term |
 | --- | --- | --- |
@@ -87,25 +70,21 @@ De volgende tabel bevat patiëntvriendelijke termen voor alle SOP-klassen die on
 | Positron Emission Tomography (PET) Image Storage | 1.2.840.10008.5.1.4.1.1.128 | PET-scan |
 | Enhanced Positron Emission Tomography (PET) Image Storage | 1.2.840.10008.5.1.4.1.1.130 | PET-scan |
 
-**Tabel 2: Patiëntvriendelijke termen SOP-klassen**
+**Tabel 1: Patiëntvriendelijke termen SOP-klassen**
 
 ### Disclaimers
 #### Downloaden van beelden
-Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM-viewer op het device geïnstalleerd dient te worden om het bestand te kunnen inzien. Door het ontwikkelen van een waarschuwing is het voor een gebruiker duidelijk wat de gevolgen zijn als een DICOM-bestand wordt gedownload.
+Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM-viewer op het apparaat geïnstalleerd dient te worden om het bestand te kunnen inzien. Door het ontwikkelen van een waarschuwing is het voor een gebruiker duidelijk wat de gevolgen zijn als een DICOM-bestand wordt gedownload.
 
-Figuur 5 bevat een visuele weergave van hoe deze waarschuwing eruit zou kunnen komen te zien. In deze figuur is een waarschuwingsveld geplaatst onder de knop waarmee het beeld als DICOM-bestand kan worden gedownload. Dit waarschuwingsveld kan als uitklapmenu geopend worden met daarin de inhoudelijke tekst (zie Figuur 6).
+Figuur 4 bevat een visuele weergave van hoe deze waarschuwing eruit zou kunnen komen te zien. In deze figuur is de waarschuwing verbonden met de knop waarmee het beeld als DICOM-bestand kan worden gedownload.
 
-{{render: guides/medmij-r4-image-availability-ig/images/Weergaverichtlijn waarschuwing downloaden beeld (knop).png}}
+{{render: guides/medmij-r4-image-availability-ig/images/Let_op_DICOM_download.png}}
 
-**Figuur 5: Voorbeeld van een waarschuwing voor het downloaden van een DICOM-beeld**
-
-{{render: guides/medmij-r4-image-availability-ig/images/Weergaverichtlijn waarschuwing downloaden beeld (tekst).png}}
-
-**Figuur 6: Voorbeeld van inhoudelijke tekst waarschuwing**
+**Figuur 4: Voorbeeld van een DICOM-download waarschuwing**
 
 #### Niet volledig tonen van beeldenreeks
-Bij het niet volledig tonen van een beeldenreeks is het advies om de gebruiker hierop te attenderen. Figuur 7 bevat een visuele weergave van hoe deze waarschuwing er per niet getoond beeld van een beeldenreeks uit zou kunnen zien. De vermelde SOP-klasse in deze waarschuwing kan door terugkoppeling van de eindgebruiker naar de PGO-leverancier of zorgaanbieder gebruikt worden voor verder onderzoek naar weergavemogelijkheden van het betreffende beeld.
+Bij het niet volledig tonen van een beeldenreeks is het advies om de gebruiker hierop te attenderen. Figuur 5 bevat een visuele weergave van hoe deze waarschuwing er per niet getoond beeld van een beeldenreeks uit zou kunnen zien. De vermelde SOP-klasse in deze waarschuwing kan door terugkoppeling van de eindgebruiker naar de PGO-leverancier of zorgaanbieder gebruikt worden voor verder onderzoek naar weergavemogelijkheden van het betreffende beeld.
 
-{{render: guides/medmij-r4-image-availability-ig/images/Weergaverichtlijn waarschuwing onvolledige beeldenreeks.png}}
+{{render: guides/medmij-r4-image-availability-ig/images/Waarschuwing_onvolledige_beeldenreeks.png}}
 
-**Figuur 7: Voorbeeld van een waarschuwing bij niet tonen beeld uit beeldenreeks**
+**Figuur 5: Voorbeeld van een waarschuwing bij niet tonen beeld uit beeldenreeks**

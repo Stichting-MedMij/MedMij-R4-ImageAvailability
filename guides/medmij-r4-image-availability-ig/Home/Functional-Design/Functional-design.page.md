@@ -31,7 +31,7 @@ Daarnaast gelden de specificaties genoemd in de [algemene inleiding](https://inf
 Geen nadere specificatie, anders dan genoemd in de [algemene inleiding](https://informatiestandaarden.nictiz.nl/wiki/MedMij:FO:V1/FunctioneelOntwerp#Geografische_reikwijdte) van de functionele ontwerpen binnen MedMij.
 
 ### Kwalificatie en testen
-Op dit moment wordt de usecase uit dit ontwerp getoetst in een pilot. Later volgt meer informatie over kwalificatie.
+De usecase uit dit ontwerp is in productie getoetst in een pilot met twee ziekenhuizen. De pilot is afgerond. Burgers konden hun medische beelden en verslagen via hun PGO inzien, en de gegevensdienst werkte technisch betrouwbaar. Als vervolgstap onderzoekt een proof of concept (PoC) of de gegegevensdienst via de landelijke infrastructuur voor beelduitwisseling tussen zorgaanbieders kan worden opgeschaald.
 
 ## Usecases
 
@@ -44,23 +44,23 @@ Een usecase is een gedetailleerde beschrijving van een praktijksituatie in de zo
 Het doel is om patiënten toegang te geven tot medische beelden en bijbehorende verslagen, zodat zij een beter inzicht krijgen in hun eigen medische situatie. Dit draagt bij aan een beter begrip van hun gezondheid en de behandelingen die zij ondergaan. Voor zorgverleners betekent dit dat patiënten beter geïnformeerd zijn over eerdere onderzoeken, wat kan bijdragen aan efficiëntere consulten en een beter afgestemd zorgproces.
 
 ##### Patiëntreis raadplegen beeld en verslag
-Roos Dalstra heeft pijn op de borst en besluit naar de huisartsenpost te gaan. Hier aangekomen wordt ze gelijk naar de spoedeisende hulp doorverwezen. Er wordt een echo gemaakt van het hart. De cardioloog besluit haar in te sturen naar het academische ziekenhuis i.v.m. andere aandoeningen die Roos ook heeft. In het academische ziekenhuis worden nog een CT-scan en thoraxröntgenfoto gemaakt. Roos verblijft enkele dagen in het ziekenhuis en mag daarna naar huis. Roos wil bij thuiskomst de radiologische beelden en de bijbehorende verslagen van beide ziekenhuizen in haar PGO inzien. Hierdoor krijgt ze meer inzicht in haar situatie en kan ze de vervolgbehandeling beter voorbereiden.
+Roos Dalstra heeft pijn op de borst en besluit naar de huisartsenpost te gaan. Hier aangekomen wordt ze gelijk naar de spoedeisende hulp doorverwezen. Er wordt een echo gemaakt van het hart. De cardioloog besluit haar in te sturen naar het academische ziekenhuis i.v.m. andere aandoeningen die Roos ook heeft. In het academische ziekenhuis worden nog een CT-scan en thoraxröntgenfoto gemaakt. Roos verblijft enkele dagen in het ziekenhuis en mag daarna naar huis. Roos wil bij thuiskomst de radiologische beelden en de bijbehorende verslagen van beide ziekenhuizen in haar persoonlijke gezondheidsomgeving (PGO) inzien. Hierdoor krijgt ze meer inzicht in haar situatie en kan ze de vervolgbehandeling beter voorbereiden.
 
 #### Procesbeschrijving beeld en verslag
 
 ##### Preproces
-- De patiënt heeft toestemming gegeven voor het elektronisch uitwisselen van medische gegevens tussen de zorgverlener en de eigen persoonlijke gezondheidsomgeving.
-- Het beeld en/of het verslag zijn geregistreerd en beschikbaar voor systemen die tijdlijngegevens kunnen opvragen.
+- De patiënt heeft toestemming gegeven voor het elektronisch uitwisselen van medische gegevens tussen de zorgverlener en de eigen PGO.
+- Het beeld en/of het verslag zijn geregistreerd en beschikbaar voor systemen die gegevens kunnen verzamelen.
 
 ##### Proces
-- De patiënt raadpleegt de tijdlijn van beelden en verslagen in zijn PGO.
+- De patiënt raadpleegt het overzicht van beelden en verslagen in de eigen PGO.
 - Het systeem van de patiënt (PGO) vraagt om beschikbare beelden en verslagen bij de zorgaanbieder.
 - Het systeem van de zorgaanbieder (XIS) levert een lijst met metadata over de gevonden beelden en verslagen op voor de patiënt.
-- De patiënt gebruikt de PGO om het gewenste beeld en/of verslag uit de tijdlijn te raadplegen of te downloaden.
+- De patiënt gebruikt de PGO om het gewenste beeld en/of verslag uit het overzicht te raadplegen of te downloaden.
 - Het systeem van de zorgaanbieder (XIS) levert het gevraagde beeld en/of verslag op voor de patiënt.
 
 ##### Postproces
-- De patiënt ziet het opgevraagde beeld en/of verslag in zijn PGO.
+- De patiënt ziet het opgevraagde beeld en/of verslag in de eigen PGO.
 
 ### Bedrijfsrollen en UML activity diagram
 Deze usecase onderscheidt twee bedrijfsrollen, namelijk de *Patiënt* en de *Zorgaanbieder*, zoals te zien in onderstaande tabel.
