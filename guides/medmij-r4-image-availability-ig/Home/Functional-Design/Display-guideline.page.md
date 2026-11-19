@@ -12,9 +12,7 @@ De weergavevoorbeelden hebben als doel om duidelijke handvatten te bieden voor e
 - gebruiken van begrijpelijke en patiëntvriendelijke termen en toelichtingen;
 - structureren en presenteren van een overzicht van beeldgegevens op een manier die aansluit bij de informatiebehoefte van patiënten.
 
-De weergavevoorbeelden geven géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens.
-
-Naast de weergavevoorbeelden zijn ook {{pagelink: Functionele eisen, text: functionele eisen}} opgesteld. De functionele eisen bevatten de minimale eisen waaraan een DVA en PGO moeten voldoen en de weergavevoorbeelden bestaan daaropvolgend uit visuele richtlijnen en UX-voorbeelden die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
+Naast de weergavevoorbeelden zijn ook {{pagelink: FunctioneleEisen, text: functionele eisen}} opgesteld. De functionele eisen bevatten de minimale eisen waaraan een DVA en PGO moeten voldoen en de weergavevoorbeelden bestaan daaropvolgend uit visuele en UX-uitwerkingen die aangeven hoe deze functionaliteit patiëntvriendelijk kan worden gepresenteerd.
 
 ## Weergave in PGO
 Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze weergavevoorbeelden.
@@ -22,7 +20,7 @@ Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze wee
 Nadat de gebruiker één of meerdere zorgaanbieders heeft gekozen waar de beschikbare beelden en verslagen opgehaald moeten worden, kan de gebruiker vanuit het hoofdmenu navigeren naar het overzichtsscherm waar de beelden en verslagen kunnen worden opgehaald.
 
 ### Overzichtsscherm beelden en verslagen
-Het overzichtsscherm bevat het overzicht van de beelden en verslagen die door de gebruiker in de PGO kunnen worden ingezien. De figuur hieronder is een voorbeeld van hoe dit overzicht zou kunnen worden weergegeven. Een PGO is vrij om onderstaande weergaven te ondersteunen of zelf een weergave te maken. 
+Het overzichtsscherm bevat het overzicht van de beelden en verslagen die door de gebruiker in de PGO kunnen worden ingezien. De figuur hieronder is een voorbeeld van hoe dit overzicht zou kunnen worden weergegeven. Een PGO is vrij om onderstaande weergave te ondersteunen of zelf een weergave te maken. 
 
 {{render: guides/medmij-r4-image-availability-ig/images/Overzicht_beelden_en_verslagen.png}}
 
@@ -76,11 +74,11 @@ De tabel hieronder bevat patiëntvriendelijke termen voor alle SOP-klassen die o
 #### Downloaden van beelden
 Het is wenselijk de gebruiker erop te attenderen dat bij het downloaden van een beeld een DICOM-viewer op het apparaat geïnstalleerd dient te worden om het bestand te kunnen inzien. Door het ontwikkelen van een waarschuwing is het voor een gebruiker duidelijk wat de gevolgen zijn als een DICOM-bestand wordt gedownload.
 
-Figuur 4 bevat een visuele weergave van hoe deze waarschuwing eruit zou kunnen komen te zien. In deze figuur is de waarschuwing verbonden met de knop waarmee het beeld als DICOM-bestand kan worden gedownload.
+Figuur 4 bevat een visuele weergave van hoe deze waarschuwing eruit zou kunnen komen te zien. In deze figuur verwijst de waarschuwing naar de knop waarmee het beeld als DICOM-bestand kan worden gedownload.
 
 {{render: guides/medmij-r4-image-availability-ig/images/Let_op_DICOM_download.png}}
 
-**Figuur 4: Voorbeeld van een DICOM-download waarschuwing**
+**Figuur 4: Voorbeeld van een waarschuwing met betrekking tot het downloaden van DICOM-bestanden**
 
 #### Niet volledig tonen van beeldenreeks
 Bij het niet volledig tonen van een beeldenreeks is het advies om de gebruiker hierop te attenderen. Figuur 5 bevat een visuele weergave van hoe deze waarschuwing er per niet getoond beeld van een beeldenreeks uit zou kunnen zien. De vermelde SOP-klasse in deze waarschuwing kan door terugkoppeling van de eindgebruiker naar de PGO-leverancier of zorgaanbieder gebruikt worden voor verder onderzoek naar weergavemogelijkheden van het betreffende beeld.
