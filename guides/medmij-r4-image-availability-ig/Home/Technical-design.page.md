@@ -171,7 +171,7 @@ If the XIS is unable to format the imaging study manifest in a content type list
 
 See [ITI-68 Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message) for further details.
 
-##### PHR: request message (WADO-RS RAD-107)
+##### <a name="RetrieveImagesRequestMessageWADORS"></a> PHR: request message (WADO-RS RAD-107)
 The WADO-RS Retrieve request (RAD-107) is used to retrieve individual (image) instances. For each (image) instance the PHR wants to retrieve, it executes an HTTP GET against the WADO-RS endpoint of the XIS using the following URL:
 
 ```
@@ -181,6 +181,7 @@ GET [WadoRsEndpoint]/studies/[StudyInstanceUID]/series/[SeriesInstanceUID]/insta
 Note the following:
 - The required `[StudyInstanceUID]`, `[SeriesInstanceUID]` and `[SOPInstanceUID]` unique identifier values can be found in the DICOM KOS document, which is obtained via the ITI-68 Retrieve Document transaction. In Table 2, the corresponding DICOM tags are listed. Note however, that the SOP Instance UID of an individual instance which is referenced by the KOS document can be found in DICOM tag `(0008,1155)` (Referenced SOP Instance UID) within the KOS document.
 - Based on the [current DICOM specifications](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_c.17.6.2.html), it is not possible to indicate the order of image instances within a series in the KOS document, as DICOM tag `(0020,0013)` (Instance Number) is not available at the image instance level. Hence for each series, the PHR SHOULD assume the order of instances within the KOS document is the correct ordering, and retrieve (and display) the individual instances in that order.
+- If Instance Number `(0020,0013)` is populated for all instances in a series and the resulting order differs from the order of the instances in the KOS document, the PHR SHOULD display the instances in ascending order of Instance Number. The PHR can obtain Instance Number from the instance metadata, using the metadata request described under Retrieve multi-frame image {{pagelink: TD, text: (*Method 2*), anchor: Method2}}. If Instance Number is not populated for all instances, the PHR SHOULD keep the order of the instances in the KOS document.
 - By default, the request returns binary DICOM instances, while adding `/rendered` to the request results in rendered instances, e.g. in JPEG format (also see Table 10).
 - The part `/frames/[FrameIndex]` only needs to be added to the request when the SOP instance may contain multi-frame images, which is indicated in Table 9 below. Since the approaches of retrieving a single-frame or multi-frame image differ slightly, these are described separately below.
 
@@ -219,7 +220,7 @@ where `[FrameIndex]` attains the values 1, 2, 3, ..., consecutively. Since the t
 
 If the very first request (i.e. the request containing `/frames/1`) fails, the PHR SHALL treat the instance as a single-frame image and follow the image retrieval approach described in the {{pagelink: TD, text: previous subsection, anchor: RetrieveSingleFrameImage}}.
 
-*Method 2* <br/>
+*<a name="Method2"></a> Method 2* <br/>
 Whether or not instances contain multiple frames can also be determined from DICOM tag `(0028,0008)` (Number of Frames) in the metadata. This DICOM tag is mandatory for multi-frame images. The PHR can request this metadata by executing the following HTTP GET request against the WADO-RS endpoint of the XIS:
 
 ```
